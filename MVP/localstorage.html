@@ -9,31 +9,39 @@
         fieldset{
             margin-bottom: 20px;
             width: 800px;
-            height:200px;
+           
             font-size: 25px;
+        }
+        input,button{
+            padding:7px;
+            height:40px;
         }
     </style>
 </head>
 <body>
     <fieldset>
         <legend>Insert Data</legend>
-        <input type="text" placeholder="Enter key..." style="font-size:20px">
-        <input type="text" placeholder="Enter value..."style="font-size:20px">
-        <button style="font-size:20px">Insert</button>
+        <input type="text" placeholder="Enter key..."  id='inpKey'>
+        <input type="text" placeholder="Enter value..."id='inpValue'>
+        <button  id="btnInsert">Insert Data</button>
 
     </fieldset>
     <fieldset>
         <legend>Local Storage</legend>
+        <div id='isOutput'></div>
         
 
     </fieldset>
     
 </body>
 <script type="text/javascript">
-    localStorage.setItem("name","jean");
-    localStorage.setItem("age",40);
+    const inpKey = document.getElementById('inpKey');
+    const inpValue = document.getElementById('inpValue');
+    const btnInsert = document.getElementById('btnInsert');
+    const isOutput = document.getElementById('isOutput');
+
     
-    localStorage.removeItem("name");
-    console.log(localStorage);
+
+
 </script>
 </html>
