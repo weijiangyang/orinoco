@@ -38,18 +38,29 @@
    const inpKey = document.getElementById("inpKey");
    const inpValue = document.getElementById("inpValue");
    const btnInsert = document.getElementById("btnInsert");
+   const isOutput = document.getElementById("isOutput")
 
-   btnInsert.addEventListener = function(){
+   btnInsert.addEventListener(
        'click',function(){
            const key = inpKey.value;
-           const value = inpInsert.value;
+           const value = inpValue.value;
            console.log(key);
            if(key && value){
                 localStorage.setItem(key,value);
-               
-           }
-       }
-   }
+            
+            location.reload();
+            };});
+        for(let i=0;i<localStorage.length;i++){
+            isOutput.innerHTML += '${key}:'
+        };
+        
+</script>
+</html>
+
+   
+   
+       
+   
   
   
 
@@ -57,5 +68,3 @@
     
 
 
-</script>
-</html>
