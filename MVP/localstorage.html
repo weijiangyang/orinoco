@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how to use localstorage</title>
+    <style>
+        fieldset{
+            margin-bottom: 20px;
+            width: 800px;
+            height:200px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Insert Data</legend>
+        <input type="text" placeholder="Enter key..." style="font-size:20px">
+        <input type="text" placeholder="Enter value..."style="font-size:20px">
+        <button style="font-size:20px">Insert</button>
+
+    </fieldset>
+    <fieldset>
+        <legend>Local Storage</legend>
+        
+
+    </fieldset>
+    
+</body>
+<script type="text/javascript">
+    localStorage.setItem("name","jean");
+    localStorage.setItem("age",40);
+    
+    localStorage.removeItem("name");
+    console.log(localStorage);
+</script>
+</html>
