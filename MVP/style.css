@@ -3,7 +3,27 @@ header{
     margin:auto;
     margin-top:20px;
     margin-bottom:30px;
-    height:200px;
+    height:160px;
+    background-color:#F2E8F0;
+    padding-top:40px;
+    
+}
+input.chercher{
+    margin-left:0;
+    height:px
+}
+
+a.btnRecherche{
+    display:block;
+    height:40px;
+    width:40px;
+    text-align: center;
+    background-color: white;
+    line-height: 40px;
+}
+div.recherche{
+    display:flex;
+
 }
 
 
