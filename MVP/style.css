@@ -10,7 +10,10 @@ header{
 }
 input.chercher{
     margin-left:0;
-    height:px
+    height:36px;
+    width: 90%;
+    
+    
 }
 
 a.btnRecherche{
@@ -20,10 +23,26 @@ a.btnRecherche{
     text-align: center;
     background-color: white;
     line-height: 40px;
+    border:1px solid black;
 }
 div.recherche{
     display:flex;
+    width:100%;
+    margin:auto;
+    justify-content: center;
+    margin-bottom: 20pxf;
 
+
+}
+ul.catalogue{
+    display:flex;
+    justify-content: space-around;
+}
+div.catalogue{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin:auto;
 }
 
 
