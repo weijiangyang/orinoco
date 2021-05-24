@@ -1,11 +1,14 @@
 header{
-    width: 80%;
+    width: 85%;
     margin:auto;
     margin-top:20px;
     margin-bottom:30px;
-    height:160px;
+    /* height:160px; */
     background-color:#F2E8F0;
     padding-top:40px;
+    padding-bottom: 20px;
+    display:flex;
+    justify-content: space-between;
     
 }
 input.chercher{
@@ -43,6 +46,13 @@ div.catalogue{
     flex-direction: column;
     width: 50%;
     margin:auto;
+}
+img.logo{
+    width:250px;
+}
+div#panier{
+    margin-left:30px;
+    margin-right:30px;
 }
 
 
