@@ -40,6 +40,19 @@
     const btnInsert = document.getElementById('btnInsert');
     const isOutput = document.getElementById('isOutput');
 
+    const key = inpKey.value;
+    const value = inpValue.value;
+    //  localStorage.removeItem("name");
+    //  localStorage.removeItem("age");
+    btnInsert.onclick = function(){
+        if (key && value){
+            localStorage.setItem(key, value);
+           
+        }
+        console.log(localStorage)
+        
+
+}
     
 
 
