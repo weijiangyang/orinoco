@@ -51,7 +51,9 @@
             location.reload();
             };});
         for(let i=0;i<localStorage.length;i++){
-            isOutput.innerHTML += '${key}:'
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            isOutput.innerHTML += `${key}: ${value}</br>`;
         };
         
 </script>
