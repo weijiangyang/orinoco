@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<!-- <body>
     <fieldset>
         <legend>Insert Data</legend>
         <input type="text" placeholder="Enter key..."  id='inpKey'>
@@ -33,26 +33,14 @@
 
     </fieldset>
     
-</body>
+</body> -->
 <script type="text/javascript">
-    const inpKey = document.getElementById('inpKey');
-    const inpValue = document.getElementById('inpValue');
-    const btnInsert = document.getElementById('btnInsert');
-    const isOutput = document.getElementById('isOutput');
+   localStorage.setItem("name","Hugo");
+   localStorage.setItem("nation",'chine')
+   localStorage.removeItem("name");
+  
 
-    const key = inpKey.value;
-    const value = inpValue.value;
-    //  localStorage.removeItem("name");
-    //  localStorage.removeItem("age");
-    btnInsert.onclick = function(){
-        // if (key && value){
-            localStorage.setItem(key, value);
-           
-        // }
-        console.log(localStorage)
-        
 
-}
     
 
 
