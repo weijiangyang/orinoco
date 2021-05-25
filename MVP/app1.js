@@ -15,9 +15,12 @@ function getPelucheInf(){
         document.querySelector("div#peluche #forth").src = value[3].imageUrl;
         document.querySelector("div#peluche #fifth").src = value[4].imageUrl;
         
-    document.querySelector("div.first-peluche p#firstdesp").innerHTML = value[0].description;
-    document.querySelector("div.first-peluche p#firstprice").innerHTML = `${value[0].price}€`;
+        document.querySelector("div.first-peluche p#firstdesp").innerHTML = value[0].description;
+        document.querySelector("div.first-peluche p#firstprice").innerHTML = `PRICE:${value[0].price}€`;
 
+        document.querySelector("div.first-peluche h2#firstitle").innerHTML = value[0].name;
+
+        
         
     })
     .catch(function(err){
