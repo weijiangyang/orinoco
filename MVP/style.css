@@ -80,7 +80,7 @@ div#contact i{
 
 div.first-peluche{
     width: 350px;
-    height: 330px;
+    height: 380px;
     background-color: pink;
     box-shadow: 2px 2px 10px black;
     margin:auto;
@@ -91,6 +91,20 @@ div.first-peluche img#first{
     display:block;
     margin:auto;
     border-radius: 15px 15px 0 0 ;
+}
+
+div.first-peluche p#firstdesp{
+    width: 95%;
+    margin-left:15px;
+    margin-top:15px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+div.first-peluche p#firstprice{
+    margin-left:15px;
+    margin-top:20px;
+    font-size:18px;
+    font-st;
 }
 
 
