@@ -1,5 +1,5 @@
 header{
-    width: 85%;
+    width: 95%;
     margin:auto;
     margin-top:20px;
     margin-bottom:30px;
@@ -78,6 +78,22 @@ div#contact i{
     text-align:center;
     margin-bottom:10px;
 }
+div#peluche{
+    width:95%;
+    background-color: #f2f2f2;
+    margin:auto;
+}
+div#peluche-list{
+    width: 100%;
+    display:flex;
+    
+    justify-content: space-between;
+    
+    padding-top:80px;
+    padding-bottom:30px;
+    border-radius: 20px;
+
+}
 
 div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche{
     width: 300px;
@@ -112,7 +128,7 @@ div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluch
     font-weight:400;
     
 }
-div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle,div.third-peluche h2#thirdtitle,div.forth-peluche h2#forthtitle,div.fifth-peluche h2#fifthtitle{
+div.first-peluche h3#firstitle,div.second-peluche h3#secondtitle,div.third-peluche h3#thirdtitle,div.forth-peluche h3#forthtitle,div.fifth-peluche h3#fifthtitle{
     width: 100%;
     text-align: center;
     margin-top:10px;
