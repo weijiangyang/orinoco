@@ -78,24 +78,37 @@ div#contact i{
     text-align:center;
     margin-bottom:10px;
 }
-div#peluche{
+div#peluche,div#camera,div#furniture{
     width:95%;
     background-color: #f2f2f2;
     margin:auto;
+    padding-top:80px;
+    padding-bottom:30px;
+    border-radius: 20px;
+    position: relative;
 }
-div#peluche-list{
+div#peluche h2,div#camera h2,div#furniture h2{
+    position:absolute;
+    left: 35px;
+    top:30px;
+    font-size:25px;
+    font-weight: 800;
+    color:blue;
+
+}
+div#peluche-list,div#camera-list{
     width: 100%;
     display:flex;
     
     justify-content: space-between;
+ }   
     
-    padding-top:80px;
-    padding-bottom:30px;
-    border-radius: 20px;
 
-}
+div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
+div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
+div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
 
-div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche{
+{
     width: 300px;
     height: 400px;
     background-color:pink;
@@ -104,7 +117,11 @@ div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fif
     border-radius: 15px;
     
 }
-div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth{
+div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth,
+div.first-camera img#first,div.second-camera img#second,div.third-camera img#third,div.forth-camera img#forth,div.fifth-camera img#fifth,
+div.first-furniture img#first,div.second-furniture img#second,div.third-furniture img#third,div.forth-furniture img#forth,div.fifth-furniture img#fifth
+
+{
     width: 100%;
     display:block;
     height:250px;
@@ -113,14 +130,23 @@ div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#
     object-fit: cover;
 }
 
-div.first-peluche p,div.second-peluche p,div.third-peluche p,div.forth-peluche p,div.fifth-peluche p{
+div.first-peluche p#firstdesp,div.second-peluche p#seconddesp,div.third-peluche p#thirddesp,div.forth-peluche p#forthdesp,div.fifth-peluche p#fifthdesp,
+div.first-camera p#firstdesp,div.second-camera p#seconddesp,div.third-camera p#thirddesp,div.forth-camera p#forthdesp,div.fifth-camera p#fifthdesp,
+div.first-furniture p#firstdesp,div.second-furniture p#seconddesp,div.third-furniture p#thirddesp,div.forth-furniture p#forthdesp,div.fifth-furniture p#fifthdesp
+{
     width: 95%;
     margin-left:15px;
     margin-top:10px;
     margin-bottom:15px;
-    font-size:16px;}
+    font-size:16px;
+    
+}
 
-div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice,div.forth-peluche p#forthprice,div.fifth-peluche p#fifthprice{
+div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice,div.forth-peluche p#forthprice,div.fifth-peluche p#fifthprice,
+div.first-camera p#firstprice,div.second-camera p#secondprice,div.third-camera p#thirdprice,div.forth-camera p#forthprice,div.fifth-camera p#fifthprice,
+div.first-furniture p#firstprice,div.second-furniture p#secondprice,div.third-furniture p#thirdprice,div.forth-furniture p#forthprice,div.fifth-furniture p#fifthprice
+
+{
     
     margin-left:15px;
     margin-top:10px;
