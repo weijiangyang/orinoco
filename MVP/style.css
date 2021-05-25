@@ -42,6 +42,7 @@ div.recherche{
 ul.catalogue{
     display:flex;
     justify-content: space-around;
+    
 }
 div.catalogue{
     display:flex;
@@ -101,11 +102,16 @@ div#peluche-list,div#camera-list,div#furniture-list{
     width: 100%;
     display:flex;
     
+    justify-content: space-evenly;
+   
+    
+    
+} 
 
-    flex-wrap:wrap;
     
     
- }   
+    
+   
     
 
 div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
@@ -114,13 +120,14 @@ div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture
 
 {
     width: 18%;
-    min-width: 250px;
+    
     height: 400px;
     background-color:pink;
     box-shadow: 2px 2px 10px pink;
     margin:auto;
     border-radius: 15px;
     margin-bottom:20px;
+    
     
 }
 div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth,
