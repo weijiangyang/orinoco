@@ -48,12 +48,16 @@ ul.catalogue{
 div.catalogue{
     display:flex;
     flex-direction: column;
-    width: 50%;
+    width: 90%;
     margin:auto;
 }
-img.logo{
+div.image-logo{
     
-    width:250px;
+    width:200px;
+}
+div.image-logo img.logo{
+    object-fit: cover;
+    width: 100%;
 }
 div#panier{
     margin-left:30px;
@@ -103,7 +107,8 @@ div#peluche-list,div#camera-list,div#furniture-list{
     width: 100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-around;
+    
     
    
 }   
@@ -115,7 +120,7 @@ div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-c
 div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
 
 {
-    width: 22%;
+    width: 28%;
     
     height: 400px;
     background-color:pink;
@@ -123,7 +128,7 @@ div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture
     
     border-radius: 15px;
     margin-bottom:20px;
-    margin-right:20px;
+   
     
     
 }
