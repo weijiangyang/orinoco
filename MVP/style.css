@@ -14,7 +14,7 @@ header{
 input.chercher{
     margin-left:0;
     height:36px;
-    width: 90%;
+    width: 60%;
     margin-bottom:20px
     
     
@@ -53,7 +53,7 @@ div.catalogue{
 }
 div.image-logo{
     
-    width:200px;
+    width:20%;
 }
 div.image-logo img.logo{
     object-fit: cover;
@@ -120,7 +120,7 @@ div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-c
 div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
 
 {
-    width: 28%;
+    width: 18%;
     
     height: 400px;
     background-color:pink;
@@ -149,12 +149,14 @@ div.first-peluche p#firstdesp,div.second-peluche p#seconddesp,div.third-peluche 
 div.first-camera p#firstdesp,div.second-camera p#seconddesp,div.third-camera p#thirddesp,div.forth-camera p#forthdesp,div.fifth-camera p#fifthdesp,
 div.first-furniture p#firstdesp,div.second-furniture p#seconddesp,div.third-furniture p#thirddesp,div.forth-furniture p#forthdesp,div.fifth-furniture p#fifthdesp
 {
-    width: 95%;
+    width: 90%;
     margin-left:15px;
-    margin-top:10px;
+    margin-top:25px;
     margin-bottom:15px;
     font-size:16px;
-    
+    margin:auto;
+    text-align: justify;
+    font-weight: 100;
 }
 
 div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice,div.forth-peluche p#forthprice,div.fifth-peluche p#fifthprice,
@@ -175,6 +177,7 @@ div.first-furniture h3#firstitle,div.second-furniture h3#secondtitle,div.third-f
     width: 100%;
     text-align: center;
     margin-top:10px;
+    margin-bottom:10px;
     font-size: 20px;
     
 }
