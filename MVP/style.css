@@ -86,6 +86,7 @@ div#peluche,div#camera,div#furniture{
     padding-bottom:30px;
     border-radius: 20px;
     position: relative;
+    margin-bottom: 30px;
 }
 div#peluche h2,div#camera h2,div#furniture h2{
     position:absolute;
@@ -96,11 +97,13 @@ div#peluche h2,div#camera h2,div#furniture h2{
     color:blue;
 
 }
-div#peluche-list,div#camera-list{
+div#peluche-list,div#camera-list,div#furniture-list{
     width: 100%;
     display:flex;
+
+    flex-wrap:wrap;
     
-    justify-content: space-between;
+    
  }   
     
 
@@ -109,12 +112,14 @@ div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-c
 div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
 
 {
-    width: 300px;
+    width: 18%;
+    min-width: 250px;
     height: 400px;
     background-color:pink;
     box-shadow: 2px 2px 10px pink;
     margin:auto;
     border-radius: 15px;
+    margin-bottom:20px;
     
 }
 div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth,
@@ -154,7 +159,9 @@ div.first-furniture p#firstprice,div.second-furniture p#secondprice,div.third-fu
     font-weight:400;
     
 }
-div.first-peluche h3#firstitle,div.second-peluche h3#secondtitle,div.third-peluche h3#thirdtitle,div.forth-peluche h3#forthtitle,div.fifth-peluche h3#fifthtitle{
+div.first-peluche h3#firstitle,div.second-peluche h3#secondtitle,div.third-peluche h3#thirdtitle,div.forth-peluche h3#forthtitle,div.fifth-peluche h3#fifthtitle,
+div.first-camera h3#firstitle,div.second-camera h3#secondtitle,div.third-camera h3#thirdtitle,div.forth-camera h3#forthtitle,div.fifth-camera h3#fifthtitle,
+div.first-furniture h3#firstitle,div.second-furniture h3#secondtitle,div.third-furniture h3#thirdtitle,div.forth-furniture h3#forthtitle,div.fifth-furniture h3#fifthtitle{
     width: 100%;
     text-align: center;
     margin-top:10px;
