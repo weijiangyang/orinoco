@@ -28,6 +28,7 @@ a.btnRecherche{
     background-color: white;
     line-height: 40px;
     border:1px solid black;
+    border-left: transparent;
 }
 div.recherche{
     display:flex;
@@ -78,29 +79,31 @@ div#contact i{
     margin-bottom:10px;
 }
 
-div.first-peluche,div.second-peluche{
-    width: 350px;
-    height: 360px;
+div.first-peluche,div.second-peluche,div.third-peluche{
+    width: 300px;
+    height: 330px;
     background-color:pink;
     box-shadow: 2px 2px 10px pink;
     margin:auto;
     border-radius: 15px;
+    
 }
-div.first-peluche img#first,div.second-peluche img#second{
+div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third{
     width: 100%;
     display:block;
     margin:auto;
     border-radius: 15px 15px 0 0 ;
+    object-fit: cover;
 }
 
-div.first-peluche p#seconddesp,div.second-peluche p#seconddesp{
+div.first-peluche p,div.second-peluche p,div.third-peluche p{
     width: 95%;
     margin-left:15px;
     margin-top:10px;
     margin-bottom:15px;
-    font-size:16px;
-}
-div.first-peluche p#firstprice,div.second-peluche p#secondprice{
+    font-size:16px;}
+
+div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice{
     
     margin-left:15px;
     margin-top:10px;
@@ -108,7 +111,7 @@ div.first-peluche p#firstprice,div.second-peluche p#secondprice{
     font-weight:400;
     
 }
-div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle{
+div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle,div.third-peluche h2#thirdtitle{
     width: 100%;
     text-align: center;
     margin-top:10px;
@@ -116,7 +119,3 @@ div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle{
     
 }
 
-main img{
-    width: 150px;
-
-}
