@@ -12,8 +12,8 @@ function getPelucheInf(){
         document.querySelector("div#peluche #second").src = value[1].imageUrl;
 
         document.querySelector("div#peluche #third").src = value[2].imageUrl;
-        // document.querySelector("div#peluche #forth").src = value[3].imageUrl;
-        // document.querySelector("div#peluche #fifth").src = value[4].imageUrl;
+        document.querySelector("div#peluche #forth").src = value[3].imageUrl;
+        document.querySelector("div#peluche #fifth").src = value[4].imageUrl;
 
         document.querySelector("div.first-peluche h2#firstitle").innerHTML = value[0].name;
         document.querySelector("div.first-peluche p#firstdesp").innerHTML = value[0].description;
@@ -26,6 +26,14 @@ function getPelucheInf(){
         document.querySelector("div.third-peluche h2#thirdtitle").innerHTML = value[2].name;
         document.querySelector("div.third-peluche p#thirddesp").innerHTML = value[2].description;
         document.querySelector("div.third-peluche p#thirdprice").innerHTML = `PRICE:${value[2].price}€`;
+
+        document.querySelector("div.forth-peluche h2#forthtitle").innerHTML = value[3].name;
+        document.querySelector("div.forth-peluche p#forthdesp").innerHTML = value[3].description;
+        document.querySelector("div.forth-peluche p#forthprice").innerHTML = `PRICE:${value[3].price}€`;
+
+        document.querySelector("div.forth-peluche h2#forthtitle").innerHTML = value[3].name;
+        document.querySelector("div.forth-peluche p#forthdesp").innerHTML = value[3].description;
+        document.querySelector("div.forth-peluche p#forthprice").innerHTML = `PRICE:${value[3].price}€`;
 
         
 

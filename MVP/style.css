@@ -79,31 +79,32 @@ div#contact i{
     margin-bottom:10px;
 }
 
-div.first-peluche,div.second-peluche,div.third-peluche{
+div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche{
     width: 300px;
-    height: 330px;
+    height: 400px;
     background-color:pink;
     box-shadow: 2px 2px 10px pink;
     margin:auto;
     border-radius: 15px;
     
 }
-div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third{
+div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth{
     width: 100%;
     display:block;
+    height:250px;
     margin:auto;
     border-radius: 15px 15px 0 0 ;
     object-fit: cover;
 }
 
-div.first-peluche p,div.second-peluche p,div.third-peluche p{
+div.first-peluche p,div.second-peluche p,div.third-peluche p,div.forth-peluche p,div.fifth-peluche p{
     width: 95%;
     margin-left:15px;
     margin-top:10px;
     margin-bottom:15px;
     font-size:16px;}
 
-div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice{
+div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluche p#thirdprice,div.forth-peluche p#forthprice,div.fifth-peluche p#fifthprice{
     
     margin-left:15px;
     margin-top:10px;
@@ -111,7 +112,7 @@ div.first-peluche p#firstprice,div.second-peluche p#secondprice,div.third-peluch
     font-weight:400;
     
 }
-div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle,div.third-peluche h2#thirdtitle{
+div.first-peluche h2#firstitle,div.second-peluche h2#secondtitle,div.third-peluche h2#thirdtitle,div.forth-peluche h2#forthtitle,div.fifth-peluche h2#fifthtitle{
     width: 100%;
     text-align: center;
     margin-top:10px;
