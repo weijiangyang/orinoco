@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 div.client-inf{
     display:flex;
 }
@@ -92,7 +95,8 @@ div#peluche-list,div#camera-list,div#furniture-list{
     width: 100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content:left;
+    margin-left:2.5%
     
     
    
@@ -105,7 +109,7 @@ div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-c
 div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
 
 {
-    width: 18%;
+    width: 30%;
     
     height: 400px;
     background-color:pink;
@@ -113,10 +117,29 @@ div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture
     
     border-radius: 15px;
     margin-bottom:20px;
-   
+    margin-right:2.5%;
+}   
+
+@media(max-width:1080px){
+    div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
+    div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
+    div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture{
+        width:40%;
+        margin-left:4%;
+    }    
+}    
+@media(max-width:780px){
+    div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
+    div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
+    div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture{
+        width:80%;
+        margin-left:8%;
+    }    
+}           
     
+
     
-}
+
 div.first-peluche img#first,div.second-peluche img#second,div.third-peluche img#third,div.forth-peluche img#forth,div.fifth-peluche img#fifth,
 div.first-camera img#first,div.second-camera img#second,div.third-camera img#third,div.forth-camera img#forth,div.fifth-camera img#fifth,
 div.first-furniture img#first,div.second-furniture img#second,div.third-furniture img#third,div.forth-furniture img#forth,div.fifth-furniture img#fifth
