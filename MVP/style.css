@@ -86,7 +86,7 @@ div.first-peluche{
     margin:auto;
     border-radius: 15px;
 }
-div img#first{
+div.first-peluche img#first{
     width: 100%;
     display:block;
     margin:auto;

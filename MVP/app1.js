@@ -7,14 +7,14 @@ function getPelucheInf(){
     })
     .then(function(value){
         
-        document.querySelector("div#peluche #first").src = value[0].imageUrl;
+        document.querySelector("div.first-peluche #first").src = value[0].imageUrl;
 
         document.querySelector("div#peluche #second").src = value[1].imageUrl;
 
         document.querySelector("div#peluche #third").src = value[2].imageUrl;
         document.querySelector("div#peluche #forth").src = value[3].imageUrl;
         document.querySelector("div#peluche #fifth").src = value[4].imageUrl;
-        console.log(value[0]._id);
+     
         
     })
     .catch(function(err){
