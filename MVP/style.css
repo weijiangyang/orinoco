@@ -1,99 +1,47 @@
-header{
-    width: 100%;
-    margin:auto;
-    margin-top:20px;
-    margin-bottom:30px;
-    
-    background-color:#F2E8F0;
-    padding-top:20px;
-    padding-bottom: 20px;
-    display:flex;
-    flex-direction: column;
-    
-    
-}
-
-div.container-upper{
-    display:flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
 div.client-inf{
     display:flex;
-    width: 35%;
 }
-input.chercher{
-    margin-left:0;
-    height:36px;
-    width: 80%;
-    margin-bottom:20px
-    
-    
-}
-
-a.btnRecherche{
-    display:block;
-    height:40px;
-    width:40px;
-    text-align: center;
-    background-color: white;
-    line-height: 40px;
-    border:1px solid black;
-    border-left: transparent;
-}
-div.recherche{
+div.container-upper{
+    width: 100%;
+    height: 150px;
     display:flex;
-   
-    width:100%;
-    margin:auto;
-    justify-content: center;
-    margin-bottom: 20px;
-
-
-}
-ul.catalogue{
-    display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: #F2E8F0;
+    margin-bottom: 30px;
     
-}
-div.catalogue{
-    display:flex;
-    flex-direction: column;
-    width: 90%;
-    margin:auto;
 }
 div.image-logo{
-    
-    width:30%;
+    margin-left:20px;
+    margin-top: 20px;
+    width: 20%;
 }
-div.image-logo img.logo{
-    object-fit: cover;
+div.image-logo img{
     width: 100%;
+    object-fit: cover;
 }
-div#panier {
-    
-    font-size:12px;
-    
+div.client-inf{
+    margin-right:40px;
     
 }
-div#panier i{
-    display:block;
-    text-align:center;
-    margin-bottom:10px;
+div.client-inf div#contact,div.client-inf div#panier{
+    margin-right:40px;
+    text-align: center;
+    margin-top:20px;
+}
+div.client-inf div#contact p,div.client-inf div#panier p{
+    margin-top:20px;
+    font-size:18px;
+}
+div.recherche {
+    width: 40%;
+}
+div.recherche input{
+    width: 80%;
+    height: 50px;
+    margin-top:30px;
+
 }
 
-div#contact {
-    
-    font-size:12px;
-    
-    
-}
-div#contact i{
-    display:block;
-    text-align:center;
-    margin-bottom:10px;
-}
 div#peluche,div#camera,div#furniture{
     width:95%;
     background-color: #f2f2f2;
