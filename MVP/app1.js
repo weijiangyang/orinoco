@@ -136,6 +136,8 @@ function getFurnitureInf(){
     })}
 getFurnitureInf();
         
+
+
         
     
     
