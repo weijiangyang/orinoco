@@ -69,5 +69,48 @@ div.recherche a{
 
 img#first-image-peluche{
     display:inline-block;
-    width: 20%;
+    width: 30%;
+}
+div.produit-choix{
+    width: 30%;
+    margin:auto;
+ }   
+div.produit-choix h3{
+    font-size:30px;
+    margin-bottom: 15px;
+    color:blue;
+}
+div.produit-choix p#first-desp-peluche{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+div.produit-choix p#first-price-peluche{
+    font-size:24px;
+    margin-bottom:24px;
+}
+label#select-form{
+    font-size:24px;
+    margin-bottom: 15px;
+}
+select, option{
+    font-size: 16px;
+    color:blue;
+
+}
+div.panier{
+    width: 30%;
+    margin:auto;
+   
+}
+div.panier h3{
+    font-size:22px;
+    margin-bottom:25px;
+}
+div.panier button{
+    font-size:20px;
+    color:blue;
+
+}
+div.container-produit{
+    display:flex;
 }
