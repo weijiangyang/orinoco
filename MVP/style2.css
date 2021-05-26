@@ -68,9 +68,9 @@ div.recherche a{
 }
 
 img#first-image-peluche{
-    display:block;
+    display:inline-block;
     width: 30%;
 }
-h2{
+h3{
     font-size:24px;
-}
+} 
