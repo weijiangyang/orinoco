@@ -16,6 +16,14 @@ function getPelucheInf(){
         document.getElementById("first-secondcolor-peluche").innerHTML=value[0].colors[1];
         document.getElementById("first-thirdcolor-peluche").innerHTML=value[0].colors[2];
         document.getElementById("first-forthcolor-peluche").innerHTML=value[0].colors[3];
+
+        var elt= document.querySelector("button")
+        elt.addEventListener("click",function(){
+            localStorage.setItem("name",value[0].name);
+            localStorage.setItem("description",value[0].description);
+            localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
+            localStorage.setItem("color",)
+        })
         
         
     })
@@ -27,3 +35,5 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
+localStorage.clear()
+
