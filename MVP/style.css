@@ -1,6 +1,7 @@
 a{
     text-decoration: none;
 }
+/* la partie du header */
 div.client-inf{
     display:flex;
 }
@@ -70,7 +71,7 @@ div.recherche a{
     }
 }
 
-
+/* la partie du main  */
 
 div#peluche,div#camera,div#furniture{
     width:95%;
