@@ -17,6 +17,7 @@ function getPelucheInf(){
         document.getElementById("first-thirdcolor-peluche").innerHTML=value[0].colors[2];
         document.getElementById("first-forthcolor-peluche").innerHTML=value[0].colors[3];
         
+        
     })
     .catch(function(err){
         console.log("il y a un error")
