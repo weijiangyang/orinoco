@@ -66,3 +66,11 @@ div.recherche a{
         width: 30px;
     }
 }
+
+img#first-image-peluche{
+    display:block;
+    width: 30%;
+}
+h2{
+    font-size:24px;
+}

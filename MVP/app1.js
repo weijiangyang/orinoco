@@ -7,33 +7,33 @@ function getPelucheInf(){
     })
     .then(function(value){
         
-        document.querySelector("div.first-peluche #first-image-peluche").src = value[0].imageUrl;
+        document.getElementById("first-image-peluche").src = value[0].imageUrl;
 
-        document.querySelector("div#peluche #second-image-peluche").src = value[1].imageUrl;
+        document.getElementById("second-image-peluche").src = value[1].imageUrl;
 
-        document.querySelector("div#peluche #third-image-peluche").src = value[2].imageUrl;
-        document.querySelector("div#peluche #forth-image-peluche").src = value[3].imageUrl;
-        document.querySelector("div#peluche #fifth-image-peluche").src = value[4].imageUrl;
+        document.getElementById("third-image-peluche").src = value[2].imageUrl;
+        document.getElementById("forth-image-peluche").src = value[3].imageUrl;
+        document.getElementById("fifth-image-peluche").src = value[4].imageUrl;
 
-        document.querySelector("div.first-peluche h3#first-title-peluche").innerHTML = value[0].name;
-        document.querySelector("div.first-peluche p#first-desp-peluche").innerHTML = value[0].description;
-        document.querySelector("div.first-peluche p#first-price-peluche").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
+        document.getElementById("first-title-peluche").innerHTML = value[0].name;
+        document.getElementById("first-desp-peluche").innerHTML = value[0].description;
+        document.getElementById("first-price-peluche").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.second-peluche h3#second-title-peluche").innerHTML = value[1].name;
-        document.querySelector("div.second-peluche p#second-desp-peluche").innerHTML = value[1].description;
-        document.querySelector("div.second-peluche p#second-price-peluche").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
+        document.getElementById("second-title-peluche").innerHTML = value[1].name;
+        document.getElementById("second-desp-peluche").innerHTML = value[1].description;
+        document.getElementById("second-price-peluche").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.third-peluche h3#third-title-peluche").innerHTML = value[2].name;
-        document.querySelector("div.third-peluche p#third-desp-peluche").innerHTML = value[2].description;
-        document.querySelector("div.third-peluche p#third-price-peluche").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
+        document.getElementById("third-title-peluche").innerHTML = value[2].name;
+        document.getElementById("third-desp-peluche").innerHTML = value[2].description;
+        document.getElementById("third-price-peluche").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.forth-peluche h3#forth-title-peluche").innerHTML = value[3].name;
-        document.querySelector("div.forth-peluche p#forth-desp-peluche").innerHTML = value[3].description;
-        document.querySelector("div.forth-peluche p#forth-price-peluche").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
+        document.getElementById("forth-title-peluche").innerHTML = value[3].name;
+        document.getElementById("forth-desp-peluche").innerHTML = value[3].description;
+        document.getElementById("forth-price-peluche").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.fifth-peluche h3#fifth-title-peluche").innerHTML = value[4].name;
-        document.querySelector("div.fifth-peluche p#fifth-desp-peluche").innerHTML = value[4].description;
-        document.querySelector("div.fifth-peluche p#fifth-price-peluche").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
+        document.getElementById("fifth-title-peluche").innerHTML = value[4].name;
+        document.getElementById("fifth-desp-peluche").innerHTML = value[4].description;
+        document.getElementById("fifth-price-peluche").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
 
     
     })
@@ -54,35 +54,35 @@ function getCameraInf(){
         }
     })
     .then(function(value){
-        document.querySelector("div#camera #first-image-camera").src = value[0].imageUrl;
+        document.getElementById("first-image-camera").src = value[0].imageUrl;
 
-        document.querySelector("div#camera #second-image-camera").src = value[1].imageUrl;
+        document.getElementById("second-image-camera").src = value[1].imageUrl;
 
-        document.querySelector("div#camera #third-image-camera").src = value[2].imageUrl;
-        document.querySelector("div#camera #forth-image-camera").src = value[3].imageUrl;
-        document.querySelector("div#camera #fifth-image-camera").src = value[4].imageUrl;
+        document.getElementById("third-image-camera").src = value[2].imageUrl;
+        document.getElementById("forth-image-camera").src = value[3].imageUrl;
+        document.getElementById("fifth-image-camera").src = value[4].imageUrl;
 
        
 
-        document.querySelector("div.first-camera h3#first-title-camera").innerHTML = value[0].name;
-        document.querySelector("div.first-camera p#first-desp-camera").innerHTML = value[0].description;
-        document.querySelector("div.first-camera p#first-price-camera").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
+        document.getElementById("first-title-camera").innerHTML = value[0].name;
+        document.getElementById("first-desp-camera").innerHTML = value[0].description;
+        document.getElementById("first-price-camera").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.second-camera h3#second-title-camera").innerHTML = value[1].name;
-        document.querySelector("div.second-camera p#second-desp-camera").innerHTML = value[1].description;
-        document.querySelector("div.second-camera p#second-price-camera").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
+        document.getElementById("second-title-camera").innerHTML = value[1].name;
+        document.getElementById("second-desp-camera").innerHTML = value[1].description;
+        document.getElementById("second-price-camera").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.third-camera h3#third-title-camera").innerHTML = value[2].name;
-        document.querySelector("div.third-camera p#third-desp-camera").innerHTML = value[2].description;
-        document.querySelector("div.third-camera p#third-price-camera").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
+        document.getElementById("third-title-camera").innerHTML = value[2].name;
+        document.getElementById("third-desp-camera").innerHTML = value[2].description;
+        document.getElementById("third-price-camera").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.forth-camera h3#forth-title-camera").innerHTML = value[3].name;
-        document.querySelector("div.forth-camera p#forth-desp-camera").innerHTML = value[3].description;
-        document.querySelector("div.forth-camera p#forth-price-camera").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
+        document.getElementById("forth-title-camera").innerHTML = value[3].name;
+        document.getElementById("forth-desp-camera").innerHTML = value[3].description;
+        document.getElementById("forth-price-camera").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.fifth-camera h3#fifth-title-camera").innerHTML = value[4].name;
-        document.querySelector("div.fifth-camera p#fifth-desp-camera").innerHTML = value[4].description;
-        document.querySelector("div.fifth-camera p#fifth-price-camera").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
+        document.getElementById("fifth-title-camera").innerHTML = value[4].name;
+        document.getElementById("fifth-desp-camera").innerHTML = value[4].description;
+        document.getElementById("fifth-price-camera").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
 
        
         
@@ -101,33 +101,33 @@ function getFurnitureInf(){
         }
     })
     .then(function(value){
-        document.querySelector("div#furniture #first-image-furniture").src = value[0].imageUrl;
+        document.getElementById("first-image-furniture").src = value[0].imageUrl;
 
-        document.querySelector("div#furniture #second-image-furniture").src = value[1].imageUrl;
+        document.getElementById("second-image-furniture").src = value[1].imageUrl;
 
-        document.querySelector("div#furniture #third-image-furniture").src = value[2].imageUrl;
-        document.querySelector("div#furniture #forth-image-furniture").src = value[3].imageUrl;
-        document.querySelector("div#furniture #fifth-image-furniture").src = value[4].imageUrl;
+        document.getElementById("third-image-furniture").src = value[2].imageUrl;
+        document.getElementById("forth-image-furniture").src = value[3].imageUrl;
+        document.getElementById("fifth-image-furniture").src = value[4].imageUrl;
 
-        document.querySelector("div.first-furniture h3#first-title-furniture").innerHTML = value[0].name;
-        document.querySelector("div.first-furniture p#first-desp-furniture").innerHTML = value[0].description;
-        document.querySelector("div.first-furniture p#first-price-furniture").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
+        document.getElementById("first-title-furniture").innerHTML = value[0].name;
+        document.getElementById("first-desp-furniture").innerHTML = value[0].description;
+        document.getElementById("first-price-furniture").innerHTML = `Price:${(value[0].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.second-furniture h3#second-title-furniture").innerHTML = value[1].name;
-        document.querySelector("div.second-furniture p#second-desp-furniture").innerHTML = value[1].description;
-        document.querySelector("div.second-furniture p#second-price-furniture").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
+        document.getElementById("second-title-furniture").innerHTML = value[1].name;
+        document.getElementById("second-desp-furniture").innerHTML = value[1].description;
+        document.getElementById("second-price-furniture").innerHTML = `Price:${(value[1].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.third-furniture h3#third-title-furniture").innerHTML = value[2].name;
-        document.querySelector("div.third-furniture p#third-desp-furniture").innerHTML = value[2].description;
-        document.querySelector("div.third-furniture p#third-price-furniture").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
+        document.getElementById("third-title-furniture").innerHTML = value[2].name;
+        document.getElementById("third-desp-furniture").innerHTML = value[2].description;
+        document.getElementById("third-price-furniture").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.forth-furniture h3#forth-title-furniture").innerHTML = value[3].name;
-        document.querySelector("div.forth-furniture p#forth-desp-furniture").innerHTML = value[3].description;
-        document.querySelector("div.forth-furniture p#forth-price-furniture").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
+        document.getElementById("forth-title-furniture").innerHTML = value[3].name;
+        document.getElementById("forth-desp-furniture").innerHTML = value[3].description;
+        document.getElementById("forth-price-furniture").innerHTML = `Price:${(value[3].price/100).toFixed(2)}€`;
 
-        document.querySelector("div.fifth-furniture h3#fifth-title-furniture").innerHTML = value[4].name;
-        document.querySelector("div.fifth-furniture p#fifth-desp-furniture").innerHTML = value[4].description;
-        document.querySelector("div.fifth-furniture p#fifth-price-furniture").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
+        document.getElementById("fifth-title-furniture").innerHTML = value[4].name;
+        document.getElementById("fifth-desp-furniture").innerHTML = value[4].description;
+        document.getElementById("fifth-price-furniture").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
         
         
     })
