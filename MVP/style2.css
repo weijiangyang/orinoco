@@ -70,6 +70,7 @@ div.recherche a{
 img#first-image-peluche{
     display:inline-block;
     width: 30%;
+    border:1px solid red;
 }
 div.produit-choix{
     width: 30%;
@@ -109,8 +110,14 @@ div.panier h3{
 div.panier button{
     font-size:20px;
     color:blue;
+    background-color:#F2E8F0;
+    padding:10px 25px 10px 25px;
+    
+    
 
 }
 div.container-produit{
     display:flex;
+    padding-bottom:30px;
+    border-bottom:1px solid red;
 }
