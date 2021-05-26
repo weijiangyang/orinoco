@@ -24,6 +24,11 @@ function getPelucheInf(){
             localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
             localStorage.setItem("color",)
         })
+
+        var selectColor = document.querySelector("select")
+        selectColor.addEventListener("change",function(){
+            localStorage.setItem("color",this.options[this.selectedIndex].label)
+        })
         
         
     })
