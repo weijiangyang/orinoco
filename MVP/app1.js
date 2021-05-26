@@ -74,7 +74,7 @@ function getCameraInf(){
 
         document.querySelector("div.third-camera h3#third-title-camera").innerHTML = value[2].name;
         document.querySelector("div.third-camera p#third-desp-camera").innerHTML = value[2].description;
-        document.querySelector("div.third-camera p#thirdprice").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
+        document.querySelector("div.third-camera p#third-price-camera").innerHTML = `Price:${(value[2].price/100).toFixed(2)}€`;
 
         document.querySelector("div.forth-camera h3#forth-title-camera").innerHTML = value[3].name;
         document.querySelector("div.forth-camera p#forth-desp-camera").innerHTML = value[3].description;
@@ -83,6 +83,8 @@ function getCameraInf(){
         document.querySelector("div.fifth-camera h3#fifth-title-camera").innerHTML = value[4].name;
         document.querySelector("div.fifth-camera p#fifth-desp-camera").innerHTML = value[4].description;
         document.querySelector("div.fifth-camera p#fifth-price-camera").innerHTML = `Price:${(value[4].price/100).toFixed(2)}€`;
+
+       
         
         
     })
@@ -99,13 +101,13 @@ function getFurnitureInf(){
         }
     })
     .then(function(value){
-        document.querySelector("div#furniture #first").src = value[0].imageUrl;
+        document.querySelector("div#furniture #first-image-furniture").src = value[0].imageUrl;
 
-        document.querySelector("div#furniture #second").src = value[1].imageUrl;
+        document.querySelector("div#furniture #second-image-furniture").src = value[1].imageUrl;
 
-        document.querySelector("div#furniture #third").src = value[2].imageUrl;
-        document.querySelector("div#furniture #forth").src = value[3].imageUrl;
-        document.querySelector("div#furniture #fifth").src = value[4].imageUrl;
+        document.querySelector("div#furniture #third-image-furniture").src = value[2].imageUrl;
+        document.querySelector("div#furniture #forth-image-furniture").src = value[3].imageUrl;
+        document.querySelector("div#furniture #fifth-image-furniture").src = value[4].imageUrl;
 
         document.querySelector("div.first-furniture h3#first-title-furniture").innerHTML = value[0].name;
         document.querySelector("div.first-furniture p#first-desp-furniture").innerHTML = value[0].description;
