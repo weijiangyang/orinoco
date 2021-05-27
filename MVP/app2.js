@@ -58,14 +58,14 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-console.log(localStorage.name)
-let produit ={name:localStorage.name,price:localStorage.price}
+
+let produit ={name:localStorage.name,price:localStorage.price,color:localStorage.color}
 
 let optionsProduit = JSON.parse(localStorage.getItem("produit"));
 
 if(optionsProduit){
-    var elt= document.querySelector("button")
-    elt.addEventListener("click",function(){optionsProduit.push(produit)})
+    
+   
 
 
 }else{
@@ -73,4 +73,4 @@ if(optionsProduit){
    optionsProduit.push(produit);
    
 }
-console.log(optionsProduit.length)
+console.log(optionsProduit);
