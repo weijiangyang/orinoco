@@ -21,28 +21,31 @@ function getPelucheInf(){
 
         // var elt= document.querySelector("button")
         // elt.addEventListener("click",function(){
-            localStorage.setItem("name",value[0].name);
-            localStorage.setItem("description",value[0].description);
-            localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
-            localStorage.setItem("url",value[0].imageUrl);
+            // localStorage.setItem("name",value[0].name);
+            // localStorage.setItem("description",value[0].description);
+            // localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
+            // localStorage.setItem("url",value[0].imageUrl);
             
             
             
         // })
-
+      let produit ={name:value[0].name,price:value[0].price};
         var selectColor = document.querySelector("select");
         var selectQuantity = document.getElementById("quantity-select");
         selectColor.addEventListener("change",function(){
-            localStorage.setItem("color",this.options[this.selectedIndex].label)
+            // localStorage.setItem("color",this.options[this.selectedIndex].label)
+            // let color=this.options[this.selectedIndex].label;
             
+            produit.color = this.options[this.selectedIndex].label
+        console.log(produit);
         })
         selectQuantity.addEventListener("change",function(){
-            localStorage.setItem("quantity",this.value)
+            // localStorage.setItem("quantity",this.value)
+            produit.quantity = this.value
         })
 
      
-        let produit ={name:localStorage.name,price:localStorage.price,color:"red"};
-        console.log(produit);
+        
 
 let optionsProduit = JSON.parse(localStorage.getItem("produit"));
 
@@ -64,7 +67,7 @@ if(optionsProduit){
    
 }
 
-console.log(localStorage)
+console.log(localStorage.length)
        
 
         }
