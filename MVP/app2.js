@@ -22,7 +22,8 @@ function getPelucheInf(){
             localStorage.setItem("name",value[0].name);
             localStorage.setItem("description",value[0].description);
             localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
-            localStorage.setItem("color",)
+            localStorage.setItem("url",value[0].imageUrl)
+            
         })
 
         var selectColor = document.querySelector("select")
@@ -40,5 +41,5 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-localStorage.clear()
+
 
