@@ -24,15 +24,20 @@ function getPelucheInf(){
             localStorage.setItem("price",`Price:${(value[0].price/100).toFixed(2)}€`);
             localStorage.setItem("url",value[0].imageUrl)
             
+            
         })
 
-        var selectColor = document.querySelector("select")
+        var selectColor = document.querySelector("select");
+        var selectQuantity = document.getElementById("quantity-select");
         selectColor.addEventListener("change",function(){
             localStorage.setItem("color",this.options[this.selectedIndex].label)
         })
+
+        selectQuantity.addEventListener("change"),console.log("123")
+        }
         
         
-    })
+    )
     .catch(function(err){
         console.log("il y a un error")
     })
