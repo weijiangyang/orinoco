@@ -31,22 +31,25 @@ function getPelucheInf(){
         var selectColor = document.querySelector("select");
         var selectQuantity = document.getElementById("quantity-select");
         selectColor.addEventListener("change",function(){
-            localStorage.setItem("color",this.options[this.selectedIndex].label)
+            // localStorage.setItem("color",this.options[this.selectedIndex].label)
+            produit.color = this.options[this.selectedIndex].label
         })
         selectQuantity.addEventListener("change",function(){
             localStorage.setItem("quantity",this.value)
         })
-        let produit ={name:localStorage.name,price:localStorage.price,color:localStorage.getItem("color")}
+
+     
+        let produit ={name:localStorage.name,price:localStorage.price,}
 
 let optionsProduit = JSON.parse(localStorage.getItem("produit"));
 
 if(optionsProduit){
     
-    let elt = document.getElementById("btn");
-    elt.addEventListener("click",function(){
-        optionsProduit.push(produit);
-       console.log(optionsProduit)
-    })
+    // let elt = document.getElementById("btn");
+    // elt.addEventListener("click",function(){
+    //     optionsProduit.push(produit);
+    //    console.log(optionsProduit)
+    // })
 
    
 
