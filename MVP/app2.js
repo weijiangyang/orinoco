@@ -36,7 +36,27 @@ function getPelucheInf(){
         selectQuantity.addEventListener("change",function(){
             localStorage.setItem("quantity",this.value)
         })
+        let produit ={name:localStorage.name,price:localStorage.price,color:localStorage.getItem("color")}
 
+let optionsProduit = JSON.parse(localStorage.getItem("produit"));
+
+if(optionsProduit){
+    
+    let elt = document.getElementById("btn");
+    elt.addEventListener("click",function(){
+        optionsProduit.push(produit);
+       console.log(optionsProduit)
+    })
+
+   
+
+
+}else{
+    optionsProduit=[];
+   optionsProduit.push(produit);
+   localStorage.setItem("produit",JSON.stringify(optionsProduit))
+   
+}
        
 
         }
@@ -59,18 +79,4 @@ function getPelucheInf(){
     
 getPelucheInf();
 
-let produit ={name:localStorage.name,price:localStorage.price,color:localStorage.color}
 
-let optionsProduit = JSON.parse(localStorage.getItem("produit"));
-
-if(optionsProduit){
-    
-   
-
-
-}else{
-    optionsProduit=[];
-   optionsProduit.push(produit);
-   
-}
-console.log(optionsProduit);
