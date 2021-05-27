@@ -37,10 +37,10 @@ function getPelucheInf(){
             localStorage.setItem("quantity",this.value)
         })
 
-        let produit = {"name":value[0].name,"description":value[0].description,"price":(value[0].price/100).toFixed(2),
-        "color":(localStorage.getItem("color")),"quantity":(localStorage.getItem("quantity"))}
+       
 
         }
+        
         
         )
         
@@ -58,6 +58,7 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-localStorage.clear();
+console.log(localStorage.name)
 
-
+// let optionsProduit = {name:localStorage.name,description:localStorage.description,price:localStorage.price},
+// console.log(local)
