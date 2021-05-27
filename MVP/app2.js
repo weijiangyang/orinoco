@@ -36,15 +36,20 @@ function getPelucheInf(){
         selectQuantity.addEventListener("change",function(){
             localStorage.setItem("quantity",this.value)
         })
-        
-        
-        
-        
-        
-        
+
+        let produit = {"name":value[0].name,"description":value[0].description,"price":(value[0].price/100).toFixed(2),
+        "color":(localStorage.getItem("color")),"quantity":(localStorage.getItem("quantity"))}
+
         }
         
-    )
+        )
+        
+        
+        
+        
+    
+    
+   
     .catch(function(err){
         console.log("il y a un error")
     })
