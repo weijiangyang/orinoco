@@ -1,12 +1,14 @@
-console.log('name');
+
 function getPelucheInf(){
     fetch("http://localhost:3000/api/teddies")
     .then(function(res){
+        
         if(res.ok){
             return res.json();
         }
     })
     .then(function(value){
+        let a;
         
         document.getElementById("first-image-peluche").src = value[0].imageUrl;
         document.getElementById("first-title-peluche").innerHTML=value[0].name;
@@ -31,15 +33,16 @@ function getPelucheInf(){
         var selectColor = document.querySelector("select");
         var selectQuantity = document.getElementById("quantity-select");
         selectColor.addEventListener("change",function(){
-            // localStorage.setItem("color",this.options[this.selectedIndex].label)
-            produit.color = this.options[this.selectedIndex].label
+            localStorage.setItem("color",this.options[this.selectedIndex].label)
+            
         })
         selectQuantity.addEventListener("change",function(){
             localStorage.setItem("quantity",this.value)
         })
 
      
-        let produit ={name:localStorage.name,price:localStorage.price,}
+        let produit ={name:localStorage.name,price:localStorage.price,color:"red"};
+        console.log(produit);
 
 let optionsProduit = JSON.parse(localStorage.getItem("produit"));
 
@@ -60,6 +63,8 @@ if(optionsProduit){
    localStorage.setItem("produit",JSON.stringify(optionsProduit))
    
 }
+
+console.log(localStorage)
        
 
         }
