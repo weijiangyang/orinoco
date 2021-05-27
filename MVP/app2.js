@@ -32,8 +32,12 @@ function getPelucheInf(){
         selectColor.addEventListener("change",function(){
             localStorage.setItem("color",this.options[this.selectedIndex].label)
         })
+        selectQuantity.addEventListener("change",function(){
+            localStorage.setItem("quantity",this.value)
+        })
+        
 
-        selectQuantity.addEventListener("change"),console.log("123")
+        
         }
         
         
