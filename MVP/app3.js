@@ -22,12 +22,26 @@ eltPname.innerText = produit.name;
  eltP.appendChild(eltPdesp);
  eltPdesp.innerHTML = produit.description ;
 
+ let eltPprice = document.createElement("p");
+ eltPprice.setAttribute("id","price");
+ eltP.appendChild(eltPprice);
+ eltPprice.innerHTML = "Price:"+produit.price ;
+
+ let eltPcolor = document.createElement("p");
+ eltPprice.setAttribute("id","color");
+ eltP.appendChild(eltPcolor);
+ eltPcolor.innerHTML = "Color:"+ produit.color ;
+
+ let eltPquantity = document.createElement("p");
+ eltPprice.setAttribute("id","quantity");
+ eltP.appendChild(eltPquantity);
+ eltPquantity.innerHTML = "Quantity:"+ produit.quantity ;
 
 }
 
 
 
-
+ 
 
 
 
