@@ -22,7 +22,7 @@ function getPelucheInf(){
         let elt = document.getElementById("btn");
         elt.addEventListener("click",function(){
         var selectColor = document.querySelector("select");
-        // let c = selectColor.options[selectColor.selectedIndex].label;
+        
          
         let produit ={name:value[0].name,description:value[0].description,price:value[0].price,color: selectColor.options[selectColor.selectedIndex].label};
       
@@ -34,7 +34,8 @@ function getPelucheInf(){
         if(optionsProduit){
     
         optionsProduit.push(produit);
-        console.log("ok")
+        localStorage.setItem("produits",JSON.stringify(optionsProduit))
+        
             
         }else{
             optionsProduit=[];
@@ -54,6 +55,7 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
+console.log(JSON.parse(localStorage.getItem("produits")))
 
 
 
