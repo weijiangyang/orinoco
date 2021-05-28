@@ -18,7 +18,7 @@ function getPelucheInf(){
         document.getElementById("first-secondcolor-peluche").innerHTML=value[0].colors[1];
         document.getElementById("first-thirdcolor-peluche").innerHTML=value[0].colors[2];
         document.getElementById("first-forthcolor-peluche").innerHTML=value[0].colors[3];
-       
+
         let elt = document.getElementById("btn");
         elt.addEventListener("click",function(){
         var selectColor = document.querySelector("select");
