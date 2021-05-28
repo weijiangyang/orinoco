@@ -7,7 +7,7 @@ function getPelucheInf(){
     })
     .then(function(value){
         
-        
+        console.log(value)
         document.getElementById("first-image-peluche").src = value[0].imageUrl;
 
         document.getElementById("second-image-peluche").src = value[1].imageUrl;
