@@ -24,7 +24,8 @@ function getPelucheInf(){
         var selectColor = document.querySelector("select");
         
          
-        let produit ={name:value[0].name,description:value[0].description,price:value[0].price,color: selectColor.options[selectColor.selectedIndex].label};
+        let produit ={src:value[0].imageUrl,name:value[0].name,description:value[0].description,price:value[0].price,
+            color: selectColor.options[selectColor.selectedIndex].label};
       
        
         
