@@ -14,22 +14,42 @@ function getPelucheInf(){
         };
         // console.log(ids)
         for (let id of ids){
-            let listProduits = [];
+            
             fetch("http://localhost:3000/api/teddies"+"/"+id)
             .then(function(res){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
                 
-                
-                listProduits.push(value);
+                let listProduits = JSON.parse(localStorage.getItem("produits`${}`"));
+                listProduits=[];
+            listProduits.push(value);
+            console.log(listProduits);
+            localStorage.setItem("produit",listProduits);
+            console.log(localStorage)
+
+        // if(listProduits){
+    
+        // listProduit.push(value);
+        // localStorage.setItem("produits",JSON.stringify(listProduits));
+        
+            
+        // }else{
+        //     listProduits=[];
+        //     listProduits.push(value);
+        //     localStorage.setItem("produits",JSON.stringify(listProduits));
+            
+        //     }
+        
+    
+        })        
                 
                
-            })
+            
             .catch(function(err){
                 console.log("il y a un error")
             })
-        console.log(listProduits);
+        
         
      };
      
