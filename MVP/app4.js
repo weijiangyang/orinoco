@@ -14,7 +14,7 @@ function getPelucheInf(){
             // localStorage.setItem("Ids",JSON.stringify(ids))
         };
         // console.log(ids)
-        
+        let i =1;
         for (let id of ids){
             
             fetch("http://localhost:3000/api/teddies"+"/"+id)
@@ -23,10 +23,11 @@ function getPelucheInf(){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
-                localStorage.setItem("item-"+id+(":"),JSON.stringify(value));
-            
-                })
                 
+                localStorage.setItem("peluche-"+i+(":"),JSON.stringify(value));
+                i++
+                })
+            
         
             
                 
@@ -49,7 +50,7 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-console.log(localStorage.length);
-console.log(localStorage.getItem(localStorage.key(4)))
+
+
 
 
