@@ -51,9 +51,16 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-let list = JSON.parse(localStorage.getItem("listPeluches"));
-console.log(list[1].name)
-
+let listPeluches= JSON.parse(localStorage.getItem("listPeluches"));
+let parentP = document.querySelector("main");
+for (let i=0; i<listPeluches.length;i++){
+    let eltP = document.createElement("div");
+    parentP.appendChild(eltP);
+    let image = document.createElement("img");
+    parentP.appendChild(image)
+    document.querySelector("img").src=listPeluches[0].imageUrl;
+    
+}
 
 
 
