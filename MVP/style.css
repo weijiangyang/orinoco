@@ -73,44 +73,12 @@ div.recherche a{
 
 /* la partie du main  */
 
-div#peluche,div#camera,div#furniture{
-    width:95%;
-    background-color: #f2f2f2;
-    margin:auto;
-    padding-top:80px;
-    padding-bottom:30px;
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 30px;
-}
-div#peluche h2,div#camera h2,div#furniture h2{
-    position:absolute;
-    left: 35px;
-    top:30px;
-    font-size:25px;
-    font-weight: 800;
-    color:blue;
-
-}
-div#peluche-list,div#camera-list,div#furniture-list{
-    width: 100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:left;
-    margin-left:2.5%
-    
-    
-   
-}   
 
 
-
-div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
-div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
-div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture
+div.peluche-carte
 
 {
-    width: 30%;
+    width: 50%;
     
     height: 400px;
     background-color:pink;
@@ -119,20 +87,17 @@ div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture
     border-radius: 15px;
     margin-bottom:20px;
     margin-right:2.5%;
+   
 }   
 
 @media(max-width:1080px){
-    div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
-    div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
-    div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture{
+    div.peluche-carte{
         width:40%;
         margin-left:4%;
     }    
 }    
 @media(max-width:780px){
-    div.first-peluche,div.second-peluche,div.third-peluche,div.forth-peluche,div.fifth-peluche,
-    div.first-camera,div.second-camera,div.third-camera,div.forth-camera,div.fifth-camera,
-    div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture,div.fifth-furniture{
+    div.peluche-carte{
         width:80%;
         margin-left:8%;
     }    
@@ -141,9 +106,7 @@ div.first-furniture,div.second-furniture,div.third-furniture,div.forth-furniture
 
     
 
-div.first-peluche img#first-image-peluche,div.second-peluche img#second-image-peluche,div.third-peluche img#third-image-peluche,div.forth-peluche img#forth-image-peluche,div.fifth-peluche img#fifth-image-peluche,
-div.first-camera img#first-image-camera,div.second-camera img#second-image-camera,div.third-camera img#third-image-camera,div.forth-camera img#forth-image-camera,div.fifth-camera img#fifth-image-camera,
-div.first-furniture img#first-image-furniture,div.second-furniture img#second-image-furniture,div.third-furniture img#third-image-furniture,div.forth-furniture img#forth-image-furniture,div.fifth-furniture img#fifth-image-furniture
+img.peluche-image
 
 {
     width: 100%;
@@ -154,9 +117,7 @@ div.first-furniture img#first-image-furniture,div.second-furniture img#second-im
     object-fit: cover;
 }
 
-div.first-peluche p#first-desp-peluche,div.second-peluche p#second-desp-peluche,div.third-peluche p#third-desp-peluche,div.forth-peluche p#forth-desp-peluche,div.fifth-peluche p#fifth-desp-peluche,
-div.first-camera p#first-desp-camera,div.second-camera p#second-desp-camera,div.third-camera p#third-desp-camera,div.forth-camera p#forth-desp-camera,div.fifth-camera p#fifth-desp-camera,
-div.first-furniture p#first-desp-furniture,div.second-furniture p#second-desp-furniture,div.third-furniture p#third-desp-furniture,div.forth-furniture p#forth-desp-furniture,div.fifth-furniture p#fifth-desp-furniture
+p.peluche-desp
 {
     width: 90%;
     margin-left:15px;
@@ -169,9 +130,7 @@ div.first-furniture p#first-desp-furniture,div.second-furniture p#second-desp-fu
     color:grey;
 }
 
-div.first-peluche p#first-price-peluche,div.second-peluche p#second-price-peluche,div.third-peluche p#third-price-peluche,div.forth-peluche p#forth-price-peluche,div.fifth-peluche p#fifth-price-peluche,
-div.first-camera p#first-price-camera,div.second-camera p#second-price-camera,div.third-camera p#third-price-camera,div.forth-camera p#forth-price-camera,div.fifth-camera p#fifth-price-camera,
-div.first-furniture p#first-price-furniture,div.second-furniture p#second-price-furniture,div.third-furniture p#third-price-furniture,div.forth-furniture p#forth-price-furniture,div.fifth-furniture p#fifth-price-furniture
+p.peluche-price
 
 {
     
@@ -181,9 +140,7 @@ div.first-furniture p#first-price-furniture,div.second-furniture p#second-price-
     font-weight:400;
     
 }
-div.first-peluche h3#first-title-peluche,div.second-peluche h3#second-title-peluche,div.third-peluche h3#third-title-peluche,div.forth-peluche h3#forth-title-peluche,div.fifth-peluche h3#fifth-title-peluche,
-div.first-camera h3#first-title-camera,div.second-camera h3#second-title-camera,div.third-camera h3#third-title-camera,div.forth-camera h3#forth-title-camera,div.fifth-camera h3#fifth-title-camera,
-div.first-furniture h3#first-title-furniture,div.second-furniture h3#second-title-furniture,div.third-furniture h3#third-title-furniture,div.forth-furniture h3#forth-title-furniture,div.fifth-furniture h3#fifth-title-furniture{
+h3.peluche-titre{
     width: 100%;
     text-align: center;
     margin-top:10px;
