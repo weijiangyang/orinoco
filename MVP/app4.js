@@ -53,13 +53,22 @@ function getPelucheInf(){
 getPelucheInf();
 let listPeluches= JSON.parse(localStorage.getItem("listPeluches"));
 let parentP = document.querySelector("main");
+parentP.style.backgroundColor = 'blue';
+parentP.style.display = "flex";
+parentP.style.flexWrap = "wrap";
+parentP.style.justifyItems = 'center';
+
 for (let i=0; i<listPeluches.length;i++){
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${i}`)
     parentP.appendChild(eltP);
+    eltP.style.height = "450px";
+    eltP.style.width = "30%";
+    eltP.style.backgroundColor ="red";
     let eltImage = document.createElement("img");
     eltImage.setAttribute("id",`image-${i}`)
-    eltP.appendChild(eltImage)
+    eltP.appendChild(eltImage);
+    eltImage.style.height = "320px"
     document.getElementById(`image-${i}`).src=listPeluches[i].imageUrl;
     let eltH3 = document.createElement("h3");
     eltH3.setAttribute("id", `title-${i}`);
