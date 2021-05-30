@@ -23,23 +23,8 @@ function getPelucheInf(){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
-        let listProduits = JSON.parse(localStorage.getItem("itemproduits"));
-
-        if(listProduits){
-    
-        listProduits.push(value);
-        localStorage.setItem("itemproduits",JSON.stringify(listProduits));
-        
-       
+                localStorage.setItem("item-"+id+(":"),JSON.stringify(value));
             
-        }else{
-            listProduits=[];
-            listProduits.push(value);
-            localStorage.setItem("itemProduits",JSON.stringify(listProduits))
-            
-            }
-               
-                 
                 })
                 
         
@@ -64,5 +49,7 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
+console.log(localStorage.length);
+console.log(localStorage.getItem(localStorage.key(4)))
 
 
