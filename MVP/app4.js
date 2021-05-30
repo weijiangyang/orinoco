@@ -52,7 +52,7 @@ function getPelucheInf(){
     
 getPelucheInf();
 let list = JSON.parse(localStorage.getItem("listPeluches"));
-console.log(list[1])
+console.log(list[1].name)
 
 
 
