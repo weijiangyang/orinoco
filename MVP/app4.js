@@ -11,28 +11,39 @@ function getPelucheInf(){
         for (let i=0; i<value.length;i++){
             let id=value[i]._id;
             ids.push(id);
+            // localStorage.setItem("Ids",JSON.stringify(ids))
         };
         // console.log(ids)
+        let listProduits = JSON.parse(localStorage.getItem("itemproduits"));
         for (let id of ids){
-            
+           
             fetch("http://localhost:3000/api/teddies"+"/"+id)
             .then(function(res){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
-                let listProduits = JSON.parse(localStorage.getItem("itemProduit"));
-                if (listProduits){
-                    listProduits.push(value);
-                    localStorage.setItem("itemProduits",JSON.stringify(listProduits));
+        
 
-                }else{
-                    listProduits = [];
-                    listProduits.push(value);
-                    localStorage.setItem("itemProduits",JSON.stringify(listProduits));
-                }
+        if(listProduits){
+    
+        listProduits.push(value);
+        localStorage.setItem("itemproduits",JSON.stringify(listProduits));
+        
+        
+            
+        }else{
+            listProduits=[];
+            listProduits.push(value);
+            localStorage.setItem("itemProduits",JSON.stringify(listProduits))
+            
+            }
+               
+                  
+                   
+                })
                 
-                // localStorage.setItem("produit-"+id,JSON.stringify(value));
-          })     
+                // 
+            
                 
               .catch(function(err){
                 console.log("il y a un error")
@@ -41,7 +52,7 @@ function getPelucheInf(){
         
      };
      
-     
+    
     })       
             
 
@@ -53,6 +64,5 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
+console.log(localStorage)
 
-// let p =JSON.parse(localStorage.getItem("produit-5be9c8541c9d440000665243"));
-// console.log(p.colors)
