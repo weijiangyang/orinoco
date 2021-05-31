@@ -65,7 +65,14 @@ for (let i=0; i<listPeluches.length;i++){
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
     document.getElementById(`lien-${i}`).href="page2.html"
-
+    eltA.addEventListener("click",function(){
+        localStorage.setItem("produitOption",localStorage.getItem)
+    })
+    
+    
+    
+    
+    
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${i}`);
     eltP.setAttribute("class","peluche-carte")
