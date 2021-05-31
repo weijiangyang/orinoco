@@ -73,14 +73,13 @@ div.recherche a{
 
 /* la partie du main  */
 
-
-
-div.peluche-carte
-
+a.lien
 {
-    width: 50%;
+    display:block;
+    width: 30%;}
+div.peluche-carte{
     
-    height: 400px;
+    height: 450px;
     background-color:pink;
     box-shadow: 2px 2px 10px pink;
     
@@ -91,13 +90,13 @@ div.peluche-carte
 }   
 
 @media(max-width:1080px){
-    div.peluche-carte{
+    a.lien{ 
         width:40%;
         margin-left:4%;
     }    
 }    
 @media(max-width:780px){
-    div.peluche-carte{
+    a.lien{
         width:80%;
         margin-left:8%;
     }    
@@ -148,4 +147,5 @@ h3.peluche-titre{
     font-size: 20px;
     
 }
+
 

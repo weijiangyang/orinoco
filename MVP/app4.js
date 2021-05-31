@@ -7,13 +7,13 @@ function getPelucheInf(){
     })
     .then(function(value){
         let idsPeluche=[];
-        // console.log(value.length);
+        
         for (let i=0; i<value.length;i++){
             let id=value[i]._id;
             idsPeluche.push(id);
             localStorage.setItem("IdsPeluche",JSON.stringify(idsPeluche))
         };
-        // console.log(ids)
+        
         
         let listPeluches=[];
         for (let id of idsPeluche){
@@ -59,12 +59,19 @@ parentP.style.flexWrap = "wrap";
 parentP.style.justifyItems = 'center';
 
 for (let i=0; i<listPeluches.length;i++){
+
+    let eltA = document.createElement("a");
+    eltA.setAttribute("id",`lien-${i}`);
+    eltA.setAttribute("class","lien");
+    parentP.appendChild(eltA);
+    document.getElementById(`lien-${i}`).href="page2.html"
+
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${i}`);
     eltP.setAttribute("class","peluche-carte")
-    parentP.appendChild(eltP);
+    eltA.appendChild(eltP);
     eltP.style.height = "450px";
-    eltP.style.width = "30%";
+    
    
     let eltImage = document.createElement("img");
     eltImage.setAttribute("id",`image-${i}`);
