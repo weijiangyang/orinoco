@@ -64,7 +64,7 @@ for (let i=0; i<listPeluches.length;i++){
     eltA.setAttribute("id",`lien-${i}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
-    document.getElementById(`lien-${i}`).href="page2.html"
+    document.getElementById(`lien-${i}`).href="page2.html";
     eltA.addEventListener("click",function(){
        let p = JSON.parse(localStorage.getItem("listPeluches"));
         localStorage.setItem("optionProduit",JSON.stringify(p[i]))
