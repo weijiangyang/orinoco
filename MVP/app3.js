@@ -1,6 +1,6 @@
 // console.log(JSON.parse(localStorage.getItem("produits")));
 
-let produits=JSON.parse(localStorage.getItem("produits"));
+let produits=JSON.parse(localStorage.getItem("optionProduit"));
 for ( let produit of produits){
 
 
