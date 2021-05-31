@@ -16,8 +16,9 @@ for (let color of typesColor){
     
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
-    let monPanier=[];
+    let momPanier=[];
     monPanier.push(produitOption);
-    localStorage.setItem("monPanier",JSON.stringify(monPanier))
+    localStorage.setItem("monPanier",JSON.stringify(mo))
+
 })
 
