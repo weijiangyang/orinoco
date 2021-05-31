@@ -25,27 +25,14 @@ function getPelucheInf(){
             .then(function(value){
                 
                 localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
-
-               
-                })
-            
-              .catch(function(err){
-                console.log("il y a un error")
-            })
-            console.log(localStorage.getItem(`peluche-${id}`));
-            let eltA = document.createElement("a");
+                let eltA = document.createElement("a");
     let parentP = document.querySelector("main");
     eltA.setAttribute("id",`lien-${id}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
     document.getElementById(`lien-${id}`).href="page2.html";
-    eltA.addEventListener("click",function(){
-       let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
-        localStorage.setItem("optionItem",JSON.stringify(p))
-        
-        
-    });
-    let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
+    
+    // let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${id}`);
     eltP.setAttribute("class","peluche-carte");
@@ -58,26 +45,41 @@ function getPelucheInf(){
     eltImage.setAttribute("class","peluche-image")
     eltP.appendChild(eltImage);
     eltImage.style.height = "320px"
-    document.getElementById(`image-${id}`).src=p.imageUrl;
+    document.getElementById(`image-${id}`).src=value.imageUrl;
     let eltH3 = document.createElement("h3");
     eltH3.setAttribute("id", `title-${id}`);
     eltH3.setAttribute("class","peluche-titre")
     eltP.appendChild(eltH3);
-    document.getElementById(`title-${id}`).innerHTML=p.name;
+    document.getElementById(`title-${id}`).innerHTML=value.name;
     let eltD = document.createElement("p");
     eltD.setAttribute("id",`description-${id}`);
     eltD.setAttribute("class","peluche-desp");
     eltP.appendChild(eltD);
-    document.getElementById(`description-${id}`).innerHTML = p.description;
+    document.getElementById(`description-${id}`).innerHTML = value.description;
     let eltPrice = document.createElement("p");
     eltPrice.setAttribute("id",`price-${id}`);
     eltPrice.setAttribute("class","peluche-price")
     eltP.appendChild(eltPrice);
-    document.getElementById(`price-${id}`).innerHTML =`Price:${(p.price/100).toFixed(2)}€`;
+    document.getElementById(`price-${id}`).innerHTML =`Price:${(value.price/100).toFixed(2)}€`;
         
     parentP.style.display = "flex";
     parentP.style.flexWrap = "wrap";
     parentP.style.justifyItems = 'center';    
+    eltA.addEventListener("click",function(){
+        let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
+         localStorage.setItem("optionItem",JSON.stringify(value))
+         
+         
+     });
+
+               
+                })
+            
+              .catch(function(err){
+                console.log("il y a un error")
+            })
+            console.log(localStorage.getItem(`peluche-${id}`));
+            
      };
 
      
