@@ -11,11 +11,10 @@ function getPelucheInf(){
         for (let i=0; i<value.length;i++){
             let id=value[i]._id;
             idsPeluche.push(id);
-            localStorage.setItem("IdsPeluche",JSON.stringify(idsPeluche))
-        };
+            };
         
         
-        let listPeluches=[];
+        
         for (let id of idsPeluche){
             
             fetch("http://localhost:3000/api/teddies"+"/"+id)
@@ -24,17 +23,11 @@ function getPelucheInf(){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
-                // listPeluches.push(value);
-                localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
-                let itemPeluch = JSON.perse(localStorage.getItem(`peluche-${id}`));
-                listPeluches.push(itemPeluche);
-                localStorage.setItem
                 
+                localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
+               
                 })
             
-        
-            
-                
               .catch(function(err){
                 console.log("il y a un error")
             })
@@ -54,7 +47,7 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
-let listPeluches= JSON.parse(localStorage.getItem("listPeluches"));
+
 
 let parentP = document.querySelector("main");
 
@@ -62,19 +55,19 @@ parentP.style.display = "flex";
 parentP.style.flexWrap = "wrap";
 parentP.style.justifyItems = 'center';
 
-for (let i=0; i<listPeluches.length;i++){
+for (let i=0; i<localStorage.length;i++){
 
     let eltA = document.createElement("a");
     eltA.setAttribute("id",`lien-${i}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
     document.getElementById(`lien-${i}`).href="page2.html";
-    eltA.addEventListener("click",function(){
-       let p = JSON.parse(localStorage.getItem("listPeluches"));
-        localStorage.setItem("optionProduit",JSON.stringify(p[i]))
+    // eltA.addEventListener("click",function(){
+    //    let p = JSON.parse(localStorage.getItem("listPeluches"));
+    //     localStorage.setItem("optionProduit",JSON.stringify(p[i]))
         
         
-    });
+    // });
    
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${i}`);
