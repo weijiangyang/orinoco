@@ -13,12 +13,23 @@ for (let color of typesColor){
     // eltOption.style.backgroundColor=color;
     eltOption.style.color = "black";
  }   
-    
+
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
-    // let momPanier=[];
-    // monPanier.push(produitOption);
-    // localStorage.setItem("monPanier",JSON.stringify(monPanier))
+    
+    let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+    
+    if(monPanier){
+        monPanier.push(produitOption);
+        p=JSON.stringify(monPanier)
+        localStorage.setItem("monPanier",p);
+
+    }else{
+        let monPanier=[];
+        monPanier.push(produitOption);
+        p=JSON.stringify(monPanier)
+        localStorage.setItem("monPanier",p);
+    }
 
 })
 
