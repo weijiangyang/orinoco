@@ -24,8 +24,11 @@ function getPelucheInf(){
                 if(res.ok){
                     return res.json();}})
             .then(function(value){
-                listPeluches.push(value);
-                localStorage.setItem("listPeluches",JSON.stringify(listPeluches));
+                // listPeluches.push(value);
+                localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
+                let itemPeluch = JSON.perse(localStorage.getItem(`peluche-${id}`));
+                listPeluches.push(itemPeluche);
+                localStorage.setItem
                 
                 })
             
@@ -52,6 +55,7 @@ function getPelucheInf(){
     
 getPelucheInf();
 let listPeluches= JSON.parse(localStorage.getItem("listPeluches"));
+
 let parentP = document.querySelector("main");
 
 parentP.style.display = "flex";
