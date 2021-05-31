@@ -66,16 +66,12 @@ for (let i=0; i<listPeluches.length;i++){
     parentP.appendChild(eltA);
     document.getElementById(`lien-${i}`).href="page2.html"
     eltA.addEventListener("click",function(){
-        // let optionProduit = JSON.parse(localStorage.getItem(localstorage.key(i)))
-
+       let p = JSON.parse(localStorage.getItem("listPeluches"));
+        localStorage.setItem("optionProduit",JSON.stringify(p[i]))
+        
         
     });
-    
-    
-    
-    
-    
-    
+   
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${i}`);
     eltP.setAttribute("class","peluche-carte")
@@ -106,9 +102,9 @@ for (let i=0; i<listPeluches.length;i++){
     document.getElementById(`price-${i}`).innerHTML =`Price:${(listPeluches[i].price/100).toFixed(2)}€`
 
  }   
-let p = JSON.parse(localStorage.getItem("listPeluches"));
-console.log(p[0].colors);
+
  
+
 
 
 
