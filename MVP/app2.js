@@ -1,4 +1,16 @@
-let produits=JSON.parse(localStorage.getItem("optionProduit"));
+let produitOption=JSON.parse(localStorage.getItem("optionProduit"));
+document.getElementById("title-peluche").innerHTML = produitOption.name;
+document.getElementById("desp-peluche").innerHTML = produitOption.description;
+document.getElementById("price-peluche").innerHTML = "Price:"+(produitOption.price/100).toFixed(2)+"€";
+document.getElementById("image-peluche").src = produitOption.imageUrl;
+let typesColor = produitOption.colors;
+let parentP = document.getElementById("form-selection");
+for (let color of typesColor){
+    eltOption = document.createElement("option");
+    parentP.appendChild(eltOption);
+    eltOption.setAttribute("class","color-peluche");
+    eltOption.innerHTML=
+}
 
 // function getPelucheInf(){
 //     fetch("http://localhost:3000/api/teddies")

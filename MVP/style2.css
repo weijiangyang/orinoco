@@ -67,7 +67,7 @@ div.recherche a{
     }
 }
 
-img#first-image-peluche{
+img#image-peluche{
     display:inline-block;
     width: 30%;
     border:1px solid red;
@@ -81,11 +81,11 @@ div.produit-choix h3{
     margin-bottom: 15px;
     color:blue;
 }
-div.produit-choix p#first-desp-peluche{
+div.produit-choix p#desp-peluche{
     font-size: 20px;
     margin-bottom: 15px;
 }
-div.produit-choix p#first-price-peluche{
+div.produit-choix p#price-peluche{
     font-size:24px;
     margin-bottom:24px;
 }
