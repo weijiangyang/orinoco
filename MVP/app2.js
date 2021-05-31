@@ -6,10 +6,14 @@ document.getElementById("image-peluche").src = produitOption.imageUrl;
 let typesColor = produitOption.colors;
 let parentP = document.getElementById("form-selection");
 for (let color of typesColor){
-    eltOption = document.createElement("option");
+    let eltOption = document.createElement("option");
     parentP.appendChild(eltOption);
     eltOption.setAttribute("class","color-peluche");
-    eltOption.innerHTML=
+    eltOption.innerHTML=color;
+    // eltOption.style.backgroundColor=color;
+    eltOption.style.color = "black";
+    
+    
 }
 
 // function getPelucheInf(){
