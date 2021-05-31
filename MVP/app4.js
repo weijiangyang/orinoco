@@ -26,23 +26,29 @@ function getPelucheInf(){
                 
                 localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
 
-for (let i=0; i<localStorage.length;i++){
-
-    let eltA = document.createElement("a");
-    eltA.setAttribute("id",`lien-${i}`);
+               
+                })
+            
+              .catch(function(err){
+                console.log("il y a un error")
+            })
+            console.log(localStorage.getItem(`peluche-${id}`));
+            let eltA = document.createElement("a");
+    let parentP = document.querySelector("main");
+    eltA.setAttribute("id",`lien-${id}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
-    document.getElementById(`lien-${i}`).href="page2.html";
+    document.getElementById(`lien-${id}`).href="page2.html";
     eltA.addEventListener("click",function(){
        let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
         localStorage.setItem("optionItem",JSON.stringify(p))
         
         
     });
-   
+    let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${id}`);
-    eltP.setAttribute("class","peluche-carte")
+    eltP.setAttribute("class","peluche-carte");
     eltA.appendChild(eltP);
     eltP.style.height = "450px";
     
@@ -67,17 +73,11 @@ for (let i=0; i<localStorage.length;i++){
     eltPrice.setAttribute("id",`price-${id}`);
     eltPrice.setAttribute("class","peluche-price")
     eltP.appendChild(eltPrice);
-    document.getElementById(`price-${id}`).innerHTML =`Price:${(p.price/100).toFixed(2)}€`
-
- }   
-               
-                })
-            
-              .catch(function(err){
-                console.log("il y a un error")
-            })
+    document.getElementById(`price-${id}`).innerHTML =`Price:${(p.price/100).toFixed(2)}€`;
         
-        
+    parentP.style.display = "flex";
+    parentP.style.flexWrap = "wrap";
+    parentP.style.justifyItems = 'center';    
      };
 
      
@@ -95,15 +95,7 @@ for (let i=0; i<localStorage.length;i++){
 getPelucheInf();
 
 
-let parentP = document.querySelector("main");
 
-parentP.style.display = "flex";
-parentP.style.flexWrap = "wrap";
-parentP.style.justifyItems = 'center';
-
-
-
- 
 
 
 
