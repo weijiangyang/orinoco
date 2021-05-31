@@ -12,7 +12,12 @@ for (let color of typesColor){
     eltOption.innerHTML=color;
     // eltOption.style.backgroundColor=color;
     eltOption.style.color = "black";
+ }   
     
-    
-}
+let btnPanier = document.getElementById("btn-panier");
+btnPanier.addEventListener("click",function(){
+    let monPanier=[];
+    monPanier.push(produitOption);
+    localStorage.setItem("monPanier",JSON.stringify(monPanier))
+})
 

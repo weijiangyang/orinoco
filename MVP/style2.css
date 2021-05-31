@@ -89,21 +89,27 @@ div.produit-choix p#firsprice-peluche{
     font-size:24px;
     margin-bottom:24px;
 }
-label#select-form{
-    font-size:24px;
-    margin-bottom: 25px;
 
+#label-couleur{
+    margin-top:16px;
+    font-size: 20px;
+    
 }
-form#quantity-select{
-    font-size:24px;
+#form-selection{
+
+    margin-top:20px;
+    font-size:20px;
+}
+#quantity{
+    font-size:20px;
     
     margin-top:20px;
 }
-form#quantity-select input{
-    font-size:16px;
+#quantity-select {
+    font-size:20px;
 }
 select, option{
-    font-size: 16px;
+    
     color:blue;
 
 }
@@ -113,7 +119,7 @@ div.panier{
    
 }
 div.panier h3{
-    font-size:22px;
+    font-size:20px;
     margin-bottom:25px;
 }
 div.panier button{
@@ -121,6 +127,7 @@ div.panier button{
     color:blue;
     background-color:#F2E8F0;
     padding:10px 25px 10px 25px;
+    border-radius: 15px;
     
     
 
