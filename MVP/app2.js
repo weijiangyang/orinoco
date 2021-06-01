@@ -14,6 +14,11 @@ for (let color of typesColor){
     eltOption.style.color = "black";
  }   
 
+ let itemSelected = 
+     name : produitOption.name,
+     description:produitOption.description,
+ )
+
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     
@@ -34,7 +39,6 @@ btnPanier.addEventListener("click",function(){
 
 })
 
-// console.log(localStorage.getItem("monPanier"));
 
 let mySelect = document.getElementById("form-selection");
 mySelect.addEventListener("change",function(){
