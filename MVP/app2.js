@@ -35,20 +35,36 @@ btnPanier.addEventListener("click",function(){
     }
 
 })
-
-localStorage.setItem("")
+// let produitSelected = {
+//              name : produitOption.name,
+//              description:produitOption.description,
+//              price:produitOption.price,
+//              color:" "
+             
+//          } 
+// console.log(produitSelected);
+// localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
 
 let colorSelect = document.getElementById("form-selection");
 colorSelect.addEventListener("change",function(){
+    
     let index = colorSelect.selectedIndex;
-    let colorSelected = colorSelect.options[index].value;})
+    let colorSelected = colorSelect.options[index].value;
+    let produitSelected ={
+        name : produitOption.name,
+        description:produitOption.description,
+        price:produitOption.price,
+        color:colorSelected};
+    localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+    console.log(produitSelected)
+    });
+    
+    
+    
+    
+    
 
-    // let itemSelected = {
-    //          name : produitOption.name,
-    //          description:produitOption.description,
-    //          price:produitOption.price,
-    //          color:colorSelected
-    //      } 
+    // 
     // console.log(colorSelected);
     // console.log(itemSelected)
 
