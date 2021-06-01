@@ -34,4 +34,13 @@ btnPanier.addEventListener("click",function(){
 
 })
 
-console.log(localStorage.getItem("monPanier"))
+// console.log(localStorage.getItem("monPanier"));
+
+let mySelect = document.getElementById("form-selection");
+mySelect.addEventListener("change",function(){
+    let index = mySelect.selectedIndex;
+    console.log(mySelect.options[index].value);
+})
+
+
+console.log("ok")
