@@ -14,10 +14,7 @@ for (let color of typesColor){
     eltOption.style.color = "black";
  }   
 
- let itemSelected = 
-     name : produitOption.name,
-     description:produitOption.description,
- )
+
 
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
@@ -39,12 +36,22 @@ btnPanier.addEventListener("click",function(){
 
 })
 
+localStorage.setItem("")
 
-let mySelect = document.getElementById("form-selection");
-mySelect.addEventListener("change",function(){
-    let index = mySelect.selectedIndex;
-    console.log(mySelect.options[index].value);
-})
+let colorSelect = document.getElementById("form-selection");
+colorSelect.addEventListener("change",function(){
+    let index = colorSelect.selectedIndex;
+    let colorSelected = colorSelect.options[index].value;})
+
+    // let itemSelected = {
+    //          name : produitOption.name,
+    //          description:produitOption.description,
+    //          price:produitOption.price,
+    //          color:colorSelected
+    //      } 
+    // console.log(colorSelected);
+    // console.log(itemSelected)
+
 
 
 console.log("ok")
