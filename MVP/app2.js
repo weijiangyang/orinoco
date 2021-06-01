@@ -29,9 +29,10 @@ colorSelect.addEventListener,quantitySelect.addEventListener("change",function()
         produitSelected.price = produitOption.price;
         produitSelected.color = colorSelected;
         produitSelected.quantity = quantitySelected;
+        produitSelected.id=produitOption._id;
         
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-        console.log(produitSelected)
+       
     });
     
 
@@ -41,7 +42,9 @@ btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     
     if(monPanier){
-        
+        for(let i=0;i<monPanier.length;i++){
+            if (produitSelected.id==monPanier[i].id && produitSelected.color==monPanier[i].color){monPanier[i].quantity+=produitSelected.quantity
+        }else{}
         monPanier.push(produitSelected);
         p=JSON.stringify(monPanier)
         localStorage.setItem("monPanier",p);
