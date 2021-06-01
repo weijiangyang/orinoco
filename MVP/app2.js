@@ -17,6 +17,7 @@ for (let color of typesColor){
 let produitSelected = new Object();
 let colorSelect = document.getElementById("form-selection");
 let quantitySelect = document.getElementById("quantity-select");
+
 colorSelect.addEventListener,quantitySelect.addEventListener("change",function(){
     
     let index = colorSelect.selectedIndex;
@@ -27,6 +28,7 @@ colorSelect.addEventListener,quantitySelect.addEventListener("change",function()
         produitSelected.name = produitOption.name;
         produitSelected.description = produitOption.description;
         produitSelected.price = produitOption.price;
+        produitSelected.imageUrl=produitOption.imageUrl;
         produitSelected.color = colorSelected;
         produitSelected.quantity = quantitySelected;
         produitSelected.id=produitOption._id;
@@ -43,9 +45,10 @@ btnPanier.addEventListener("click",function(){
     
     if(monPanier){
         if(produitSelected){
+            if(produitSelected.color&&produitSelected.quantity){
         monPanier.push(produitSelected);
         p=JSON.stringify(monPanier);
-        localStorage.setItem("monPanier",p)}
+        localStorage.setItem("monPanier",p)}}
         
 
     }else{

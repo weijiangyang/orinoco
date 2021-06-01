@@ -66,7 +66,7 @@ function getPelucheInf(){
     parentP.style.flexWrap = "wrap";
     parentP.style.justifyItems = 'center';    
     eltA.addEventListener("click",function(){
-        let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
+        // let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
          localStorage.setItem("optionItem",JSON.stringify(value))
          
          
