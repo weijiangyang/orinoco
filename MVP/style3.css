@@ -1,0 +1,14 @@
+.carte{
+    background-color: hotpink;
+    width: 70%;
+    margin:auto;
+}
+img{
+    width: 40%;
+    object-fit: cover;
+    display:block;
+}
+
+.info-produit{
+    display:flexbox;
+}
