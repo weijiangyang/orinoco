@@ -4,6 +4,8 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentM = document.querySelector("main");
 for (let i=0;i<monPanier.length;i++){
+   
+
 parentD = document.createElement("div");
 parentD.setAttribute("class","carte");
 parentM.appendChild(parentD);
@@ -40,14 +42,16 @@ eltT.appendChild(eltLabel);
 eltLabel.innerHTML="Quantity: "
 eltI = document.createElement("input");
 eltLabel.appendChild(eltI );
-eltI.setAttribute("type","number")
+eltI.setAttribute("type","number");
 eltI.setAttribute("placeHolder",monPanier[i].quantity);
 
 btn = document.createElement("button");
 eltT.appendChild(btn);
 btn.innerHTML = "Supprimer";
 btn.addEventListener("click",function(){
-    monPanier.remove("i");
+    monPanier.splice(0,1);
+    localStorage.setItem("monPanier",JSON.stringify(monPanier));
+    location.reload();
     console.log(monPanier)
 })
 
