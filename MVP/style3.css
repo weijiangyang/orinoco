@@ -18,5 +18,16 @@ img{
 
 .info-produit{
     width: 50%;
-    background-color: hotpink;
+    background-color: #F3F3F3;
+    
+}
+p,label
+{
+ text-align: left;
+ margin-left:30px;
+ font-size: 20px;
+}
+
+h2{
+    text-align: center;
 }

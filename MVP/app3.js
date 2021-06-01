@@ -28,17 +28,27 @@ eltD.innerHTML = monPanier[i].description;
 eltP = document.createElement("p");
 eltP.setAttribute ("class","price-produit");
 eltT.appendChild(eltP);
-eltP.innerHTML = monPanier[i].price;
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€";
 
 eltC = document.createElement("p");
 eltC.setAttribute("class","color-produit");
 eltT.appendChild(eltC);
-eltC.innerHTML = monPanier[i].color;
+eltC.innerHTML = "Color:"+monPanier[i].color;
 
+eltLabel = document.createElement("label");
+eltT.appendChild(eltLabel);
+eltLabel.innerHTML="Quantity: "
 eltI = document.createElement("input");
-eltT.appendChild(eltI );
+eltLabel.appendChild(eltI );
 eltI.setAttribute("type","number")
-eltI.setAttribute("placeholder",)
+eltI.setAttribute("placeHolder",monPanier[i].quantity);
 
+btn = document.createElement("button");
+eltT.appendChild(btn);
+btn.innerHTML = "Supprimer";
+btn.addEventListener("click",function(){
+    monPanier.remove("i");
+    console.log(monPanier)
+})
 
 }
