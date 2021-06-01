@@ -36,18 +36,21 @@ btnPanier.addEventListener("click",function(){
 
 })
 
-let produitSelected = new Object(this.name = produitOption.name);
+let produitSelected = new Object();
 let colorSelect = document.getElementById("form-selection");
-colorSelect.addEventListener("change",function(){
+let quantitySelect = document.getElementById("quantity-select");
+colorSelect.addEventListener,quantitySelect.addEventListener("change",function(){
     
     let index = colorSelect.selectedIndex;
     let colorSelected = colorSelect.options[index].value;
+    let quantitySelected = quantitySelect.value;
     
     
         
         produitSelected.description = produitOption.description;
         produitSelected.price = produitOption.price;
         produitSelected.color = colorSelected;
+        produitSelected.quantity = quantitySelected;
         
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
         console.log(produitSelected)
