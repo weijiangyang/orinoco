@@ -35,39 +35,27 @@ btnPanier.addEventListener("click",function(){
     }
 
 })
-// let produitSelected = {
-//              name : produitOption.name,
-//              description:produitOption.description,
-//              price:produitOption.price,
-//              color:" "
-             
-//          } 
-// console.log(produitSelected);
-// localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
 
+let produitSelected = new Object(this.name = produitOption.name);
 let colorSelect = document.getElementById("form-selection");
 colorSelect.addEventListener("change",function(){
     
     let index = colorSelect.selectedIndex;
     let colorSelected = colorSelect.options[index].value;
-    let produitSelected ={
-        name : produitOption.name,
-        description:produitOption.description,
-        price:produitOption.price,
-        color:colorSelected};
+    
+    
+        
+        produitSelected.description = produitOption.description;
+        produitSelected.price = produitOption.price;
+        produitSelected.color = colorSelected;
+        
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-    console.log(produitSelected)
+        console.log(produitSelected)
     });
     
     
     
-    
-    
-
-    // 
-    // console.log(colorSelected);
-    // console.log(itemSelected)
+   
 
 
 
-console.log("ok")
