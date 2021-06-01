@@ -35,5 +35,10 @@ eltC.setAttribute("class","color-produit");
 eltT.appendChild(eltC);
 eltC.innerHTML = monPanier[i].color;
 
+eltI = document.createElement("input");
+eltT.appendChild(eltI );
+eltI.setAttribute("type","number")
+eltI.setAttribute("placeholder",)
+
 
 }

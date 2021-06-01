@@ -1,18 +1,22 @@
 .carte{
     
-    width: 100%;
+    width: 60%;
+    margin:auto;
     display:flex;
+    justify-content: space-between;
+    justify-content: center;
     border:1px solid black;
     margin-bottom: 10px;
     
+    
 }
 img{
-    width: 40%;
+    width: 50%;
     object-fit: cover;
     display:block;
 }
 
 .info-produit{
-    width: 40%;
+    width: 50%;
     background-color: hotpink;
 }
