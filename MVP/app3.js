@@ -30,7 +30,7 @@ eltD.innerHTML = monPanier[i].description;
 eltP = document.createElement("p");
 eltP.setAttribute ("class","price-produit");
 eltT.appendChild(eltP);
-eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€";
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
 
 eltC = document.createElement("p");
 eltC.setAttribute("class","color-produit");
@@ -44,12 +44,21 @@ eltI = document.createElement("input");
 eltLabel.appendChild(eltI );
 eltI.setAttribute("type","number");
 eltI.setAttribute("placeHolder",monPanier[i].quantity);
+eltI.addEventListener("change",function(){
+    monPanier[i].quantity = eltI.value;
+    console.log("ok")
+    
+localStorage.setItem("monPanier",JSON.stringify(monPanier));
+
+})
+
+
 
 btn = document.createElement("button");
 eltT.appendChild(btn);
 btn.innerHTML = "Supprimer";
 btn.addEventListener("click",function(){
-    monPanier.splice(0,1);
+    monPanier.splice(i,i+1);
     localStorage.setItem("monPanier",JSON.stringify(monPanier));
     location.reload();
     console.log(monPanier)
