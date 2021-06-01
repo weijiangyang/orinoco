@@ -43,11 +43,11 @@ btnPanier.addEventListener("click",function(){
     
     if(monPanier){
         for(let i=0;i<monPanier.length;i++){
-            if (produitSelected.id==monPanier[i].id && produitSelected.color==monPanier[i].color){monPanier[i].quantity+=produitSelected.quantity
-        }else{}
+            if (produitSelected.id==monPanier[i].id && produitSelected.color==monPanier[i].color){monPanier[i].quantity+=produitSelected.quantity;
         monPanier.push(produitSelected);
-        p=JSON.stringify(monPanier)
-        localStorage.setItem("monPanier",p);
+        p=JSON.stringify(monPanier);
+        localStorage.setItem("monPanier",p);}else{}
+        
 
     }else{
         let monPanier=[];
