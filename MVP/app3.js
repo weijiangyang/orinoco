@@ -31,7 +31,6 @@ eltP = document.createElement("p");
 eltP.setAttribute ("class","price-produit");
 eltT.appendChild(eltP);
 eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
-
 eltC = document.createElement("p");
 eltC.setAttribute("class","color-produit");
 eltT.appendChild(eltC);
@@ -42,13 +41,18 @@ eltT.appendChild(eltLabel);
 eltLabel.innerHTML="Quantity: "
 eltI = document.createElement("input");
 eltLabel.appendChild(eltI );
+eltI.setAttribute("class","quantity-pro")
 eltI.setAttribute("type","number");
 eltI.setAttribute("placeHolder",monPanier[i].quantity);
+
 eltI.addEventListener("change",function(){
     monPanier[i].quantity = eltI.value;
-    console.log("ok")
+    
     
 localStorage.setItem("monPanier",JSON.stringify(monPanier));
+
+
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`*${eltI.value}`;
 
 })
 
