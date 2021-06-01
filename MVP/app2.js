@@ -20,6 +20,7 @@ btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     
     if(monPanier){
+        
         monPanier.push(produitOption);
         p=JSON.stringify(monPanier)
         localStorage.setItem("monPanier",p);
