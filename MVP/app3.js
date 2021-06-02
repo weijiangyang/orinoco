@@ -52,6 +52,10 @@ eltI.setAttribute("type","number");
 
 eltI.setAttribute("value",monPanier[i].quantity);
 
+pItemTotal = document.createElement("p");
+pItemTotal.setAttribute("id",`pItemTotal-${i}`);
+eltT.appendChild(pItemTotal);
+pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
 
 btn = document.createElement("button");
 eltT.appendChild(btn);
@@ -73,6 +77,12 @@ for (let i=0;i<p.length; i++){
        localStorage.setItem("monPanier",JSON.stringify(monPanier));
        eltP = document.getElementById(`price-produit-${i}`);
        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
+       pItemTotal = document.getElementById(`pItemTotal-${i}`);
+       pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
    })
     
+}
+
+for (let i=0;i<monPanier.length,i++){
+    total+=monPanier[i].quantity
 }
