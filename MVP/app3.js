@@ -69,9 +69,7 @@ let p = document.getElementsByClassName("quantity-inp");
 for (let i=0;i<p.length; i++){
    
    p[i].addEventListener("change",function(){
-       console.log(p[i].value) ;
-       console.log(monPanier[i].name);
-       monPanier[i].quantity = p[i].value;
+        monPanier[i].quantity = p[i].value;
        localStorage.setItem("monPanier",JSON.stringify(monPanier));
        eltP = document.getElementById(`price-produit-${i}`);
        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
