@@ -51,26 +51,6 @@ eltLabel.appendChild(eltI);
 eltI.setAttribute("type","number");
 
 eltI.setAttribute("value",monPanier[i].quantity);
-// console.log(eltI.value);
-// eltI.addEventListener("change",function(){
-//     monPanier[i].quantity = eltI.value;
-    
-//     console.log(eltI.value)
-// localStorage.setItem("monPanier",JSON.stringify(monPanier));
-
-
-
-// eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
-
-// });
-
-
-
-
-
-
-
-
 
 
 btn = document.createElement("button");
@@ -91,8 +71,10 @@ for (let i=0;i<p.length; i++){
    p[i].addEventListener("change",function(){
        console.log(p[i].value) ;
        console.log(monPanier[i].name);
-    //    monPanier[i].quantity = p[i].value;
+       monPanier[i].quantity = p[i].value;
        localStorage.setItem("monPanier",JSON.stringify(monPanier));
+       eltP = document.getElementById(`price-produit-${i}`);
+       eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
    })
     
 }
