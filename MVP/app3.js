@@ -2,7 +2,7 @@
 
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-parentM = document.querySelector("main");
+parentM = document.getElementById("monpanier-i");
 let sum = 0;
 for (let i=0;i<monPanier.length;i++){
    
