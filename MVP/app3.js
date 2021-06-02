@@ -67,12 +67,16 @@ btn.addEventListener("click",function(){
     console.log(monPanier)
 })
 }
-let p = document.getElementsByClassName("quantity-inp");
+
 
 
 eltTotal = document.createElement("p");
 eltTotal.setAttribute("id","price-total");
-eltTotal.innerHTML="1234"
+
+parentM.appendChild(eltTotal);
+eltTotal.innerHTML="0";
+
+let p = document.getElementsByClassName("quantity-inp");
 for (let i=0;i<p.length; i++){
 
 
