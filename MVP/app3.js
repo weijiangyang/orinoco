@@ -46,23 +46,23 @@ eltLabel.setAttribute("id",`label-${i}`);
 eltT.appendChild(eltLabel);
 eltLabel.innerHTML="Quantity: "
 eltI = document.createElement("input");
-eltI.setAttribute("id",`quantity-${i}`);
+eltI.setAttribute("class","quantity-inp");
 eltLabel.appendChild(eltI);
 eltI.setAttribute("type","number");
 
 eltI.setAttribute("value",monPanier[i].quantity);
 // console.log(eltI.value);
-eltI.addEventListener("change",function(){
-    monPanier[i].quantity = eltI.value;
+// eltI.addEventListener("change",function(){
+//     monPanier[i].quantity = eltI.value;
     
-    console.log(eltI.value)
-localStorage.setItem("monPanier",JSON.stringify(monPanier));
+//     console.log(eltI.value)
+// localStorage.setItem("monPanier",JSON.stringify(monPanier));
 
 
 
-eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
+// eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
 
-});
+// });
 
 
 
@@ -85,9 +85,14 @@ btn.addEventListener("click",function(){
 
 }
 
-// for(let i=0;i<monPanier.length;i++){
-//     eltI =  document.getElementById(`quantity-${i}`);
-//     eltI.addEventListener("change",function(){
-//         console.log(eltI.value)
-//     })
-// }
+let p = document.getElementsByClassName("quantity-inp");
+for (let i=0;i<p.length; i++){
+   
+   p[i].addEventListener("change",function(){
+       console.log(p[i].value) ;
+       console.log(monPanier[i].name);
+    //    monPanier[i].quantity = p[i].value;
+       localStorage.setItem("monPanier",JSON.stringify(monPanier));
+   })
+    
+}
