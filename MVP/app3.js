@@ -37,24 +37,23 @@ eltT.appendChild(eltC);
 eltC.innerHTML = "Color:"+monPanier[i].color;
 
 eltLabel = document.createElement("label");
+eltLabel.setAttribute("id",`label-${i}`);
 eltT.appendChild(eltLabel);
 eltLabel.innerHTML="Quantity: "
 eltI = document.createElement("input");
-eltLabel.appendChild(eltI );
-eltI.setAttribute("class","quantity-pro")
+eltI.setAttribute("id",`quantity-${i}`);
+eltLabel.appendChild(eltI);
 eltI.setAttribute("type","number");
 eltI.setAttribute("placeHolder",monPanier[i].quantity);
 
-eltI.addEventListener("change",function(){
-    monPanier[i].quantity = eltI.value;
-    
-    
-localStorage.setItem("monPanier",JSON.stringify(monPanier));
 
 
-eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`*${eltI.value}`;
 
-})
+
+
+
+
+
 
 
 
@@ -69,3 +68,16 @@ btn.addEventListener("click",function(){
 })
 
 }
+for (let i=0; i<monPanier.length;i++){
+    eltI = document.getElementById(`quantity-${i}`)
+eltI.addEventListener("change",function(){
+    monPanier[i].quantity = eltI.value;
+    
+    
+localStorage.setItem("monPanier",JSON.stringify(monPanier));
+
+
+
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
+
+});}
