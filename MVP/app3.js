@@ -44,9 +44,21 @@ eltI = document.createElement("input");
 eltI.setAttribute("id",`quantity-${i}`);
 eltLabel.appendChild(eltI);
 eltI.setAttribute("type","number");
-eltI.setAttribute("placeHolder",monPanier[i].quantity);
+
+eltI.setAttribute("value",monPanier[i].quantity);
+// console.log(eltI.value);
+eltI.addEventListener("change",function(){
+    monPanier[i].quantity = eltI.value;
+    
+    
+localStorage.setItem("monPanier",JSON.stringify(monPanier));
 
 
+
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
+
+});
+for(let i=0)
 
 
 
@@ -68,16 +80,3 @@ btn.addEventListener("click",function(){
 })
 
 }
-for (let i=0; i<monPanier.length;i++){
-    eltI = document.getElementById(`quantity-${i}`)
-eltI.addEventListener("change",function(){
-    monPanier[i].quantity = eltI.value;
-    
-    
-localStorage.setItem("monPanier",JSON.stringify(monPanier));
-
-
-
-eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${eltI.value})`;
-
-});}
