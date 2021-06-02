@@ -66,11 +66,18 @@ btn.addEventListener("click",function(){
     location.reload();
     console.log(monPanier)
 })
-
 }
-
 let p = document.getElementsByClassName("quantity-inp");
+
+
+eltTotal = document.createElement("p");
+eltTotal.setAttribute("id","price-total");
+eltTotal.innerHTML="1234"
 for (let i=0;i<p.length; i++){
+
+
+
+
    
    p[i].addEventListener("change",function(){
         monPanier[i].quantity = p[i].value;
@@ -79,10 +86,14 @@ for (let i=0;i<p.length; i++){
        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
        pItemTotal = document.getElementById(`pItemTotal-${i}`);
        pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
+let totalItem = 0;
+for (let i=0;i<monPanier.length;i++){
+    totalItem+=monPanier[i].quantity*monPanier[i].price;
+
+}
+console.log(totalItem)
+
+
    })
     
-}
-
-for (let i=0;i<monPanier.length,i++){
-    total+=monPanier[i].quantity
 }
