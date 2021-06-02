@@ -87,7 +87,12 @@ eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
 eltBtnCommand = document.createElement("div");
 eltBtnCommand.setAttribute("id","btn-command");
 eltCommand.appendChild(eltBtnCommand);
-eltBtnCommand.innerHTML = "Passer la commande"
+eltBtnCommand.innerHTML = "Passer la commande";
+
+eltBtnContinue = document.createElement("div");
+eltBtnContinue.setAttribute("id","btn-continuer");
+eltCommand.appendChild(eltBtnContinue);
+eltBtnContinue.innerHTML = "Continuer mon shopping";
 
 
 
