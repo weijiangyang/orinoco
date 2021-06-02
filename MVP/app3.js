@@ -3,6 +3,7 @@
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentM = document.querySelector("main");
+let sum = 0;
 for (let i=0;i<monPanier.length;i++){
    
 
@@ -56,6 +57,7 @@ pItemTotal = document.createElement("p");
 pItemTotal.setAttribute("id",`pItemTotal-${i}`);
 eltT.appendChild(pItemTotal);
 pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
+sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
 
 btn = document.createElement("button");
 eltT.appendChild(btn);
@@ -68,13 +70,13 @@ btn.addEventListener("click",function(){
 })
 }
 
-
+console.log(sum);
 
 eltTotal = document.createElement("p");
 eltTotal.setAttribute("id","price-total");
-
 parentM.appendChild(eltTotal);
-eltTotal.innerHTML="0";
+
+
 
 let p = document.getElementsByClassName("quantity-inp");
 for (let i=0;i<p.length; i++){
@@ -90,14 +92,7 @@ for (let i=0;i<p.length; i++){
        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
        pItemTotal = document.getElementById(`pItemTotal-${i}`);
        pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
-let totalItem = 0;
-for (let i=0;i<monPanier.length;i++){
-    totalItem+=monPanier[i].quantity*monPanier[i].price;
-
-}
-console.log(totalItem)
-
-
+       
    })
     
 }
