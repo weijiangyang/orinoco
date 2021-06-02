@@ -12,9 +12,12 @@ parentD.setAttribute("class","carte");
 parentD.setAttribute("id",`carte-${i}`)
 parentM.appendChild(parentD);
 
+eltImage = document.createElement("div");
+eltImage.setAttribute("class","image-produit");
+parentD.appendChild(eltImage);
 eltImg=document.createElement("img");
 eltImg.src=monPanier[i].imageUrl;
-parentD.appendChild(eltImg);
+eltImage.appendChild(eltImg);
 
 eltT = document.createElement("div");
 eltT.setAttribute("class","info-produit");
@@ -75,6 +78,7 @@ console.log(sum);
 eltTotal = document.createElement("p");
 eltTotal.setAttribute("id","price-total");
 parentM.appendChild(eltTotal);
+eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
 
 
 
@@ -92,7 +96,12 @@ for (let i=0;i<p.length; i++){
        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
        pItemTotal = document.getElementById(`pItemTotal-${i}`);
        pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
-       
+       sum = 0;
+       for(let i=0;i<monPanier.length;i++){
+           sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+       }
+       console.log(sum);
+       eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
    })
     
 }
