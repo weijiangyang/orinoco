@@ -2,6 +2,7 @@
 main{
     width: 95%; 
     margin:auto;
+    display:flex;
 }
 div.monpanier{
     width:70%;

@@ -2,6 +2,7 @@
 
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 let sum = 0;
 for (let i=0;i<monPanier.length;i++){
@@ -77,8 +78,16 @@ console.log(sum);
 
 eltTotal = document.createElement("p");
 eltTotal.setAttribute("id","price-total");
-parentM.appendChild(eltTotal);
+eltCommand = document.getElementById("command");
+parentMain.appendChild(eltCommand);
+
+eltCommand.appendChild(eltTotal);
 eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
+
+eltBtnCommand = document.createElement("div");
+eltBtnCommand.setAttribute("id","btn-command");
+eltCommand.appendChild(eltBtnCommand);
+eltBtnCommand.innerHTML = "Passer la commande"
 
 
 
