@@ -89,9 +89,14 @@ eltBtnCommand.setAttribute("id","btn-command");
 eltCommand.appendChild(eltBtnCommand);
 eltBtnCommand.innerHTML = "Passer la commande";
 
+eltLienContinuer = document.createElement("a");
+eltLienContinuer.setAttribute("id","lien-continuer");
+eltLienContinuer.setAttribute("href","index.html");
+eltCommand.appendChild(eltLienContinuer);
+
 eltBtnContinue = document.createElement("div");
 eltBtnContinue.setAttribute("id","btn-continuer");
-eltCommand.appendChild(eltBtnContinue);
+eltLienContinuer.appendChild(eltBtnContinue);
 eltBtnContinue.innerHTML = "Continuer mon shopping";
 
 
