@@ -125,12 +125,16 @@ div.panier h3{
     font-size:20px;
     margin-bottom:25px;
 }
-div.panier button{
+#btn-panier,
+#btn-continuer
+{
     font-size:20px;
     color:blue;
     background-color:#F2E8F0;
-    padding:10px 25px 10px 25px;
+    padding:10px 5px 10px 15px;
     border-radius: 15px;
+    width: 50%;
+    margin-bottom: 15px;
     
     
 
