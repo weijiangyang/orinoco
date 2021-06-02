@@ -1,16 +1,17 @@
 
 main{
-    width: 95%;
+    width: 95%; 
+    margin:auto;
 }
 div.monpanier{
     width:70%;
     background-color: #F3F3F3;
-    margin:auto;
+   
 }
 
 .carte{
     
-    width: 100%;
+    width: 90%;
    
     display:flex;
    
@@ -19,6 +20,8 @@ div.monpanier{
     border:1px solid black;
     border-left: transparent;
     border-right: transparent;
+    background-color: white;
+    margin: auto;
     
 
     
@@ -61,7 +64,8 @@ h2{
 }
 h1{
     font-size:24px;
-    text-align: center;
+    margin-left:5%;
+    padding-top:20px;
 }
 button{
     display:block;
