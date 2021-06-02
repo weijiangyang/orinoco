@@ -74,6 +74,8 @@ main{
     width: 95%; 
     margin:auto;
     display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 div.monpanier{
     width:70%;
@@ -145,4 +147,8 @@ button{
     margin-left:30px;
     margin-top:10px;
     
+}
+#command{
+    width: 25%;
+    background-color: red;
 }
