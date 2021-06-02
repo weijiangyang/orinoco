@@ -1,8 +1,17 @@
 
+main{
+    width: 95%;
+}
+div.monpanier{
+    width:70%;
+    background-color: #F3F3F3;
+    margin:auto;
+}
+
 .carte{
     
-    width: 70%;
-    margin-left:30px;
+    width: 100%;
+   
     display:flex;
    
     justify-content: space-between;
@@ -10,7 +19,7 @@
     border:1px solid black;
     border-left: transparent;
     border-right: transparent;
-   
+    
 
     
     
@@ -33,7 +42,7 @@ img{
 
 .info-produit{
     width: 80%;
-    background-color: #F3F3F3;
+   
     
 }
 
