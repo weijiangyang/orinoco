@@ -76,13 +76,13 @@ btn.addEventListener("click",function(){
 
 console.log(sum);
 
-eltTotal = document.createElement("p");
-eltTotal.setAttribute("id","price-total");
+// eltTotal = document.createElement("p");
+// eltTotal.setAttribute("id","price-total");
 eltCommand = document.getElementById("command");
 parentMain.appendChild(eltCommand);
 
-eltCommand.appendChild(eltTotal);
-eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
+// eltCommand.appendChild(eltTotal);
+// eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
 
 priceTotal = document.getElementById("pricetotal");
 priceTotal.innerHTML = "Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
@@ -123,8 +123,9 @@ for (let i=0;i<p.length; i++){
            sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
        }
        console.log(sum);
-       eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
-       
+    //    eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
+       priceTotal.innerHTML = "Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
+
    })
     
 }
