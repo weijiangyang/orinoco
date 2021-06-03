@@ -39,7 +39,7 @@ eltP = document.createElement("p");
 eltP.setAttribute ("class","price-produit");
 eltP.setAttribute("id",`price-produit-${i}`);
 eltT.appendChild(eltP);
-eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
+eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
 eltC = document.createElement("p");
 eltC.setAttribute("class","color-produit");
 eltC.setAttribute("id",`color-produit-${i}`)
@@ -60,7 +60,7 @@ eltI.setAttribute("value",monPanier[i].quantity);
 pItemTotal = document.createElement("p");
 pItemTotal.setAttribute("id",`pItemTotal-${i}`);
 eltT.appendChild(pItemTotal);
-pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
+pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
 sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
 
 btn = document.createElement("button");
@@ -115,9 +115,9 @@ for (let i=0;i<p.length; i++){
         monPanier[i].quantity = p[i].value;
        localStorage.setItem("monPanier",JSON.stringify(monPanier));
        eltP = document.getElementById(`price-produit-${i}`);
-       eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"€"+`(*${monPanier[i].quantity}）`;
+       eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
        pItemTotal = document.getElementById(`pItemTotal-${i}`);
-       pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"€";
+       pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
        sum = 0;
        for(let i=0;i<monPanier.length;i++){
            sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
