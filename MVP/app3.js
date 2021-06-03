@@ -6,8 +6,21 @@ parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 if(monPanier.length==0){
    eltMonpanier = document.querySelector("div.monpanier");
-   remove(eltMonpanier);
+   eltCommand = document.querySelector("div#command");
+   parentMain.removeChild(eltMonpanier);
+   parentMain.removeChild(eltCommand);
+   eltVide = document.createElement("div");
+   eltVide.setAttribute("class","vide");
+   parentMain.appendChild(eltVide);
+   eltVide.innerHTML = "Votre panier est vide pour le moment!";
+   eltL = document.createElement("a");
+   eltL.setAttribute("id","commencechoisir");
+   parentMain.appendChild(eltL);
+   eltL.innerHTML = "Choisissez vos produits et les ajouter au panier maintenant";
+   eltL.href = "index.html";
+   
 
+   
 }else{
 
 let sum = 0;
