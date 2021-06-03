@@ -6,8 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mon panier</title>
     <link rel="stylesheet" href="style3.css">;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
   <link rel="stylesheet" href="./fa/css/all.css"> 
+  <style>
+   form#loginForm input{
+     width: 80%;
+     margin:auto;
+   }
+   div#titre{
+     font-size:30px;
+     margin-bottom: 20px;
+   }
+  </style>
 </head>
 <body>
     <header>
@@ -46,6 +57,55 @@
         <div id="command">
             <!-- <div  id='btn-continuer'><a href="index.html">Continuer mon shopping</a></div> -->
         </div>
+
+        <div id="formvalidation" style="width:40%;margin:auto; margin-top:30px;background-color: #f3f3f3;">
+          <form action="",method="POST" id="loginForm">
+            <div id="titre" >Formulaire de Validation</div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" class="form-control" name="nom">
+              <small class="text-success text-danger"></small>
+            </div>  
+            <div class="form-group">
+              <label for="prenom">Prenom</label>
+              <input type="text" class="form-control" name="prenom">
+              
+            </div>  
+      
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email">
+              <small class="text-success text-danger"></small>
+            </div>  
+      
+            <div class="form-group">
+              <label for="adresse">Adresse</label>
+              <input type="text" class="form-control" name="adresse" placeholder="num,rue">
+              <small class="text-success text-danger"></small>
+            </div>  
+      
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" name="city">
+              <small></small>
+            </div>  
+      
+            <div class="form-group">
+              <label for="codepostale">Code Postale</label>
+              <input type="text" class="form-control" name="codepostale">
+              <small class="text-success text-danger" ></small>
+            </div>  
+      
+            <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+              </div>
+      
+      
+              
+            
+            
+          </form>
+         </div>
 
     </main>
     

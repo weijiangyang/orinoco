@@ -57,6 +57,7 @@ eltT.setAttribute("id",`infor-produit-${i}`)
 parentD.appendChild(eltT);
 
 eltN = document.createElement("h2");
+eltN.setAttribute("id","nom-peluche")
 eltT.appendChild(eltN);
 eltN.innerHTML= monPanier[i].name;
 
@@ -97,6 +98,7 @@ sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
 btn = document.createElement("button");
 eltT.appendChild(btn);
 btn.innerHTML = "Supprimer";
+btn.setAttribute("id","btn-supprimer");
 btn.addEventListener("click",function(){
     monPanier.splice(i,i+1);
     localStorage.setItem("monPanier",JSON.stringify(monPanier));
@@ -162,4 +164,71 @@ for (let i=0;i<p.length; i++){
    })
     
 }
+}
+let form = document.getElementById("loginForm");
+form.email.addEventListener("change",function(){
+    validEmail(this);
+
+})
+
+const validEmail = function(inputEmail){
+    let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$','g');
+    
+    let small = inputEmail.nextElementSibling;
+    if(emailRegExp.test(inputEmail.value)){
+        small.innerHTML = "Email valide";
+        small.classList.remove("text-danger");
+        small.classList.add("text-success");
+      
+    }else{
+  small.innerHTML = "Email non valide";
+  small.classList.remove("text-success");
+  small.classList.add("text-danger");
+    }
+
+}
+
+
+form.adresse.addEventListener("change",function(){
+    validAdresse(this);
+
+})
+
+const validAdresse = function(inputAdresse){
+    let adresseRegExp = new RegExp('^[0-9]{1,}[a-zA-Z]','g');
+    
+    let small = inputAdresse.nextElementSibling;
+    if(emailRegExp.test(inputAdresse.value)){
+        small.innerHTML = "Adresse valide";
+        small.classList.remove("text-danger");
+        small.classList.add("text-success");
+      
+    }else{
+  small.innerHTML = "Adresse non valide doit contenir des chiffres et puis des lettres";
+  small.classList.remove("text-success");
+  small.classList.add("text-danger");
+    }
+
+}
+
+form.codepostale.addEventListener("change",function(){
+    validCodePostale(this);
+
+})
+
+ const validCodePostale = function(inputCodePostale){
+    let codePostaleRegExp = new RegExp('^\d{5}$','g');
+    
+    let small = inputCodePostale.nextElementSibling;
+   if(codePostaleRegExp.test(inputCodePostale.value)){
+       small.innerHTML = "Code postale valide";
+       small.classList.remove("text-danger");
+       small.classList.add("text-success");
+      
+    }else{
+  small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
+ small.classList.remove("text-success");
+ small.classList.add("text-danger");
+   }
+
 }
