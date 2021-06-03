@@ -4,6 +4,16 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
+if(monPanier.length==0){
+   
+    parentMain.innerHTML = 'Votre panier est vide pour le moment!<br>Ajouter vos produits au panier ';
+    
+    
+
+    
+
+}else{
+
 let sum = 0;
 for (let i=0;i<monPanier.length;i++){
    
@@ -130,4 +140,5 @@ for (let i=0;i<p.length; i++){
 
    })
     
+}
 }
