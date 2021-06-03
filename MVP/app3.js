@@ -16,8 +16,20 @@ if(monPanier.length==0){
    eltL = document.createElement("a");
    eltL.setAttribute("id","commencechoisir");
    parentMain.appendChild(eltL);
-   eltL.innerHTML = "Choisissez vos produits et les ajouter au panier maintenant";
+   eltL.innerHTML = "Choisissez vos produits ";
    eltL.href = "index.html";
+
+   eltAjouter = document.createElement("div");
+   eltAjouter.setAttribute("id","ajouter");
+   parentMain.appendChild(eltAjouter);
+   eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+
+   eltValider = document.createElement("div");
+   eltValider.setAttribute("id","valider");
+   parentMain.appendChild(eltValider);
+   eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
+
+
    
 
    

@@ -164,6 +164,8 @@ button{
 #btn-continuer{
     margin-top:20px;
     background-color:rgb(221, 179, 187) ;
+    width: 50%;
+    max-width: 300px;
 }
 #pricetotal{
     font-size:20px;
@@ -181,7 +183,17 @@ div.vide
 }
 #commencechoisir{
     padding:16px;
-    background-color: burlywood;
+    background-color: #DDB3BB;
     border-radius: 10px;
-    font-size:22px;
+    font-size:20px;
+}
+#ajouter{
+    font-size:20px;
+    margin-top:50px;
+    color:rgb(218, 102, 121);
+}
+#valider{
+    font-size:18px;
+    margin-top:16px;
+    color:rgb(218, 102, 121);
 }
