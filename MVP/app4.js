@@ -26,7 +26,7 @@ function getPelucheInf(){
                 
                 localStorage.setItem(`peluche-${id}`,JSON.stringify(value));
                 let eltA = document.createElement("a");
-    let parentP = document.querySelector("main");
+    let parentP = document.querySelector("#total-produits");
     eltA.setAttribute("id",`lien-${id}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);

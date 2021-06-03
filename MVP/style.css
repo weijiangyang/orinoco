@@ -36,7 +36,7 @@ div.client-inf div#contact p,div.client-inf div#panier p{
     margin-top:20px;
     font-size:18px;
 }
-div.recherche {
+/* div.recherche {
     width: 40%;
     position: relative;
 }
@@ -58,7 +58,7 @@ div.recherche a{
     right: -5px;;
     top:50px;
     font-size:20px;
-}
+} */
 @media (max-width:600px){
     div.recherche{
         left:-50px;
@@ -72,6 +72,13 @@ div.recherche a{
 }
 
 /* la partie du main  */
+main{
+    width: 100%;
+    margin-left:2.5%
+ }   
+    
+
+  
 
 a.lien
 {
@@ -146,6 +153,16 @@ h3.peluche-titre{
     margin-bottom:10px;
     font-size: 20px;
     
+}
+#total-produits{
+    display:flex;
+    margin-top:50px
+    
+}
+h1#titre{
+    text-align: center;
+    color:rgb(230, 30, 163);
+   font-size: 30px;
 }
 
 
