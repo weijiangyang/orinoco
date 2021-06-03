@@ -198,7 +198,7 @@ const validAdresse = function(inputAdresse){
     let adresseRegExp = new RegExp('^[0-9]{1,}[a-zA-Z]','g');
     
     let small = inputAdresse.nextElementSibling;
-    if(emailRegExp.test(inputAdresse.value)){
+    if(adresseRegExp.test(inputAdresse.value)){
         small.innerHTML = "Adresse valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
