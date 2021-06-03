@@ -5,12 +5,8 @@ let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 if(monPanier.length==0){
-   
-    parentMain.innerHTML = 'Votre panier est vide pour le moment!<br>Ajouter vos produits au panier ';
-    
-    
-
-    
+   eltMonpanier = document.querySelector("div.monpanier");
+   remove(eltMonpanier);
 
 }else{
 
