@@ -82,7 +82,7 @@ eltCommand = document.getElementById("command");
 parentMain.appendChild(eltCommand);
 
 eltCommand.appendChild(eltTotal);
-eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
+eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
 
 eltBtnCommand = document.createElement("div");
 eltBtnCommand.setAttribute("id","btn-command");
