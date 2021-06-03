@@ -148,13 +148,8 @@ button{
     margin-top:10px;
     
 }
-#command{
-    width: 25%;
-    background-color:#F3F3F3;
-    height: 200px;
-    
-}
-#btn-command,
+
+
 #btn-continuer{
     font-size: 20px;
     text-align: center;

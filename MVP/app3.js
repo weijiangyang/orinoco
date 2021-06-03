@@ -78,24 +78,26 @@ console.log(sum);
 
 // eltTotal = document.createElement("p");
 // eltTotal.setAttribute("id","price-total");
-eltCommand = document.getElementById("command");
-parentMain.appendChild(eltCommand);
+// eltCommand = document.getElementById("command");
+// parentMain.appendChild(eltCommand);
 
 // eltCommand.appendChild(eltTotal);
 // eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
 
 priceTotal = document.getElementById("pricetotal");
+parentMonpanier = document.querySelector(".monpanier");
+parentMonpanier.appendChild(priceTotal);
 priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
 
-eltBtnCommand = document.createElement("div");
-eltBtnCommand.setAttribute("id","btn-command");
-eltCommand.appendChild(eltBtnCommand);
-eltBtnCommand.innerHTML = "Passer la commande";
+// eltBtnCommand = document.createElement("div");
+// eltBtnCommand.setAttribute("id","btn-command");
+// eltCommand.appendChild(eltBtnCommand);
+// eltBtnCommand.innerHTML = "Passer la commande";
 
 eltLienContinuer = document.createElement("a");
 eltLienContinuer.setAttribute("id","lien-continuer");
 eltLienContinuer.setAttribute("href","index.html");
-eltCommand.appendChild(eltLienContinuer);
+parentMonpanier.appendChild(eltLienContinuer);
 
 eltBtnContinue = document.createElement("div");
 eltBtnContinue.setAttribute("id","btn-continuer");
