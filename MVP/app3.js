@@ -84,6 +84,9 @@ parentMain.appendChild(eltCommand);
 eltCommand.appendChild(eltTotal);
 eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
 
+priceTotal = document.getElementById("pricetotal");
+priceTotal.innerHTML = "Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
+
 eltBtnCommand = document.createElement("div");
 eltBtnCommand.setAttribute("id","btn-command");
 eltCommand.appendChild(eltBtnCommand);
@@ -121,6 +124,7 @@ for (let i=0;i<p.length; i++){
        }
        console.log(sum);
        eltTotal.innerHTML="Total:"+sum.toFixed(2)+"€";
+       
    })
     
 }
