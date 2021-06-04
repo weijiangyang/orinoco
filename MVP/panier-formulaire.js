@@ -240,14 +240,22 @@ form.codepostale.addEventListener("change",function(){
    }
 
 }
-document.getElementById("btn-commande").addEventListener("click",function(e){
-
-if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)){
-const contact = new Object();
-contact.name = form.nom.value;
-console.log(contact.name);
-document.getElementById("btn-link").href="index.html";
+document.getElementById("btn-commande").addEventListener("click",function(){
+// e.preventDefault();
+if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
+&&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+    document.getElementById("btn-link").href="#";
+    const contact = new Object();
+    contact.name = form.nom.value;
+    contact.prenom = form.prenom.value;
+    contact.email = form.email.value;
+    contact.adresse = form.adresse.value;
+    contact.city = form.city.value;
+    contact.codepostale = form.codepostale.value;
+    console.log(contact)
 }
+
+
 })
 
 // object de commande
