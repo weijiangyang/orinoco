@@ -174,7 +174,7 @@ form.email.addEventListener("change",function(){
 })
 
 const validEmail = function(inputEmail){
-    let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$','g');
+    let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
     
     let small = inputEmail.nextElementSibling;
     if(emailRegExp.test(inputEmail.value)){
