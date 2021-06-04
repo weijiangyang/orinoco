@@ -234,3 +234,7 @@ form.codepostale.addEventListener("change",function(){
    }
 
 }
+form.addEventListener("submit",function(e){
+e.preventDefault();
+if v
+})
