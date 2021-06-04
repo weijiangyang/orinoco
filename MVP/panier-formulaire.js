@@ -252,11 +252,29 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     contact.adresse = form.adresse.value;
     contact.city = form.city.value;
     contact.codepostale = form.codepostale.value;
-    console.log(contact)
+    
+    produits=[];
+    for(let i=0;i<monPanier.length;i++){
+        const produit = new Object();
+        produit.id = monPanier[i].id;
+        produit.color = monPanier[i].color;
+        produit.quantity = monPanier[i].quantity;
+        produits.push(produit);
+    }
+    
+    const commande = new Object();
+    commande.contact = contact;
+    commande.tableauProduits = produits;
+
+    
+
+
+
+
+
 }
 
 
 })
 
-// object de commande
-
+console.log(monPanier)
