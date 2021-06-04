@@ -240,15 +240,15 @@ form.codepostale.addEventListener("change",function(){
    }
 
 }
-form.addEventListener("submit",function(e){
-e.preventDefault();
-if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)){
-form.submit();
+document.getElementById("btn-commande").addEventListener("click",function(e){
 
+if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)){
+const contact = new Object();
+contact.name = form.nom.value;
+console.log(contact.name);
+document.getElementById("btn-link").href="index.html";
 }
 })
 
 // object de commande
-const contact = new Object();
-contact.nom = form.nom.value;
-console.log(form.nom.value)
+
