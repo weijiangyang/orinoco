@@ -5,6 +5,8 @@ let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 if(monPanier.length==0){
+    eltForm = document.querySelector("div#formvalidation");
+    parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
    eltCommand = document.querySelector("div#command");
    parentMain.removeChild(eltMonpanier);
@@ -217,7 +219,7 @@ form.codepostale.addEventListener("change",function(){
 })
 
  const validCodePostale = function(inputCodePostale){
-    let codePostaleRegExp = new RegExp('^\d{5}$','g');
+    let codePostaleRegExp = new RegExp('^\\d{5}$','g');
     
     let small = inputCodePostale.nextElementSibling;
    if(codePostaleRegExp.test(inputCodePostale.value)){

@@ -30,7 +30,7 @@ function getPelucheInf(){
     eltA.setAttribute("id",`lien-${id}`);
     eltA.setAttribute("class","lien");
     parentP.appendChild(eltA);
-    document.getElementById(`lien-${id}`).href="page2.html";
+    document.getElementById(`lien-${id}`).href="./optionProduit.html";
     
     // let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
     let eltP = document.createElement("div");
