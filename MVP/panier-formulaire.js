@@ -241,7 +241,7 @@ form.codepostale.addEventListener("change",function(){
 
 }
 document.getElementById("btn-commande").addEventListener("click",function(){
-// e.preventDefault();
+
 if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
@@ -265,8 +265,27 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     const commande = new Object();
     commande.contact = contact;
     commande.tableauProduits = produits;
+// e.preventDefault();
+    fetch("http://localhost:3000/api/teddies",{
+	method: "POST",
+	headers: { 
+'Accept': 'application/json', 
+'Content-Type': 'application/json' 
+},
+	body: JSON.stringify(commande)
+})
+console.log(commande)
+// .then(function(res) {
+//     if (res.ok) {
+//       return res.json();
+//     }
+//   })
+//   .then(function(value) {
+//       console.log(value.postData.contact);
 
-    
+
+//   });
+
 
 
 
