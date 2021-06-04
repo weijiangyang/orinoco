@@ -247,3 +247,8 @@ form.submit();
 
 }
 })
+
+// object de commande
+const contact = new Object();
+contact.nom = form.nom.value;
+console.log(form.nom.value)
