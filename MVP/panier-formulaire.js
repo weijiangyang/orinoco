@@ -181,11 +181,13 @@ const validEmail = function(inputEmail){
         small.innerHTML = "Email valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
+        return true;
       
     }else{
   small.innerHTML = "Email non valide";
   small.classList.remove("text-success");
   small.classList.add("text-danger");
+  return false;
     }
 
 }
@@ -204,11 +206,13 @@ const validAdresse = function(inputAdresse){
         small.innerHTML = "Adresse valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
+        return true;
       
     }else{
   small.innerHTML = "Adresse non valide doit contenir des chiffres et puis des lettres";
   small.classList.remove("text-success");
   small.classList.add("text-danger");
+  return false
     }
 
 }
@@ -226,15 +230,20 @@ form.codepostale.addEventListener("change",function(){
        small.innerHTML = "Code postale valide";
        small.classList.remove("text-danger");
        small.classList.add("text-success");
+       return true;
       
     }else{
   small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
  small.classList.remove("text-success");
  small.classList.add("text-danger");
+ return false;
    }
 
 }
 form.addEventListener("submit",function(e){
 e.preventDefault();
-if v
+if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)){
+form.submit();
+
+}
 })
