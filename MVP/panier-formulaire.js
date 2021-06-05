@@ -266,13 +266,13 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     order.contact = contact;
     order.tableauProduits = produits;
 // e.preventDefault();
-    fetch("http://localhost:3000/api/teddies/order",{
+    fetch("http://localhost:3000/api/teddies",{
 	method: "POST",
 	headers: { 
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: JSON.stringify(order)
+	body: JSON.stringify({name:"yang"})
 })
 
 .then(function(res) {
