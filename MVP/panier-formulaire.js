@@ -266,23 +266,23 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     order.contact = contact;
     order.tableauProduits = produits;
 // e.preventDefault();
-    fetch("http://localhost:3000/api/teddies",{
-	method: "POST",
-	headers: { 
-'Accept': 'application/json', 
-'Content-Type': 'application/json' 
-},
-	body: JSON.stringify({name:"yang"})
-})
+//     fetch("http://localhost:3000/api/teddies",{
+// 	method: "POST",
+// 	headers: { 
+// 'Accept': 'application/json', 
+// 'Content-Type': 'application/json' 
+// },
+// 	body: JSON.stringify({name:"yang"})
+// })
 
-.then(function(res) {
-    if (res.ok) { 
-      return res.json();
-    }
-  })
-  .then(function(value) {
-   console.log("ok");
-  });
+// .then(function(res) {
+//     if (res.ok) { 
+//       return res.json();
+//     }
+//   })
+//   .then(function(value) {
+//    console.log("ok");
+//   });
 
 
 
