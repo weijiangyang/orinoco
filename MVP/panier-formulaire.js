@@ -272,7 +272,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: JSON.stringify({name:"yang"})
+	data: JSON.stringify({contact:"yang",produits:"a"})
 })
 
 .then(function(res) {
@@ -293,4 +293,5 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 
 
 })
+console.log("ok")
 
