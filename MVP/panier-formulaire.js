@@ -262,9 +262,9 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
         produits.push(produit);
     }
     
-    const commande = new Object();
-    commande.contact = contact;
-    commande.tableauProduits = produits;
+    const order = new Object();
+    order.contact = contact;
+    order.tableauProduits = produits;
 // e.preventDefault();
     fetch("http://localhost:3000/api/teddies/order",{
 	method: "POST",
@@ -272,18 +272,16 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: JSON.stringify({name:"yang"})
+	body: JSON.stringify(order)
 })
 
 .then(function(res) {
-    if (res.ok) {
+    if (res.ok) { 
       return res.json();
     }
   })
   .then(function(value) {
-    //   console.log(value);
-
-console.log(value.postData.text)
+   console.log("ok");
   });
 
 
