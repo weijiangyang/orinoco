@@ -246,37 +246,38 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
     const contac = new Object();
-    contac.name = form.nom.value;
-    contac.prenom = form.prenom.value;
-    contac.email = form.email.value;
-    contac.adresse = form.adresse.value;
-    contac.city = form.city.value;
-    contac.codepostale = form.codepostale.value;
-    contact = JSON.stringify(contac);
+    contact.name = form.nom.value;
+    contact.prenom = form.prenom.value;
+    contact.email = form.email.value;
+    contact.adresse = form.adresse.value;
+    contact.city = form.city.value;
+    contact.codepostale = form.codepostale.value;
+   
   
    
     
-    produits=[];
+    products=[];
     for(let i=0;i<monPanier.length;i++){
         const produit = new Object();
         produit.id = monPanier[i].id;
         produit.color = monPanier[i].color;
         produit.quantity = monPanier[i].quantity;
         // produit = JSON.stringify(produit);
-        produits.push(JSON.stringify(produit));
+        products.push(produit);
     }
-    products = [1,2,3]
+    
     console.log(products);
     
     
-       
+      
     fetch("http://localhost:3000/api/teddies/order",{
 	method: "POST",
 	headers: { 
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: (contact,products)
+
+	body:(contact,products)
     
 })
 
