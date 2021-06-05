@@ -245,18 +245,7 @@ document.getElementById("btn-commande").addEventListener("click",function(){
 if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
-    const contact = new Object();
-    contact.firstName = form.nom.value;
-    contact.lastName = form.prenom.value;
-    contact.email = form.email.value;
-    contact.address= form.adresse.value;
-    // contact.city = form.city.value;
-    // contact.codepostale = form.codepostale.value;
-   
-  contact=JSON.stringify(contact);
-   
-    
-    products=[];
+   let formPurchaseO
     for(let i=0;i<monPanier.length;i++){
         const productId = monPanier[i].id;
         
