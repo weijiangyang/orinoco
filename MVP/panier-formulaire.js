@@ -245,29 +245,29 @@ document.getElementById("btn-commande").addEventListener("click",function(){
 if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
-    const contact = new Object();
-    contact.name = form.nom.value;
-    contact.prenom = form.prenom.value;
-    contact.email = form.email.value;
-    contact.adresse = form.adresse.value;
-    contact.city = form.city.value;
-    contact.codepostale = form.codepostale.value;
+    const contac = new Object();
+    contac.name = form.nom.value;
+    contac.prenom = form.prenom.value;
+    contac.email = form.email.value;
+    contac.adresse = form.adresse.value;
+    contac.city = form.city.value;
+    contac.codepostale = form.codepostale.value;
+    contact = JSON.stringify(contac);
   
-   console.log(JSON.stringify(contact));
+   
     
-    products=[];
+    produits=[];
     for(let i=0;i<monPanier.length;i++){
         const produit = new Object();
         produit.id = monPanier[i].id;
         produit.color = monPanier[i].color;
         produit.quantity = monPanier[i].quantity;
-        products.push(produit);
+        // produit = JSON.stringify(produit);
+        products.push(JSON.stringify(produit));
     }
+    products = JSON.stringify(produits);
+    console.log(products);
     
-    const order = new Object();
-    order.contact = contact;
-    order.products = products;
-    console.log(order)
     
        
     fetch("http://localhost:3000/api/teddies/order",{
@@ -276,7 +276,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: (contact)
+	body: JSON.stringify({order:[contact,products]})
     
 })
 
