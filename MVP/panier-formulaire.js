@@ -240,41 +240,51 @@ form.codepostale.addEventListener("change",function(){
    }
 
 }
-document.getElementById("btn-commande").addEventListener("click",function(){
 
-if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
-&&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+ document.getElementById("btn-commande").addEventListener("click",function(e){
+e.preventDefault();
+ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
+ &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
-   let formPurchaseO
+   let PurchaseOrder ={
+       contact :{
+           firstName:form.nom.value,
+           lastName:form.prenom.value,
+           email:form.email.value,
+           address:form.adresse.value,
+           city:form.city.value},
+        products:[]
+       }
+   
     for(let i=0;i<monPanier.length;i++){
-        const productId = monPanier[i].id;
-        
-        // produit = JSON.stringify(produit);
-        products.push(productId);
-    }
+        PurchaseOrder.products.push(monPanier[i].id);
+    }    
+     
+    }    
+   
     
-   products=JSON.stringify(products)
-    
+  
+    console.log(PurchaseOrder);
     
       
-    fetch("http://localhost:3000/api/teddies/order",{
+   fetch("http://localhost:3000/api/teddies/order",{
 	method: "POST",
 	headers: { 
-'Accept': 'application/json', 
-'Content-Type': 'application/json' 
-},
+ 'Accept': 'application/json', 
+ 'Content-Type': 'application/json' 
+ },
 
-	body:JSON.stringify({contact:JSON.stringify(contact)},{products:JSON.stringify(products)})
+ 	body:JSON.stringify(PurchaseOrder)
     
-})
+ })
 
-.then(function(res) {
-    if (res.ok) { 
-      return res.json(); 
+ .then(function(res) {
+     if (res.ok) { 
+       return res.json(); 
     }
   })
   .then(function(value) {
-  console.log("ok");
+   console.log("ok");
   });
 
 
@@ -282,7 +292,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 
 
 
-}
+
 
 
 })
