@@ -246,14 +246,14 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
     const contact = new Object();
-    contact.name = form.nom.value;
-    contact.prenom = form.prenom.value;
+    contact.firstName = form.nom.value;
+    contact.lastName = form.prenom.value;
     contact.email = form.email.value;
-    contact.adresse = form.adresse.value;
-    contact.city = form.city.value;
-    contact.codepostale = form.codepostale.value;
+    contact.address= form.adresse.value;
+    // contact.city = form.city.value;
+    // contact.codepostale = form.codepostale.value;
    
-  
+  contact=JSON.stringify(contact);
    
     
     products=[];
@@ -264,7 +264,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
         products.push(productId);
     }
     
-   
+   products=JSON.stringify(products)
     
     
       
