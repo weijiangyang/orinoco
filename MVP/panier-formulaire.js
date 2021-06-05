@@ -264,24 +264,24 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     
     const order = new Object();
     order.contact = contact;
-    order.tableauProduits = produits;
-// e.preventDefault();
+    order.produits = produits;
+console.log(order);
     fetch("http://localhost:3000/api/teddies/order",{
 	method: "POST",
 	headers: { 
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	data: JSON.stringify({contact:"yang",produits:"a"})
+	body: JSON.stringify(order)
 })
 
 .then(function(res) {
     if (res.ok) { 
-      return res.json();
+      return res.json(); 
     }
   })
   .then(function(value) {
-   console.log("ok");
+  console.log("ok");
   });
 
 
