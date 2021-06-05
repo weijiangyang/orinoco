@@ -263,9 +263,9 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
         produit.color = monPanier[i].color;
         produit.quantity = monPanier[i].quantity;
         // produit = JSON.stringify(produit);
-        products.push(JSON.stringify(produit));
+        produits.push(JSON.stringify(produit));
     }
-    products = JSON.stringify(produits);
+    products = [1,2,3]
     console.log(products);
     
     
@@ -276,7 +276,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: JSON.stringify({order:[contact,products]})
+	body: (contact,products)
     
 })
 
