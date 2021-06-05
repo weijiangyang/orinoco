@@ -241,30 +241,37 @@ form.codepostale.addEventListener("change",function(){
 
 }
 
- document.getElementById("btn-commande").addEventListener("click",function(e){
-e.preventDefault();
+ document.getElementById("btn-commande").addEventListener("click",function(){
+let contact=new Object();
+let formPurchaseOrder = new Object;
+let product = new Object;
  if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
  &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
-   let PurchaseOrder ={
-       contact :{
-           firstName:form.nom.value,
-           lastName:form.prenom.value,
-           email:form.email.value,
-           address:form.adresse.value,
-           city:form.city.value},
-        products:[]
-       }
-   
-    for(let i=0;i<monPanier.length;i++){
-        PurchaseOrder.products.push(monPanier[i].id);
-    }    
-     
-    }    
+    
+
    
     
+        contact.firstName = form.nom.value;
+        contact.lastName = form.prenom.value;
+        contact.email = form.email.value;
+        contact.address = form.adresse.value;
+        contact.city = form.city.value;}
+          
+    formPurchaseOrder ={
+       contact,products:[]
+   }
+   
+   for(let i=0;i<monPanier.length;i++){
+       product.id=monPanier[i].id;
+       product.color = monPanier[i].color,
+       product.quantity = monPanier[i].quantity};
+
+       formPurchaseOrder.products.push(product)
+   }
+    
   
-    console.log(PurchaseOrder);
+    // console.log(formPurchaseOrder);
     
       
    fetch("http://localhost:3000/api/teddies/order",{
@@ -274,7 +281,7 @@ e.preventDefault();
  'Content-Type': 'application/json' 
  },
 
- 	body:JSON.stringify(PurchaseOrder)
+ 	body:JSON.stringify(formPurchaseOrder)
     
  })
 
@@ -284,7 +291,7 @@ e.preventDefault();
     }
   })
   .then(function(value) {
-   console.log("ok");
+   console.log(value.orderId);
   });
 
 
