@@ -245,7 +245,7 @@ document.getElementById("btn-commande").addEventListener("click",function(){
 if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
-    const contac = new Object();
+    const contact = new Object();
     contact.name = form.nom.value;
     contact.prenom = form.prenom.value;
     contact.email = form.email.value;
@@ -258,15 +258,13 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     
     products=[];
     for(let i=0;i<monPanier.length;i++){
-        const produit = new Object();
-        produit.id = monPanier[i].id;
-        produit.color = monPanier[i].color;
-        produit.quantity = monPanier[i].quantity;
+        const productId = monPanier[i].id;
+        
         // produit = JSON.stringify(produit);
-        products.push(produit);
+        products.push(productId);
     }
     
-    console.log(products);
+   
     
     
       
@@ -277,7 +275,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Content-Type': 'application/json' 
 },
 
-	body:(contact,products)
+	body:JSON.stringify({contact:JSON.stringify(contact)},{products:JSON.stringify(products)})
     
 })
 
