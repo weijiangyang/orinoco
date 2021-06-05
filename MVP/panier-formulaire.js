@@ -252,6 +252,8 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
     contact.adresse = form.adresse.value;
     contact.city = form.city.value;
     contact.codepostale = form.codepostale.value;
+  
+   console.log(JSON.stringify(contact));
     
     products=[];
     for(let i=0;i<monPanier.length;i++){
@@ -274,7 +276,7 @@ if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(for
 'Accept': 'application/json', 
 'Content-Type': 'application/json' 
 },
-	body: JSON.stringify({contact:contact,products:products})
+	body: (contact)
     
 })
 
