@@ -31,11 +31,6 @@ if(monPanier.length==0){
    parentMain.appendChild(eltValider);
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
   
-
-
-   
-
-   
 }else{
 
 let sum = 0;
@@ -285,7 +280,7 @@ let formPurchaseOrder = new Object;
    
   });
  
-localStorage.clear();
+
 
 eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
