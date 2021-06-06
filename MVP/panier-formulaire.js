@@ -259,33 +259,9 @@ let formPurchaseOrder = new Object;
     
   
     // console.log(formPurchaseOrder);
-    
-      
-   fetch("http://localhost:3000/api/teddies/order",{
-	method: "POST",
-	headers: { 
- 'Accept': 'application/json', 
- 'Content-Type': 'application/json' 
- },
-
- 	body:JSON.stringify(formPurchaseOrder)
-    
- })
-
- .then(function(res) {
-     if (res.ok) { 
-       return res.json(); 
-    }
-  })
-  .then(function(value) {
-   console.log(value.products);
-   
-  });
-
- monPanier = [];
-localStorage.clear();
-   
-eltForm = document.querySelector("div#formvalidation");
+    monPanier = [];
+    localStorage.clear();
+    eltForm = document.querySelector("div#formvalidation");
 parentMain.removeChild(eltForm);
 
 eltMonpanier = document.querySelector("div.monpanier");
@@ -311,6 +287,32 @@ eltValider = document.createElement("div");
 eltValider.setAttribute("id","valider");
 parentMain.appendChild(eltValider);
 eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
+
+      
+   fetch("http://localhost:3000/api/teddies/order",{
+	method: "POST",
+	headers: { 
+ 'Accept': 'application/json', 
+ 'Content-Type': 'application/json' 
+ },
+
+ 	body:JSON.stringify(formPurchaseOrder)
+    
+ })
+
+ .then(function(res) {
+     if (res.ok) { 
+       return res.json(); 
+       
+    }
+  })
+  .then(function(value) {
+   console.log(value.products);
+   
+  });
+
+
+   
 
 
     
