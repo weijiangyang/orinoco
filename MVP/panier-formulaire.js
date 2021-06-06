@@ -111,23 +111,12 @@ btn.addEventListener("click",function(){
 
 console.log(sum);
 
-// eltTotal = document.createElement("p");
-// eltTotal.setAttribute("id","price-total");
-// eltCommand = document.getElementById("command");
-// parentMain.appendChild(eltCommand);
-
-// eltCommand.appendChild(eltTotal);
-// eltTotal.innerHTML="Total:<strong>"+sum.toFixed(2)+"€"+"</strong>";
-
 priceTotal = document.getElementById("pricetotal");
 parentMonpanier = document.querySelector(".monpanier");
 parentMonpanier.appendChild(priceTotal);
 priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
 
-// eltBtnCommand = document.createElement("div");
-// eltBtnCommand.setAttribute("id","btn-command");
-// eltCommand.appendChild(eltBtnCommand);
-// eltBtnCommand.innerHTML = "Passer la commande";
+
 
 eltLienContinuer = document.createElement("a");
 eltLienContinuer.setAttribute("id","lien-continuer");
@@ -291,8 +280,38 @@ let formPurchaseOrder = new Object;
    console.log(value.products);
   });
 
-  monPanier = [];
+  
+    localStorage.clear();
+    eltForm = document.querySelector("div#formvalidation");
+    parentMain.removeChild(eltForm);
+   eltMonpanier = document.querySelector("div.monpanier");
+   eltCommand = document.querySelector("div#command");
+   parentMain.removeChild(eltMonpanier);
+   parentMain.removeChild(eltCommand);
+   eltVide = document.createElement("div");
+   eltVide.setAttribute("class","vide");
+   parentMain.appendChild(eltVide);
+   eltVide.innerHTML = "Votre panier est vide pour le moment!";
+   eltL = document.createElement("a");
+   eltL.setAttribute("id","commencechoisir");
+   parentMain.appendChild(eltL);
+   eltL.innerHTML = "Choisissez vos produits ";
+   eltL.href = "index.html";
 
+   eltAjouter = document.createElement("div");
+   eltAjouter.setAttribute("id","ajouter");
+   parentMain.appendChild(eltAjouter);
+   eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+
+   eltValider = document.createElement("div");
+   eltValider.setAttribute("id","valider");
+   parentMain.appendChild(eltValider);
+   eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
+   
+    
+   
+
+})
 
  
 
@@ -301,6 +320,6 @@ let formPurchaseOrder = new Object;
 
 
 
-})
+
 
 
