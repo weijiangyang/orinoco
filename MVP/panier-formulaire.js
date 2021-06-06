@@ -1,10 +1,9 @@
 // console.log(JSON.parse(localStorage.getItem("produits")));
 
-
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
-function 
+
 if(monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
