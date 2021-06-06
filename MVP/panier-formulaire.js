@@ -4,7 +4,7 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
-
+function 
 if(monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
@@ -232,7 +232,7 @@ form.codepostale.addEventListener("change",function(){
 }
 
  document.getElementById("btn-commande").addEventListener("click",function(e){
-     e.preventDefault();
+   
 let contact=new Object();
 let formPurchaseOrder = new Object;
 
@@ -241,7 +241,7 @@ let formPurchaseOrder = new Object;
     document.getElementById("btn-link").href="#";
     
 
-    let product = new Object;
+    
     
         contact.firstName = form.nom.value;
         contact.lastName = form.prenom.value;
@@ -285,35 +285,9 @@ let formPurchaseOrder = new Object;
  monPanier = [];
    localStorage.clear();
    
+   document.querySelector("main").innerHTML="ok";
+
     
-//     eltForm = document.querySelector("div#formvalidation");
-//     parentMain.removeChild(eltForm);
-//    eltMonpanier = document.querySelector("div.monpanier");
-//    eltCommand = document.querySelector("div#command");
-//    parentMain.removeChild(eltMonpanier);
-//    parentMain.removeChild(eltCommand);
-//    eltVide = document.createElement("div");
-//    eltVide.setAttribute("class","vide");
-//    parentMain.appendChild(eltVide);
-//    eltVide.innerHTML = "Votre panier est vide pour le moment!";
-//    eltL = document.createElement("a");
-//    eltL.setAttribute("id","commencechoisir");
-//    parentMain.appendChild(eltL);
-//    eltL.innerHTML = "Choisissez vos produits ";
-//    eltL.href = "index.html";
-
-//    eltAjouter = document.createElement("div");
-//    eltAjouter.setAttribute("id","ajouter");
-//    parentMain.appendChild(eltAjouter);
-//    eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
-
-//    eltValider = document.createElement("div");
-//    eltValider.setAttribute("id","valider");
-//    parentMain.appendChild(eltValider);
-//    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-
-   
-   
    
     
    
