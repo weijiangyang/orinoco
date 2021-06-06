@@ -244,13 +244,13 @@ form.codepostale.addEventListener("change",function(){
  document.getElementById("btn-commande").addEventListener("click",function(){
 let contact=new Object();
 let formPurchaseOrder = new Object;
-let product = new Object;
+
  if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
  &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     document.getElementById("btn-link").href="#";
     
 
-   
+    let product = new Object;
     
         contact.firstName = form.nom.value;
         contact.lastName = form.prenom.value;
@@ -263,11 +263,8 @@ let product = new Object;
    }
    
    for(let i=0;i<monPanier.length;i++){
-       product.id=monPanier[i].id;
-       product.color = monPanier[i].color,
-       product.quantity = monPanier[i].quantity};
-
-       formPurchaseOrder.products.push(product)
+       
+       formPurchaseOrder.products.push(monPanier[i].id)
    }
     
   
@@ -291,8 +288,10 @@ let product = new Object;
     }
   })
   .then(function(value) {
-   console.log(value.orderId);
+   console.log(value.products);
   });
+
+  monPanier = [];
 
 
  
