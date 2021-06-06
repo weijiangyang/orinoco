@@ -4,7 +4,7 @@ let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 
-if(monPanier.length==0){
+if(monPanier==null){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
@@ -254,9 +254,6 @@ let formPurchaseOrder = new Object;
    }
     
   
-    // console.log(formPurchaseOrder);
-   
-
       
    fetch("http://localhost:3000/api/teddies/order",{
 	method: "POST",
@@ -279,10 +276,8 @@ let formPurchaseOrder = new Object;
    console.log(value.products);
    
   });
- 
-
-
-eltForm = document.querySelector("div#formvalidation");
+  localStorage.removeItem("monPanier")
+  eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
    eltCommand = document.querySelector("div#command");
@@ -308,6 +303,7 @@ eltForm = document.querySelector("div#formvalidation");
    parentMain.appendChild(eltValider);
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
 
+ 
 })
 
 
