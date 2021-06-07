@@ -275,7 +275,7 @@ let formPurchaseOrder = new Object;
   .then(function(value) {
    console.log(value.products);
    
-  });
+  
   localStorage.removeItem("monPanier")
   eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
@@ -302,7 +302,7 @@ let formPurchaseOrder = new Object;
    eltValider.setAttribute("id","valider");
    parentMain.appendChild(eltValider);
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
-
+});
  
 })
 
