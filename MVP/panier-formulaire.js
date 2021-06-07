@@ -4,7 +4,7 @@ let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 
-if(monPanier==null){
+if(monPanier==null|| monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
