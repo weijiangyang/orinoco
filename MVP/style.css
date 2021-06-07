@@ -2,9 +2,7 @@ a{
     text-decoration: none;
     
 }
-a:hover{
-    color:
-}
+
 
 
 /* la partie du header */
@@ -38,6 +36,7 @@ div.client-inf div#commande,div.client-inf div#panier,div.client-inf div#acueill
     text-align: center;
     margin-top:20px;
 }
+
 div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acueill p{
     margin-top:20px;
     font-size:18px;
