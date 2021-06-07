@@ -226,7 +226,9 @@ form.codepostale.addEventListener("change",function(){
 
 }
 
- document.getElementById("btn-commande").addEventListener("click",function(e){
+
+
+ document.getElementById("btn-commande").addEventListener("click",function(){
    
 let contact=new Object();
 let formPurchaseOrder = new Object;
@@ -271,7 +273,9 @@ let formPurchaseOrder = new Object;
        return res.json(); 
        
     }
-  })
+  }
+
+  )
   .then(function(value) {
    console.log(value.products);
    
@@ -302,9 +306,12 @@ let formPurchaseOrder = new Object;
    eltValider.setAttribute("id","valider");
    parentMain.appendChild(eltValider);
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
-});
+}
+);
  
-})
+
+}
+)
 
 
 
