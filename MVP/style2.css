@@ -26,12 +26,12 @@ div.client-inf{
     margin-right:10px;
     
 }
-div.client-inf div#commande,div.client-inf div#panier{
+div.client-inf div#commande,div.client-inf div#panier,div.client-inf div#acueill{
     margin-right:10px;
     text-align: center;
     margin-top:20px;
 }
-div.client-inf div#commande p,div.client-inf div#panier p{
+div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acueill p{
     margin-top:20px;
     font-size:18px;
 }
