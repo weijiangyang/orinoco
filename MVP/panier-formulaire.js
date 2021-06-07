@@ -308,7 +308,9 @@ let formPurchaseOrder = new Object;
    eltValider.setAttribute("id","valider");
    parentMain.appendChild(eltValider);
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
+   
 }
+
 );
 document.getElementById("btn-link").href="commandeSuccess.html";
  
