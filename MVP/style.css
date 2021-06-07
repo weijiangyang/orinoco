@@ -27,29 +27,34 @@ div.image-logo img{
     width: 100%;
     object-fit: cover;
 }
-ul.menubar {
+div#menu-pilier{
+    display:none;
+}
+ul#menubar {
 width: 30px;
 height: 30px;
 background-color: tomato;
 opacity:1;
 position:relative;
+
+top:30px;
 }
-ul.menubar li{
+ul#menubar li{
     width: 30px;
     height: 1px;
     background-color:black ;
     position:absolute;
 }
-ul.menubar li:nth-child(1){
+ul#menubar li:nth-child(1){
     
     top:8px;
 }
-ul.menubar li:nth-child(2){
+ul#menubar li:nth-child(2){
     top:15px;
 
 }
-ul.menubar li:nth-child(3){
-    
+ul#menubar li:nth-child(3){
+    top:22px
 }
 
 div.client-inf{
@@ -69,15 +74,27 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 }
 
 @media (max-width:600px){
-    div.recherche{
-        left:-50px;
-    }
     div.image-logo{
         width: 160px;
+        
     }
-    div.recherche a{
-        width: 30px;
+    div#menu-pilier{
+        display:block;}
+    
+    ul#menubar{
+        
+        margin-right: 10px;
     }
+    ul#menu-extend{
+        display:none
+    }
+    div.client-inf{
+        display:none
+    }
+
+    
+    
+
 }
 
 /* la partie du main  */

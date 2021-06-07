@@ -95,6 +95,14 @@ function getPelucheInf(){
 }
     
 getPelucheInf();
+document.getElementById("menu-pilier").addEventListener(
+    "click",function(){
+        document.getElementById("menubar").style.display="none";
+        document.getElementById("menu-extend").setAttribute("display","block")
+    }
+)
+
+
 
 
 
