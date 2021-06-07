@@ -7,15 +7,41 @@
     <title>commande</title>
     <link rel="stylesheet" href="style4.css">
     <link rel="stylesheet" href="./iconfonts/iconfont.css">
+    <style>
+        i.iconfont{
+      font-size:30px;
+      color:rgb(202, 29, 188);
+    }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container-upper">
+          <div class="image-logo">
+            <img src="./logo.png" alt="" class="logo">
+          </div>
+          
+          <div class="client-inf">
+            <div id="commande"><a href="./commandeSuccess.html">
+              <i class='iconfont'>&#xe70c;</i>
+              <p style="font-size:18px;color:rgb(202, 29, 188)">mon commande</p></a>
+           </div>
+    
+            <div id="panier"><a href="mon-panier.html">
+              <i class='iconfont'>&#xe604;</i>
+              <p style="font-size:18px;color:rgb(202, 29, 188)">Mon panier</p></a>
+            </div>
+          </div>
+          
+        </div>
+      </header>  
     <main>
         <h1>Vos commandes</h1>
         <h2>Votre commande a bien été reçu</h2>
         <p id="infocommande">votre identifiant de commande est le :<span id="idoforder"></span>,le total de vos achats est de :<span id="priceoforder"></span> </p>
         <p>Merci de votre fidélité!</p>
 
-        <i class="iconfont" style="font-size: 40px; color:red">&#xe604;</i>
+        
 
         <script src="commande.js"></script>
     </main>

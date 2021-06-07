@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "16036550",
+      "name": "home-heart-line",
+      "font_class": "home-heart-line",
+      "unicode": "e7b5",
+      "unicode_decimal": 59317
+    },
+    {
       "icon_id": "16271659",
       "name": "购物车",
       "font_class": "gouwuche",

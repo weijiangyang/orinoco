@@ -16,4 +16,5 @@ for(let i=0; i<listOfProductsCommanded.length;i++){
     sum+=priceItem
 
 }
-priceTotalCommande.innerText = `${sum.toFixed(2)}€`;}
+priceTotalCommande.innerText = `${sum.toFixed(2)}€`;};
+localStorage.removeItem("monCommande");
