@@ -278,8 +278,11 @@ let formPurchaseOrder = new Object;
   )
   .then(function(value) {
    console.log(value.products);
+   let monCommande = new Object;
+   monCommande.orderId = value.orderId;
+   monCommande.listOfProductsCommanded = monPanier;
    
-  localStorage.setItem("monCommande",JSON.stringify(monPanier));
+  localStorage.setItem("monCommande",JSON.stringify(monCommande));
   localStorage.removeItem("monPanier")
   eltForm = document.querySelector("div#formvalidation");
   parentMain.removeChild(eltForm);
@@ -309,7 +312,6 @@ let formPurchaseOrder = new Object;
 }
 );
  
-
 }
 )
 
