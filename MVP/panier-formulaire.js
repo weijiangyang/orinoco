@@ -275,10 +275,10 @@ let formPurchaseOrder = new Object;
   .then(function(value) {
    console.log(value.products);
    
-  
+  localStorage.setItem("monCommande",JSON.stringify(monPanier));
   localStorage.removeItem("monPanier")
   eltForm = document.querySelector("div#formvalidation");
-    parentMain.removeChild(eltForm);
+  parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
    eltCommand = document.querySelector("div#command");
    parentMain.removeChild(eltMonpanier);
