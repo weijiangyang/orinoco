@@ -236,7 +236,7 @@ let formPurchaseOrder = new Object;
  if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
  &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
     
-
+    document.getElementById("btn-link").href="commandeSuccess.html";
     
     
         contact.firstName = form.nom.value;
@@ -312,7 +312,7 @@ let formPurchaseOrder = new Object;
 }
 
 );
-document.getElementById("btn-link").href="commandeSuccess.html";
+// document.getElementById("btn-link").href="commandeSuccess.html";
  
 }
 )
