@@ -1,6 +1,12 @@
 a{
     text-decoration: none;
+    
 }
+a:hover{
+    color:
+}
+
+
 /* la partie du header */
 div.client-inf{
     display:flex;

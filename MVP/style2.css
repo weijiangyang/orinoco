@@ -136,10 +136,15 @@ div.panier h3{
     border-radius: 15px;
     width: 50%;
     margin-bottom: 15px;
-    
-    
+    transition: .3s;
+}    
+#btn-panier:hover{
+    background-color:rgb(230, 191, 230)
 
-}
+
+}  
+
+
 div.container-produit{
     display:flex;
     padding-bottom:30px;
