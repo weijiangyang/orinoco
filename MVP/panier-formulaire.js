@@ -235,7 +235,6 @@ let formPurchaseOrder = new Object;
 
  if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
  &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-    document.getElementById("btn-link").href="#";
     
 
     
@@ -311,6 +310,7 @@ let formPurchaseOrder = new Object;
    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
 }
 );
+document.getElementById("btn-link").href="commandeSuccess.html";
  
 }
 )
