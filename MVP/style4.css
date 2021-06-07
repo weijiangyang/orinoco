@@ -1,0 +1,21 @@
+main{
+    width:80%;
+    margin:auto;
+    padding-top:50px
+}
+h1,h2,p{
+    text-align: center;
+    font-size: 30px;
+    color:rgb(118, 75, 219);
+}
+h2{
+    font-size:24px;
+}
+p{
+    font-size: 22px;
+}  
+
+span{
+    color:rgb(63, 16, 233);
+    font-weight: 800;
+}
