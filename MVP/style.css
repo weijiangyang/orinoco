@@ -30,15 +30,25 @@ div.image-logo img{
 div#menu-pilier{
     display:none;
 }
+ul#menu-extend{
+    display:none;
+    position: relative;
+    top:10px;
+    margin-right:20px
+}
+ul#menu-extend li{
+    margin-bottom: 15px;
+}
 ul#menubar {
 width: 30px;
 height: 30px;
-background-color: tomato;
+
 opacity:1;
 position:relative;
 
 top:30px;
 }
+
 ul#menubar li{
     width: 30px;
     height: 1px;
@@ -86,7 +96,8 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
         margin-right: 10px;
     }
     ul#menu-extend{
-        display:none
+        display:none;
+        
     }
     div.client-inf{
         display:none
