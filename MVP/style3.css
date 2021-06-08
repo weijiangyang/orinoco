@@ -7,12 +7,12 @@ ul{
 
 a#active{
     display:block;
-    border-bottom: 1px solid rgb(224, 96, 11);
-    color:rgb(224, 96, 11);
+    border-bottom: 1px solid rgb(224, 96, 11)!important;
+    color:rgb(224, 96, 11)!important;
    
 }
 a#active-extend{
-    color:rgb(224, 96, 11);
+    color:rgb(224, 96, 11)!important;
     text-decoration: underline;
 }
 
@@ -218,7 +218,7 @@ button#btn-supprimer{
     margin-left:40px;
     border-radius: 5px;
     padding:8px;
-    font-weight;
+    font-weight:bold;
     
 }
 button#btn-supprimer:hover{
@@ -288,4 +288,7 @@ input.quantity-inp{
 label{
     color:rgb(72, 17, 223);
     font-weight: bold;
+}
+.carte h2{
+    color:rgb(72, 17, 223);
 }
