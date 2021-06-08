@@ -4,15 +4,15 @@ a{
 }
 a#active{
     display:block;
-   border-bottom: 1px solid blue;
-   padding-bottom: 8px;
-}
-
-a#active-extend{
-    display:block;
-   border-bottom: 1px solid blue;
+    border-bottom: 1px solid rgb(224, 96, 11);
+    color:rgb(224, 96, 11);
    
 }
+a#active-extend{
+    color:rgb(224, 96, 11);
+    text-decoration: underline;
+}
+
 
 /* la partie du header */
 div.client-inf{
@@ -125,9 +125,16 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 /* la partie du main  */
 main{
     width: 100%;
-    margin-left:6%;
-
- }   
+}    
+div#total-produits{
+    width: 100%;
+   margin:auto;
+    display:flex;
+   
+    
+    
+}
+    
     
 
   
@@ -135,7 +142,7 @@ main{
 a.lien
 {
     display:block;
-    width: 30%;}
+    width: 32%;}
 div.peluche-carte{
     
     height: 450px;
@@ -144,7 +151,8 @@ div.peluche-carte{
     
     border-radius: 15px;
     margin-bottom:20px;
-    margin-right:10%;
+    margin-right:2.5%;
+    margin-left:10%
    
 }   
 
@@ -215,6 +223,8 @@ h1#titre{
     text-align: center;
     color:rgb(230, 30, 163);
    font-size: 30px;
+   margin:auto;
+   margin-bottom: 40px;
 }
 
 
