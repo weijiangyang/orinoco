@@ -117,11 +117,6 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     }   
     
 
-    
-    
-
-
-
 /* la partie du main  */
 main{
     width: 100%;
@@ -130,15 +125,8 @@ div#total-produits{
     width: 100%;
    margin:auto;
     display:flex;
-   
-    
-    
-}
-    
-    
-
-  
-
+}   
+ 
 a.lien
 {
     display:block;
@@ -166,7 +154,8 @@ div.peluche-carte{
     a.lien{
         width:80%;
         margin-left:8%;
-    }    
+    }   
+     
 }           
     
 

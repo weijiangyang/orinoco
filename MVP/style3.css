@@ -1,6 +1,10 @@
 body a:hover{
     text-decoration: none;
 }
+ul{
+    list-style-type: none;
+}
+
 
 
 div.client-inf{
@@ -23,6 +27,46 @@ div.image-logo{
 div.image-logo img{
     width: 100%;
     object-fit: cover;
+    box-shadow: 0 0 0 transparent;
+}
+div#menu-pilier{
+    display:none;
+}
+ul#menu-extend{
+    display:none;
+    position: relative;
+    top:10px;
+    margin-right:20px
+}
+ul#menu-extend li{
+    margin-bottom: 15px;
+}
+ul#menubar {
+width: 30px;
+height: 30px;
+
+opacity:1;
+position:relative;
+
+top:30px;
+}
+
+ul#menubar li{
+    width: 30px;
+    height: 1px;
+    background-color:black ;
+    position:absolute;
+}
+ul#menubar li:nth-child(1){
+    
+    top:8px;
+}
+ul#menubar li:nth-child(2){
+    top:15px;
+
+}
+ul#menubar li:nth-child(3){
+    top:22px
 }
 div.client-inf{
     margin-right:10px;
@@ -44,6 +88,23 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     div.image-logo{
         width: 160px;
     }
+    div#menu-pilier{
+        display:block;}
+    
+    ul#menubar{
+        
+        margin-right: 50px;
+        top:10px;
+    }
+    ul#menu-extend{
+        display:none;
+        margin-bottom: 10px;
+        
+    }
+    div.client-inf{
+        display:none;
+    }
+    
    
 }
 main{
@@ -89,9 +150,9 @@ img{
     object-fit: cover;
     display: block;
     box-shadow: 1px 1px 5px pink;
+}    
     
-    
-}
+
 
 .info-produit{
     width: 80%;
