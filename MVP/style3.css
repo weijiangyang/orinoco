@@ -5,7 +5,16 @@ ul{
     list-style-type: none;
 }
 
-
+a#active{
+    display:block;
+    border-bottom: 1px solid rgb(224, 96, 11);
+    color:rgb(224, 96, 11);
+   
+}
+a#active-extend{
+    color:rgb(224, 96, 11);
+    text-decoration: underline;
+}
 
 div.client-inf{
     display:flex;
@@ -83,7 +92,7 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 }
 
 
-@media (max-width:600px){
+@media (max-width:800px){
     
     div.image-logo{
         width: 160px;
@@ -98,12 +107,26 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     }
     ul#menu-extend{
         display:none;
-        margin-bottom: 10px;
         
     }
+    ul#menu-extend li{
+        margin-bottom: 5px;
+    }   
+        
+    
     div.client-inf{
         display:none;
     }
+    .carte{
+        flex-direction: column;
+    }
+    div.image-produit{
+        width: 100%;
+    }
+    div#formvalidation{
+        width: 100%!important;
+    }
+    
     
    
 }
