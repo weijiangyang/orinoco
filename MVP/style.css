@@ -110,12 +110,13 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     
     
 
-}
+
 
 /* la partie du main  */
 main{
     width: 100%;
-    margin-left:2.5%
+    margin-left:2.5%;
+
  }   
     
 
