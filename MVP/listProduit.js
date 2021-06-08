@@ -97,9 +97,18 @@ function getPelucheInf(){
 getPelucheInf();
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
-        document.getElementById("menubar").style.display="none";
+        // document.getElementById("menubar").style.display="none";
         document.getElementById("menu-extend").style.display="block";
-    }
+        // document.getElementById("second-bar").style.display="none";
+        document.getElementById("first-bar").style.transform="rotateZ(30deg)";
+        document.getElementById("third-bar").style.transform="rotateZ(-30deg)";
+        document.getElementById("first-bar").style.transformOrigin="left";
+        document.getElementById("second-bar").style.display="none";
+        document.getElementById("third-bar").style.transformOrigin="left";
+        document.getElementById("first-bar").style.transition="left";
+        }
+        
+    
 )
 
 

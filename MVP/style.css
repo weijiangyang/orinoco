@@ -100,8 +100,12 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
         
     }
     div.client-inf{
-        display:none
+        display:none;
     }
+    
+    
+    }   
+    
 
     
     
