@@ -142,10 +142,11 @@ div.monpanier{
     margin:auto;
    
 }
-/* h1{
-    font-size:28px;
-    color:blue
-} */
+h1{
+    font-size:68px;
+    color:blue;
+    margin-bottom: 50px;
+}
 
 .carte{
     
@@ -160,6 +161,7 @@ div.monpanier{
     border-right: transparent;
     background-color: white;
     margin: auto;
+    
     
 
     
@@ -217,24 +219,20 @@ button#btn-supprimer{
     border-radius: 5px;
     
 }
-
-
-#btn-continuer{
-    font-size: 20px;
-    text-align: center;
-   padding:10px;
-    width: 70%;
-    margin:auto;
-    background-color: rgb(158, 187, 182);
-    border-radius: 15px;
-    margin-top: 15px;
-   
+button#btn-supprimer:hover{
+    background-color:rgb(211, 221, 70);
 }
+
+
+
 #btn-continuer{
     margin-top:20px;
     background-color:rgb(221, 179, 187) ;
     width: 50%;
     max-width: 300px;
+}
+#btn-continuer:hover{
+    background-color: tomato;
 }
 #pricetotal{
     font-size:20px;

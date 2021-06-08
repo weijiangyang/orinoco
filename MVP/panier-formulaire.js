@@ -28,7 +28,24 @@ if(monPanier==null|| monPanier.length==0){
    eltValider = document.createElement("div");
    eltValider.setAttribute("id","valider");
    parentMain.appendChild(eltValider);
-   eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!"
+   eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
+   document.getElementById("menu-pilier").addEventListener(
+    "click",function(){
+        // document.getElementById("menubar").style.display="none";
+        document.getElementById("menu-extend").style.display="block";
+        // document.getElementById("second-bar").style.display="none";
+        document.getElementById("third-bar").style.transformOrigin="left";
+        document.getElementById("first-bar").style.transformOrigin="left";
+        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
+        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
+        document.getElementById("third-bar").style.transition=".2s";
+        document.getElementById("first-bar").style.transition=".2s";
+        
+        document.getElementById("second-bar").style.display="none";
+        
+        document.getElementById("first-bar").style.transition="left";
+        }
+)        
   
 }else{
 
@@ -333,9 +350,9 @@ document.getElementById("menu-pilier").addEventListener(
         
         document.getElementById("first-bar").style.transition="left";
         }
-        
+)        
     
-)
+
 
 
 
