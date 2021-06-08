@@ -62,6 +62,7 @@ div.image-logo{
 div.image-logo img{
     width: 100%;
     object-fit: cover;
+    
 }
 div.client-inf{
     margin-right:10px;
@@ -78,16 +79,17 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 }
 
 div.image-container{
-    width:30%;border:1px solid red;
+    width:30%;
+    border:1px solid transparent;
 }
 img#image-peluche{
-    display:inline-block;
-    
+    display:block;
+    width: 100%;
     
     object-fit: cover;
 }
 div.produit-choix{
-    width: 60%;
+    width: 35%;
     margin:auto;
  }   
 div.produit-choix h3{
@@ -99,7 +101,7 @@ div.produit-choix p#desp-peluche{
     font-size: 20px;
     margin-bottom: 15px;
 }
-div.produit-choix p#firsprice-peluche{
+div.produit-choix p#price-peluche{
     font-size:24px;
     margin-bottom:24px;
 }
@@ -128,7 +130,7 @@ select, option{
 
 }
 div.panier{
-    width: 30%;
+    width: 25%;
     margin:auto;
    
 }
@@ -143,11 +145,12 @@ div.panier h3{
     font-size:20px;
     color:blue;
     background-color:#F2E8F0;
-    padding:10px 5px 10px 15px;
+    padding:10px 5px 10px 5px;
     border-radius: 15px;
-    width: 50%;
+    width: 100%;
     margin-bottom: 15px;
     transition: .3s;
+    margin-leftauto;
 }    
 #btn-panier:hover{
     background-color:rgb(230, 191, 230)
@@ -158,12 +161,12 @@ div.panier h3{
 
 div.container-produit{
     display:flex;
-   
+   align-items: center;
     padding-bottom:30px;
     border-bottom:1px solid red;
     
 }
-@media (max-width:600px){
+@media (max-width:1000px){
     
     div.image-logo{
         width: 160px;
@@ -187,6 +190,19 @@ div.container-produit{
     }
     div.container-produit{
         flex-direction: column;
+        
     }
+    div.produit-choix{
+        width: 80%;
+        margin-bottom: 50px;
+        margin-top:40px;
+    }
+    div.panier{
+        width: 80%;
+    }
+    div.image-container{
+        width: 80%;
+    }
+    
     
 }
