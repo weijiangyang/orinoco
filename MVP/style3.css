@@ -224,16 +224,22 @@ button#btn-supprimer:hover{
 }
 
 
-
 #btn-continuer{
-    margin-top:20px;
+    font-size: 20px;
+    text-align: center;
+   padding:15px;
+    width: 70%;
+    margin:auto;
+   
+    border-radius: 15px;
+    margin-top: 15px;
+   margin-top:20px;
     background-color:rgb(221, 179, 187) ;
-    width: 50%;
-    max-width: 300px;
+    max-width: 300px
+    ;
 }
-#btn-continuer:hover{
-    background-color: tomato;
-}
+
+
 #pricetotal{
     font-size:20px;
     
