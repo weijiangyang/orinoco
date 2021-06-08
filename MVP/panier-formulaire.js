@@ -107,7 +107,8 @@ btn.addEventListener("click",function(){
 
 console.log(sum);
 
-priceTotal = document.getElementById("pricetotal");
+priceTotal = document.createElement("p");
+priceTotal.setAttribute("id","pricetotal")
 parentMonpanier = document.querySelector("div.monpanier");
 parentMonpanier.appendChild(priceTotal);
 priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";

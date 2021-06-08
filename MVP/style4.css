@@ -1,6 +1,20 @@
 a{
     text-decoration: none;
 }
+ul{
+    list-style-type: none;
+}
+
+a#active{
+    display:block;
+    border-bottom: 1px solid rgb(224, 96, 11);
+    color:rgb(224, 96, 11);
+   
+}
+a#active-extend{
+    color:rgb(224, 96, 11);
+    text-decoration: underline;
+}
 /* la partie du header */
 div.client-inf{
     display:flex;
@@ -23,6 +37,45 @@ div.image-logo img{
     width: 100%;
     object-fit: cover;
 }
+div#menu-pilier{
+    display:none;
+}
+ul#menu-extend{
+    display:none;
+    position: relative;
+    top:10px;
+    margin-right:20px
+}
+ul#menu-extend li{
+    margin-bottom: 15px;
+}
+ul#menubar {
+width: 30px;
+height: 30px;
+
+opacity:1;
+position:relative;
+
+top:30px;
+}
+
+ul#menubar li{
+    width: 30px;
+    height: 1px;
+    background-color:black ;
+    position:absolute;
+}
+ul#menubar li:nth-child(1){
+    
+    top:8px;
+}
+ul#menubar li:nth-child(2){
+    top:15px;
+
+}
+ul#menubar li:nth-child(3){
+    top:22px
+}
 div.client-inf{
     margin-right:10px;
     
@@ -37,18 +90,8 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     font-size:18px;
 }
 
-@media (max-width:600px){
-    div.recherche{
-        left:-50px;
-    }
-    div.image-logo{
-        width: 160px;
-    }
-    div.recherche a{
-        width: 30px;
-    }
-}
 
+    
 
 
 
@@ -74,3 +117,29 @@ span{
     color:rgb(63, 16, 233);
     font-weight: 800;
 }
+@media (max-width:800px){
+    
+    div.image-logo{
+        width: 160px;
+    }
+    div#menu-pilier{
+        display:block;}
+    
+    ul#menubar{
+        
+        margin-right: 50px;
+        top:10px;
+    }
+    ul#menu-extend{
+        display:none;
+        
+    }
+    ul#menu-extend li{
+        margin-bottom: 5px;
+    }   
+        
+    
+    div.client-inf{
+        display:none;
+    }
+    
