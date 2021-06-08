@@ -78,6 +78,7 @@ eltN.innerHTML= monPanier[i].name;
 eltD = document.createElement("p");
 eltD.setAttribute("class","desp-produit");
 eltD.setAttribute("id",`desp-produit-${i}`);
+
 eltT.appendChild(eltD);
 eltD.innerHTML = monPanier[i].description;
 
@@ -85,6 +86,7 @@ eltP = document.createElement("p");
 eltP.setAttribute ("class","price-produit");
 eltP.setAttribute("id",`price-produit-${i}`);
 eltT.appendChild(eltP);
+
 eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
 eltC = document.createElement("p");
 eltC.setAttribute("class","color-produit");
@@ -105,6 +107,7 @@ eltI.setAttribute("value",monPanier[i].quantity);
 
 pItemTotal = document.createElement("p");
 pItemTotal.setAttribute("id",`pItemTotal-${i}`);
+pItemTotal.setAttribute("class","totalprice-produit");
 eltT.appendChild(pItemTotal);
 pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
 sum+=(monPanier[i].quantity)*(monPanier[i].price/100);

@@ -126,6 +126,9 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     div#formvalidation{
         width: 100%!important;
     }
+    div.info-produit{
+        margin-left:20px;
+    }
     
     
    
@@ -161,9 +164,6 @@ h1{
     border-right: transparent;
     background-color: white;
     margin: auto;
-    
-    
-
     
     
 }
@@ -217,6 +217,8 @@ button#btn-supprimer{
     background-color:rgb(216, 179, 207);
     margin-left:40px;
     border-radius: 5px;
+    padding:8px;
+    font-weight;
     
 }
 button#btn-supprimer:hover{
@@ -269,4 +271,21 @@ div.vide
     font-size:18px;
     margin-top:16px;
     color:rgb(218, 102, 121);
+}
+p.desp-produit{
+    color:rgb(72, 17, 223);
+    margin-bottom:20px
+}
+p.price-produit,p.color-produit,p.totalprice-produit{
+    color:rgb(72, 17, 223);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+input.quantity-inp{
+    color:rgb(72, 17, 223);
+    font-weight: bold;
+}
+label{
+    color:rgb(72, 17, 223);
+    font-weight: bold;
 }
