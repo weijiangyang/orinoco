@@ -142,6 +142,10 @@ div.monpanier{
     margin:auto;
    
 }
+/* h1{
+    font-size:28px;
+    color:blue
+} */
 
 .carte{
     
@@ -164,7 +168,7 @@ div.monpanier{
 .image-produit{
     width: 20%;
     display:flex;
-   
+   margin-right:30px;
     align-items: center;
 }
 

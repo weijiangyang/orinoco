@@ -8,9 +8,8 @@ if(monPanier==null|| monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
    eltMonpanier = document.querySelector("div.monpanier");
-   eltCommand = document.querySelector("div#command");
-   parentMain.removeChild(eltMonpanier);
-   parentMain.removeChild(eltCommand);
+
+    document.querySelector("div.monpanier").innerHTML = "";
    eltVide = document.createElement("div");
    eltVide.setAttribute("class","vide");
    parentMain.appendChild(eltVide);
