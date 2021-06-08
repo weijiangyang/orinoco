@@ -1,3 +1,44 @@
+
+div#menu-pilier{
+    display:none;
+}
+ul#menu-extend{
+    display:none;
+    position: relative;
+    top:10px;
+    margin-right:20px
+}
+ul#menu-extend li{
+    margin-bottom: 15px;
+}
+ul#menubar {
+width: 30px;
+height: 30px;
+
+opacity:1;
+position:relative;
+
+top:30px;
+}
+
+ul#menubar li{
+    width: 30px;
+    height: 1px;
+    background-color:black ;
+    position:absolute;
+}
+ul#menubar li:nth-child(1){
+    
+    top:8px;
+}
+ul#menubar li:nth-child(2){
+    top:15px;
+
+}
+ul#menubar li:nth-child(3){
+    top:22px
+}
+
 div.client-inf{
     display:flex;
 }
@@ -35,48 +76,18 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     margin-top:20px;
     font-size:18px;
 }
-div.recherche {
-    width: 40%;
-    position: relative;
-}
-div.recherche input{
-    width: 100%;
-    height: 50px;
-    margin-top:50px;
-    border:1px solid black;
-    
-}    
-div.recherche a{
-    display:block;
-    position:absolute;
-    width: 50px;
-    height: 52px;
-    border-left:1px solid black;
-    text-align: center;
-    line-height:50px;
-    right: -5px;;
-    top:50px;
-    font-size:20px;
-}
-@media (max-width:600px){
-    div.recherche{
-        left:-50px;
-    }
-    div.image-logo{
-        width: 160px;
-    }
-    div.recherche a{
-        width: 30px;
-    }
-}
 
+div.image-container{
+    width:30%;border:1px solid red;
+}
 img#image-peluche{
     display:inline-block;
-    width: 30%;
-    border:1px solid red;
+    
+    
+    object-fit: cover;
 }
 div.produit-choix{
-    width: 30%;
+    width: 60%;
     margin:auto;
  }   
 div.produit-choix h3{
@@ -147,6 +158,35 @@ div.panier h3{
 
 div.container-produit{
     display:flex;
+   
     padding-bottom:30px;
     border-bottom:1px solid red;
+    
+}
+@media (max-width:600px){
+    
+    div.image-logo{
+        width: 160px;
+    }
+    
+    div#menu-pilier{
+        display:block;}
+    
+    ul#menubar{
+        
+        margin-right: 10px;
+        top:10px;
+
+    }
+    ul#menu-extend{
+        display:none;
+        
+    }
+    div.client-inf{
+        display:none;
+    }
+    div.container-produit{
+        flex-direction: column;
+    }
+    
 }
