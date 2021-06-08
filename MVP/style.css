@@ -115,7 +115,7 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 /* la partie du main  */
 main{
     width: 100%;
-    margin-left:2.5%;
+    margin-left:6%;
 
  }   
     
@@ -134,7 +134,7 @@ div.peluche-carte{
     
     border-radius: 15px;
     margin-bottom:20px;
-    margin-right:2.5%;
+    margin-right:10%;
    
 }   
 
