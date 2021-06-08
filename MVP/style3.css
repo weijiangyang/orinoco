@@ -129,7 +129,10 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     div.info-produit{
         margin-left:20px;
     }
-    
+    footer{
+        flex-direction:column;
+        padding-left:50px
+    } 
     
    
 }
@@ -291,4 +294,35 @@ label{
 }
 .carte h2{
     color:rgb(72, 17, 223);
+}
+footer{
+    display:flex;
+    width: 100%;
+   justify-content: space-around;
+   border-top:1px solid pink;
+   margin:auto;
+  
+   background-color: #F2E8F0;
+   padding-top:20px;
+   padding-bottom:30px;
+}
+footer h2{
+    font-size:22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color:rgb(230, 30, 163)
+}
+
+footer li{
+    font-size:18px;
+    margin-bottom: 10px;
+    color:rgb(161, 56, 126);
+}
+
+footer ul.contact{
+    display:flex
+}
+footer ul.contact li i{
+    font-size: 28px;
+    margin-right:20px;
 }

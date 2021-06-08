@@ -99,7 +99,8 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 main{
     width:80%;
     margin:auto;
-    padding-top:50px
+    padding-top:50px;
+    margin-bottom:200px;
 }
 h1,h2,p{
     text-align: center;
@@ -111,6 +112,7 @@ h2{
 }
 p{
     font-size: 22px;
+
 }  
 
 span{
@@ -142,4 +144,47 @@ span{
     div.client-inf{
         display:none;
     }
+    footer{
+        flex-direction:column;
+        padding-left:50px
+    } 
+    footer h2{
+        text-align: left;
+        margin-left: 30px;
+    }
+    
+    
+}
+footer{
+    display:flex;
+    width: 100%;
+   justify-content: space-around;
+   border-top:1px solid pink;
+   margin:auto;
+   
+   background-color: #F2E8F0;
+   padding-top:20px;
+   padding-bottom:70px;
+}
+footer h2{
+    font-size:22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color:rgb(230, 30, 163);
+   
+}
+
+footer li{
+    font-size:18px;
+    margin-bottom: 10px;
+    color:rgb(161, 56, 126);
+
+}
+
+footer ul.contact{
+    display:flex
+}
+footer ul.contact li i{
+    font-size: 28px;
+    margin-right:20px;
 }
