@@ -1,7 +1,7 @@
 i.iconfont{
     font-size:30px;
     color:rgb(202, 29, 188);
-  }
+}
 div#menu-pilier{
     display:none;
 }
@@ -17,13 +17,10 @@ ul#menu-extend li{
 ul#menubar {
 width: 30px;
 height: 30px;
-
 opacity:1;
 position:relative;
-
 top:30px;
 }
-
 ul#menubar li{
     width: 30px;
     height: 1px;
@@ -31,12 +28,10 @@ ul#menubar li{
     position:absolute;
 }
 ul#menubar li:nth-child(1){
-    
     top:8px;
 }
 ul#menubar li:nth-child(2){
     top:15px;
-
 }
 ul#menubar li:nth-child(3){
     top:22px
@@ -55,7 +50,6 @@ div.container-upper{
     justify-content: space-between;
     background-color: #F2E8F0;
     margin-bottom: 30px;
-    
 }
 div.image-logo{
     margin-left:20px;
@@ -65,12 +59,10 @@ div.image-logo{
 div.image-logo img{
     width: 100%;
     object-fit: cover;
-    
 }
 div.client-inf{
     margin-right:10px;
-    
-}
+}    
 div.client-inf div#commande,div.client-inf div#panier,div.client-inf div#acueill{
     margin-right:10px;
     text-align: center;
@@ -80,7 +72,6 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     margin-top:20px;
     font-size:18px;
 }
-
 div.image-container{
     width:30%;
     border:1px solid transparent;
@@ -89,7 +80,6 @@ div.image-container{
 img#image-peluche{
     display:block;
     width: 100%;
-    
     object-fit: cover;
 }
 div.produit-choix{
@@ -114,39 +104,33 @@ div.produit-choix p#price-peluche{
 #label-couleur{
     margin-top:16px;
     font-size: 20px;
-    
 }
-#form-selection{
 
+#form-selection{
     margin-top:20px;
     font-size:20px;
 }
+    
 #quantity{
     font-size:20px;
-    
     margin-top:20px;
 }
 #quantity-select {
     font-size:20px;
 }
 select, option{
-    
     color:blue;
-
 }
 div.panier{
     width: 25%;
     margin:auto;
-   
 }
 div.panier h3{
     font-size:20px;
     margin-bottom:25px;
 }
 
-#btn-panier
-
-{
+#btn-panier{
     font-size:20px;
     color:blue;
     background-color:#F2E8F0;
@@ -160,43 +144,32 @@ div.panier h3{
 }    
 #btn-panier:hover{
     background-color:rgb(230, 191, 230)
-
-
-}  
-
-
+} 
 div.container-produit{
     display:flex;
-   align-items: center;
+    align-items: center;
     padding-bottom:30px;
-   
-    
-}
+}   
+ 
 @media (max-width:800px){
-    
     div.image-logo{
         width: 160px;
     }
-    
     div#menu-pilier{
-        display:block;}
-    
+        display:block;
+    }
     ul#menubar{
-        
         margin-right: 10px;
         top:10px;
-
     }
     ul#menu-extend{
         display:none;
-        
     }
     div.client-inf{
         display:none;
     }
     div.container-produit{
         flex-direction: column;
-        
     }
     div.produit-choix{
         width: 80%;
@@ -213,16 +186,15 @@ div.container-produit{
         flex-direction:column;
         padding-left:50px
     } 
+}    
     
-    
-}
+
 footer{
     display:flex;
     width: 100%;
    justify-content: space-around;
    border-top:1px solid pink;
    margin:auto;
-   
    background-color: #F2E8F0;
    padding-top:20px;
    padding-bottom:80px;
@@ -233,13 +205,11 @@ footer h2{
     margin-bottom: 15px;
     color:rgb(230, 30, 163)
 }
-
 footer li{
     font-size:18px;
     margin-bottom: 10px;
     color:rgb(161, 56, 126);
 }
-
 footer ul.contact{
     display:flex
 }
