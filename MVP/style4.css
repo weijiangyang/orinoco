@@ -9,7 +9,6 @@ a#active{
     display:block;
     border-bottom: 1px solid rgb(224, 96, 11);
     color:rgb(224, 96, 11);
-   
 }
 a#active-extend{
     color:rgb(224, 96, 11);
@@ -26,7 +25,6 @@ div.container-upper{
     justify-content: space-between;
     background-color: #F2E8F0;
     margin-bottom: 30px;
-    
 }
 div.image-logo{
     margin-left:20px;
@@ -52,10 +50,8 @@ ul#menu-extend li{
 ul#menubar {
 width: 30px;
 height: 30px;
-
 opacity:1;
 position:relative;
-
 top:30px;
 }
 
@@ -66,19 +62,16 @@ ul#menubar li{
     position:absolute;
 }
 ul#menubar li:nth-child(1){
-    
     top:8px;
 }
 ul#menubar li:nth-child(2){
     top:15px;
-
 }
 ul#menubar li:nth-child(3){
     top:22px
 }
 div.client-inf{
     margin-right:10px;
-    
 }
 div.client-inf div#commande,div.client-inf div#panier,div.client-inf div#acueill{
     margin-right:30px;
@@ -90,12 +83,11 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     font-size:18px;
 }
 
-
+i.iconfont{
+    font-size:30px;
+    color:rgb(202, 29, 188);
+}
     
-
-
-
-
 main{
     width:80%;
     margin:auto;
@@ -112,35 +104,30 @@ h2{
 }
 p{
     font-size: 22px;
-
 }  
-
 span{
     color:rgb(63, 16, 233);
     font-weight: 800;
 }
 @media (max-width:800px){
-    
     div.image-logo{
         width: 160px;
     }
     div#menu-pilier{
-        display:block;}
+        display:block;
+    }
     
     ul#menubar{
-        
         margin-right: 50px;
         top:10px;
     }
     ul#menu-extend{
         display:none;
-        
     }
     ul#menu-extend li{
         margin-bottom: 5px;
     }   
         
-    
     div.client-inf{
         display:none;
     }
@@ -152,33 +139,27 @@ span{
         text-align: left;
         margin-left: 30px;
     }
-    
-    
-}
+ }
 footer{
     display:flex;
     width: 100%;
-   justify-content: space-around;
-   border-top:1px solid pink;
-   margin:auto;
-   
-   background-color: #F2E8F0;
-   padding-top:20px;
-   padding-bottom:70px;
+    justify-content: space-around;
+    border-top:1px solid pink;
+    margin:auto;
+    background-color: #F2E8F0;
+    padding-top:20px;
+    padding-bottom:70px;
 }
 footer h2{
     font-size:22px;
     font-weight: bold;
     margin-bottom: 15px;
     color:rgb(230, 30, 163);
-   
-}
-
+}   
 footer li{
     font-size:18px;
     margin-bottom: 10px;
     color:rgb(161, 56, 126);
-
 }
 
 footer ul.contact{
