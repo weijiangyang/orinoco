@@ -9,84 +9,70 @@
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./fa/css/all.css">
     <link rel="stylesheet" href="./iconfonts/iconfont.css">
-    <style>
-      i.iconfont{
-        font-size:30px;
-        color:rgb(202, 29, 188);
-      }
-     
-      
-    </style>
 </head>
 <body>
     <header>
-        <div class="container-upper">
-          <div class="image-logo">
-            
-            <img src="./logo.png" alt="" class="logo">
-          
-          </div>
-          <div id="menu-pilier">
-            <ul id="menubar">
-              <li id="first-bar"></li>
-              <li id="second-bar"></li>
-              <li id="third-bar"></li>
-            </ul>
-            <ul id="menu-extend" >
-              <a href="index.html" id="active-extend" style="color:rgb(202, 29, 188)"><li >Accueil</li></a>
-              <a href="commandeSuccess.html" style="color:rgb(202, 29, 188)"><li>Mon commande</li></a>
-              <a href="mon-panier.html" style="color:rgb(202, 29, 188)"><li>Mon panier</li></a>
-            </ul>
-      </div>      
-          
-          <div class="client-inf">
-            <div class="client-inf">
-              <div id="acueill"><a href="index.html">
-                <i class='iconfont'>&#xe7b5;</i>
-                <p style="font-size:18px;color:rgb(202, 29, 188)">Acueill</p></a>
-             </div>
-            <div id="commande"><a href="commandeSuccess.html">
-              <i class='iconfont'>&#xe70c;</i>
-              <p style="font-size:18px;color:rgb(202, 29, 188)">mon commande</p></a>
-           </div>
-    
-            <div id="panier"><a href="mon-panier.html">
-              <i class='iconfont'>&#xe604;</i>
-              <p style="font-size:18px;color:rgb(202, 29, 188)">Mon panier</p></a>
-            </div>
-          </div>
-          
+      <div class="container-upper">
+        <div class="image-logo">
+          <img src="./logo.png" alt="" class="logo">
         </div>
-      </header>  
-      <main>
-        <div class="container-produit">
-          <div class="image-container">
-            <img src="" alt="" id="image-peluche">
+        <div id="menu-pilier">
+          <ul id="menubar">
+            <li id="first-bar"></li>
+            <li id="second-bar"></li>
+            <li id="third-bar"></li>
+          </ul>
+          <ul id="menu-extend" >
+            <a href="index.html" id="active-extend" style="color:rgb(202, 29, 188)"><li >Accueil</li></a>
+            <a href="commandeSuccess.html" style="color:rgb(202, 29, 188)"><li>Mon commande</li></a>
+            <a href="mon-panier.html" style="color:rgb(202, 29, 188)"><li>Mon panier</li></a>
+          </ul>  
+        </div>      
+        <div class="client-inf">
+          <div id="acueill"><a href="index.html">
+            <i class='iconfont'>&#xe7b5;</i>
+            <p style="font-size:18px;color:rgb(202, 29, 188)">Acueill</p></a>
           </div>
-          <div class="produit-choix">
-            <h3 id="title-peluche"></h3>
-            <p id="desp-peluche"></p>
-            <p id="price-peluche"></p>
-            <label for="form-selection" id='label-couleur' >Couleurs:
-              <select name="selection" id="form-selection">
-                <option value="">---selectionner---</option>
-                
-               </select> 
-            </label>
-               <form for="quantity-select" id='quantity'>
-                  Quantity:
-                  <input type="number" min=0 id='quantity-select'>
-                
-               </form>
-          </div>   
-          <div class="panier">
-            <h3>Pour acheter, selectionner les couleurs et remplir la quantity</h3>
-            <div  id='btn-panier'><a href="#" id="link-btn-panier"><i class='iconfont'>&#xe604;</i>&nbsp &nbsp Ajouter au panier</a></div>
+          <div id="commande"><a href="commandeSuccess.html">
+            <i class='iconfont'>&#xe70c;</i>
+            <p style="font-size:18px;color:rgb(202, 29, 188)">mon commande</p></a>
+          </div>
+          <div id="panier"><a href="mon-panier.html">
+            <i class='iconfont'>&#xe604;</i>
+            <p style="font-size:18px;color:rgb(202, 29, 188)">Mon panier</p></a>
+          </div>
+        </div>  
+      </div>
+    </header>      
+      
+    <main>
+      <div class="container-produit">
+        <div class="image-container">
+          <img src="" alt="" id="image-peluche">
+        </div>
+        <div class="produit-choix">
+          <h3 id="title-peluche"></h3>
+          <p id="desp-peluche"></p>
+          <p id="price-peluche"></p>
+          <label for="form-selection" id='label-couleur' >Couleurs:
+            <select name="selection" id="form-selection">
+              <option value="">---selectionner---</option>
+            </select>     
+          </label>
+          <form for="quantity-select" id='quantity'>
+            Quantity:
+            <input type="number" min=0 id='quantity-select'>
+          </form>      
+        </div>        
             
-            <!-- <a href=""><button type="submit" id="btn-continuer">  Continuer mon shopping</button></a> -->
-          </div>
-          </div>
-          </main>
+        <div class="panier">
+          <h3>Pour acheter, selectionner les couleurs et remplir la quantity</h3>
+          <div  id='btn-panier'><a href="#" id="link-btn-panier"><i class='iconfont'>&#xe604;</i>&nbsp &nbsp Ajouter au panier</a></div>  
+        </div>    
+      </div>      <!-- <a href=""><button type="submit" id="btn-continuer">  Continuer mon shopping</button></a> --
+    </main>      
+          
+          
           <footer>
             <div class="container-societe">
               <h2>NOTRE SOCIETE</h2>
