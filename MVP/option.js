@@ -10,7 +10,7 @@ for (let color of typesColor){
     parentP.appendChild(eltOption);
     eltOption.setAttribute("class","color-peluche");
     eltOption.innerHTML=color;
-    // eltOption.style.backgroundColor=color;
+    
     eltOption.style.color = "black";
  }   
 
@@ -79,6 +79,9 @@ document.getElementById("menu-pilier").addEventListener(
         
     
 )
+
+let btnPanier = document.getElementById("btn-panier");
+let A = document.createElement("a");
     
    
 
