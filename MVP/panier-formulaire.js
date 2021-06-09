@@ -46,20 +46,20 @@ if(monPanier==null|| monPanier.length==0){
 }else{
     let sum = 0;
     for (let i=0;i<monPanier.length;i++){
-        parentD = document.createElement("div");
-        parentD.setAttribute("class","carte");
-        parentD.setAttribute("id",`carte-${i}`)
-        parentPanierInf.appendChild(parentD);
+        parentCarte = document.createElement("div");
+        parentCarte.setAttribute("class","carte");
+        parentCarte.setAttribute("id",`carte-${i}`)
+        parentPanierInf.appendChild(parentCarte);
         eltImage = document.createElement("div");
         eltImage.setAttribute("class","image-produit");
-        parentD.appendChild(eltImage);
+        parentCarte.appendChild(eltImage);
         eltImg=document.createElement("img");
         eltImg.src=monPanier[i].imageUrl;
         eltImage.appendChild(eltImg);
         eltT = document.createElement("div");
         eltT.setAttribute("class","info-produit");
         eltT.setAttribute("id",`infor-produit-${i}`)
-        parentD.appendChild(eltT);
+        parentCarte.appendChild(eltT);
         eltN = document.createElement("h2");
         eltN.setAttribute("id","nom-peluche")
         eltT.appendChild(eltN);
@@ -99,11 +99,11 @@ if(monPanier==null|| monPanier.length==0){
         btn.innerHTML = "Supprimer";
         btn.setAttribute("id","btn-supprimer");
         btn.addEventListener("click",function(){
-        monPanier.splice(i,i+1);
-        localStorage.setItem("monPanier",JSON.stringify(monPanier));
-        location.reload();
-        }
-    )
+            monPanier.splice(i,i+1);
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            location.reload();
+            }
+        )
         priceTotal = document.createElement("p");
         priceTotal.setAttribute("id","pricetotal")
         parentMonpanier = document.querySelector("div.monpanier");
@@ -137,7 +137,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
         }
-    }        
+        }        
  
         let form = document.getElementById("loginForm");
         form.email.addEventListener("change",function(){
