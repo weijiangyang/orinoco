@@ -1,5 +1,3 @@
-// console.log(JSON.parse(localStorage.getItem("produits")));
-
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
@@ -105,165 +103,165 @@ if(monPanier==null|| monPanier.length==0){
             }
         )
     }
-        priceTotal = document.createElement("p");
-        priceTotal.setAttribute("id","pricetotal")
-        parentMonpanier = document.querySelector("div.monpanier");
-        parentMonpanier.appendChild(priceTotal);
-        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+    priceTotal = document.createElement("p");
+    priceTotal.setAttribute("id","pricetotal")
+    parentMonpanier = document.querySelector("div.monpanier");
+    parentMonpanier.appendChild(priceTotal);
+    priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
 
-        eltLienContinuer = document.createElement("a");
-        eltLienContinuer.setAttribute("id","lien-continuer");
-        eltLienContinuer.setAttribute("href","index.html");
-        parentMonpanier.appendChild(eltLienContinuer);
-    
-        eltBtnContinue = document.createElement("div");
-        eltBtnContinue.setAttribute("id","btn-continuer");
-        eltLienContinuer.appendChild(eltBtnContinue);
-        eltBtnContinue.innerHTML = "Continuer mon shopping";
-    
-        let p = document.getElementsByClassName("quantity-inp");
-        for (let i=0;i<p.length; i++){
-            p[i].addEventListener("change",function(){
-                monPanier[i].quantity = p[i].value;
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                eltP = document.getElementById(`price-produit-${i}`);
-                eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-                pItemTotal = document.getElementById(`pItemTotal-${i}`);
-                pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-                sum = 0;
-                for(let i=0;i<monPanier.length;i++){
-                    sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-                    }
-                priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+    eltLienContinuer = document.createElement("a");
+    eltLienContinuer.setAttribute("id","lien-continuer");
+    eltLienContinuer.setAttribute("href","index.html");
+    parentMonpanier.appendChild(eltLienContinuer);
+
+    eltBtnContinue = document.createElement("div");
+    eltBtnContinue.setAttribute("id","btn-continuer");
+    eltLienContinuer.appendChild(eltBtnContinue);
+    eltBtnContinue.innerHTML = "Continuer mon shopping";
+
+    let p = document.getElementsByClassName("quantity-inp");
+    for (let i=0;i<p.length; i++){
+        p[i].addEventListener("change",function(){
+            monPanier[i].quantity = p[i].value;
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            eltP = document.getElementById(`price-produit-${i}`);
+            eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+            pItemTotal = document.getElementById(`pItemTotal-${i}`);
+            pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+            sum = 0;
+            for(let i=0;i<monPanier.length;i++){
+                sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
                 }
-            )
-        }
-                
- 
-        let form = document.getElementById("loginForm");
-        form.email.addEventListener("change",function(){
-            validEmail(this);
+            priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
             }
         )
+    }
+                
+ 
+    let form = document.getElementById("loginForm");
+    form.email.addEventListener("change",function(){
+        validEmail(this);
+        }
+    )
 
-        const validEmail = function(inputEmail){
-            let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
-            let small = inputEmail.nextElementSibling;
-            if(emailRegExp.test(inputEmail.value)){
-                small.innerHTML = "Email valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;}else{
-                small.innerHTML = "Email non valide";
+    const validEmail = function(inputEmail){
+        let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
+        let small = inputEmail.nextElementSibling;
+        if(emailRegExp.test(inputEmail.value)){
+            small.innerHTML = "Email valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;}else{
+            small.innerHTML = "Email non valide";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+            }
+        }    
+
+    form.adresse.addEventListener("change",function(){
+        validAdresse(this);
+        }
+    )
+
+    const validAdresse = function(inputAdresse){
+        let adresseRegExp = new RegExp('^[0-9]{1,}[a-zA-Z]','g');
+        let small = inputAdresse.nextElementSibling;
+        if(adresseRegExp.test(inputAdresse.value)){
+            small.innerHTML = "Adresse valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Adresse non valide doit contenir des chiffres et puis des lettres";
+                small.classList.remove("text-success");
+                small.classList.add("text-danger");
+                return false
+            }
+        }
+    form.codepostale.addEventListener("change",function(){
+        validCodePostale(this);
+        }
+    )
+                    
+    const validCodePostale = function(inputCodePostale){
+        let codePostaleRegExp = new RegExp('^\\d{5}$','g');
+        let small = inputCodePostale.nextElementSibling;
+        if(codePostaleRegExp.test(inputCodePostale.value)){
+            small.innerHTML = "Code postale valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
                 small.classList.remove("text-success");
                 small.classList.add("text-danger");
                 return false;
-                }
-            }    
-
-        form.adresse.addEventListener("change",function(){
-            validAdresse(this);
             }
-        )
- 
-        const validAdresse = function(inputAdresse){
-            let adresseRegExp = new RegExp('^[0-9]{1,}[a-zA-Z]','g');
-            let small = inputAdresse.nextElementSibling;
-            if(adresseRegExp.test(inputAdresse.value)){
-                small.innerHTML = "Adresse valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;
-                }else{
-                    small.innerHTML = "Adresse non valide doit contenir des chiffres et puis des lettres";
-                    small.classList.remove("text-success");
-                    small.classList.add("text-danger");
-                    return false
-                    }
+        }
+    document.getElementById("btn-commande").addEventListener("click",function(){
+        let contact=new Object();
+        let formPurchaseOrder = new Object;
+        if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
+            &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                document.getElementById("btn-link").href="commandeSuccess.html";
+                contact.firstName = form.nom.value;
+                contact.lastName = form.prenom.value;
+                contact.email = form.email.value;
+                contact.address = form.adresse.value;
+                contact.city = form.city.value;}
+                formPurchaseOrder ={contact,products:[]
             }
-        form.codepostale.addEventListener("change",function(){
-            validCodePostale(this);
-            }
-        )
-                        
-        const validCodePostale = function(inputCodePostale){
-            let codePostaleRegExp = new RegExp('^\\d{5}$','g');
-            let small = inputCodePostale.nextElementSibling;
-            if(codePostaleRegExp.test(inputCodePostale.value)){
-                small.innerHTML = "Code postale valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;
-                }else{
-                    small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
-                    small.classList.remove("text-success");
-                    small.classList.add("text-danger");
-                    return false;
-                    }
-            }
-        document.getElementById("btn-commande").addEventListener("click",function(){
-            let contact=new Object();
-            let formPurchaseOrder = new Object;
-            if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
-                &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                    document.getElementById("btn-link").href="commandeSuccess.html";
-                    contact.firstName = form.nom.value;
-                    contact.lastName = form.prenom.value;
-                    contact.email = form.email.value;
-                    contact.address = form.adresse.value;
-                    contact.city = form.city.value;}
-                    formPurchaseOrder ={contact,products:[]
-                }
-        
-            for(let i=0;i<monPanier.length;i++){
-                formPurchaseOrder.products.push(monPanier[i].id)
-                }
-        
-            fetch("http://localhost:3000/api/teddies/order",{
-                method: "POST",
-                headers: { 
-                    'Accept': 'application/json', 
-                    'Content-Type': 'application/json' 
-                },
-                body:JSON.stringify(formPurchaseOrder)
-                }
-            )
-
-            .then(function(res) {
-                if (res.ok) { 
-                    return res.json(); 
-                    }
-                }
-            )
     
-            .then(function(value) {
-                let monCommande = new Object;
-                monCommande.orderId = value.orderId;
-                monCommande.listOfProductsCommanded = monPanier;
-                localStorage.removeItem("monPanier");
-                menuPilier();
-                }
-            );   
+        for(let i=0;i<monPanier.length;i++){
+            formPurchaseOrder.products.push(monPanier[i].id)
+            }
+    
+        fetch("http://localhost:3000/api/teddies/order",{
+            method: "POST",
+            headers: { 
+                'Accept': 'application/json', 
+                'Content-Type': 'application/json' 
+            },
+            body:JSON.stringify(formPurchaseOrder)
             }
         )
-    } 
+
+        .then(function(res) {
+            if (res.ok) { 
+                return res.json(); 
+                }
+            }
+        )
+
+        .then(function(value) {
+            let monCommande = new Object;
+            monCommande.orderId = value.orderId;
+            monCommande.listOfProductsCommanded = monPanier;
+            localStorage.removeItem("monPanier");
+            menuPilier();
+            }
+        );   
+        }
+    )
+} 
 
 
 
 
-    
-
-
-            
-            
-            
 
 
 
+        
+        
+        
 
 
 
- 
+
+
+
+
 
 
   
