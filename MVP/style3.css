@@ -137,6 +137,18 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
     
    
 }
+form#loginForm input{
+    width: 80%;
+    margin:auto;
+  }
+  div#titre{
+    font-size:30px;
+    margin-bottom: 20px;
+  }
+  i.iconfont{
+       font-size:30px;
+       color:rgb(202, 29, 188);
+     }
 main{
     width: 95%; 
     margin:auto;
