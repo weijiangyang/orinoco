@@ -92,6 +92,7 @@ div.client-inf div#commande p,div.client-inf div#panier p,div.client-inf div#acu
 }
 
 
+
 @media (max-width:800px){
     
     div.image-logo{
@@ -140,6 +141,7 @@ main{
     width: 95%; 
     margin:auto;
     text-align: center;
+    margin-bottom: 200px;
     
 }
 div.monpanier{
@@ -167,6 +169,7 @@ h1{
     border-right: transparent;
     background-color: white;
     margin: auto;
+   
     
     
 }
@@ -211,6 +214,7 @@ div.monpanier h1{
     font-size:24px;
     margin-left:5%;
     padding-top:20px;
+   
 }
 button#btn-supprimer{
     display:block;
@@ -301,7 +305,7 @@ footer{
    justify-content: space-around;
    border-top:1px solid pink;
    margin:auto;
-  margin-top:50px;
+  margin-top:100px;
    background-color: #F2E8F0;
    padding-top:20px;
    padding-bottom:30px;

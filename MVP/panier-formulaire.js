@@ -104,6 +104,7 @@ if(monPanier==null|| monPanier.length==0){
             location.reload();
             }
         )
+    }
         priceTotal = document.createElement("p");
         priceTotal.setAttribute("id","pricetotal")
         parentMonpanier = document.querySelector("div.monpanier");
@@ -137,7 +138,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
         }
-        }        
+                
  
         let form = document.getElementById("loginForm");
         form.email.addEventListener("change",function(){
