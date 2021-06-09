@@ -57,15 +57,15 @@ btnPanier.addEventListener("click",function(){
         p=JSON.stringify(monPanier)
         localStorage.setItem("monPanier",p);
     }
-    let btnPanier = document.getElementById("btn-panier");
-    let A = document.createElement("a");
-    btnPanier.appendChild("A");
+    
+    let A = document.getElementById("link-btn-panier");
    
         
     let index = parentP.selectedIndex;
-    let colorSelected = colorSelect.options[index].value;
-    if (colorSelected){A.href="./mon-panier.html"};
-    
+    let colorSelected = parentP.options[index].value;
+    let quantitySelected = quantitySelect.value;
+    if (colorSelected && quantitySelected){A.href="./mon-panier.html"};
+
 
     
 

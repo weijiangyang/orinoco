@@ -5,8 +5,12 @@ parentMain = document.querySelector("main");
 parentM = document.getElementById("monpanier-inf");
 
 if(monPanier==null|| monPanier.length==0){
+    
+    
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
+    let form = document.getElementById("loginForm");
+    form.removeItem();
    eltMonpanier = document.querySelector("div.monpanier");
 
     document.querySelector("div.monpanier").innerHTML = "";
@@ -150,9 +154,6 @@ let p = document.getElementsByClassName("quantity-inp");
 for (let i=0;i<p.length; i++){
 
 
-
-
-   
    p[i].addEventListener("change",function(){
         monPanier[i].quantity = p[i].value;
        localStorage.setItem("monPanier",JSON.stringify(monPanier));
