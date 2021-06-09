@@ -2,55 +2,49 @@
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
-parentM = document.getElementById("monpanier-inf");
+parentPanierInf = document.getElementById("monpanier-inf");
+function menuPilier(){
+    document.getElementById("menu-pilier").addEventListener(
+            "click",function(){
+            document.getElementById("menu-extend").style.display="block";
+            document.getElementById("third-bar").style.transformOrigin="left";
+            document.getElementById("first-bar").style.transformOrigin="left";
+            document.getElementById("first-bar").style.transform="rotateZ(28deg)";
+            document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
+            document.getElementById("third-bar").style.transition=".2s";
+            document.getElementById("first-bar").style.transition=".2s";
+            document.getElementById("second-bar").style.display="none";
+            document.getElementById("first-bar").style.transition="left";
+            }
+    )            
+}            
+menuPilier();
 
 if(monPanier==null|| monPanier.length==0){
-    
-    
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
-    let form = document.getElementById("loginForm");
-    form.removeItem();
-   eltMonpanier = document.querySelector("div.monpanier");
-
+    eltMonpanier = document.querySelector("div.monpanier");
     document.querySelector("div.monpanier").innerHTML = "";
-   eltVide = document.createElement("div");
-   eltVide.setAttribute("class","vide");
-   parentMain.appendChild(eltVide);
-   eltVide.innerHTML = "Votre panier est vide pour le moment!";
-   eltL = document.createElement("a");
-   eltL.setAttribute("id","commencechoisir");
-   parentMain.appendChild(eltL);
-   eltL.innerHTML = "Choisissez vos produits ";
-   eltL.href = "index.html";
-
-   eltAjouter = document.createElement("div");
-   eltAjouter.setAttribute("id","ajouter");
-   parentMain.appendChild(eltAjouter);
-   eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
-
-   eltValider = document.createElement("div");
-   eltValider.setAttribute("id","valider");
-   parentMain.appendChild(eltValider);
-   eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-   document.getElementById("menu-pilier").addEventListener(
-    "click",function(){
-        // document.getElementById("menubar").style.display="none";
-        document.getElementById("menu-extend").style.display="block";
-        // document.getElementById("second-bar").style.display="none";
-        document.getElementById("third-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-        document.getElementById("third-bar").style.transition=".2s";
-        document.getElementById("first-bar").style.transition=".2s";
-        
-        document.getElementById("second-bar").style.display="none";
-        
-        document.getElementById("first-bar").style.transition="left";
-        }
-)        
+    eltVide = document.createElement("div");
+    eltVide.setAttribute("class","vide");
+    parentMain.appendChild(eltVide);
+    eltVide.innerHTML = "Votre panier est vide pour le moment!";
+    eltL = document.createElement("a");
+    eltL.setAttribute("id","commencechoisir");
+    parentMain.appendChild(eltL);
+    eltL.innerHTML = "Choisissez vos produits ";
+    eltL.href = "index.html";
+    eltAjouter = document.createElement("div");
+    eltAjouter.setAttribute("id","ajouter");
+    parentMain.appendChild(eltAjouter);
+    eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+    eltValider = document.createElement("div");
+    eltValider.setAttribute("id","valider");
+    parentMain.appendChild(eltValider);
+    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
+   
   
+   
 }else{
 
 let sum = 0;
@@ -60,7 +54,7 @@ for (let i=0;i<monPanier.length;i++){
 parentD = document.createElement("div");
 parentD.setAttribute("class","carte");
 parentD.setAttribute("id",`carte-${i}`)
-parentM.appendChild(parentD);
+parentPanierInf.appendChild(parentD);
 
 eltImage = document.createElement("div");
 eltImage.setAttribute("class","image-produit");
@@ -333,30 +327,18 @@ let formPurchaseOrder = new Object;
 }
 
 );
-// document.getElementById("btn-link").href="commandeSuccess.html";
+
  
 }
 )
 
-document.getElementById("menu-pilier").addEventListener(
-    "click",function(){
-        // document.getElementById("menubar").style.display="none";
-        document.getElementById("menu-extend").style.display="block";
-        // document.getElementById("second-bar").style.display="none";
-        document.getElementById("third-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-        document.getElementById("third-bar").style.transition=".2s";
-        document.getElementById("first-bar").style.transition=".2s";
-        
-        document.getElementById("second-bar").style.display="none";
-        
-        document.getElementById("first-bar").style.transition="left";
-        }
-)        
+
     
 
+
+            
+            
+            
 
 
 
