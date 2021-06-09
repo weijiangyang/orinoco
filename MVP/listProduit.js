@@ -32,7 +32,7 @@ function getPelucheInf(){
     parentP.appendChild(eltA);
     document.getElementById(`lien-${id}`).href="./optionProduit.html";
     
-    // let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
+    
     let eltP = document.createElement("div");
     eltP.setAttribute("id",`peluche-${id}`);
     eltP.setAttribute("class","peluche-carte");
@@ -66,8 +66,8 @@ function getPelucheInf(){
     parentP.style.flexWrap = "wrap";
     parentP.style.justifyItems = 'center';    
     eltA.addEventListener("click",function(){
-        // let p = JSON.parse(localStorage.getItem(`peluche-${id}`));
-         localStorage.setItem("optionItem",JSON.stringify(value))
+        
+    localStorage.setItem("optionItem",JSON.stringify(value))
          
          
      });
@@ -97,9 +97,9 @@ function getPelucheInf(){
 getPelucheInf();
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
-        // document.getElementById("menubar").style.display="none";
+        
         document.getElementById("menu-extend").style.display="block";
-        // document.getElementById("second-bar").style.display="none";
+       
         document.getElementById("third-bar").style.transformOrigin="left";
         document.getElementById("first-bar").style.transformOrigin="left";
         document.getElementById("first-bar").style.transform="rotateZ(28deg)";
