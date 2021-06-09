@@ -240,6 +240,7 @@ if(monPanier==null|| monPanier.length==0){
                 let monCommande = new Object;
                 monCommande.orderId = value.orderId;
                 monCommande.listOfProductsCommanded = monPanier;
+                localStorage.removeItem("monPanier");
                 menuPilier();
                 }
             );   
