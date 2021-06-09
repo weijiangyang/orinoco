@@ -15,13 +15,13 @@ for (let color of typesColor){
  }   
 
 let produitSelected = new Object();
-let colorSelect = document.getElementById("form-selection");
+
 let quantitySelect = document.getElementById("quantity-select");
 
-colorSelect.addEventListener,quantitySelect.addEventListener("change",function(){
+parentP.addEventListener,quantitySelect.addEventListener("change",function(){
     
-    let index = colorSelect.selectedIndex;
-    let colorSelected = colorSelect.options[index].value;
+    let index = parentP.selectedIndex;
+    let colorSelected = parentP.options[index].value;
     let quantitySelected = quantitySelect.value;
     
     
@@ -57,6 +57,17 @@ btnPanier.addEventListener("click",function(){
         p=JSON.stringify(monPanier)
         localStorage.setItem("monPanier",p);
     }
+    let btnPanier = document.getElementById("btn-panier");
+    let A = document.createElement("a");
+    btnPanier.appendChild("A");
+   
+        
+    let index = parentP.selectedIndex;
+    let colorSelected = colorSelect.options[index].value;
+    if (colorSelected){A.href="./mon-panier.html"};
+    
+
+    
 
 })
 
@@ -80,10 +91,6 @@ document.getElementById("menu-pilier").addEventListener(
     
 )
 
-let btnPanier = document.getElementById("btn-panier");
-let A = document.createElement("a");
-    
-   
 
 
 
