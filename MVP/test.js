@@ -4,6 +4,7 @@ document.getElementById("desp-peluche").innerHTML = produitOption.description;
 document.getElementById("price-peluche").innerHTML = "Price:"+(produitOption.price/100).toFixed(2)+"€";
 document.getElementById("image-peluche").src = produitOption.imageUrl;
 let typesColor = produitOption.colors;
+// console.log(produitOption);
 let formSelection = document.getElementById("form-selection");
 for (let color of typesColor){
     let eltOption = document.createElement("option");
@@ -23,6 +24,7 @@ quantitySelect.addEventListener("input",function(){
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+    
 });
 
 formSelection.addEventListener("change",function(){
@@ -31,20 +33,18 @@ formSelection.addEventListener("change",function(){
     produitSelected.color = colorSelected;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
 });
-
-
+console.log(localStorage.getItem("produitSelected"));
+ produitSelected = JSON.parse(localStorage.getItem("produitSelected"));
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     
     if(monPanier){
-        let index = formSelection.selectedIndex;
-    let colorSelected = formSelection.options[index].value;
-    let quantitySelected = quantitySelect.value;
         
-            if(colorSelected!=produitSelected.color|| quantitySelected!=produitSelected.quantity){
-                produitSelected.quantity=quantitySelected;
-                produitSelected.color=colorSelected;
+        
+            if(produitSelected.quantity&&produitSelected.color){
+                // produitSelected.quantity=quantitySelected;
+                // produitSelected.color=colorSelected;
                 monPanier.push(produitSelected);
                 p=JSON.stringify(monPanier);
                 localStorage.setItem("monPanier",p)
