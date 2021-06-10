@@ -86,6 +86,7 @@ if(monPanier==null|| monPanier.length==0){
         eltLabel.appendChild(eltI);
         eltI.setAttribute("type","number");
         eltI.setAttribute("value",monPanier[i].quantity);
+        eltI.setAttribute("min",1);
         pItemTotal = document.createElement("p");
         pItemTotal.setAttribute("id",`pItemTotal-${i}`);
         pItemTotal.setAttribute("class","totalprice-produit");
@@ -165,7 +166,7 @@ if(monPanier==null|| monPanier.length==0){
         )
  
         const validAdresse = function(inputAdresse){
-            let adresseRegExp = new RegExp('^[0-9]{1,}[a-zA-Z]','g');
+            let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
             let small = inputAdresse.nextElementSibling;
             if(adresseRegExp.test(inputAdresse.value)){
                 small.innerHTML = "Adresse valide";
@@ -173,7 +174,7 @@ if(monPanier==null|| monPanier.length==0){
                 small.classList.add("text-success");
                 return true;
                 }else{
-                    small.innerHTML = "Adresse non valide doit contenir des chiffres et puis des lettres";
+                    small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
                     small.classList.remove("text-success");
                     small.classList.add("text-danger");
                     return false
@@ -200,6 +201,7 @@ if(monPanier==null|| monPanier.length==0){
                     }
             }
         document.getElementById("btn-commande").addEventListener("click",function(){
+            localStorage.removeItem("monPanier");
             let contact=new Object();
             let formPurchaseOrder = new Object;
             if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
@@ -238,10 +240,13 @@ if(monPanier==null|| monPanier.length==0){
                 let monCommande = new Object;
                 monCommande.orderId = value.orderId;
                 monCommande.listOfProductsCommanded = monPanier;
-                localStorage.removeItem("monPanier");
-                menuPilier();
+                
+                
+
                 }
             );   
             }
+            
         )
     } 
+    menuPilier();
