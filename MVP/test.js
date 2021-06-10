@@ -18,12 +18,13 @@ produitSelected.description = produitOption.description;
 produitSelected.price = produitOption.price;
 produitSelected.imageUrl=produitOption.imageUrl;
 produitSelected.id=produitOption._id;
-produitSelected.quantity='';
-produitSelected.color='';
+// produitSelected.quantity=produitOption.quantity;
+// produitSelected.color=produitOption.color;
 let quantitySelect = document.getElementById("quantity-select");
 quantitySelect.addEventListener("input",function(){
     // let index = formSelection.selectedIndex;
     // let colorSelected = formSelection.options[index].value;
+    
     let quantitySelected = quantitySelect.value;
     // produitSelected.name = produitOption.name;
     // produitSelected.description = produitOption.description;
@@ -34,6 +35,7 @@ quantitySelect.addEventListener("input",function(){
     // produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
 });
+
 formSelection.addEventListener("change",function(){
     let index = formSelection.selectedIndex;
     let colorSelected = formSelection.options[index].value;
@@ -45,6 +47,7 @@ formSelection.addEventListener("change",function(){
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+     produitSelected=JSON.localStorage.getItem("produitSelected");
     if(monPanier){
         // if(produitSelected){
             if(produitSelected.color&&produitSelected.quantity){
