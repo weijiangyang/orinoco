@@ -82,7 +82,7 @@ if(monPanier==null|| monPanier.length==0){
         eltT.appendChild(eltLabel);
         eltLabel.innerHTML="Quantity: "
         eltI = document.createElement("input");
-        eltI.setAttribute("class","quantity-inp");
+        eltI.setAttribute("id",`quantity-inp-${i}`);
         eltLabel.appendChild(eltI);
         eltI.setAttribute("type","number");
         eltI.setAttribute("value",monPanier[i].quantity);
@@ -90,8 +90,25 @@ if(monPanier==null|| monPanier.length==0){
         pItemTotal.setAttribute("id",`pItemTotal-${i}`);
         pItemTotal.setAttribute("class","totalprice-produit");
         eltT.appendChild(pItemTotal);
+        pItemTotal = document.getElementById(`pItemTotal-${i}`);
         pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+
+        eltI.addEventListener("change",function(){
+            monPanier[i].quantity = eltI.value;
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+            pItemTotal = document.getElementById(`pItemTotal-${i}`);
+            pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+            
+        })
+        
+        
         sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        priceTotal = document.createElement("p");
+        priceTotal.setAttribute("id","pricetotal")
+        parentMonpanier = document.querySelector("div.monpanier");
+        parentMonpanier.appendChild(priceTotal);
+        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
         btn = document.createElement("button");
         eltT.appendChild(btn);
         btn.innerHTML = "Supprimer";
@@ -103,11 +120,11 @@ if(monPanier==null|| monPanier.length==0){
             }
         )
     }
-        priceTotal = document.createElement("p");
-        priceTotal.setAttribute("id","pricetotal")
-        parentMonpanier = document.querySelector("div.monpanier");
-        parentMonpanier.appendChild(priceTotal);
-        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+        // priceTotal = document.createElement("p");
+        // priceTotal.setAttribute("id","pricetotal")
+        // parentMonpanier = document.querySelector("div.monpanier");
+        // parentMonpanier.appendChild(priceTotal);
+        // priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
 
         eltLienContinuer = document.createElement("a");
         eltLienContinuer.setAttribute("id","lien-continuer");

@@ -253,7 +253,6 @@ if(monPanier==null|| monPanier.length==0){
 
 
 
-
         
         
         
