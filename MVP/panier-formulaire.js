@@ -82,10 +82,12 @@ if(monPanier==null|| monPanier.length==0){
         eltT.appendChild(eltLabel);
         eltLabel.innerHTML="Quantity: "
         eltI = document.createElement("input");
-        eltI.setAttribute("class","quantity-inp");
+        eltI.setAttribute("id",`quantity-inp-${i}`);
         eltLabel.appendChild(eltI);
         eltI.setAttribute("type","number");
+        
         eltI.setAttribute("value",monPanier[i].quantity);
+        eltI.setAttribute("min",1);
         pItemTotal = document.createElement("p");
         pItemTotal.setAttribute("id",`pItemTotal-${i}`);
         pItemTotal.setAttribute("class","totalprice-produit");
