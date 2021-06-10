@@ -42,9 +42,11 @@ btnPanier.addEventListener("click",function(){
 
     }else{
         let monPanier=[];
-        monPanier.push(produitSelected);
-        p=JSON.stringify(monPanier)
-        localStorage.setItem("monPanier",p);
+        if(produitSelected.color&&produitSelected.quantity){
+            monPanier.push(produitSelected);
+            p=JSON.stringify(monPanier)
+            localStorage.setItem("monPanier",p);
+        }
     }
     
     let linkBtnPanier = document.getElementById("link-btn-panier");
