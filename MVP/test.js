@@ -14,17 +14,17 @@ for (let color of typesColor){
     eltOption.style.color = "black";
  }   
 
-let produitSelected = new Object();
+
 
 let quantitySelect = document.getElementById("quantity-select");
 
-parentP.addEventListener,quantitySelect.addEventListener("change",function(){
+ quantitySelect.addEventListener("change",function(){
     
     let index = parentP.selectedIndex;
     let colorSelected = parentP.options[index].value;
     let quantitySelected = quantitySelect.value;
     
-    
+        let produitSelected = new Object();
         produitSelected.name = produitOption.name;
         produitSelected.description = produitOption.description;
         produitSelected.price = produitOption.price;
@@ -32,23 +32,23 @@ parentP.addEventListener,quantitySelect.addEventListener("change",function(){
         produitSelected.color = colorSelected;
         produitSelected.quantity = quantitySelected;
         produitSelected.id=produitOption._id;
-        
+      
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
        
     });
-    
+    console.log(localStorage.getItem("produitSelected")) ; 
 
     let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-    
+    let produitSelected = JSON.parse(localStorage.getItem("produitSelected"));
     if(monPanier){
-        if(produitSelected){
+        
             if(produitSelected.color&&produitSelected.quantity){
         monPanier.push(produitSelected);
         p=JSON.stringify(monPanier);
-        localStorage.setItem("monPanier",p)}}
+        localStorage.setItem("monPanier",p)}
         
 
     }else{
