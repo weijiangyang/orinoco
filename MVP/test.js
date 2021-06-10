@@ -21,6 +21,7 @@ produitSelected.imageUrl=produitOption.imageUrl;
 produitSelected.color = "";
 produitSelected.quantity = "";
 produitSelected.id=produitOption._id;
+
 let quantitySelect = document.getElementById("quantity-select");
 quantitySelect.addEventListener("input",function(){
     let quantitySelected = quantitySelect.value;
@@ -28,36 +29,41 @@ quantitySelect.addEventListener("input",function(){
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     }
 );
+
   
 parentFormSelection.addEventListener("change",function(){
     let index = parentFormSelection.selectedIndex;
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-})
+});
 
 produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
+console.log(produitSelected);
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+    let linkBtnPanier = document.getElementById("link-btn-panier");
     if(monPanier){
         if(produitSelected.color&&produitSelected.quantity){
         monPanier.push(produitSelected);
         p=JSON.stringify(monPanier);
-        localStorage.setItem("monPanier",p)
+        localStorage.setItem("monPanier",p);
+        linkBtnPanier.href="./mon-panier.html";
+        localStorage.setItem("produitSelected","");
         }
     }else{
         let monPanier=[];
         if(produitSelected.color&&produitSelected.quantity){
             monPanier.push(produitSelected);
             p=JSON.stringify(monPanier);
-            localStorage.setItem("monPanier",p)
+            localStorage.setItem("monPanier",p);
+            linkBtnPanier.href="./mon-panier.html";
+            localStorage.setItem("produitSelected","");
         }
     }
-    let linkBtnPanier = document.getElementById("link-btn-panier");
-    if (produitSelected.color&&produitSelected.quantity){
-        linkBtnPanier.href="./mon-panier.html"
-    };
+    
+    
 })    
 
     
