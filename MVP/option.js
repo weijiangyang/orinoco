@@ -14,7 +14,7 @@ for (let color of typesColor){
 }    
 let produitSelected = new Object();
 let quantitySelect = document.getElementById("quantity-select");
-formSelection.addEventListener,quantitySelect.addEventListener("change",function(){
+formSelection.addEventListener,quantitySelect.addEventListener("input",function(){
     let index = formSelection.selectedIndex;
     let colorSelected = formSelection.options[index].value;
     let quantitySelected = quantitySelect.value;
