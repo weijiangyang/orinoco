@@ -52,9 +52,8 @@ btnPanier.addEventListener("click",function(){
         p=JSON.stringify(monPanier);
         localStorage.setItem("monPanier",p);
         linkBtnPanier.href="./mon-panier.html";
-        produitSelected.color = "";
-        produitSelected.quantity ="";
-        localStorage.setItem("produitSelected",produitSelected);
+       
+        
         }
         
         
@@ -65,15 +64,26 @@ btnPanier.addEventListener("click",function(){
             p=JSON.stringify(monPanier);
             localStorage.setItem("monPanier",p);
             linkBtnPanier.href="./mon-panier.html";
-            produitSelected.color = "";
-        produitSelected.quantity ="";
-        localStorage.setItem("produitSelected",produitSelected);
+            
+            
         
         }
     }
     
-    
-})    
+    produitSelected.color="";
+produitSelected.quantity="";
+
+localStorage.setItem("produitSelected",produitSelected);
+
+})  
+
+
+
+
+
+
+
+console.log(produitSelected)  
 
     
 
