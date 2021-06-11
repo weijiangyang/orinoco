@@ -37,8 +37,8 @@ produitSelected.id=produitOption._id;
     
     }
 );
-produitSelected = JSON.parse(localStorage.getItem("produitSelected"));
-console.log(produitSelected);
+
+
   
 parentFormSelection.addEventListener("change",function(){
     let index = parentFormSelection.selectedIndex;

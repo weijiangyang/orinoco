@@ -32,13 +32,15 @@ produitSelected.description = produitOption.description;
 produitSelected.price = produitOption.price;
 produitSelected.imageUrl=produitOption.imageUrl;
 
+    produitSelected.color = "";
+
 produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
     }
 );
-produitSelected = JSON.parse(localStorage.getItem("produitSelected"));
-console.log(produitSelected);
+
+
   
 parentFormSelection.addEventListener("change",function(){
     let index = parentFormSelection.selectedIndex;
