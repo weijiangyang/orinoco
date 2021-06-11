@@ -28,6 +28,7 @@ quantitySelect.addEventListener("input",function(){
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+    
     }
 );
 produitSelected = JSON.parse(localStorage.getItem("produitSelected"));
@@ -38,6 +39,7 @@ parentFormSelection.addEventListener("change",function(){
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+    
 });
 
 produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
@@ -52,11 +54,7 @@ btnPanier.addEventListener("click",function(){
         p=JSON.stringify(monPanier);
         localStorage.setItem("monPanier",p);
         linkBtnPanier.href="./mon-panier.html";
-       
-        
         }
-        
-        
     }else{
         let monPanier=[];
         if(produitSelected.color&&produitSelected.quantity){
@@ -69,15 +67,31 @@ btnPanier.addEventListener("click",function(){
         
         }
     }
+
+quantitySelect.value="";
+let index = parentFormSelection.selectedIndex;
+parentFormSelection.options[index].value = "";
+
+})          
+ 
+
+produitSelected.name = produitOption.name;
+produitSelected.description = produitOption.description;
+produitSelected.price = produitOption.price;
+produitSelected.imageUrl=produitOption.imageUrl;
+produitSelected.color = "";
+produitSelected.quantity = "";
+produitSelected.id=produitOption._id;
+localStorage.setItem("produitSelected",produitSelected); 
+   
+ console.log(localStorage.getItem("produitSelected"))       
+        
     
-    produitSelected.color="";
-produitSelected.quantity="";
-
-localStorage.setItem("produitSelected",produitSelected);
-
-})  
+   
 
 
+
+ 
 
 
 
