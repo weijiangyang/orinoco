@@ -28,11 +28,11 @@ quantitySelect.addEventListener("input",function(){
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
     produitSelected.name = produitOption.name;
-produitSelected.description = produitOption.description;
-produitSelected.price = produitOption.price;
-produitSelected.imageUrl=produitOption.imageUrl;
+    produitSelected.description = produitOption.description;
+    produitSelected.price = produitOption.price;
+    produitSelected.imageUrl=produitOption.imageUrl;
 
-produitSelected.id=produitOption._id;
+    produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
     }
@@ -45,12 +45,12 @@ parentFormSelection.addEventListener("change",function(){
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
     produitSelected.name = produitOption.name;
-produitSelected.description = produitOption.description;
-produitSelected.price = produitOption.price;
-produitSelected.imageUrl=produitOption.imageUrl;
+    produitSelected.description = produitOption.description;
+    produitSelected.price = produitOption.price;
+    produitSelected.imageUrl=produitOption.imageUrl;
 
-produitSelected.quantity = "";
-produitSelected.id=produitOption._id;
+    produitSelected.quantity = "";
+    produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
 });
@@ -63,18 +63,20 @@ btnPanier.addEventListener("click",function(){
     let linkBtnPanier = document.getElementById("link-btn-panier");
     if(monPanier){
         if(produitSelected.color&&produitSelected.quantity){
+            linkBtnPanier.href="./mon-panier.html";
         monPanier.push(produitSelected);
         p=JSON.stringify(monPanier);
         localStorage.setItem("monPanier",p);
-        linkBtnPanier.href="./mon-panier.html";
+        
         }
     }else{
         let monPanier=[];
         if(produitSelected.color&&produitSelected.quantity){
+            linkBtnPanier.href="./mon-panier.html";
             monPanier.push(produitSelected);
             p=JSON.stringify(monPanier);
             localStorage.setItem("monPanier",p);
-            linkBtnPanier.href="./mon-panier.html";
+            
             
             
         
@@ -87,32 +89,10 @@ parentFormSelection.options[index].value = "";
 
 })          
  
-
-
-
 produitSelected.color = "";
 produitSelected.quantity = "";
 
 localStorage.setItem("produitSelected",produitSelected); 
-   
-//  console.log(localStorage.getItem("produitSelected"))       
-        
-    
-   
-
-
-
- 
-
-
-
-
-
-console.log(produitSelected)  
-
-    
-
-
 
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
@@ -130,6 +110,5 @@ document.getElementById("menu-pilier").addEventListener(
         
         document.getElementById("first-bar").style.transition="left";
         }
-        
+)        
     
-)
