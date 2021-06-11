@@ -13,50 +13,47 @@ for (let color of typesColor){
     eltOption.style.color = "black";
  }   
 
-let produitSelected = new Object();
-produitSelected.name = produitOption.name;
-produitSelected.description = produitOption.description;
-produitSelected.price = produitOption.price;
-produitSelected.imageUrl=produitOption.imageUrl;
-produitSelected.color = "";
-produitSelected.quantity = "";
-produitSelected.id=produitOption._id;
+let produitSelected = {
+name : produitOption.name,
+description : produitOption.description,
+price : produitOption.price,
+imageUrl:produitOption.imageUrl,
+
+id:produitOption._id}
+localStorage.setItem("produitSelected",produitSelected);
+
+
 
 
 let quantitySelect = document.getElementById("quantity-select");
 quantitySelect.addEventListener("input",function(){
+    
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
-    produitSelected.name = produitOption.name;
-    produitSelected.description = produitOption.description;
-    produitSelected.price = produitOption.price;
-    produitSelected.imageUrl=produitOption.imageUrl;
-
-    produitSelected.id=produitOption._id;
+    
+    
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
     }
 );
-
+// console.log(JSON.parse(localStorage.getItem("produitSelected")));
 
   
 parentFormSelection.addEventListener("change",function(){
+    
     let index = parentFormSelection.selectedIndex;
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
-    produitSelected.name = produitOption.name;
-    produitSelected.description = produitOption.description;
-    produitSelected.price = produitOption.price;
-    produitSelected.imageUrl=produitOption.imageUrl;
-
-    produitSelected.quantity = "";
-    produitSelected.id=produitOption._id;
-    localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+    
+    localStorage.setItem("produitSelected",JSON.stringify(produitSelected))
     
 });
+;
+// console.log(localStorage.getItem("produitSelected"));
+// produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
 
-produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
-console.log(produitSelected);
+console.log(JSON.parse(localStorage.getItem("optionItem")));
+
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
@@ -76,23 +73,21 @@ btnPanier.addEventListener("click",function(){
             monPanier.push(produitSelected);
             p=JSON.stringify(monPanier);
             localStorage.setItem("monPanier",p);
+        }    
             
-            
-            
-        
-        }
-    }
-
+    }        
 quantitySelect.value="";
 let index = parentFormSelection.selectedIndex;
-parentFormSelection.options[index].value = "";
+parentFormSelection.options[index].value = "";   
+
+
 
 })          
- 
-produitSelected.color = "";
-produitSelected.quantity = "";
+// produitSelected.color = "";
+// produitSelected.quantity = "";
+localStorage.setItem("produitSelected",produitSelected);
 
-localStorage.setItem("produitSelected",produitSelected); 
+ 
 
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
