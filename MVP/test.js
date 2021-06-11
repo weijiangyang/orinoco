@@ -27,6 +27,12 @@ let quantitySelect = document.getElementById("quantity-select");
 quantitySelect.addEventListener("input",function(){
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
+    produitSelected.name = produitOption.name;
+produitSelected.description = produitOption.description;
+produitSelected.price = produitOption.price;
+produitSelected.imageUrl=produitOption.imageUrl;
+
+produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
     }
@@ -38,6 +44,13 @@ parentFormSelection.addEventListener("change",function(){
     let index = parentFormSelection.selectedIndex;
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
+    produitSelected.name = produitOption.name;
+produitSelected.description = produitOption.description;
+produitSelected.price = produitOption.price;
+produitSelected.imageUrl=produitOption.imageUrl;
+
+produitSelected.quantity = "";
+produitSelected.id=produitOption._id;
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
     
 });
@@ -75,16 +88,14 @@ parentFormSelection.options[index].value = "";
 })          
  
 
-produitSelected.name = produitOption.name;
-produitSelected.description = produitOption.description;
-produitSelected.price = produitOption.price;
-produitSelected.imageUrl=produitOption.imageUrl;
+
+
 produitSelected.color = "";
 produitSelected.quantity = "";
-produitSelected.id=produitOption._id;
+
 localStorage.setItem("produitSelected",produitSelected); 
    
- console.log(localStorage.getItem("produitSelected"))       
+//  console.log(localStorage.getItem("produitSelected"))       
         
     
    
