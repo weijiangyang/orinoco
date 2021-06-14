@@ -64,7 +64,7 @@ btnPanier.addEventListener("click",function(){
     }
 })
 
-
+// localStorage.setItem("produitSelected",produitSelected); 
  
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
