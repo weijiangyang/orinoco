@@ -246,12 +246,11 @@ if(monPanier==null|| monPanier.length==0){
             )
     
             .then(function(value) {
-                let monCommande = {ok:"ok"
-                // orderId:value.orderId
-                // listOfProductsCommanded : monPanier
-                };
+              
+
+            
                 localStorage.setItem("order",value.orderId);
-                localStorage.setItem("monCommande",monCommande);
+                
                 
                 
 
@@ -263,5 +262,10 @@ if(monPanier==null|| monPanier.length==0){
             
         )
     } 
+const monCommand ={
+    name="okeee"
+}
 
-   
+
+             
+localStorage.setItem("monCommand",monCommand);
