@@ -20,15 +20,14 @@ function getPeulucheInf(){
         console.log("il y a un error")
     });
     
-    
 }
 
+// let listPeuluches = JSON.parse(localStorage.getItem("listPeuluches"));
+let listPeuluches = JSON.parse(localStorage.getItem("listPeuluches"));
+    
 function elementAppend(){
     
     getPeulucheInf();
-    
-    let listPeuluches = JSON.parse(localStorage.getItem("listPeuluches"));
-    listPeuluches = JSON.stringify(listPeuluche);
     for (let peuluche of listPeuluches){
         let carteLink = document.createElement("a");
         let totalProduits = document.querySelector("#total-produits");
@@ -81,8 +80,9 @@ function elementAppend(){
  }   
 
 
-getPeulucheInf();
+
 elementAppend();
+getPelucheInf();
 
     
 
