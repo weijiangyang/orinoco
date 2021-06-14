@@ -1,22 +1,23 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
-function menuPilier(){
-    document.getElementById("menu-pilier").addEventListener(
-            "click",function(){
-            document.getElementById("menu-extend").style.display="block";
-            document.getElementById("third-bar").style.transformOrigin="left";
-            document.getElementById("first-bar").style.transformOrigin="left";
-            document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-            document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-            document.getElementById("third-bar").style.transition=".2s";
-            document.getElementById("first-bar").style.transition=".2s";
-            document.getElementById("second-bar").style.display="none";
-            document.getElementById("first-bar").style.transition="left";
-            }
-    )            
-}            
-menuPilier();
+// function menuPilier(){
+//     document.getElementById("menu-pilier").addEventListener(
+//             "click",function(){
+//             document.getElementById("menu-extend").style.display="block";
+//             document.getElementById("third-bar").style.transformOrigin="left";
+//             document.getElementById("first-bar").style.transformOrigin="left";
+//             document.getElementById("first-bar").style.transform="rotateZ(28deg)";
+//             document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
+//             document.getElementById("third-bar").style.transition=".2s";
+//             document.getElementById("first-bar").style.transition=".2s";
+//             document.getElementById("second-bar").style.display="none";
+//             document.getElementById("first-bar").style.transition="left";
+//             }
+//     )            
+// }            
+// menuPilier();
 
 if(monPanier==null|| monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
@@ -200,24 +201,32 @@ if(monPanier==null|| monPanier.length==0){
                     return false;
                     }
             }
+          
         document.getElementById("btn-commande").addEventListener("click",function(){
-            localStorage.removeItem("monPanier");
-            let contact=new Object();
-            let formPurchaseOrder = new Object;
+            
+            
             if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
                 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                    localStorage.removeItem("monPanier");
                     document.getElementById("btn-link").href="commandeSuccess.html";
+                    let contact=new Object();
+                    let formPurchaseOrder = new Object();
+                    
                     contact.firstName = form.nom.value;
                     contact.lastName = form.prenom.value;
                     contact.email = form.email.value;
                     contact.address = form.adresse.value;
-                    contact.city = form.city.value;}
-                    formPurchaseOrder ={contact,products:[]
-                }
+                    contact.city = form.city.value;
+                    formPurchaseOrder = {contact,products:[]}
+               
+                    
         
-            for(let i=0;i<monPanier.length;i++){
+               
+        
+            for (let i=0;i<monPanier.length;i++){
                 formPurchaseOrder.products.push(monPanier[i].id)
                 }
+               
         
             fetch("http://localhost:3000/api/teddies/order",{
                 method: "POST",
@@ -237,16 +246,22 @@ if(monPanier==null|| monPanier.length==0){
             )
     
             .then(function(value) {
-                let monCommande = new Object;
-                monCommande.orderId = value.orderId;
-                monCommande.listOfProductsCommanded = monPanier;
+                let monCommande = {ok:"ok"
+                // orderId:value.orderId
+                // listOfProductsCommanded : monPanier
+                };
+                localStorage.setItem("order",value.orderId);
+                localStorage.setItem("monCommande",monCommande);
                 
                 
 
                 }
-            );   
+            );  
+            
+        };
             }
             
         )
     } 
-    menuPilier();
+
+   

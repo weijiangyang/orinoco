@@ -33,7 +33,7 @@ quantitySelect.addEventListener("input",function(){
     
     
     localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-    
+    console.log(produitSelected);
     }
 );
 // console.log(JSON.parse(localStorage.getItem("produitSelected")));
@@ -45,14 +45,15 @@ parentFormSelection.addEventListener("change",function(){
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
     
-    localStorage.setItem("produitSelected",JSON.stringify(produitSelected))
-    
+    localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
+
+    console.log(produitSelected);
 });
-;
+
 // console.log(localStorage.getItem("produitSelected"));
 // produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
+ 
 
-console.log(JSON.parse(localStorage.getItem("optionItem")));
 
 let btnPanier = document.getElementById("btn-panier");
 btnPanier.addEventListener("click",function(){
