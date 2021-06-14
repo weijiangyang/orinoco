@@ -1,5 +1,5 @@
-function getpeulucheInf(){
-    let listpeuluches=[];
+function getPeulucheInf(){
+    let listPeuluches=[];
     fetch("http://localhost:3000/api/teddies")
     .then(function(res){
         if(res.ok){
@@ -10,18 +10,26 @@ function getpeulucheInf(){
         
         
         for (let i=0; i<peuluches.length;i++){
-            listpeuluches.push(peuluches[i])
+            listPeuluches.push(peuluches[i])
         };
-        localStorage.setItem("listpeuluches",JSON.stringify(listpeuluches));
+        localStorage.setItem("listPeuluches",JSON.stringify(listPeuluches));
     
 
-});
+    })
+    .catch(function(err){
+        console.log("il y a un error")
+    });
+    
+    
 }
 
 function elementAppend(){
     
-    let listpeuluches = JSON.parse(localStorage.getItem("listpeuluches"));
-    for (let peuluche of listpeuluches){
+    getPeulucheInf();
+    
+    let listPeuluches = JSON.parse(localStorage.getItem("listPeuluches"));
+    listPeuluches = JSON.stringify(listPeuluche);
+    for (let peuluche of listPeuluches){
         let carteLink = document.createElement("a");
         let totalProduits = document.querySelector("#total-produits");
         carteLink.setAttribute("id",`link-${peuluche._id}`);
@@ -73,7 +81,7 @@ function elementAppend(){
  }   
 
 
- getpeulucheInf(); 
+getPeulucheInf();
 elementAppend();
 
     
