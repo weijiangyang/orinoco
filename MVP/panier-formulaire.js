@@ -1,6 +1,6 @@
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-
+console.log(monPanier);
 
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
@@ -183,6 +183,7 @@ if(monPanier==null|| monPanier.length==0){
                     return false
                     }
             }
+         
         form.codepostale.addEventListener("change",function(){
             validCodePostale(this);
             }
@@ -209,7 +210,7 @@ if(monPanier==null|| monPanier.length==0){
             
             if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
                 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                    localStorage.removeItem("monPanier");
+                    // localStorage.removeItem("monPanier");
                     document.getElementById("btn-link").href="commandeSuccess.html";
                     let contact=new Object();
                     let formPurchaseOrder = new Object();
@@ -222,7 +223,7 @@ if(monPanier==null|| monPanier.length==0){
                     formPurchaseOrder = {contact,products:[]}
                
                     
-        
+        alert(JSON.stringify(monPanier));
                
         
             for (let i=0;i<monPanier.length;i++){
@@ -255,6 +256,8 @@ if(monPanier==null|| monPanier.length==0){
             
                 localStorage.setItem("order",value.orderId);
                 localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                localStorage.setItem("contact",JSON.stringify(value.contact));
+               
                 
                 
                 
