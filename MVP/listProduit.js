@@ -41,9 +41,9 @@ function getPelucheInf(){
                 
                     let eltImage = document.createElement("img");
                     eltImage.setAttribute("id",`image-${id}`);
-                    eltImage.setAttribute("class","peluche-image")
+                    eltImage.setAttribute("class","peluche-image");
                     peulucheCarte.appendChild(eltImage);
-                    eltImage.style.height = "320px"
+                    eltImage.style.height = "320px";
                     document.getElementById(`image-${id}`).src=value.imageUrl;
                     let peulucheTitre = document.createElement("h3");
                     peulucheTitre.setAttribute("id", `title-${id}`);
