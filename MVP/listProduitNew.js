@@ -19,7 +19,7 @@ function getpeulucheInf(){
 }
 
 function elementAppend(){
-    getpeulucheInf();
+    
     let listpeuluches = JSON.parse(localStorage.getItem("listpeuluches"));
     for (let peuluche of listpeuluches){
         let carteLink = document.createElement("a");
@@ -59,33 +59,22 @@ function elementAppend(){
         peuluchePrice.setAttribute("class","peuluche-price")
         peulucheCarte.appendChild(peuluchePrice);
         document.getElementById(`price-${peuluche._id}`).innerHTML =`Price:${(peuluche.price/100).toFixed(2)}€`;
+
+        document.getElementById(`link-${peuluche._id}`).addEventListener("click",function(){
+        localStorage.setItem("optionItem",JSON.stringify(peuluche))
+    });        
     }
+        
         
     let totalProduits = document.querySelector("#total-produits");
     totalProduits.style.display = "flex";
     totalProduits.style.flexWrap = "wrap";
-    totalProduits.style.justifyItems = 'center';
+    
  }   
+
+
+ getpeulucheInf(); 
 elementAppend();
-function menuCache(){
-        document.getElementById("menu-extend").style.display="block";
-        document.getElementById("third-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-        document.getElementById("third-bar").style.transition=".2s";
-        document.getElementById("first-bar").style.transition=".2s";
-        document.getElementById("second-bar").style.display="none";
-        document.getElementById("first-bar").style.transition="left";
-}
 
-
-
-
-
-    document.getElementById("menu-pilier").addEventListener(
-    "click",menuCache()
-    )
-
-
+    
 
