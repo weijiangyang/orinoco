@@ -60,45 +60,12 @@ btnPanier.addEventListener("click",function(){
             p=JSON.stringify(monPanier);
             localStorage.setItem("monPanier",p);
             linkBtnPanier.href="./mon-panier.html";
-            
-            
-        
         }
     }
-
-quantitySelect.value="";
-let index = parentFormSelection.selectedIndex;
-parentFormSelection.options[index].value = "";
-
-})          
- 
-
-
-
-produitSelected.color = "";
-produitSelected.quantity = "";
+})
 
 localStorage.setItem("produitSelected",produitSelected); 
-   
-//  console.log(localStorage.getItem("produitSelected"))       
-        
-    
-   
-
-
-
  
-
-
-
-
-
-console.log(produitSelected)  
-
-    
-
-
-
 document.getElementById("menu-pilier").addEventListener(
     "click",function(){
         // document.getElementById("menubar").style.display="none";
