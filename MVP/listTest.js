@@ -52,34 +52,17 @@ document.getElementById("btn-panier").addEventListener("click",function(){
             localStorage.setItem("monPanier",p);
         }    
     }        
-            
 document.getElementById("quantity-select").value="";
 let index = parentFormSelection.selectedIndex;
-document.getElementById("form-selection").options[index].value = "";   
+document.getElementById("form-selection").options[index].value = "";      
+})   
 
 
-// localStorage.setItem("produitPersonaliser",produitPersonaliser);
-})          
+
+         
 
 
 
  
 
-document.getElementById("menu-pilier").addEventListener(
-    "click",function(){
-        // document.getElementById("menubar").style.display="none";
-        document.getElementById("menu-extend").style.display="block";
-        // document.getElementById("second-bar").style.display="none";
-        document.getElementById("third-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-        document.getElementById("third-bar").style.transition=".2s";
-        document.getElementById("first-bar").style.transition=".2s";
-        
-        document.getElementById("second-bar").style.display="none";
-        
-        document.getElementById("first-bar").style.transition="left";
-        }
-)        
-    
+
