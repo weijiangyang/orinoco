@@ -1,5 +1,6 @@
-const produitOptionAppend = function(){
-    let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+function produitOptionAppend (){
+    
     document.getElementById("title-peluche").innerHTML = produitOption.name;
     document.getElementById("desp-peluche").innerHTML = produitOption.description;
     document.getElementById("price-peluche").innerHTML = "Price:"+(produitOption.price/100).toFixed(2)+"€";
@@ -12,10 +13,11 @@ const produitOptionAppend = function(){
         eltOption.setAttribute("class","color-peluche");
         eltOption.innerHTML=color;
         eltOption.style.color = "black";
- }   
+    }   
 }
-const produitSelection = function(produitOptionAppend){
-    produitOptionAppend();
+produitOptionAppend();
+
+    
 let produitSelected = {
 name : produitOption.name,
 description : produitOption.description,
@@ -31,6 +33,7 @@ localStorage.setItem("produitSelected",produitSelected);
 let quantitySelect = document.getElementById("quantity-select");
 quantitySelect.addEventListener("input",function(){
     
+    
     let quantitySelected = quantitySelect.value;
     produitSelected.quantity = quantitySelected;
     
@@ -42,8 +45,9 @@ quantitySelect.addEventListener("input",function(){
 // console.log(JSON.parse(localStorage.getItem("produitSelected")));
 
   
-parentFormSelection.addEventListener("change",function(){
+document.getElementById("form-selection").addEventListener("change",function(){
     
+    let parentFormSelection = document.getElementById("form-selection");
     let index = parentFormSelection.selectedIndex;
     let colorSelected = parentFormSelection.options[index].value;
     produitSelected.color = colorSelected;
@@ -52,15 +56,11 @@ parentFormSelection.addEventListener("change",function(){
 
     console.log(produitSelected);
 });
-}
-// console.log(localStorage.getItem("produitSelected"));
-// produitSelected=JSON.parse(localStorage.getItem("produitSelected"));
- 
 
 
 
-document.getElementById("btn-panier").addEventListener("click",function(produitSelection){
-    produitSelection();
+document.getElementById("btn-panier").addEventListener("click",function(){
+    
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     let linkBtnPanier = document.getElementById("link-btn-panier");
     if(monPanier){
