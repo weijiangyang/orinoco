@@ -1,4 +1,6 @@
+
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+
 
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
@@ -246,10 +248,13 @@ if(monPanier==null|| monPanier.length==0){
             )
     
             .then(function(value) {
+              let monCommande = monPanier;
+              
               
 
             
                 localStorage.setItem("order",value.orderId);
+                localStorage.setItem("monCommande",JSON.stringify(monCommande));
                 
                 
                 
@@ -262,10 +267,7 @@ if(monPanier==null|| monPanier.length==0){
             
         )
     } 
-const monCommand ={
-    name="okeee"
-}
 
 
              
-localStorage.setItem("monCommand",monCommand);
+// localStorage.setItem("monCommand",monCommand);
