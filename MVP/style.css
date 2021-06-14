@@ -148,7 +148,7 @@ div.peluche-carte{
 }    
     
  
-img.peluche-image{
+img.peuluche-image{
         width: 100%;
         display:block;
         height:250px;
@@ -157,7 +157,7 @@ img.peluche-image{
         object-fit: cover;
 }
  
-p.peluche-desp{
+p.peuluche-desp{
     width: 90%;
     margin-left:15px;
     margin-top:25px;
@@ -169,14 +169,14 @@ p.peluche-desp{
     color:grey;
 }
 
-p.peluche-price{
+p.peuluche-price{
     margin-left:15px;
     margin-top:10px;
     font-size:18px;
     font-weight:400;
 }    
 
-h3.peluche-titre{
+h3.peuluche-titre{
     width: 100%;
     text-align: center;
     margin-top:10px;
