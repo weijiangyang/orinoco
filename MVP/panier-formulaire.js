@@ -252,14 +252,16 @@ if(monPanier==null|| monPanier.length==0){
             .then(function(value) {
               
             let monCommande = new Object();
-            monCommande.name="jack";
+            monCommande.listOfProductsCommanded = monPanier;
+            monCommande.contact = value.contact;
+            monCommande.orderId = value.orderId;
               
 
             
-                localStorage.setItem("order",value.orderId);
-                localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                localStorage.setItem("contact",JSON.stringify(value.contact));
-                // localStorage.removeItem("monPanier");
+            localStorage.setItem("monCommande",JSON.stringify(monCommande));
+            
+                
+                localStorage.removeItem("monPanier");
                
                 
                 
@@ -276,4 +278,3 @@ if(monPanier==null|| monPanier.length==0){
 
 
              
-// localStorage.setItem("monCommand",monCommand);

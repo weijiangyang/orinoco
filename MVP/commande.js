@@ -9,6 +9,7 @@ if(monCommande ==null || monCommande.length == 0){
     orderId.innerText = monCommande.orderId;
     let priceTotalCommande = document.getElementById("priceoforder");
     let listOfProductsCommanded = monCommande.listOfProductsCommanded;
+    
     let sum = 0;
     for(let i=0; i<listOfProductsCommanded.length;i++){
         let priceItem = (listOfProductsCommanded[i].price)*(listOfProductsCommanded[i].quantity)/100;
