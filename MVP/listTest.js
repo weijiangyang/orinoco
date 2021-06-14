@@ -16,77 +16,49 @@ function produitOptionAppend (){
     }   
 }
 produitOptionAppend();
-
-    
-let produitSelected = {
+let produitPersonaliser = {
 name : produitOption.name,
 description : produitOption.description,
 price : produitOption.price,
 imageUrl:produitOption.imageUrl,
-
-id:produitOption._id}
-localStorage.setItem("produitSelected",produitSelected);
-
-
-
-
-let quantitySelect = document.getElementById("quantity-select");
-quantitySelect.addEventListener("input",function(){
-    
-    
-    let quantitySelected = quantitySelect.value;
-    produitSelected.quantity = quantitySelected;
-    
-    
-    localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-    console.log(produitSelected);
+id:produitOption._id
+}
+document.getElementById("quantity-select").addEventListener("input",function(){
+    produitPersonaliser.quantity = this.value;
     }
-);
-// console.log(JSON.parse(localStorage.getItem("produitSelected")));
+);    
 
-  
 document.getElementById("form-selection").addEventListener("change",function(){
-    
-    let parentFormSelection = document.getElementById("form-selection");
-    let index = parentFormSelection.selectedIndex;
-    let colorSelected = parentFormSelection.options[index].value;
-    produitSelected.color = colorSelected;
-    
-    localStorage.setItem("produitSelected",JSON.stringify(produitSelected));
-
-    console.log(produitSelected);
-});
-
-
-
+    let index = this.selectedIndex;
+    let colorSelected = this.options[index].value;
+    produitPersonaliser.color = colorSelected;
+    }
+);    
 document.getElementById("btn-panier").addEventListener("click",function(){
-    
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-    let linkBtnPanier = document.getElementById("link-btn-panier");
     if(monPanier){
-        if(produitSelected.color&&produitSelected.quantity){
-            linkBtnPanier.href="./mon-panier.html";
-        monPanier.push(produitSelected);
-        p=JSON.stringify(monPanier);
-        localStorage.setItem("monPanier",p);
-        
-        }
+        if(produitPersonaliser.color&&produitPersonaliser.quantity){
+            document.getElementById("link-btn-panier").href="./mon-panier.html";
+            monPanier.push(produitPersonaliser);
+            p=JSON.stringify(monPanier);
+            localStorage.setItem("monPanier",p);
+            }
     }else{
         let monPanier=[];
-        if(produitSelected.color&&produitSelected.quantity){
-            linkBtnPanier.href="./mon-panier.html";
-            monPanier.push(produitSelected);
+        if(produitPersonaliser.color&&produitPersonaliser.quantity){
+            document.getElementById("link-btn-panier").href="./mon-panier.html";
+            monPanier.push(produitPersonaliser);
             p=JSON.stringify(monPanier);
             localStorage.setItem("monPanier",p);
         }    
-            
     }        
-quantitySelect.value="";
+            
+document.getElementById("quantity-select").value="";
 let index = parentFormSelection.selectedIndex;
-parentFormSelection.options[index].value = "";   
+document.getElementById("form-selection").options[index].value = "";   
 
 
-localStorage.setItem("produitSelected",produitSelected);
+// localStorage.setItem("produitPersonaliser",produitPersonaliser);
 })          
 
 
