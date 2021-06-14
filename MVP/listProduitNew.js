@@ -25,6 +25,7 @@ function elementAppend(){
         let carteLink = document.createElement("a");
         let totalProduits = document.querySelector("#total-produits");
         carteLink.setAttribute("id",`link-${peuluche._id}`);
+        carteLink.setAttribute("class","lien");
         totalProduits.appendChild(carteLink);
         document.getElementById(`link-${peuluche._id}`).href="./optionProduit.html";
 
@@ -66,6 +67,25 @@ function elementAppend(){
     totalProduits.style.justifyItems = 'center';
  }   
 elementAppend();
+function menuCache(){
+        document.getElementById("menu-extend").style.display="block";
+        document.getElementById("third-bar").style.transformOrigin="left";
+        document.getElementById("first-bar").style.transformOrigin="left";
+        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
+        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
+        document.getElementById("third-bar").style.transition=".2s";
+        document.getElementById("first-bar").style.transition=".2s";
+        document.getElementById("second-bar").style.display="none";
+        document.getElementById("first-bar").style.transition="left";
+}
+
+
+
+
+
+    document.getElementById("menu-pilier").addEventListener(
+    "click",menuCache()
+    )
 
 
 
