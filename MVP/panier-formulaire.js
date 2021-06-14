@@ -223,12 +223,13 @@ if(monPanier==null|| monPanier.length==0){
                     formPurchaseOrder = {contact,products:[]}
                
                     
-        alert(JSON.stringify(monPanier));
+      
                
         
             for (let i=0;i<monPanier.length;i++){
                 formPurchaseOrder.products.push(monPanier[i].id)
                 }
+                alert(formPurchaseOrder.products);
                
         
             fetch("http://localhost:3000/api/teddies/order",{
@@ -249,14 +250,16 @@ if(monPanier==null|| monPanier.length==0){
             )
     
             .then(function(value) {
-              let monCommande = monPanier;
               
+            let monCommande = new Object();
+            monCommande.name="jack";
               
 
             
                 localStorage.setItem("order",value.orderId);
                 localStorage.setItem("monCommande",JSON.stringify(monCommande));
                 localStorage.setItem("contact",JSON.stringify(value.contact));
+                // localStorage.removeItem("monPanier");
                
                 
                 
