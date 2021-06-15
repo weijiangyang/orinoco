@@ -72,6 +72,12 @@ if(monPanier==null|| monPanier.length==0){
         eltInputQuantity.setAttribute("type","number");
         eltInputQuantity.setAttribute("value",monPanier[i].quantity);
         eltInputQuantity.setAttribute("min",1);
+        document.getElementsByClassName("quantity-inp")[i].addEventListener("change",function(){
+            monPanier[i].quantity = this.value;
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            document.getElementById(`price-produit-${i}`).innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+            document.getElementById(`pItemTotal-${i}`).innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+        });
         priceItemTotal = document.createElement("p");
         priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
         priceItemTotal.setAttribute("class","totalprice-produit");
@@ -106,22 +112,22 @@ if(monPanier==null|| monPanier.length==0){
         eltBtnContinue.innerHTML = "Continuer mon shopping";
     
         let p = document.getElementsByClassName("quantity-inp");
-        for (let i=0;i<p.length; i++){
-            p[i].addEventListener("change",function(){
-                monPanier[i].quantity = p[i].value;
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                eltP = document.getElementById(`price-produit-${i}`);
-                eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-                pItemTotal = document.getElementById(`pItemTotal-${i}`);
-                pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-                sum = 0;
-                for(let i=0;i<monPanier.length;i++){
-                    sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-                    }
-                priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-                }
-            )
-        }
+        // for (let i=0;i<p.length; i++){
+        //     p[i].addEventListener("change",function(){
+        //         monPanier[i].quantity = p[i].value;
+        //         localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        //         eltP = document.getElementById(`price-produit-${i}`);
+        //         eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+        //         pItemTotal = document.getElementById(`pItemTotal-${i}`);
+        //         pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+        //         sum = 0;
+        //         for(let i=0;i<monPanier.length;i++){
+        //             sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        //             }
+        //         priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+        //         }
+        //     )
+        // }
                 
  
         let form = document.getElementById("loginForm");
