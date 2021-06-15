@@ -2,30 +2,35 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
+function eltAppendPanierVide(){
+    eltForm = document.querySelector("div#formvalidation");
+    parentMain.removeChild(eltForm);
+    eltMonpanier = document.querySelector("div.monpanier");
+    document.querySelector("div.monpanier").innerHTML = "";
+    eltVide = document.createElement("div");
+    eltVide.setAttribute("class","vide");
+    parentMain.appendChild(eltVide);
+    eltVide.innerHTML = "Votre panier est vide pour le moment!";
+    eltBtnChoisir = document.createElement("a");
+    eltBtnChoisir.setAttribute("id","commencechoisir");
+    parentMain.appendChild(eltBtnChoisir);
+    eltBtnChoisir.innerHTML = "Choisissez vos produits ";
+    eltBtnChoisir.href = "index.html";
+    eltAjouter = document.createElement("div");
+    eltAjouter.setAttribute("id","ajouter");
+    parentMain.appendChild(eltAjouter);
+    eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+    eltValider = document.createElement("div");
+    eltValider.setAttribute("id","valider");
+    parentMain.appendChild(eltValider);
+    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
+}
+
+function eltAppendPanierNonVide(){
+
+}
+
 if(monPanier==null|| monPanier.length==0){
-    function eltAppendPanierVide(){
-        eltForm = document.querySelector("div#formvalidation");
-        parentMain.removeChild(eltForm);
-        eltMonpanier = document.querySelector("div.monpanier");
-        document.querySelector("div.monpanier").innerHTML = "";
-        eltVide = document.createElement("div");
-        eltVide.setAttribute("class","vide");
-        parentMain.appendChild(eltVide);
-        eltVide.innerHTML = "Votre panier est vide pour le moment!";
-        eltBtnChoisir = document.createElement("a");
-        eltBtnChoisir.setAttribute("id","commencechoisir");
-        parentMain.appendChild(eltBtnChoisir);
-        eltBtnChoisir.innerHTML = "Choisissez vos produits ";
-        eltBtnChoisir.href = "index.html";
-        eltAjouter = document.createElement("div");
-        eltAjouter.setAttribute("id","ajouter");
-        parentMain.appendChild(eltAjouter);
-        eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
-        eltValider = document.createElement("div");
-        eltValider.setAttribute("id","valider");
-        parentMain.appendChild(eltValider);
-        eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-    }
     eltAppendPanierVide();
 }else{
     let sum = 0;
@@ -101,21 +106,22 @@ if(monPanier==null|| monPanier.length==0){
         )
     }
     priceTotal = document.createElement("p");
-    priceTotal.setAttribute("id","pricetotal")
-    parentMonpanier = document.querySelector("div.monpanier");
-    parentMonpanier.appendChild(priceTotal);
+    priceTotal.setAttribute("id","pricetotal");
+    
+    document.querySelector("div.monpanier").appendChild(priceTotal);
     priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-
+btnChoisir();
+    function btnChoisir(){
     eltBtnChoisirienContinuer = document.createElement("a");
     eltBtnChoisirienContinuer.setAttribute("id","lien-continuer");
     eltBtnChoisirienContinuer.setAttribute("href","index.html");
-    parentMonpanier.appendChild(eltBtnChoisirienContinuer);
+    document.querySelector("div.monpanier").appendChild(eltBtnChoisirienContinuer);
 
     eltBtnContinue = document.createElement("div");
     eltBtnContinue.setAttribute("id","btn-continuer");
     eltBtnChoisirienContinuer.appendChild(eltBtnContinue);
     eltBtnContinue.innerHTML = "Continuer mon shopping";
-    
+    }
         
     let form = document.getElementById("loginForm");
     form.email.addEventListener("change",function(){
