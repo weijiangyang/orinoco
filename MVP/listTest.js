@@ -1,6 +1,5 @@
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
 function produitOptionAppend (){
-    
     document.getElementById("title-peluche").innerHTML = produitOption.name;
     document.getElementById("desp-peluche").innerHTML = produitOption.description;
     document.getElementById("price-peluche").innerHTML = "Price:"+(produitOption.price/100).toFixed(2)+"€";
@@ -40,20 +39,18 @@ document.getElementById("btn-panier").addEventListener("click",function(){
         if(produitPersonaliser.color&&produitPersonaliser.quantity){
             document.getElementById("link-btn-panier").href="./mon-panier.html";
             monPanier.push(produitPersonaliser);
-            p=JSON.stringify(monPanier);
-            localStorage.setItem("monPanier",p);
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
             }
     }else{
         let monPanier=[];
         if(produitPersonaliser.color&&produitPersonaliser.quantity){
             document.getElementById("link-btn-panier").href="./mon-panier.html";
             monPanier.push(produitPersonaliser);
-            p=JSON.stringify(monPanier);
-            localStorage.setItem("monPanier",p);
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
         }    
     }        
 document.getElementById("quantity-select").value="";
-let index = parentFormSelection.selectedIndex;
+let index = document.getElementById("form-selection").selectedIndex;
 document.getElementById("form-selection").options[index].value = "";      
 })   
 
