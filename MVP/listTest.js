@@ -77,7 +77,10 @@ if(monPanier==null|| monPanier.length==0){
             localStorage.setItem("monPanier",JSON.stringify(monPanier));
             document.getElementById(`price-produit-${i}`).innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
             document.getElementById(`pItemTotal-${i}`).innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+            monPanier = JSON.parse(localStorage.getItem("monPanier"));
+            sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
         });
+        
         priceItemTotal = document.createElement("p");
         priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
         priceItemTotal.setAttribute("class","totalprice-produit");
