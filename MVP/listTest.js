@@ -35,92 +35,139 @@ if(monPanier==null|| monPanier.length==0){
 }else{
     let sum = 0;
     for (let i=0;i<monPanier.length;i++){
-        parentCarte = document.createElement("div");
-        parentCarte.setAttribute("class","carte");
-        parentCarte.setAttribute("id",`carte-${i}`)
-        parentPanierInf.appendChild(parentCarte);
-        eltImage = document.createElement("div");
-        eltImage.setAttribute("class","image-produit");
-        parentCarte.appendChild(eltImage);
-        eltImg=document.createElement("img");
-        eltImg.src=monPanier[i].imageUrl;
-        eltImage.appendChild(eltImg);
-        eltInfProduit = document.createElement("div");
-        eltInfProduit.setAttribute("class","info-produit");
+        function parentCarte(i){
+            parentCarte = document.createElement("div");
+            parentCarte.setAttribute("class","carte");
+            parentCarte.setAttribute("id",`carte-${i}`)
+            parentPanierInf.appendChild(parentCarte);
+            return parentCarte
+        }
+        parentCarte(i);
+        console.log(parentCarte);
+        // function appendImage(i){
+        //     eltImage = document.createElement("div");
+        //     eltImage.setAttribute("class","image-produit");
+        //     parentCarte(i).appendChild(eltImage); 
+        //     return eltImage 
+        // }
+        // appendImage(i);
+        // function appendImg(i){
+        //     eltImg=document.createElement("img");
+        //     eltImg.src=monPanier[i].imageUrl;
+        //     appendImage(i).appendChild(eltImg);
+        //     return eltImg
+        // }
+        // appendImg(i);
+        // function appendInfProduit(i){
+        //     eltInfProduit = document.createElement("div");
+        //     eltInfProduit.setAttribute("class","info-produit");
+        //     parentCarte(i).appendChild(eltInfProduit);
+        //     return eltInfProduit
+        // }
+        // appendInfProduit(i);
+        // function appendNom(i){
+        //     eltNom = document.createElement("h2");
+        //     eltNom.setAttribute("id","nom-peluche")
+        //     appendInfProduit(i).appendChild(eltNom);
+        //     eltNom.innerHTML= monPanier[i].name;
+        //     return eltNom
+        // }
+        // appendNom(i);
+        // function appendDesp(i){
+        //     eltDesp = document.createElement("p");
+        //     eltDesp.setAttribute("class","desp-produit");
+        //     eltDesp.setAttribute("id",`desp-produit-${i}`);
+        //     appendInfProduit(i).appendChild(eltDesp);
+        //     eltDesp.innerHTML = monPanier[i].description;
+        //     return eltDesp
+        // }
+        // appendDesp(i);
+        // function appendPriceItem(i){
+        //     eltPriceItem = document.createElement("p");
+        //     eltPriceItem.setAttribute ("class","price-produit");
+        //     eltPriceItem.setAttribute("id",`price-produit-${i}`);
+        //     appendInfProduit(i).appendChild(eltPriceItem);
+        //     eltPriceItem.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+        //     return eltPriceItem
+        // }
+        // appendPriceItem(i);
+        // function appendColorItem(i){
+        //     eltColorItem = document.createElement("p");
+        //     eltColorItem.setAttribute("class","color-produit");
+        //     eltColorItem.setAttribute("id",`color-produit-${i}`)
+        //     appendInfProduit(i).appendChild(eltColorItem);
+        //     eltColorItem.innerHTML = "Color:"+monPanier[i].color;
+        //     return eltColorItem
+        // }
+        // appendColorItem(i);
+        // function appendBtnQuantity(i){
+        //     eltBtnChoisirLabel = document.createElement("label");
+        //     eltBtnChoisirLabel.setAttribute("id",`label-${i}`);
+        //     appendInfProduit(i).appendChild(eltBtnChoisirLabel);
+        //     eltBtnChoisirLabel.innerHTML="Quantity: "
+        //     eltInputQuantity = document.createElement("input");
+        //     eltInputQuantity.setAttribute("class","quantity-inp");
+        //     eltBtnChoisirLabel.appendChild(eltInputQuantity);
+        //     eltInputQuantity.setAttribute("type","number");
+        //     eltInputQuantity.setAttribute("value",monPanier[i].quantity);
+        //     eltInputQuantity.setAttribute("min",1);
+        //     return eltInputQuantity
+        // }
         
-        parentCarte.appendChild(eltInfProduit);
-        eltNom = document.createElement("h2");
-        eltNom.setAttribute("id","nom-peluche")
-        eltInfProduit.appendChild(eltNom);
-        eltNom.innerHTML= monPanier[i].name;
-        eltDesp = document.createElement("p");
-        eltDesp.setAttribute("class","desp-produit");
-        eltDesp.setAttribute("id",`desp-produit-${i}`);
-        eltInfProduit.appendChild(eltDesp);
-        eltDesp.innerHTML = monPanier[i].description;
-        eltPriceItem = document.createElement("p");
-        eltPriceItem.setAttribute ("class","price-produit");
-        eltPriceItem.setAttribute("id",`price-produit-${i}`);
-        eltInfProduit.appendChild(eltPriceItem);
-        eltPriceItem.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-        eltColorItem = document.createElement("p");
-        eltColorItem.setAttribute("class","color-produit");
-        eltColorItem.setAttribute("id",`color-produit-${i}`)
-        eltInfProduit.appendChild(eltColorItem);
-        eltColorItem.innerHTML = "Color:"+monPanier[i].color;
-        eltBtnChoisirLabel = document.createElement("label");
-        eltBtnChoisirLabel.setAttribute("id",`label-${i}`);
-        eltInfProduit.appendChild(eltBtnChoisirLabel);
-        eltBtnChoisirLabel.innerHTML="Quantity: "
-        eltInputQuantity = document.createElement("input");
-        eltInputQuantity.setAttribute("class","quantity-inp");
-        eltBtnChoisirLabel.appendChild(eltInputQuantity);
-        eltInputQuantity.setAttribute("type","number");
-        eltInputQuantity.setAttribute("value",monPanier[i].quantity);
-        eltInputQuantity.setAttribute("min",1);
-        document.getElementsByClassName("quantity-inp")[i].addEventListener("change",function(){
-            monPanier[i].quantity = this.value;
-            localStorage.setItem("monPanier",JSON.stringify(monPanier));
-            document.getElementById(`price-produit-${i}`).innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-            document.getElementById(`pItemTotal-${i}`).innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-            monPanier = JSON.parse(localStorage.getItem("monPanier"));
-            location.reload();
-            
-        });
+        // appendBtnQuantity(i).addEventListener("change",function(i){
+        //     monPanier[i].quantity = this.value;
+        //     localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        //     document.getElementById(`price-produit-${i}`).innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+        //     document.getElementById(`pItemTotal-${i}`).innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+        //     monPanier = JSON.parse(localStorage.getItem("monPanier"));
+        //     location.reload();
+        // });    
         
-        priceItemTotal = document.createElement("p");
-        priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
-        priceItemTotal.setAttribute("class","totalprice-produit");
-        eltInfProduit.appendChild(priceItemTotal);
-        priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-        sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-        btnSupprimer = document.createElement("button");
-        eltInfProduit.appendChild(btnSupprimer);
-        btnSupprimer.innerHTML = "Supprimer";
-        btnSupprimer.setAttribute("id","btn-supprimer");
-        btnSupprimer.addEventListener("click",function(){
-            monPanier.splice(i,i+1);
-            localStorage.setItem("monPanier",JSON.stringify(monPanier));
-            location.reload();
-            }
-        )
+        // function appendPriceItemTotal(i){
+        //     priceItemTotal = document.createElement("p");
+        //     priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
+        //     priceItemTotal.setAttribute("class","totalprice-produit");
+        //     appendInfProduit(i).appendChild(priceItemTotal);
+        //     priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+        //     return priceItemTotal
+        // }
+        // appendPriceItemTotal(i);
+        // function appendBtnSupprimer(i){
+        //     btnSupprimer = document.createElement("button");
+        //     appendInfProduit(i).appendChild(btnSupprimer);
+        //     btnSupprimer.innerHTML = "Supprimer";
+        //     btnSupprimer.setAttribute("id",`btn-supprimer-${i}`);
+        //     return btnSupprimer
+        // }
+        // appendBtnSupprimer(i);
+        // sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        
+        // appendBtnSupprimer(i).addEventListener("click",function(i){
+        //     monPanier.splice(i,i+1);
+        //     localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        //     location.reload();
+        //     }
+        // )
     }
-    priceTotal = document.createElement("p");
-    priceTotal.setAttribute("id","pricetotal");
+    function priceTotal(){
+        priceTotal = document.createElement("p");
+        priceTotal.setAttribute("id","pricetotal");
+        document.querySelector("div.monpanier").appendChild(priceTotal);
+        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+    }
+    priceTotal();
     
-    document.querySelector("div.monpanier").appendChild(priceTotal);
-    priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-btnChoisir();
+    btnChoisir();
     function btnChoisir(){
-    eltBtnChoisirienContinuer = document.createElement("a");
-    eltBtnChoisirienContinuer.setAttribute("id","lien-continuer");
-    eltBtnChoisirienContinuer.setAttribute("href","index.html");
-    document.querySelector("div.monpanier").appendChild(eltBtnChoisirienContinuer);
+        eltBtnChoisirienContinuer = document.createElement("a");
+        eltBtnChoisirienContinuer.setAttribute("id","lien-continuer");
+        eltBtnChoisirienContinuer.setAttribute("href","index.html");
+        document.querySelector("div.monpanier").appendChild(eltBtnChoisirienContinuer);
 
-    eltBtnContinue = document.createElement("div");
-    eltBtnContinue.setAttribute("id","btn-continuer");
-    eltBtnChoisirienContinuer.appendChild(eltBtnContinue);
-    eltBtnContinue.innerHTML = "Continuer mon shopping";
+        eltBtnContinue = document.createElement("div");
+        eltBtnContinue.setAttribute("id","btn-continuer");
+        eltBtnChoisirienContinuer.appendChild(eltBtnContinue);
+        eltBtnContinue.innerHTML = "Continuer mon shopping";
     }
         
     let form = document.getElementById("loginForm");
