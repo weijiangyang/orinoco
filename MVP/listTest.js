@@ -201,7 +201,7 @@ if(monPanier==null|| monPanier.length==0){
             for (let i=0;i<monPanier.length;i++){
                 formPurchaseOrder.products.push(monPanier[i].id)
                 }
-                alert(formPurchaseOrder.products);
+                
                
         
             fetch("http://localhost:3000/api/teddies/order",{
@@ -221,12 +221,12 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
     
-            .then(function(value) {
+            .then(function(order) {
               
             let monCommande = new Object();
             monCommande.listOfProductsCommanded = monPanier;
-            monCommande.contact = value.contact;
-            monCommande.orderId = value.orderId;
+            monCommande.contact = order.contact;
+            monCommande.orderId = order.orderId;
               
 
             
