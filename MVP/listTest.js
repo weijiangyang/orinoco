@@ -44,12 +44,15 @@ if(monPanier==null|| monPanier.length==0){
         }
         parentCarte(i);
         console.log(parentCarte);
-        // function appendImage(i){
-        //     eltImage = document.createElement("div");
-        //     eltImage.setAttribute("class","image-produit");
-        //     parentCarte(i).appendChild(eltImage); 
-        //     return eltImage 
-        // }
+        function appendImage(parentCarte){
+            eltImage = document.createElement("div");
+            eltImage.setAttribute("class","image-produit");
+            parentCarte(i).appendChild(eltImage); 
+            return eltImage 
+        }
+        console.log(appendImage(parentCarte))
+        // appendImage(i);
+        // console.log(appendImage)
         // appendImage(i);
         // function appendImg(i){
         //     eltImg=document.createElement("img");
