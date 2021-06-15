@@ -1,31 +1,32 @@
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
 if(monPanier==null|| monPanier.length==0){
-    eltForm = document.querySelector("div#formvalidation");
-    parentMain.removeChild(eltForm);
-    eltMonpanier = document.querySelector("div.monpanier");
-    document.querySelector("div.monpanier").innerHTML = "";
-    eltVide = document.createElement("div");
-    eltVide.setAttribute("class","vide");
-    parentMain.appendChild(eltVide);
-    eltVide.innerHTML = "Votre panier est vide pour le moment!";
-    eltBtnChoisir = document.createElement("a");
-    eltBtnChoisir.setAttribute("id","commencechoisir");
-    parentMain.appendChild(eltBtnChoisir);
-    eltBtnChoisir.innerHTML = "Choisissez vos produits ";
-    eltBtnChoisir.href = "index.html";
-    eltAjouter = document.createElement("div");
-    eltAjouter.setAttribute("id","ajouter");
-    parentMain.appendChild(eltAjouter);
-    eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
-    eltValider = document.createElement("div");
-    eltValider.setAttribute("id","valider");
-    parentMain.appendChild(eltValider);
-    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-    
+    function eltAppendPanierVide(){
+        eltForm = document.querySelector("div#formvalidation");
+        parentMain.removeChild(eltForm);
+        eltMonpanier = document.querySelector("div.monpanier");
+        document.querySelector("div.monpanier").innerHTML = "";
+        eltVide = document.createElement("div");
+        eltVide.setAttribute("class","vide");
+        parentMain.appendChild(eltVide);
+        eltVide.innerHTML = "Votre panier est vide pour le moment!";
+        eltBtnChoisir = document.createElement("a");
+        eltBtnChoisir.setAttribute("id","commencechoisir");
+        parentMain.appendChild(eltBtnChoisir);
+        eltBtnChoisir.innerHTML = "Choisissez vos produits ";
+        eltBtnChoisir.href = "index.html";
+        eltAjouter = document.createElement("div");
+        eltAjouter.setAttribute("id","ajouter");
+        parentMain.appendChild(eltAjouter);
+        eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+        eltValider = document.createElement("div");
+        eltValider.setAttribute("id","valider");
+        parentMain.appendChild(eltValider);
+        eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
+    }
+    eltAppendPanierVide();
 }else{
     let sum = 0;
     for (let i=0;i<monPanier.length;i++){
@@ -41,7 +42,7 @@ if(monPanier==null|| monPanier.length==0){
         eltImage.appendChild(eltImg);
         eltInfProduit = document.createElement("div");
         eltInfProduit.setAttribute("class","info-produit");
-        // eltT.setAttribute("id",`info-produit-${i}`)
+        
         parentCarte.appendChild(eltInfProduit);
         eltNom = document.createElement("h2");
         eltNom.setAttribute("id","nom-peluche")
@@ -78,7 +79,8 @@ if(monPanier==null|| monPanier.length==0){
             document.getElementById(`price-produit-${i}`).innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
             document.getElementById(`pItemTotal-${i}`).innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
             monPanier = JSON.parse(localStorage.getItem("monPanier"));
-            sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+            location.reload();
+            
         });
         
         priceItemTotal = document.createElement("p");
@@ -114,25 +116,7 @@ if(monPanier==null|| monPanier.length==0){
         eltBtnChoisirienContinuer.appendChild(eltBtnContinue);
         eltBtnContinue.innerHTML = "Continuer mon shopping";
     
-        let p = document.getElementsByClassName("quantity-inp");
-        // for (let i=0;i<p.length; i++){
-        //     p[i].addEventListener("change",function(){
-        //         monPanier[i].quantity = p[i].value;
-        //         localStorage.setItem("monPanier",JSON.stringify(monPanier));
-        //         eltP = document.getElementById(`price-produit-${i}`);
-        //         eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-        //         pItemTotal = document.getElementById(`pItemTotal-${i}`);
-        //         pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-        //         sum = 0;
-        //         for(let i=0;i<monPanier.length;i++){
-        //             sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-        //             }
-        //         priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-        //         }
-        //     )
-        // }
-                
- 
+        
         let form = document.getElementById("loginForm");
         form.email.addEventListener("change",function(){
             validEmail(this);
