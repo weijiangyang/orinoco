@@ -226,17 +226,18 @@ if(monPanier==null|| monPanier.length==0){
                     monCommande.contact = purchaseOrder.contact;
                     monCommande.orderId = purchaseOrder.orderId;
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    // localStorage.removeItem("monPanier");
-                    
+                    localStorage.removeItem("monPanier");
+                    document.getElementById("btn-link").href="commandeSuccess.html"; 
+                    alert("ok")
                     }
                  );  
-                   document.getElementById("btn-link").href="commandeSuccess.html"; 
-
+                   
+                     
            }     
      
-            
+            document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend)  
         }      
-        document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend)   
+         
         
             
         
