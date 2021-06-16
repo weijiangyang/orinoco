@@ -37,21 +37,24 @@ document.getElementById("btn-panier").addEventListener("click",function(){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     if(monPanier){
         if(produitPersonaliser.color&&produitPersonaliser.quantity){
-            document.getElementById("link-btn-panier").href="./mon-panier.html";
+            
             monPanier.push(produitPersonaliser);
             localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            document.getElementById("link-btn-panier").href="./mon-panier.html";
             }
     }else{
         let monPanier=[];
         if(produitPersonaliser.color&&produitPersonaliser.quantity){
-            document.getElementById("link-btn-panier").href="./mon-panier.html";
+            
             monPanier.push(produitPersonaliser);
             localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            document.getElementById("link-btn-panier").href="./mon-panier.html";
         }    
-    }        
-document.getElementById("quantity-select").value="";
+    } 
+    
+ document.getElementById("quantity-select").value="";
 let index = document.getElementById("form-selection").selectedIndex;
-document.getElementById("form-selection").options[index].value = "";      
+ document.getElementById("form-selection").options[index].value = "";      
 })   
 
 

@@ -4,22 +4,7 @@ console.log(monPanier);
 
 parentMain = document.querySelector("main");
 parentPanierInf = document.getElementById("monpanier-inf");
-// function menuPilier(){
-//     document.getElementById("menu-pilier").addEventListener(
-//             "click",function(){
-//             document.getElementById("menu-extend").style.display="block";
-//             document.getElementById("third-bar").style.transformOrigin="left";
-//             document.getElementById("first-bar").style.transformOrigin="left";
-//             document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-//             document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-//             document.getElementById("third-bar").style.transition=".2s";
-//             document.getElementById("first-bar").style.transition=".2s";
-//             document.getElementById("second-bar").style.display="none";
-//             document.getElementById("first-bar").style.transition="left";
-//             }
-//     )            
-// }            
-// menuPilier();
+
 
 if(monPanier==null|| monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
@@ -211,7 +196,7 @@ if(monPanier==null|| monPanier.length==0){
             if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
                 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                     // localStorage.removeItem("monPanier");
-                    document.getElementById("btn-link").href="commandeSuccess.html";
+                   
                     let contact=new Object();
                     let formPurchaseOrder = new Object();
                     
@@ -229,7 +214,7 @@ if(monPanier==null|| monPanier.length==0){
             for (let i=0;i<monPanier.length;i++){
                 formPurchaseOrder.products.push(monPanier[i].id)
                 }
-                alert(formPurchaseOrder.products);
+                
                
         
             fetch("http://localhost:3000/api/teddies/order",{
@@ -264,13 +249,14 @@ if(monPanier==null|| monPanier.length==0){
                 localStorage.removeItem("monPanier");
                
                 
-                
+                  
                 
 
                 }
             );  
             
         };
+        document.getElementById("btn-link").href="commandeSuccess.html"; 
             }
             
         )
