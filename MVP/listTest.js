@@ -104,15 +104,15 @@ function appendPanierNonVide(){
         eltLienContinuer.appendChild(eltBtnContinue);
         eltBtnContinue.innerHTML = "Continuer mon shopping";
     
-        let quantity = document.getElementsByClassName("quantity-inp");
-        for (let i=0;i<p.length; i++){
+        let quantity= document.getElementsByClassName("quantity-inp");
+        for (let i=0;i<quantity.length; i++){
             quantity[i].addEventListener("change",function(){
                 monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                eltP = document.getElementById(`price-produit-${i}`);
-                eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-                pItemTotal = document.getElementById(`pItemTotal-${i}`);
-                pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+                PriceItem = document.getElementById(`price-produit-${i}`);
+                PriceItem.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+                priceItemTotal = document.getElementById(`pItemTotal-${i}`);
+                priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
                 sum = 0;
                 for(let i=0;i<monPanier.length;i++){
                     sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
@@ -187,7 +187,7 @@ if(monPanier==null|| monPanier.length==0){
         
         
 
-        function purchaseOrderSend(){
+        
             if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
                 &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                     let contact=new Object();
@@ -202,7 +202,8 @@ if(monPanier==null|| monPanier.length==0){
                 formPurchaseOrder.products.push(monPanier[i].id)
                 }
               
-            fetch("http://localhost:3000/api/teddies/order",{
+          function purchaseOrderSend(){
+             fetch("http://localhost:3000/api/teddies/order",{
                 method: "POST",
                 headers: { 
                     'Accept': 'application/json', 
@@ -219,39 +220,33 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
     
-            .then(function(purchaseOrder) {
-              
-            let monCommande = new Object();
-            monCommande.listOfProductsCommanded = monPanier;
-            monCommande.contact = purchaseOrder.contact;
-            monCommande.orderId = purchaseOrder.orderId;
-              
-
+            .then(function(purchaseOrder){
+                    let monCommande = new Object();
+                    monCommande.listOfProductsCommanded = monPanier;
+                    monCommande.contact = purchaseOrder.contact;
+                    monCommande.orderId = purchaseOrder.orderId;
+                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                    localStorage.removeItem("monPanier");
+                    }
+                 );  
+            document.getElementById("btn-link").href="commandeSuccess.html";          
+           }     
+     
             
-            localStorage.setItem("monCommande",JSON.stringify(monCommande));
+        }        
+    document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend);   
+        
             
-                
-                localStorage.removeItem("monPanier");
-               
-                
-                  
-                
-
-                }
-            );  
-            
-        };
-        document.getElementById("btn-link").href="commandeSuccess.html"; 
-        }
+        
  
         
          
         
           
-        document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend
+        
             
-        )
-    } 
+        
+    
 
 
              
