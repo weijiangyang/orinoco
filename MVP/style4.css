@@ -122,7 +122,7 @@ span{
         top:10px;
     }
     ul#menu-extend{
-        display:none;
+        display:block;
     }
     ul#menu-extend li{
         margin-bottom: 5px;

@@ -16,6 +16,10 @@ if(monCommande ==null || monCommande.length == 0){
         sum+=priceItem
     }
     priceTotalCommande.innerText = `${sum.toFixed(2)}€`;
+    document.getElementById("acueill").addEventListener("click",function(){
+        monCommande=[];
+        localStorage.setItem("monCommande",JSON.stringify(monCommande));
+    })
 };
 function menuPillier(){
     document.getElementById("menu-pilier").addEventListener( "click",function(){
