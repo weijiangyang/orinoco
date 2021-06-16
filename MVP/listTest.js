@@ -197,10 +197,10 @@ if(monPanier==null|| monPanier.length==0){
                     contact.email = form.email.value;
                     contact.address = form.adresse.value;
                     contact.city = form.city.value;
-                    formPurchaseOrder = {contact,products:[]}
-            for (let i=0;i<monPanier.length;i++){
-                formPurchaseOrder.products.push(monPanier[i].id)
-                }
+                    formPurchaseOrder = {contact,products:[]};
+                for (let i=0;i<monPanier.length;i++){
+                    formPurchaseOrder.products.push(monPanier[i].id)
+                    };
               
           function purchaseOrderSend(){
              fetch("http://localhost:3000/api/teddies/order",{
@@ -226,20 +226,22 @@ if(monPanier==null|| monPanier.length==0){
                     monCommande.contact = purchaseOrder.contact;
                     monCommande.orderId = purchaseOrder.orderId;
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    localStorage.removeItem("monPanier");
+                    // localStorage.removeItem("monPanier");
+                    
                     }
                  );  
-            document.getElementById("btn-link").href="commandeSuccess.html";          
+                   document.getElementById("btn-link").href="commandeSuccess.html"; 
+
            }     
      
             
-        }        
-    document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend);   
+        }      
+        document.getElementById("btn-commande").addEventListener("click",purchaseOrderSend)   
         
             
         
  
-        
+    }
          
         
           
@@ -249,4 +251,4 @@ if(monPanier==null|| monPanier.length==0){
     
 
 
-             
+           
