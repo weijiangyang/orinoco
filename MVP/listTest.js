@@ -13,11 +13,11 @@ if(monPanier==null|| monPanier.length==0){
         eltVide.setAttribute("class","vide");
         parentMain.appendChild(eltVide);
         eltVide.innerHTML = "Votre panier est vide pour le moment!";
-        eltL = document.createElement("a");
-        eltL.setAttribute("id","commencechoisir");
-        parentMain.appendChild(eltL);
-        eltL.innerHTML = "Choisissez vos produits ";
-        eltL.href = "index.html";
+        linkCommencerChoisir = document.createElement("a");
+        linkCommencerChoisir.setAttribute("id","commencechoisir");
+        parentMain.appendChild(linkCommencerChoisir);
+        linkCommencerChoisir.innerHTML = "Choisissez vos produits ";
+        linkCommencerChoisir.href = "index.html";
         eltAjouter = document.createElement("div");
         eltAjouter.setAttribute("id","ajouter");
         parentMain.appendChild(eltAjouter);
@@ -49,12 +49,12 @@ if(monPanier==null|| monPanier.length==0){
             eltInfProduit.setAttribute("id",`infor-produit-${i}`)
             parentCarte.appendChild(eltInfProduit);
             eltNom = document.createElement("h2");
-            eltNom.setAttribute("id","nom-peluche")
+            eltNom.setAttribute("class","nom-peluche")
             eltInfProduit.appendChild(eltNom);
             eltNom.innerHTML= monPanier[i].name;
             eltDespProduit = document.createElement("p");
             eltDespProduit.setAttribute("class","desp-produit");
-            eltDespProduit.setAttribute("id",`desp-produit-${i}`);
+            // eltDespProduit.setAttribute("id",`desp-produit-${i}`);
             eltInfProduit.appendChild(eltDespProduit);
             eltDespProduit.innerHTML = monPanier[i].description;
             eltPriceProduit = document.createElement("p");
@@ -64,11 +64,12 @@ if(monPanier==null|| monPanier.length==0){
             eltPriceProduit.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
             eltColorProduit = document.createElement("p");
             eltColorProduit.setAttribute("class","color-produit");
-            eltColorProduit.setAttribute("id",`color-produit-${i}`)
+            // eltColorProduit.setAttribute("id",`color-produit-${i}`)
             eltInfProduit.appendChild(eltColorProduit);
             eltColorProduit.innerHTML = "Color:"+monPanier[i].color;
             eltLabelQuantity= document.createElement("label");
-            eltLabelQuantity.setAttribute("id",`label-${i}`);
+            // eltLabelQuantity.setAttribute("id",`label-${i}`);
+            eltLabelQuantity.setAttribute("class","labelQuantity");
             eltInfProduit.appendChild(eltLabelQuantity);
             eltLabelQuantity.innerHTML="Quantity: "
             eltInputQuantity = document.createElement("input");

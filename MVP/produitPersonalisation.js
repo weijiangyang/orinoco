@@ -11,8 +11,8 @@ function produitOptionAppend (){
         let eltOption = document.createElement("option");
         parentFormSelection.appendChild(eltOption);
         eltOption.setAttribute("class","color-peluche");
-        eltOption.innerHTML=color + <i class = "fas fa-bus"></i>;
-        eltOption.style.color = "black";
+        eltOption.innerHTML=color;
+        eltOption.style.color = color;
     }   
 }
 produitOptionAppend();
