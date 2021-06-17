@@ -54,7 +54,6 @@ if(monPanier==null|| monPanier.length==0){
             eltNom.innerHTML= monPanier[i].name;
             eltDespProduit = document.createElement("p");
             eltDespProduit.setAttribute("class","desp-produit");
-            // eltDespProduit.setAttribute("id",`desp-produit-${i}`);
             eltInfProduit.appendChild(eltDespProduit);
             eltDespProduit.innerHTML = monPanier[i].description;
             eltPriceProduit = document.createElement("p");
@@ -64,11 +63,9 @@ if(monPanier==null|| monPanier.length==0){
             eltPriceProduit.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
             eltColorProduit = document.createElement("p");
             eltColorProduit.setAttribute("class","color-produit");
-            // eltColorProduit.setAttribute("id",`color-produit-${i}`)
             eltInfProduit.appendChild(eltColorProduit);
             eltColorProduit.innerHTML = "Color:"+monPanier[i].color;
             eltLabelQuantity= document.createElement("label");
-            // eltLabelQuantity.setAttribute("id",`label-${i}`);
             eltLabelQuantity.setAttribute("class","labelQuantity");
             eltInfProduit.appendChild(eltLabelQuantity);
             eltLabelQuantity.innerHTML="Quantity: "
@@ -84,6 +81,7 @@ if(monPanier==null|| monPanier.length==0){
             eltInfProduit.appendChild(priceItemTotal);
             priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
             sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+            // ajouter le button pour supprimer les produits choisies
             btnSupprimer = document.createElement("button");
             eltInfProduit.appendChild(btnSupprimer);
             btnSupprimer.innerHTML = "Supprimer";
@@ -230,7 +228,6 @@ if(monPanier==null|| monPanier.length==0){
                         orderId : formPurchaseOrder.orderId
                     }
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    // localStorage.removeItem("monPanier");
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     }

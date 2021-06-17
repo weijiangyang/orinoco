@@ -16,7 +16,6 @@ function getPeulucheInf(){
                 document.getElementById(`link-${peuluche._id}`).href="./optionProduit.html";
         
                 let peulucheCarte = document.createElement("div");
-                // peulucheCarte.setAttribute("id",`carte-${peuluche._id}`);
                 peulucheCarte.setAttribute("class","peuluche-carte");
                 carteLink.appendChild(peulucheCarte);
                 peulucheCarte.style.height = "450px";

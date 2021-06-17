@@ -38,7 +38,7 @@ document.getElementById("form-selection").addEventListener("change",function(){
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
 document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){
-        document.getElementById("link-btn-panier").href="./mon-panier.html";
+        
         let monPanier = JSON.parse(localStorage.getItem("monPanier"));
     
         if(monPanier){
@@ -50,8 +50,8 @@ document.getElementById("btn-panier").addEventListener("click",function(){
             monPanier.push(produitPersonaliser);
             localStorage.setItem("monPanier",JSON.stringify(monPanier));
         }
+        document.getElementById("link-btn-panier").href="./mon-panier.html";
     }
-// rafraîchir la page
     document.getElementById("quantity-select").value="";
     let index = document.getElementById("form-selection").selectedIndex;
     document.getElementById("form-selection").options[index].value = "";      
