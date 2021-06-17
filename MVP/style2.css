@@ -145,6 +145,10 @@ div.panier h3{
 #btn-panier:hover{
     background-color:rgb(230, 191, 230)
 } 
+a#link-btn-panier{
+    display:block;
+    width: 100%;
+}
 div.container-produit{
     display:flex;
     align-items: center;

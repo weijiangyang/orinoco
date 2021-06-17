@@ -193,6 +193,7 @@ if(monPanier==null|| monPanier.length==0){
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                
                 let contact = {
                     firstName:form.nom.value,
                     lastName:form.prenom.value,
