@@ -4,7 +4,9 @@ let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 
 let parentMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
-function appendEltPanierVide(){
+
+
+if(monPanier==null|| monPanier.length==0){
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
     eltMonpanier = document.querySelector("div.monpanier");
@@ -26,9 +28,8 @@ function appendEltPanierVide(){
     eltValider.setAttribute("id","valider");
     parentMain.appendChild(eltValider);
     eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-}
-function appendEltPanierNonVide(){
     
+}else{
     let sum = 0;
     for (let i=0;i<monPanier.length;i++){
         parentCarte = document.createElement("div");
@@ -124,10 +125,9 @@ function appendEltPanierNonVide(){
                 }
             )
         }
-
-}
-function formValidation(){
-    let form = document.getElementById("loginForm");
+                
+ 
+        let form = document.getElementById("loginForm");
         form.email.addEventListener("change",function(){
             validEmail(this);
             }
@@ -189,16 +189,6 @@ function formValidation(){
                     return false;
                     }
             }
-            
-}
-if(monPanier==null|| monPanier.length==0){
-    appendEltPanierVide()
-}else{
-
-        appendEltPanierNonVide();
-        formValidation();
- 
-        
           
         document.getElementById("btn-commande").addEventListener("click",function(){
             
@@ -264,10 +254,11 @@ if(monPanier==null|| monPanier.length==0){
 
                 }
             );  
-            
+             document.getElementById("btn-link").href="commandeSuccess.html";
         };
-        document.getElementById("btn-link").href="commandeSuccess.html"; 
+        
             }
+            
             
         )
     } 
