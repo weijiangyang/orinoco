@@ -88,6 +88,7 @@ if(monPanier==null|| monPanier.length==0){
             btnSupprimer.setAttribute("id","btn-supprimer");
             btnSupprimer.addEventListener("click",function(){
                 monPanier.splice(i,i+1);
+                i++;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
                 location.reload();
                 }
