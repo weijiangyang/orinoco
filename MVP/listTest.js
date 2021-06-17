@@ -30,87 +30,70 @@ if(monPanier==null|| monPanier.length==0){
     // afficher le contenu du page quand mon panier n'est pas vide
     let sum = 0;
     // ajouter les elements dynamiquement sur le page en itinérant les items dans mon panier
-    for (let i=0;i<monPanier.length;i++){
-        parentCarte = document.createElement("div");
-        parentCarte.setAttribute("class","carte");
-        parentCarte.setAttribute("id",`carte-${i}`)
-        parentPanierInf.appendChild(parentCarte);
-        eltImage = document.createElement("div");
-        eltImage.setAttribute("class","image-produit");
-        parentCarte.appendChild(eltImage);
-        eltImg=document.createElement("img");
-        eltImg.src=monPanier[i].imageUrl;
-        eltImage.appendChild(eltImg);
-        eltInfProduit = document.createElement("div");
-        eltInfProduit.setAttribute("class","info-produit");
-        eltInfProduit.setAttribute("id",`infor-produit-${i}`)
-        parentCarte.appendChild(eltInfProduit);
-        eltNom = document.createElement("h2");
-        eltNom.setAttribute("id","nom-peluche")
-        eltInfProduit.appendChild(eltNom);
-        eltNom.innerHTML= monPanier[i].name;
-        eltDespProduit = document.createElement("p");
-        eltDespProduit.setAttribute("class","desp-produit");
-        eltDespProduit.setAttribute("id",`desp-produit-${i}`);
-        eltInfProduit.appendChild(eltDespProduit);
-        eltDespProduit.innerHTML = monPanier[i].description;
-        eltPriceProduit = document.createElement("p");
-        eltPriceProduit.setAttribute ("class","price-produit");
-        eltPriceProduit.setAttribute("id",`price-produit-${i}`);
-        eltInfProduit.appendChild(eltPriceProduit);
-        eltPriceProduit.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-        eltColorProduit = document.createElement("p");
-        eltColorProduit.setAttribute("class","color-produit");
-        eltColorProduit.setAttribute("id",`color-produit-${i}`)
-        eltInfProduit.appendChild(eltColorProduit);
-        eltColorProduit.innerHTML = "Color:"+monPanier[i].color;
-        eltLabelQuantity= document.createElement("label");
-        eltLabelQuantity.setAttribute("id",`label-${i}`);
-        eltInfProduit.appendChild(eltLabelQuantity);
-        eltLabelQuantity.innerHTML="Quantity: "
-        eltInputQuantity = document.createElement("input");
-        eltInputQuantity.setAttribute("class","quantity-inp");
-        eltLabelQuantity.appendChild(eltInputQuantity);
-        eltInfProduit.setAttribute("type","number");
-        eltInfProduit.setAttribute("value",monPanier[i].quantity);
-        eltInfProduit.setAttribute("min",1);
-        priceItemTotal = document.createElement("p");
-        priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
-        priceItemTotal.setAttribute("class","totalprice-produit");
-        eltInfProduit.appendChild(priceItemTotal);
-        priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
-        sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-        btnSupprimer = document.createElement("button");
-        eltInfProduit.appendChild(btnSupprimer);
-        btnSupprimer.innerHTML = "Supprimer";
-        btnSupprimer.setAttribute("id","btn-supprimer");
-        btnSupprimer.addEventListener("click",function(){
-            monPanier.splice(i,i+1);
-            localStorage.setItem("monPanier",JSON.stringify(monPanier));
-            location.reload();
-            }
-        )
-    }
-    // ajouter l'element du price total pour tous les produits dans mon panier sur le page 
-        priceTotal = document.createElement("p");
-        priceTotal.setAttribute("id","pricetotal")
-        parentMonpanier = document.querySelector("div.monpanier");
-        parentMonpanier.appendChild(priceTotal);
-        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-    // ajouter le button pour retourner au page d'accueille et continuer le shopping
-        eltLienContinuer = document.createElement("a");
-        eltLienContinuer.setAttribute("id","lien-continuer");
-        eltLienContinuer.setAttribute("href","index.html");
-        parentMonpanier.appendChild(eltLienContinuer);
-        eltBtnContinue = document.createElement("div");
-        eltBtnContinue.setAttribute("id","btn-continuer");
-        eltLienContinuer.appendChild(eltBtnContinue);
-        eltBtnContinue.innerHTML = "Continuer mon shopping";
-    
-        let p = document.getElementsByClassName("quantity-inp");
-        for (let i=0;i<p.length; i++){
-            p[i].addEventListener("change",function(){
-                monPanier[i].quantity = p[i].value;
+    function appendElementsPanierNonVide(){
+        for (let i=0;i<monPanier.length;i++){
+            parentCarte = document.createElement("div");
+            parentCarte.setAttribute("class","carte");
+            parentCarte.setAttribute("id",`carte-${i}`)
+            parentPanierInf.appendChild(parentCarte);
+            eltImage = document.createElement("div");
+            eltImage.setAttribute("class","image-produit");
+            parentCarte.appendChild(eltImage);
+            eltImg=document.createElement("img");
+            eltImg.src=monPanier[i].imageUrl;
+            eltImage.appendChild(eltImg);
+            eltInfProduit = document.createElement("div");
+            eltInfProduit.setAttribute("class","info-produit");
+            eltInfProduit.setAttribute("id",`infor-produit-${i}`)
+            parentCarte.appendChild(eltInfProduit);
+            eltNom = document.createElement("h2");
+            eltNom.setAttribute("id","nom-peluche")
+            eltInfProduit.appendChild(eltNom);
+            eltNom.innerHTML= monPanier[i].name;
+            eltDespProduit = document.createElement("p");
+            eltDespProduit.setAttribute("class","desp-produit");
+            eltDespProduit.setAttribute("id",`desp-produit-${i}`);
+            eltInfProduit.appendChild(eltDespProduit);
+            eltDespProduit.innerHTML = monPanier[i].description;
+            eltPriceProduit = document.createElement("p");
+            eltPriceProduit.setAttribute ("class","price-produit");
+            eltPriceProduit.setAttribute("id",`price-produit-${i}`);
+            eltInfProduit.appendChild(eltPriceProduit);
+            eltPriceProduit.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+            eltColorProduit = document.createElement("p");
+            eltColorProduit.setAttribute("class","color-produit");
+            eltColorProduit.setAttribute("id",`color-produit-${i}`)
+            eltInfProduit.appendChild(eltColorProduit);
+            eltColorProduit.innerHTML = "Color:"+monPanier[i].color;
+            eltLabelQuantity= document.createElement("label");
+            eltLabelQuantity.setAttribute("id",`label-${i}`);
+            eltInfProduit.appendChild(eltLabelQuantity);
+            eltLabelQuantity.innerHTML="Quantity: "
+            eltInputQuantity = document.createElement("input");
+            eltInputQuantity.setAttribute("class","quantity-inp");
+            eltLabelQuantity.appendChild(eltInputQuantity);
+            eltInputQuantity.setAttribute("type","number");
+            eltInputQuantity.setAttribute("value",monPanier[i].quantity);
+            eltInputQuantity.setAttribute("min",1);
+            priceItemTotal = document.createElement("p");
+            priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
+            priceItemTotal.setAttribute("class","totalprice-produit");
+            eltInfProduit.appendChild(priceItemTotal);
+            priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+            sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+            btnSupprimer = document.createElement("button");
+            eltInfProduit.appendChild(btnSupprimer);
+            btnSupprimer.innerHTML = "Supprimer";
+            btnSupprimer.setAttribute("id","btn-supprimer");
+            btnSupprimer.addEventListener("click",function(){
+                monPanier.splice(i,i+1);
+                localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                location.reload();
+                }
+            )
+        // ajouter l'element sur le page pour changer la quantity dans mon panier
+            eltInputQuantity.addEventListener("change",function(){
+                monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
                 eltP = document.getElementById(`price-produit-${i}`);
                 eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
@@ -123,8 +106,29 @@ if(monPanier==null|| monPanier.length==0){
                 priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
                 }
             )
-        }
-                
+    }
+}
+
+appendElementsPanierNonVide();
+    // ajouter l'element du price total pour tous les produits dans mon panier sur le page 
+        priceTotal = document.createElement("p");
+        priceTotal.setAttribute("id","pricetotal")
+        parentMonpanier = document.querySelector("div.monpanier");
+        parentMonpanier.appendChild(priceTotal);
+        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+
+
+    // ajouter le button pour retourner au page d'accueille et continuer le shopping
+        eltLienContinuer = document.createElement("a");
+        eltLienContinuer.setAttribute("id","lien-continuer");
+        eltLienContinuer.setAttribute("href","index.html");
+        parentMonpanier.appendChild(eltLienContinuer);
+        eltBtnContinue = document.createElement("div");
+        eltBtnContinue.setAttribute("id","btn-continuer");
+        eltLienContinuer.appendChild(eltBtnContinue);
+        eltBtnContinue.innerHTML = "Continuer mon shopping";
+    
+        
  
         let form = document.getElementById("loginForm");
         form.email.addEventListener("change",function(){
