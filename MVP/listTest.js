@@ -106,12 +106,11 @@ if(monPanier==null|| monPanier.length==0){
                 for(let i=0;i<monPanier.length;i++){
                     sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
                     }
-                priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+                location.reload();
                 }
-            )
-        }
-    }
-
+            )    
+        }        
+    }        
     appendElementsPanierNonVide();
     // ajouter l'element du price total pour tous les produits dans mon panier sur le page 
     priceTotal = document.createElement("p");
@@ -120,14 +119,15 @@ if(monPanier==null|| monPanier.length==0){
     parentMonpanier.appendChild(priceTotal);
     priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
     // ajouter le button pour retourner au page d'accueille et continuer le shopping
-        eltLienContinuer = document.createElement("a");
-        eltLienContinuer.setAttribute("id","lien-continuer");
-        eltLienContinuer.setAttribute("href","index.html");
-        parentMonpanier.appendChild(eltLienContinuer);
-        eltBtnContinue = document.createElement("div");
-        eltBtnContinue.setAttribute("id","btn-continuer");
-        eltLienContinuer.appendChild(eltBtnContinue);
-        eltBtnContinue.innerHTML = "Continuer mon shopping";
+    eltLienContinuer = document.createElement("a");
+    eltLienContinuer.setAttribute("class","lien-continuer");
+    eltLienContinuer.setAttribute("href","index.html");
+    
+    parentMonpanier.appendChild(eltLienContinuer);
+    eltBtnContinue = document.createElement("div");
+    eltBtnContinue.setAttribute("Id","btn-continuer");
+    eltLienContinuer.appendChild(eltBtnContinue);
+    eltBtnContinue.innerHTML = "Continuer mon shopping";
     // ajouter le formulaire de validation
     let form = document.getElementById("loginForm");
         // la validation pour l'email
