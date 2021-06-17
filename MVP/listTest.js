@@ -4,32 +4,34 @@ let parentMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
 if(monPanier==null|| monPanier.length==0){
     // afficher le contenu du page quand mon panier est vide
-    eltForm = document.querySelector("div#formvalidation");
-    parentMain.removeChild(eltForm);
-    eltMonpanier = document.querySelector("div.monpanier");
-    document.querySelector("div.monpanier").innerHTML = "";
-    eltVide = document.createElement("div");
-    eltVide.setAttribute("class","vide");
-    parentMain.appendChild(eltVide);
-    eltVide.innerHTML = "Votre panier est vide pour le moment!";
-    eltL = document.createElement("a");
-    eltL.setAttribute("id","commencechoisir");
-    parentMain.appendChild(eltL);
-    eltL.innerHTML = "Choisissez vos produits ";
-    eltL.href = "index.html";
-    eltAjouter = document.createElement("div");
-    eltAjouter.setAttribute("id","ajouter");
-    parentMain.appendChild(eltAjouter);
-    eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
-    eltValider = document.createElement("div");
-    eltValider.setAttribute("id","valider");
-    parentMain.appendChild(eltValider);
-    eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
-    
+    function appendElementsPanierVide(){
+        eltForm = document.querySelector("div#formvalidation");
+        parentMain.removeChild(eltForm);
+        eltMonpanier = document.querySelector("div.monpanier");
+        document.querySelector("div.monpanier").innerHTML = "";
+        eltVide = document.createElement("div");
+        eltVide.setAttribute("class","vide");
+        parentMain.appendChild(eltVide);
+        eltVide.innerHTML = "Votre panier est vide pour le moment!";
+        eltL = document.createElement("a");
+        eltL.setAttribute("id","commencechoisir");
+        parentMain.appendChild(eltL);
+        eltL.innerHTML = "Choisissez vos produits ";
+        eltL.href = "index.html";
+        eltAjouter = document.createElement("div");
+        eltAjouter.setAttribute("id","ajouter");
+        parentMain.appendChild(eltAjouter);
+        eltAjouter.innerHTML = "Ajouter vos produits au panier pour le moment!";
+        eltValider = document.createElement("div");
+        eltValider.setAttribute("id","valider");
+        parentMain.appendChild(eltValider);
+        eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
+    }
+    appendElementsPanierVide();
 }else{
     // afficher le contenu du page quand mon panier n'est pas vide
     let sum = 0;
-    // ajouter les elements dynamiquement sur le page en itinérant les items dans mon panier
+        // ajouter les elements dynamiquement sur le page en itinérant les items dans mon panier
     function appendElementsPanierNonVide(){
         for (let i=0;i<monPanier.length;i++){
             parentCarte = document.createElement("div");
@@ -91,7 +93,7 @@ if(monPanier==null|| monPanier.length==0){
                 location.reload();
                 }
             )
-        // ajouter l'element sur le page pour changer la quantity dans mon panier
+            // ajouter l'element sur le page pour changer la quantity dans mon panier
             eltInputQuantity.addEventListener("change",function(){
                 monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
@@ -127,7 +129,7 @@ if(monPanier==null|| monPanier.length==0){
         eltBtnContinue.innerHTML = "Continuer mon shopping";
     // ajouter le formulaire de validation
     let form = document.getElementById("loginForm");
-    // la validation pour l'email
+        // la validation pour l'email
     form.email.addEventListener("change",function(){
         validEmail(this);
         }
@@ -146,7 +148,7 @@ if(monPanier==null|| monPanier.length==0){
             return false;
             }
         }    
-    // la validation pour l'adresse
+        // la validation pour l'adresse
     form.adresse.addEventListener("change",function(){
         validAdresse(this);
         }
@@ -167,7 +169,7 @@ if(monPanier==null|| monPanier.length==0){
                 return false
                 }
         }
-     // la validation pour la code postale     
+        // la validation pour la code postale     
     form.codepostale.addEventListener("change",function(){
         validCodePostale(this);
         }
@@ -188,10 +190,11 @@ if(monPanier==null|| monPanier.length==0){
                 return false;
                 }
         }
-    
+    // composer et send mes commandes
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                document.getElementById("btn-link").href="commandeSuccess.html"; 
                 let contact = {
                     firstName:form.nom.value,
                     lastName:form.prenom.value,
@@ -222,38 +225,33 @@ if(monPanier==null|| monPanier.length==0){
                     }
                 )
                 .then(function(purchaseOrder) {
-                    // let monCommande = new Object();
-                    // monCommande.listOfProductsCommanded = monPanier;
-                    // monCommande.contact = value.contact;
-                    // monCommande.orderId = value.orderId;
                     let monCommande = {
                         listOfProductsCommanded : monPanier,
-                        // contact = purchaseOrder.contact,
                         orderId : purchaseOrder.orderId
                     }
-                
-
-                
-                localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                
-                    
+                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     localStorage.removeItem("monPanier");
-               
+                    }
+                );     
+        }               
+    };       
+    document.getElementById("btn-commande").addEventListener("click",commandeSend)            
+}               
+       
                 
                   
                 
 
-                }
-            );  
-             document.getElementById("btn-link").href="commandeSuccess.html";
-        };
-    }
+                
+            
+             
+        
           
-        document.getElementById("btn-commande").addEventListener("click",commandeSend
+        
             
             
-        )
-    } 
+        
+     
 
 
              
