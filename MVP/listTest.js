@@ -106,18 +106,16 @@ if(monPanier==null|| monPanier.length==0){
                 priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
                 }
             )
+        }
     }
-}
 
-appendElementsPanierNonVide();
+    appendElementsPanierNonVide();
     // ajouter l'element du price total pour tous les produits dans mon panier sur le page 
-        priceTotal = document.createElement("p");
-        priceTotal.setAttribute("id","pricetotal")
-        parentMonpanier = document.querySelector("div.monpanier");
-        parentMonpanier.appendChild(priceTotal);
-        priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-
-
+    priceTotal = document.createElement("p");
+    priceTotal.setAttribute("id","pricetotal")
+    parentMonpanier = document.querySelector("div.monpanier");
+    parentMonpanier.appendChild(priceTotal);
+    priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
     // ajouter le button pour retourner au page d'accueille et continuer le shopping
         eltLienContinuer = document.createElement("a");
         eltLienContinuer.setAttribute("id","lien-continuer");
@@ -127,129 +125,119 @@ appendElementsPanierNonVide();
         eltBtnContinue.setAttribute("id","btn-continuer");
         eltLienContinuer.appendChild(eltBtnContinue);
         eltBtnContinue.innerHTML = "Continuer mon shopping";
-    
-        
- 
-        let form = document.getElementById("loginForm");
-        form.email.addEventListener("change",function(){
-            validEmail(this);
+    // ajouter le formulaire de validation
+    let form = document.getElementById("loginForm");
+    // la validation pour l'email
+    form.email.addEventListener("change",function(){
+        validEmail(this);
+        }
+    )
+    const validEmail = function(inputEmail){
+        let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
+        let small = inputEmail.nextElementSibling;
+        if(emailRegExp.test(inputEmail.value)){
+            small.innerHTML = "Email valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;}else{
+            small.innerHTML = "Email non valide";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
             }
+        }    
+    // la validation pour l'adresse
+    form.adresse.addEventListener("change",function(){
+        validAdresse(this);
+        }
         )
-
-        const validEmail = function(inputEmail){
-            let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
-            let small = inputEmail.nextElementSibling;
-            if(emailRegExp.test(inputEmail.value)){
-                small.innerHTML = "Email valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;}else{
-                small.innerHTML = "Email non valide";
+ 
+    const validAdresse = function(inputAdresse){
+        let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
+        let small = inputAdresse.nextElementSibling;
+        if(adresseRegExp.test(inputAdresse.value)){
+            small.innerHTML = "Adresse valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
+                small.classList.remove("text-success");
+                small.classList.add("text-danger");
+                return false
+                }
+        }
+     // la validation pour la code postale     
+    form.codepostale.addEventListener("change",function(){
+        validCodePostale(this);
+        }
+    )
+                    
+    const validCodePostale = function(inputCodePostale){
+        let codePostaleRegExp = new RegExp('^\\d{5}$','g');
+        let small = inputCodePostale.nextElementSibling;
+        if(codePostaleRegExp.test(inputCodePostale.value)){
+            small.innerHTML = "Code postale valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
                 small.classList.remove("text-success");
                 small.classList.add("text-danger");
                 return false;
                 }
-            }    
-
-        form.adresse.addEventListener("change",function(){
-            validAdresse(this);
-            }
-        )
- 
-        const validAdresse = function(inputAdresse){
-            let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
-            let small = inputAdresse.nextElementSibling;
-            if(adresseRegExp.test(inputAdresse.value)){
-                small.innerHTML = "Adresse valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;
-                }else{
-                    small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
-                    small.classList.remove("text-success");
-                    small.classList.add("text-danger");
-                    return false
-                    }
-            }
-         
-        form.codepostale.addEventListener("change",function(){
-            validCodePostale(this);
-            }
-        )
-                        
-        const validCodePostale = function(inputCodePostale){
-            let codePostaleRegExp = new RegExp('^\\d{5}$','g');
-            let small = inputCodePostale.nextElementSibling;
-            if(codePostaleRegExp.test(inputCodePostale.value)){
-                small.innerHTML = "Code postale valide";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
-                return true;
-                }else{
-                    small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
-                    small.classList.remove("text-success");
-                    small.classList.add("text-danger");
-                    return false;
-                    }
-            }
-          
-        document.getElementById("btn-commande").addEventListener("click",function(){
-            
-            
-            if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
-                &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                    // localStorage.removeItem("monPanier");
-                   
-                    let contact=new Object();
-                    let formPurchaseOrder = new Object();
-                    
-                    contact.firstName = form.nom.value;
-                    contact.lastName = form.prenom.value;
-                    contact.email = form.email.value;
-                    contact.address = form.adresse.value;
-                    contact.city = form.city.value;
-                    formPurchaseOrder = {contact,products:[]}
-               
-                    
-      
-               
-        
-            for (let i=0;i<monPanier.length;i++){
-                formPurchaseOrder.products.push(monPanier[i].id)
-                }
-                
-               
-        
-            fetch("http://localhost:3000/api/teddies/order",{
-                method: "POST",
-                headers: { 
-                    'Accept': 'application/json', 
-                    'Content-Type': 'application/json' 
-                },
-                body:JSON.stringify(formPurchaseOrder)
-                }
-            )
-
-            .then(function(res) {
-                if (res.ok) { 
-                    return res.json(); 
-                    }
-                }
-            )
+        }
     
-            .then(function(value) {
-              
-            let monCommande = new Object();
-            monCommande.listOfProductsCommanded = monPanier;
-            monCommande.contact = value.contact;
-            monCommande.orderId = value.orderId;
-              
-
-            
-            localStorage.setItem("monCommande",JSON.stringify(monCommande));
-            
+    function commandeSend(){
+        if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
+            &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                let contact = {
+                    firstName:form.nom.value,
+                    lastName:form.prenom.value,
+                    email:form.email.value,
+                    address:form.adresse.value,
+                    city:form.city.value
+                }
+                let formPurchaseOrder = {
+                    contact:contact,
+                    products:[]
+                }
+                for (let i=0;i<monPanier.length;i++){
+                    formPurchaseOrder.products.push(monPanier[i].id)
+                }
+                fetch("http://localhost:3000/api/teddies/order",{
+                    method: "POST",
+                    headers: { 
+                        'Accept': 'application/json', 
+                        'Content-Type': 'application/json' 
+                    },
+                    body:JSON.stringify(formPurchaseOrder)
+                    }
+                )
+                .then(function(res) {
+                    if (res.ok) { 
+                        return res.json(); 
+                        }
+                    }
+                )
+                .then(function(purchaseOrder) {
+                    // let monCommande = new Object();
+                    // monCommande.listOfProductsCommanded = monPanier;
+                    // monCommande.contact = value.contact;
+                    // monCommande.orderId = value.orderId;
+                    let monCommande = {
+                        listOfProductsCommanded : monPanier,
+                        // contact = purchaseOrder.contact,
+                        orderId : purchaseOrder.orderId
+                    }
                 
-                localStorage.removeItem("monPanier");
+
+                
+                localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                
+                    
+                    localStorage.removeItem("monPanier");
                
                 
                   
@@ -259,8 +247,9 @@ appendElementsPanierNonVide();
             );  
              document.getElementById("btn-link").href="commandeSuccess.html";
         };
-        
-            }
+    }
+          
+        document.getElementById("btn-commande").addEventListener("click",commandeSend
             
             
         )
