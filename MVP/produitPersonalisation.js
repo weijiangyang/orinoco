@@ -1,4 +1,5 @@
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+// ajouter la produit choisie sur la page 
 function produitOptionAppend (){
     document.getElementById("title-peluche").innerHTML = produitOption.name;
     document.getElementById("desp-peluche").innerHTML = produitOption.description;
@@ -10,11 +11,12 @@ function produitOptionAppend (){
         let eltOption = document.createElement("option");
         parentFormSelection.appendChild(eltOption);
         eltOption.setAttribute("class","color-peluche");
-        eltOption.innerHTML=color;
+        eltOption.innerHTML=color + <i class = "fas fa-bus"></i>;
         eltOption.style.color = "black";
     }   
 }
 produitOptionAppend();
+// personaliser la produit choisie en choisissant la couleur et la quantity
 let produitPersonaliser = {
 name : produitOption.name,
 description : produitOption.description,
@@ -32,26 +34,23 @@ document.getElementById("form-selection").addEventListener("change",function(){
     let colorSelected = this.options[index].value;
     produitPersonaliser.color = colorSelected;
     }
-);    
+);   
+// mettre les produits choisies et personalisées dans mon panier en cliquant le button
 document.getElementById("btn-panier").addEventListener("click",function(){
+    if(produitPersonaliser.color&&produitPersonaliser.quantity){
     let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+    document.getElementById("link-btn-panier").href="./mon-panier.html";
     if(monPanier){
-        if(produitPersonaliser.color&&produitPersonaliser.quantity){
-            
-            monPanier.push(produitPersonaliser);
-            localStorage.setItem("monPanier",JSON.stringify(monPanier));
-            document.getElementById("link-btn-panier").href="./mon-panier.html";
-            }
+        monPanier.push(produitPersonaliser);
+        localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        
     }else{
         let monPanier=[];
-        if(produitPersonaliser.color&&produitPersonaliser.quantity){
-            
-            monPanier.push(produitPersonaliser);
-            localStorage.setItem("monPanier",JSON.stringify(monPanier));
-            document.getElementById("link-btn-panier").href="./mon-panier.html";
-        }    
-    } 
-    
+        monPanier.push(produitPersonaliser);
+        localStorage.setItem("monPanier",JSON.stringify(monPanier));
+    }
+}
+// rafraîchir la page
  document.getElementById("quantity-select").value="";
 let index = document.getElementById("form-selection").selectedIndex;
  document.getElementById("form-selection").options[index].value = "";      
