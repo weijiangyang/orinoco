@@ -38,22 +38,23 @@ document.getElementById("form-selection").addEventListener("change",function(){
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
 document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){
-    let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-    document.getElementById("link-btn-panier").href="./mon-panier.html";
-    if(monPanier){
-        monPanier.push(produitPersonaliser);
-        localStorage.setItem("monPanier",JSON.stringify(monPanier));
-        
-    }else{
-        let monPanier=[];
-        monPanier.push(produitPersonaliser);
-        localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        document.getElementById("link-btn-panier").href="./mon-panier.html";
+        let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+    
+        if(monPanier){
+            monPanier.push(produitPersonaliser);
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            
+        }else{
+            let monPanier=[];
+            monPanier.push(produitPersonaliser);
+            localStorage.setItem("monPanier",JSON.stringify(monPanier));
+        }
     }
-}
 // rafraîchir la page
- document.getElementById("quantity-select").value="";
-let index = document.getElementById("form-selection").selectedIndex;
- document.getElementById("form-selection").options[index].value = "";      
+    document.getElementById("quantity-select").value="";
+    let index = document.getElementById("form-selection").selectedIndex;
+    document.getElementById("form-selection").options[index].value = "";      
 })   
 
 

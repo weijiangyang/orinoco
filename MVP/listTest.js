@@ -195,7 +195,6 @@ if(monPanier==null|| monPanier.length==0){
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                document.getElementById("btn-link").href="commandeSuccess.html"; 
                 let contact = {
                     firstName:form.nom.value,
                     lastName:form.prenom.value,
@@ -231,9 +230,12 @@ if(monPanier==null|| monPanier.length==0){
                         orderId : formPurchaseOrder.orderId
                     }
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    localStorage.removeItem("monPanier");
+                    // localStorage.removeItem("monPanier");
+                    monPanier=[];
+                    localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     }
-                );     
+                ); 
+                document.getElementById("btn-link").href="commandeSuccess.html";   
         }               
     };       
     document.getElementById("btn-commande").addEventListener("click",commandeSend)            

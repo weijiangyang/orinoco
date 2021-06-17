@@ -1,6 +1,6 @@
 
 let monCommande = JSON.parse(localStorage.getItem("monCommande"));
-// alert(JSON.stringify(monCommande));
+
 if(monCommande ==null || monCommande.length == 0){
     document.querySelector("h2").innerText = "Vous n'avez aucune commande en cours!";
     document.querySelector("p#infocommande").innerText = "Ajouter d'abord vos produits au votre panier et puis valider vos commandes"
@@ -21,22 +21,7 @@ if(monCommande ==null || monCommande.length == 0){
         localStorage.setItem("monCommande",JSON.stringify(monCommande));
     })
 };
-function menuPillier(){
-    document.getElementById("menu-pilier").addEventListener( "click",function(){
-        document.getElementById("menu-extend").style.display="block";
-        document.getElementById("third-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transformOrigin="left";
-        document.getElementById("first-bar").style.transform="rotateZ(28deg)";
-        document.getElementById("third-bar").style.transform="rotateZ(-28deg)";
-        document.getElementById("third-bar").style.transition=".2s";
-        document.getElementById("first-bar").style.transition=".2s";
-        document.getElementById("second-bar").style.display="none";
-        document.getElementById("first-bar").style.transition="left";
-        }
-     )   
-}            
-        
-menuPillier();   
+
 
 
 
