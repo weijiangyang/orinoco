@@ -93,7 +93,7 @@ if(monPanier==null|| monPanier.length==0){
                 location.reload();
                 }
             )
-            // ajouter l'element sur le page pour changer la quantity dans mon panier
+            // changer la quantity des produits dans mon panier
             eltInputQuantity.addEventListener("change",function(){
                 monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
@@ -224,10 +224,10 @@ if(monPanier==null|| monPanier.length==0){
                         }
                     }
                 )
-                .then(function(purchaseOrder) {
+                .then(function(formPurchaseOrder) {
                     let monCommande = {
                         listOfProductsCommanded : monPanier,
-                        orderId : purchaseOrder.orderId
+                        orderId : formPurchaseOrder.orderId
                     }
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     localStorage.removeItem("monPanier");
