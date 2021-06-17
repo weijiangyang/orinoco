@@ -1,12 +1,9 @@
 
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-
-
 let parentMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
-
-
 if(monPanier==null|| monPanier.length==0){
+    // afficher le contenu du page quand mon panier est vide
     eltForm = document.querySelector("div#formvalidation");
     parentMain.removeChild(eltForm);
     eltMonpanier = document.querySelector("div.monpanier");
@@ -30,7 +27,9 @@ if(monPanier==null|| monPanier.length==0){
     eltValider.innerHTML = "Ensuit vous pourrez valider votre panier Merci!";
     
 }else{
+    // afficher le contenu du page quand mon panier n'est pas vide
     let sum = 0;
+    // ajouter les elements dynamiquement sur le page en itinérant les items dans mon panier
     for (let i=0;i<monPanier.length;i++){
         parentCarte = document.createElement("div");
         parentCarte.setAttribute("class","carte");
@@ -42,67 +41,67 @@ if(monPanier==null|| monPanier.length==0){
         eltImg=document.createElement("img");
         eltImg.src=monPanier[i].imageUrl;
         eltImage.appendChild(eltImg);
-        eltT = document.createElement("div");
-        eltT.setAttribute("class","info-produit");
-        eltT.setAttribute("id",`infor-produit-${i}`)
-        parentCarte.appendChild(eltT);
-        eltN = document.createElement("h2");
-        eltN.setAttribute("id","nom-peluche")
-        eltT.appendChild(eltN);
-        eltN.innerHTML= monPanier[i].name;
-        eltD = document.createElement("p");
-        eltD.setAttribute("class","desp-produit");
-        eltD.setAttribute("id",`desp-produit-${i}`);
-        eltT.appendChild(eltD);
-        eltD.innerHTML = monPanier[i].description;
-        eltP = document.createElement("p");
-        eltP.setAttribute ("class","price-produit");
-        eltP.setAttribute("id",`price-produit-${i}`);
-        eltT.appendChild(eltP);
-        eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
-        eltC = document.createElement("p");
-        eltC.setAttribute("class","color-produit");
-        eltC.setAttribute("id",`color-produit-${i}`)
-        eltT.appendChild(eltC);
-        eltC.innerHTML = "Color:"+monPanier[i].color;
-        eltLabel = document.createElement("label");
-        eltLabel.setAttribute("id",`label-${i}`);
-        eltT.appendChild(eltLabel);
-        eltLabel.innerHTML="Quantity: "
-        eltI = document.createElement("input");
-        eltI.setAttribute("class","quantity-inp");
-        eltLabel.appendChild(eltI);
-        eltI.setAttribute("type","number");
-        eltI.setAttribute("value",monPanier[i].quantity);
-        eltI.setAttribute("min",1);
-        pItemTotal = document.createElement("p");
-        pItemTotal.setAttribute("id",`pItemTotal-${i}`);
-        pItemTotal.setAttribute("class","totalprice-produit");
-        eltT.appendChild(pItemTotal);
-        pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+        eltInfProduit = document.createElement("div");
+        eltInfProduit.setAttribute("class","info-produit");
+        eltInfProduit.setAttribute("id",`infor-produit-${i}`)
+        parentCarte.appendChild(eltInfProduit);
+        eltNom = document.createElement("h2");
+        eltNom.setAttribute("id","nom-peluche")
+        eltInfProduit.appendChild(eltNom);
+        eltNom.innerHTML= monPanier[i].name;
+        eltDespProduit = document.createElement("p");
+        eltDespProduit.setAttribute("class","desp-produit");
+        eltDespProduit.setAttribute("id",`desp-produit-${i}`);
+        eltInfProduit.appendChild(eltDespProduit);
+        eltDespProduit.innerHTML = monPanier[i].description;
+        eltPriceProduit = document.createElement("p");
+        eltPriceProduit.setAttribute ("class","price-produit");
+        eltPriceProduit.setAttribute("id",`price-produit-${i}`);
+        eltInfProduit.appendChild(eltPriceProduit);
+        eltPriceProduit.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+        eltColorProduit = document.createElement("p");
+        eltColorProduit.setAttribute("class","color-produit");
+        eltColorProduit.setAttribute("id",`color-produit-${i}`)
+        eltInfProduit.appendChild(eltColorProduit);
+        eltColorProduit.innerHTML = "Color:"+monPanier[i].color;
+        eltLabelQuantity= document.createElement("label");
+        eltLabelQuantity.setAttribute("id",`label-${i}`);
+        eltInfProduit.appendChild(eltLabelQuantity);
+        eltLabelQuantity.innerHTML="Quantity: "
+        eltInputQuantity = document.createElement("input");
+        eltInputQuantity.setAttribute("class","quantity-inp");
+        eltLabelQuantity.appendChild(eltInputQuantity);
+        eltInfProduit.setAttribute("type","number");
+        eltInfProduit.setAttribute("value",monPanier[i].quantity);
+        eltInfProduit.setAttribute("min",1);
+        priceItemTotal = document.createElement("p");
+        priceItemTotal.setAttribute("id",`pItemTotal-${i}`);
+        priceItemTotal.setAttribute("class","totalprice-produit");
+        eltInfProduit.appendChild(priceItemTotal);
+        priceItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
         sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
-        btn = document.createElement("button");
-        eltT.appendChild(btn);
-        btn.innerHTML = "Supprimer";
-        btn.setAttribute("id","btn-supprimer");
-        btn.addEventListener("click",function(){
+        btnSupprimer = document.createElement("button");
+        eltInfProduit.appendChild(btnSupprimer);
+        btnSupprimer.innerHTML = "Supprimer";
+        btnSupprimer.setAttribute("id","btn-supprimer");
+        btnSupprimer.addEventListener("click",function(){
             monPanier.splice(i,i+1);
             localStorage.setItem("monPanier",JSON.stringify(monPanier));
             location.reload();
             }
         )
     }
+    // ajouter l'element du price total pour tous les produits dans mon panier sur le page 
         priceTotal = document.createElement("p");
         priceTotal.setAttribute("id","pricetotal")
         parentMonpanier = document.querySelector("div.monpanier");
         parentMonpanier.appendChild(priceTotal);
         priceTotal.innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-
+    // ajouter le button pour retourner au page d'accueille et continuer le shopping
         eltLienContinuer = document.createElement("a");
         eltLienContinuer.setAttribute("id","lien-continuer");
         eltLienContinuer.setAttribute("href","index.html");
         parentMonpanier.appendChild(eltLienContinuer);
-    
         eltBtnContinue = document.createElement("div");
         eltBtnContinue.setAttribute("id","btn-continuer");
         eltLienContinuer.appendChild(eltBtnContinue);
