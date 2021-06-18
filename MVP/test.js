@@ -197,7 +197,7 @@ if(monPanier==null|| monPanier.length==0){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                 
-                
+                setTimeout(function(){document.getElementById("btn-link").href="commandeSuccess.html";},50) 
                 
                 let contact = {
                     firstName:form.nom.value,
@@ -239,21 +239,22 @@ if(monPanier==null|| monPanier.length==0){
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                    
+                     
                     }
                 );
-                alert("okay");
-                document.getElementById("btn-link").href="commandeSuccess.html";   
-                
-        }               
-       
+               
                  
-    };       
+             
+        }               
+      
+                 
+    };  
+       
    const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",commandeSend) ;    
             
 }               
-
+ 
       
                 
                   
