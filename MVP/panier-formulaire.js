@@ -196,7 +196,7 @@ if(monPanier==null|| monPanier.length==0){
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                document.getElementById("btn-link").href="commandeSuccess.html";
+                
                 
                 
                 let contact = {
@@ -239,16 +239,17 @@ if(monPanier==null|| monPanier.length==0){
                     
                     }
                 );
+                document.getElementById("btn-link").href="commandeSuccess.html";   
                 
         }               
        
-                  
+                 
     };       
-   
+   const commandeSendCliquer =  document.getElementById("btn-commande");
+   commandeSendCliquer.addEventListener("click",commandeSend) ;    
             
 }               
-const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;   
+
       
                 
                   
