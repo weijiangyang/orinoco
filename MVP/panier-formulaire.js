@@ -94,7 +94,8 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
             // changer la quantity des produits dans mon panier
-            let inputQuantity = eltInputQuantity.addEventListener("change",function(){
+            let inputQuantity = eltInputQuantity;
+            inputQuantity.addEventListener("change",function(){
                 monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
                 eltP = document.getElementById(`price-produit-${i}`);
@@ -195,6 +196,7 @@ if(monPanier==null|| monPanier.length==0){
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                setTimeout(function(){document.getElementById("btn-link").href="commandeSuccess.html"},5);
                 
                 let contact = {
                     firstName:form.nom.value,
@@ -233,12 +235,15 @@ if(monPanier==null|| monPanier.length==0){
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                    
                     }
                 ); 
-                document.getElementById("btn-link").href="commandeSuccess.html";   
         }               
+       
+                  
     };       
-   let commandeSendCliquer =  document.getElementById("btn-commande").addEventListener("click",commandeSend) ;
+   let commandeSendCliquer =  document.getElementById("btn-commande");
+   commandeSendCliquer.addEventListener("click",commandeSend) ;
             
 }               
        

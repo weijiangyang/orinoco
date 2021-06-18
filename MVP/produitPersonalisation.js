@@ -18,21 +18,22 @@ function produitOptionAppend (){
 }
 produitOptionAppend();
 // personaliser la produit choisie en choisissant la couleur et la quantity
-produitPersonaliser = {
+let produitPersonaliser = {
 name : produitOption.name,
 description : produitOption.description,
 price : produitOption.price,
 imageUrl:produitOption.imageUrl,
 id:produitOption._id,}
+let inputQuantity = document.getElementById("quantity-select");
 
 
-let inputQuantity = document.getElementById("quantity-select").addEventListener("input",function(){
+inputQuantity.addEventListener("input",function(){
     produitPersonaliser.quantity = document.getElementById("quantity-select").value;
     }
 )
    
-
-let inputColor = document.getElementById("form-selection").addEventListener("change",function(){
+let inputColor = document.getElementById("form-selection");
+inputColor.addEventListener("change",function(){
     let index = document.getElementById("form-selection").selectedIndex;
     let colorSelected = document.getElementById("form-selection").options[index].value;
     produitPersonaliser.color = colorSelected;
