@@ -1,4 +1,5 @@
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+console.log(produitOption);
 // ajouter la produit choisie sur la page 
 function produitOptionAppend (){
     document.getElementById("title-peluche").innerHTML = produitOption.name;
@@ -24,19 +25,21 @@ price : produitOption.price,
 imageUrl:produitOption.imageUrl,
 id:produitOption._id
 }
+console.log(produitPersonaliser);
 document.getElementById("quantity-select").addEventListener("input",function(){
-    produitPersonaliser.quantity = this.value;
+    produitPersonaliser.quantity = document.getElementById("quantity-select").value;
     }
 );    
 
 document.getElementById("form-selection").addEventListener("change",function(){
-    let index = this.selectedIndex;
-    let colorSelected = this.options[index].value;
+    let index = document.getElementById("form-selection").selectedIndex;
+    let colorSelected = document.getElementById("form-selection").options[index].value;
     produitPersonaliser.color = colorSelected;
     }
-);   
+); 
+console.log(produitPersonaliser);
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
-document.getElementById("btn-panier").addEventListener("click",function(){
+let misePanier = document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){
         
             let monPanier = JSON.parse(localStorage.getItem("monPanier"));

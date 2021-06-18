@@ -55,7 +55,8 @@ function getPeulucheInf(){
             totalProduits.style.display = "flex";
             totalProduits.style.flexWrap = "wrap";
         }   
-        elementAppend();    
+        elementAppend();   
+        console.log(peuluches) 
     })    
     .catch(function(err){
         console.log("il y a un error")
