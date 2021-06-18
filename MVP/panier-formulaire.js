@@ -94,7 +94,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
             )
             // changer la quantity des produits dans mon panier
-            eltInputQuantity.addEventListener("change",function(){
+            let inputQuantity = eltInputQuantity.addEventListener("change",function(){
                 monPanier[i].quantity = this.value;
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
                 eltP = document.getElementById(`price-produit-${i}`);
@@ -107,7 +107,8 @@ if(monPanier==null|| monPanier.length==0){
                     }
                 location.reload();
                 }
-            )    
+            ) 
+            
         }        
     }        
     appendElementsPanierNonVide();
@@ -237,7 +238,8 @@ if(monPanier==null|| monPanier.length==0){
                 document.getElementById("btn-link").href="commandeSuccess.html";   
         }               
     };       
-    document.getElementById("btn-commande").addEventListener("click",commandeSend)            
+   let commandeSendCliquer =  document.getElementById("btn-commande").addEventListener("click",commandeSend) ;
+            
 }               
        
                 

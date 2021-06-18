@@ -25,18 +25,20 @@ price : produitOption.price,
 imageUrl:produitOption.imageUrl,
 id:produitOption._id
 }
-console.log(produitPersonaliser);
-document.getElementById("quantity-select").addEventListener("input",function(){
+
+let inputQuantity = document.getElementById("quantity-select").addEventListener("input",function(){
     produitPersonaliser.quantity = document.getElementById("quantity-select").value;
     }
-);    
+); 
+inputQuantity();   
 
-document.getElementById("form-selection").addEventListener("change",function(){
+let inputColor = document.getElementById("form-selection").addEventListener("change",function(){
     let index = document.getElementById("form-selection").selectedIndex;
     let colorSelected = document.getElementById("form-selection").options[index].value;
     produitPersonaliser.color = colorSelected;
     }
 ); 
+inputColor();
 console.log(produitPersonaliser);
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
 let misePanier = document.getElementById("btn-panier").addEventListener("click",function(){
