@@ -237,8 +237,13 @@ if(monPanier==null|| monPanier.length==0){
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
+                    
                     }
-                );
+                )
+                .catch(function(err){
+                    console.log("il y a un error")
+                });    
+                
                 document.getElementById("btn-link").href="commandeSuccess.html";   
                 
         }               
