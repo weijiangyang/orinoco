@@ -196,8 +196,8 @@ if(monPanier==null|| monPanier.length==0){
     function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                let P = document.getElementById("btn-link").href="commandeSuccess.html";
-                setTimeout(function(){P},5000);
+                document.getElementById("btn-link").href="commandeSuccess.html";
+                
                 
                 let contact = {
                     firstName:form.nom.value,
@@ -249,7 +249,7 @@ if(monPanier==null|| monPanier.length==0){
 }               
 const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",commandeSend) ;   
-   console.log(localStorage.getItem(monCommande))   
+      
                 
                   
                 
