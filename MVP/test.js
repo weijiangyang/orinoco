@@ -215,7 +215,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
                 
                 
-                 fetch("http://localhost:3000/api/teddies/order",{
+         async function apiSdend()   {fetch("http://localhost:3000/api/teddies/order",{
                     method: "POST",
                     headers: { 
                         'Accept': 'application/json', 
@@ -243,22 +243,28 @@ if(monPanier==null|| monPanier.length==0){
                     
                     }
                 );
-                alert("ok")   
+            }
+                
+                
         
-                document.getElementById("btn-link").href="commandeSuccess.html"; 
-             
-        }  
+         async function changePage(){
+             const Result =  await apiSdend();
+            console.log(Result);
+            
+          document.getElementById("btn-link").href="commandeSuccess.html";        
+             }
          
-          
+        changePage();
+         
                  
-    };  
+    }};  
        
    const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",commandeSend) ;    
             
 }               
  
-       
+    
                 
                   
                 

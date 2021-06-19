@@ -244,10 +244,10 @@ if(monPanier==null|| monPanier.length==0){
                     console.log("il y a un error")
                 });    
                 
-                document.getElementById("btn-link").href="commandeSuccess.html";   
+                 
                 
         }               
-       
+       document.getElementById("btn-link").href="commandeSuccess.html";  
                  
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
