@@ -237,18 +237,20 @@ if(monPanier==null|| monPanier.length==0){
                 .then(function(formPurchaseOrder) {
                     
                     
-                    monCommande.orderId = formPurchaseOrder.orderId;});
-                    alert(monCommande)
+                    monCommande.orderId = formPurchaseOrder.orderId;
+                    
+                   
                     
                     
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                   
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
-                    
-                
+                    });
+             
       
-          document.getElementById("btn-link").href="commandeSuccess.html"       
+          document.getElementById("btn-link").href="commandeSuccess.html"      
                 
     }};  
        
