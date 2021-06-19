@@ -215,7 +215,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
                 
                 
-        fetch("http://localhost:3000/api/teddies/order",{
+                fetch("http://localhost:3000/api/teddies/order",{
                     method: "POST",
                     headers: { 
                         'Accept': 'application/json', 
@@ -243,17 +243,9 @@ if(monPanier==null|| monPanier.length==0){
                     
                     }
                 );
-               
+      
+          document.getElementById("btn-link").href="commandeSuccess.html"       
                 
-                
-        
-         
-             
-            
-          document.getElementById("btn-link").href="commandeSuccess.html";        
-           
-         
-                 
     }};  
        
    const commandeSendCliquer =  document.getElementById("btn-commande");
