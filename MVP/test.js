@@ -213,6 +213,8 @@ if(monPanier==null|| monPanier.length==0){
                 for (let i=0;i<monPanier.length;i++){
                     formPurchaseOrder.products.push(monPanier[i].id)
                 }
+                let monCommande = new Object();
+                monCommande.listOfProductsCommanded=monPanier;
                 
                 
                 fetch("http://localhost:3000/api/teddies/order",{
@@ -233,16 +235,18 @@ if(monPanier==null|| monPanier.length==0){
                     }
                 )
                 .then(function(formPurchaseOrder) {
-                    let monCommande = {
-                        listOfProductsCommanded : monPanier,
-                        orderId : formPurchaseOrder.orderId
-                    }
+                    
+                    
+                    monCommande.orderId = formPurchaseOrder.orderId;});
+                    alert(monCommande)
+                    
+                    
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
-                    }
-                );
+                    
+                
       
           document.getElementById("btn-link").href="commandeSuccess.html"       
                 
