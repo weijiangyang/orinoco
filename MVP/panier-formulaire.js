@@ -245,13 +245,13 @@ if(monPanier==null|| monPanier.length==0){
                 });    
                 
                  
-                
+        document.getElementById("btn-link").href="commandeSuccess.html";        
         }               
-       document.getElementById("btn-link").href="commandeSuccess.html";  
-                 
+         
+                   
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;    
+   commandeSendCliquer.addEventListener("click",commandeSend) ;  
             
 }               
 
