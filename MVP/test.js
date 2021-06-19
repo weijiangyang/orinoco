@@ -193,12 +193,12 @@ if(monPanier==null|| monPanier.length==0){
                 }
         }
     // composer et send mes commandes
-    
+    function commandeSend(){
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                 
                 
-         function commandeSend(){       
+                
                 let contact = {
                     firstName:form.nom.value,
                     lastName:form.prenom.value,
@@ -213,9 +213,6 @@ if(monPanier==null|| monPanier.length==0){
                 for (let i=0;i<monPanier.length;i++){
                     formPurchaseOrder.products.push(monPanier[i].id)
                 }
-                let monCommande = new Object();
-                monCommande.listOfProductsCommanded=monPanier;
-                
                 
                 fetch("http://localhost:3000/api/teddies/order",{
                     method: "POST",
@@ -226,45 +223,41 @@ if(monPanier==null|| monPanier.length==0){
                     body:JSON.stringify(formPurchaseOrder)
                     }
                 )
-                
                 .then(function(res) {
                     if (res.ok) { 
                         return res.json(); 
-                        
                         }
                     }
                 )
                 .then(function(formPurchaseOrder) {
-                    
-                    
-                    monCommande.orderId = formPurchaseOrder.orderId;
-                    
-                   
-                    
-                    
+                    let monCommande = {
+                        listOfProductsCommanded : monPanier,
+                        orderId : formPurchaseOrder.orderId
+                    }
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                   
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
-                    });
-             }
-                const commandeSendCliquer =  document.getElementById("btn-commande");
-                commandeSendCliquer.addEventListener("click",function(){
-                // commandeSend();
-                document.getElementById("btn-link").href="commandeSuccess.html";
-                }); 
-        
-        
-    }    
-}                
+                    }
+                )
+                .catch(function(err){
+                    console.log("il y a un error")
+                });    
+              
                 
-     
-       
+        }  
+        
+       document.getElementById("btn-link").href="commandeSuccess.html";  
+                 
+    };       
    
-               
- 
+   
+       const commandeSendCliquer =  document.getElementById("btn-link");
+       commandeSendCliquer.addEventListener("click",commandeSend) ;    
+          
+}               
 
+      
                 
                   
                 
