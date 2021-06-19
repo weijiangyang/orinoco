@@ -193,12 +193,12 @@ if(monPanier==null|| monPanier.length==0){
                 }
         }
     // composer et send mes commandes
-    function commandeSend(){
+    
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                 
                 
-                
+         function commandeSend(){       
                 let contact = {
                     firstName:form.nom.value,
                     lastName:form.prenom.value,
@@ -248,18 +248,23 @@ if(monPanier==null|| monPanier.length==0){
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
                     });
-             
-      
-          document.getElementById("btn-link").href="commandeSuccess.html"      
+             }
+                const commandeSendCliquer =  document.getElementById("btn-commande");
+                commandeSendCliquer.addEventListener("click",function(){
+                // commandeSend();
+                document.getElementById("btn-link").href="commandeSuccess.html";
+                }); 
+        
+        
+    }    
+}                
                 
-    }};  
+     
        
-   const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;    
-            
-}               
+   
+               
  
-    
+
                 
                   
                 
