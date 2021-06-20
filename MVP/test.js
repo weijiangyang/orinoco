@@ -215,6 +215,7 @@ if(monPanier==null|| monPanier.length==0){
                 }
                 let monCommande = {
                     listOfProductsCommanded : monPanier,
+                    orderId:""
                     
                 }
                 fetch("http://localhost:3000/api/teddies/order",{
@@ -233,34 +234,30 @@ if(monPanier==null|| monPanier.length==0){
                     }
                 )
                 .then(function(formPurchaseOrder) {
-                    monCommande = {
-                        
-                        orderId : formPurchaseOrder.orderId
-                    }
                     
+                    monCommande.orderId = formPurchaseOrder.orderId;
+                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     
-                     
                     }
                 )
-                .then(
-                   
-                    document.getElementById("btn-link").href="commandeSuccess.html"
-                )
+                
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                // alert("okay")   
+                alert("okay")   
                 
-                // monPanier=[];
-                // localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                monPanier=[];
+                localStorage.setItem("monPanier",JSON.stringify(monPanier));
                  
-               localStorage.setItem("monCommande",JSON.stringify(monCommande));
+               
         }               
          
                    
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;  
+   commandeSendCliquer.addEventListener("click",function(){
+       commandeSend();
+       document.getElementById("btn-link").href="commandeSuccess.html"; } )
             
 }               
 
