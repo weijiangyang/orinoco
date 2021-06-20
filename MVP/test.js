@@ -130,6 +130,7 @@ if(monPanier==null|| monPanier.length==0){
     eltLienContinuer.appendChild(eltBtnContinue);
     eltBtnContinue.innerHTML = "Continuer mon shopping";
     // ajouter le formulaire de validation
+   
     let form = document.getElementById("loginForm");
         // la validation pour l'email
     form.email.addEventListener("change",function(){
@@ -193,69 +194,67 @@ if(monPanier==null|| monPanier.length==0){
                 }
         }
     // composer et send mes commandes
-    function commandeSend(){
+
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
-                
-                
-                
-                let contact = {
-                    firstName:form.nom.value,
-                    lastName:form.prenom.value,
-                    email:form.email.value,
-                    address:form.adresse.value,
-                    city:form.city.value
-                }
-                let formPurchaseOrder = {
-                    contact:contact,
-                    products:[]
-                }
-                for (let i=0;i<monPanier.length;i++){
-                    formPurchaseOrder.products.push(monPanier[i].id)
-                }
-                fetch("http://localhost:3000/api/teddies/order",{
-                    method: "POST",
-                    headers: { 
-                        'Accept': 'application/json', 
-                        'Content-Type': 'application/json' 
-                    },
-                    body:JSON.stringify(formPurchaseOrder)
-                    }
-                )
-                .then(function(res) {
-                    if (res.ok) { 
-                        return res.json(); 
-                        }
-                    }
-                )
-                .then(function(formPurchaseOrder) {
-                    let monCommande = {
-                        listOfProductsCommanded : monPanier,
-                        orderId : formPurchaseOrder.orderId
-                    }
-                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    monPanier=[];
-                    localStorage.setItem("monPanier",JSON.stringify(monPanier));
+               function change(){ document.getElementById("btn-link").href="commandeSuccess.html";}
+               change();
+        //         let contact = {
+        //             firstName:form.nom.value,
+        //             lastName:form.prenom.value,
+        //             email:form.email.value,
+        //             address:form.adresse.value,
+        //             city:form.city.value
+        //         }
+        //         let formPurchaseOrder = {
+        //             contact:contact,
+        //             products:[]
+        //         }
+        //         for (let i=0;i<monPanier.length;i++){
+        //             formPurchaseOrder.products.push(monPanier[i].id)
+        //         }
+        // fetch("http://localhost:3000/api/teddies/order",{
+        //             method: "POST",
+        //             headers: { 
+        //                 'Accept': 'application/json', 
+        //                 'Content-Type': 'application/json' 
+        //             },
+        //             body:JSON.stringify(formPurchaseOrder)
+        //             }
+        //         )
+        //         .then(function(res) {
+        //             if (res.ok) { 
+        //                 return res.json(); 
+        //                 }
+        //             }
+        //         )
+        //         .then(function(formPurchaseOrder) {
                     
+        //             let monCommande = {
+        //                 listOfProductsCommanded : monPanier,
+        //                 orderId : formPurchaseOrder.orderId
+        //             }
+        //             localStorage.setItem("monCommande",JSON.stringify(monCommande));
+        //             monPanier=[];
+        //             localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
-                    }
-                )
-                .catch(function(err){
-                    console.log("il y a un error")
-                });    
+        //             document.getElementById("btn-link").href="commandeSuccess.html"; 
+        //             }
+        //         )
+        //         .catch(function(err){
+        //             console.log("il y a un error")
+        //         });   
                 
-                 
-        document.getElementById("btn-link").href="commandeSuccess.html";        
-        }               
-         
-                   
-    };       
-   const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;  
+       
+              
             
-}               
+        
+   
+            
+} 
 
-      
+
+}     
                 
                   
                 
