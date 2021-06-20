@@ -210,15 +210,9 @@ if(monPanier==null|| monPanier.length==0){
                     contact:contact,
                     products:[]
                 }
-                for (let i=0;i<monPanier.length;i++){
-                    formPurchaseOrder.products.push(monPanier[i].id)
-                }
-                let monCommande = {
-                    listOfProductsCommanded : monPanier,
-                    orderId:""
-                    
-                }
-                fetch("http://localhost:3000/api/teddies/order",{
+                
+                
+                let api = function() {fetch("http://localhost:3000/api/teddies/order",{
                     method: "POST",
                     headers: { 
                         'Accept': 'application/json', 
@@ -235,26 +229,28 @@ if(monPanier==null|| monPanier.length==0){
                 )
                 .then(function(formPurchaseOrder) {
                     
-                    monCommande.orderId = formPurchaseOrder.orderId;
-                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                    let orderId = formPurchaseOrder.orderId;
+                    localStorage.setItem("orderId",JSON.stringify(orderId));
                     
                     }
                 )
                 
                 .catch(function(err){
                     console.log("il y a un error")
-                }); 
-                // alert("okay")   
+                }); }
+                api();
+                alert("okay")
                 
-                monPanier=[];
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                 
+                
+                // monPanier=[];
+                // localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                // alert("okay") 
             }      
                    
          
                    
     };  
-    alert("okay")  
+    
    const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",
       
