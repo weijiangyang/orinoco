@@ -244,20 +244,22 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                alert("okay")   
+                // alert("okay")   
                 
                 monPanier=[];
                 localStorage.setItem("monPanier",JSON.stringify(monPanier));
                  
-               
-        }               
+            }      
+                   
          
                    
-    };       
+    };  
+    alert("okay")  
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",function(){
-       commandeSend();
-       document.getElementById("btn-link").href="commandeSuccess.html"; } )
+   commandeSendCliquer.addEventListener("click",
+      
+       commandeSend)
+      
             
 }               
 
