@@ -217,7 +217,9 @@ if(monPanier==null|| monPanier.length==0){
                     method: "POST",
                     headers: { 
                         'Accept': 'application/json', 
-                        'Content-Type': 'application/json' 
+                        'Content-Type': 'application/json',
+                        
+
                     },
                     body:JSON.stringify(formPurchaseOrder)
                     }
