@@ -243,7 +243,7 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                alert("okay")   
+                alert("Confirmez votre commande!")   
                 
                  
         document.getElementById("btn-link").href="commandeSuccess.html";        
