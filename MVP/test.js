@@ -236,29 +236,29 @@ if(monPanier==null|| monPanier.length==0){
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                    
-                    
                     }
-                )
+                )    
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                alert("okay")   
-                
-                 
-                
-        }               
-         
-                   
+                // alert("okay")     
+        }        
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",function(){
        commandeSend();
-       document.getElementById("btn-link").href="commandeSuccess.html";
+    //    ;
    })
-     
+    // setTimeout(function(){},500) 
             
-}               
+}                             
+                
+document.getElementById("btn-link").href="commandeSuccess.html"                
+                
+                       
+         
+                   
+    
 
       
                 
