@@ -237,6 +237,7 @@ if(monPanier==null|| monPanier.length==0){
                     monPanier=[];
                     localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
+                    
                     }
                 )
                 .catch(function(err){
@@ -244,23 +245,19 @@ if(monPanier==null|| monPanier.length==0){
                 }); 
                 alert("Confirmez votre commande!")   
                 
-                document.getElementById("btn-link").href="commandeSuccess.html" 
                  
-              
+        document.getElementById("btn-link").href="commandeSuccess.html";        
         }               
          
                    
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend)  
-}  
-       
-      
-         
-               
+   commandeSendCliquer.addEventListener("click",commandeSend) ;  
+            
+}               
 
       
-                 
+                
                   
                 
 

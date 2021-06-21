@@ -22,7 +22,7 @@ if(monCommande ==null || monCommande.length == 0){
     })
 };
 document.getElementById("panier").addEventListener("click",function(){
-    // localStorage.removeItem("monPanier")
+    localStorage.removeItem("monPanier")
 })
 
 
