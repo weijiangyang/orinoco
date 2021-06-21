@@ -210,9 +210,10 @@ if(monPanier==null|| monPanier.length==0){
                     contact:contact,
                     products:[]
                 }
-                
-                
-                let api = function() {fetch("http://localhost:3000/api/teddies/order",{
+                for (let i=0;i<monPanier.length;i++){
+                    formPurchaseOrder.products.push(monPanier[i].id)
+                }
+                fetch("http://localhost:3000/api/teddies/order",{
                     method: "POST",
                     headers: { 
                         'Accept': 'application/json', 
@@ -228,34 +229,30 @@ if(monPanier==null|| monPanier.length==0){
                     }
                 )
                 .then(function(formPurchaseOrder) {
+                    let monCommande = {
+                        listOfProductsCommanded : monPanier,
+                        orderId : formPurchaseOrder.orderId
+                    }
+                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                    monPanier=[];
+                    localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
-                    let orderId = formPurchaseOrder.orderId;
-                    localStorage.setItem("orderId",JSON.stringify(orderId));
                     
                     }
                 )
-                
                 .catch(function(err){
                     console.log("il y a un error")
-                }); }
-                api();
-                alert("okay")
+                }); 
+                alert("okay")   
                 
-                
-                // monPanier=[];
-                // localStorage.setItem("monPanier",JSON.stringify(monPanier));
-                // alert("okay") 
-            }      
-                   
+                 
+        document.getElementById("btn-link").href="commandeSuccess.html";        
+        }               
          
                    
-    };  
-    
+    };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",
-      
-       commandeSend)
-      
+   commandeSendCliquer.addEventListener("click",commandeSend) ;  
             
 }               
 
