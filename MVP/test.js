@@ -242,8 +242,8 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                // alert("Confirmez votre commande!")   
-                //  alert("ok")
+                alert("Confirmez votre commande!")   
+                
                 document.getElementById("btn-link").href="commandeSuccess.html" 
                  
               
@@ -252,9 +252,12 @@ if(monPanier==null|| monPanier.length==0){
                    
     };       
    const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;  
+   commandeSendCliquer.addEventListener("click",commandeSend)  
+}  
+       
+      
          
-}               
+               
 
       
                  

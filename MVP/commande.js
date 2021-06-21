@@ -1,6 +1,6 @@
 
 let monCommande = JSON.parse(localStorage.getItem("monCommande"));
-function commande(){
+
 if(monCommande ==null || monCommande.length == 0){
     document.querySelector("h2").innerText = "Vous n'avez aucune commande en cours!";
     document.querySelector("p#infocommande").innerText = "Ajouter d'abord vos produits au votre panier et puis valider vos commandes"
@@ -24,8 +24,8 @@ if(monCommande ==null || monCommande.length == 0){
 document.getElementById("panier").addEventListener("click",function(){
     // localStorage.removeItem("monPanier")
 })
-}
-setTimeout(commande,50)
+
+
 
 
 
