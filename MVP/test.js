@@ -234,8 +234,8 @@ if(monPanier==null|| monPanier.length==0){
                         orderId : formPurchaseOrder.orderId
                     }
                     localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    // monPanier=[];
-                    // localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                    monPanier=[];
+                    localStorage.setItem("monPanier",JSON.stringify(monPanier));
                     
                     
                     }
@@ -243,26 +243,17 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                // alert("Confirmez votre commande!")   
+                
                 
                  
-              
+        document.getElementById("btn-link").href="commandeSuccess.html";  
+              alert("Confirmez votre commande!")   
         }               
          
                    
-    };  
-    function task2()  {
-        function change(){document.getElementById("btn-link").href="commandeSuccess.html";}
-        return setTimeout(change,20)
-    }   
-    function task1(){
-        return setTimeout(commandeSend,0)
-    }
-    async function allTasks(){
-        await task1();
-        await task2();
-    }
-   document.getElementById("btn-link").addEventListener("click",allTasks)
+    };       
+   const commandeSendCliquer =  document.getElementById("btn-commande");
+   commandeSendCliquer.addEventListener("click",commandeSend) ;  
             
 }               
 
