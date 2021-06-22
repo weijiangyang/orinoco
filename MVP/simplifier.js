@@ -1,5 +1,9 @@
+let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+let parentMain = document.querySelector("main");
+let parentPanierInf = document.getElementById("monpanier-inf");
+
 for(let i=0; i<5;i++)
-let produitOfPanier = `${monPanier[i]}`
+let produitOfPanier = monPanier[i]
 let nomProduit = `${produitOfPanier.name}`
 let despProduit = `${produitOfPanier.description}`
 let prixProduit = `${produitOfPanier.price}`
@@ -20,3 +24,4 @@ let srcImg = produitOfPanier.imageUrl
 <p class="price-produit" id="idPrixProd"></p>
 </div>
 </div>`
+parentPanierInf.innerHTML+= htmlElement 
