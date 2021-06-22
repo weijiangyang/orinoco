@@ -194,9 +194,7 @@ if(monPanier==null|| monPanier.length==0){
         }
     // composer et send mes commandes
     function commandeSend(){
-        $.ajaxSetup({
-            async: false
-            });
+        
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
             &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
                 
@@ -217,8 +215,8 @@ if(monPanier==null|| monPanier.length==0){
                     formPurchaseOrder.products.push(monPanier[i].id)
                 }
                 fetch("http://localhost:3000/api/teddies/order",{
+                    
                     method: "POST",
-                    // async:false,
                     headers: { 
                         'Accept': 'application/json', 
                         'Content-Type': 'application/json' 
@@ -247,7 +245,7 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                // alert("Confirmez votre commande!")   
+                alert("Confirmez votre commande!")   
                 
                  
         document.getElementById("btn-link").href="commandeSuccess.html";        
