@@ -224,7 +224,9 @@ if(monPanier==null|| monPanier.length==0){
                 )
                 .then(function(res) {
                     if (res.ok) { 
-                        return res.json(); 
+                        
+                        return res.json();
+
                         }
                     }
                 )
@@ -243,14 +245,18 @@ if(monPanier==null|| monPanier.length==0){
                 .catch(function(err){
                     console.log("il y a un error")
                 }); 
-                alert("Confirmez votre commande!")   
-                
+        //           
+                alert("Confirmez votre commande!"); 
                  
-        document.getElementById("btn-link").href="commandeSuccess.html";        
-        }               
+      
+            document.getElementById("btn-link").href="commandeSuccess.html";}
+        
+       
+    };                   
          
                    
-    };       
+      
+
    const commandeSendCliquer =  document.getElementById("btn-commande");
    commandeSendCliquer.addEventListener("click",commandeSend) ;  
             
