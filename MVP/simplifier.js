@@ -1,7 +1,7 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 let parentMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
-function appendElement(){
+
         for(let i=0; i<monPanier.length;i++){
 
         let nomProduit = monPanier[i].name
@@ -36,15 +36,15 @@ function appendElement(){
         document.querySelector("input.quantity-inp").addEventListener("change",function(){
         quantityProduit = this.value;
         localStorage.setItem("monPanier",JSON.stringify(monPanier));
-        eltP = document.getElementById("${idPrixItemTotal}");
-                    eltP.innerHTML = "Price:"+(monPanier[i].price/100).toFixed(2)+"&nbsp€"+`(*${monPanier[i].quantity}）`;
+        eltP = document.getElementById(`pItemTotal-${i}`);
+                    eltP.innerHTML = "Price:"+"${(quantityProduit/100).toFixed(2)}"+"&nbsp€"+`(*${quantityProduit}）`;
                     pItemTotal = document.getElementById(`pItemTotal-${i}`);
-                    pItemTotal.innerHTML = ((monPanier[i].quantity)*(monPanier[i].price/100)).toFixed(2)+"&nbsp€";
+                    pItemTotal.innerHTML = (quantityProduit*(prixProduit/100)).toFixed(2)+"&nbsp€";
+                    document.getElementById(`${idPrixProd}`).innerHTML = "Price:"+`${(prixProduit/100).toFixed(2)}`+"&nbsp€"+`(*${quantityProduit})`;
                     sum = 0;
                     for(let i=0;i<monPanier.length;i++){
-                        sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+                        sum+=(quantityProduit)*(prixProduit/100);
                         }
-                    location.reload();
+                    
                     }
-                ) }}
-            appendElement();
+                ) }
