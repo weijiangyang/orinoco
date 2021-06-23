@@ -29,7 +29,7 @@ let parentPanierInf = document.getElementById("monpanier-inf");
                             <p class="color-produit">Color:${colorProduit}</p>
                             
                             <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
-                            <button id="btn-supprimer">Supprimer</button>
+                            <button class="btn-supprimer">Supprimer</button>
                         </div>
 
                     </div>`
@@ -39,6 +39,14 @@ let parentPanierInf = document.getElementById("monpanier-inf");
     sum = 0;
     for(let i=0;i<monPanier.length;i++){
         sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
+            btnSupprimer.addEventListener("click",function(){
+                monPanier.splice(i,1);
+                
+                localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                location.reload();
+                }
+            )
         
         }
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
