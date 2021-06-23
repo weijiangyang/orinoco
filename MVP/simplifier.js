@@ -34,11 +34,13 @@ let parentPanierInf = document.getElementById("monpanier-inf");
 
                     </div>`
         parentPanierInf.innerHTML+= htmlElement 
+        
     }   
     sum = 0;
     for(let i=0;i<monPanier.length;i++){
         sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        
         }
-    document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>"
+    document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
     
           
