@@ -1,6 +1,7 @@
 let lePanier = JSON.parse(localStorage.getItem("monPanier"));
 let elementMain = document.querySelector("main");
 let elementPanierInf = document.getElementById("monpanier-inf");
+
 function appendElementsPanierVide(){
     elementMain.removeChild(document.querySelector("div#formvalidation"));
     document.querySelector("div.monpanier-no-vide").style.display="none"
@@ -33,23 +34,24 @@ function appendElementsPanierNonVide(){
     }   
     sum = 0;
     for(let i=0;i<lePanier.length;i++){
+    // calculer le prix total
         sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+        // ajouter le button supprimer pour chaque produit dans mon panier
         btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
             btnSupprimer.addEventListener("click",function(){
                 lePanier.splice(i,1);
-                
                 localStorage.setItem("monPanier",JSON.stringify(lePanier));
                 location.reload();
                 }
-            )
-        
-        }
+            )    
+    }            
+     // ajouter le prix total
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-    
-    } 
-    function commandeSend(){
-        let form = document.getElementById("loginForm");
-        // la validation pour l'email
+    }
+     
+function commandeSend(){
+    // la validation pour l'email
+    let form = document.getElementById("loginForm");
     form.email.addEventListener("change",function(){
         validEmail(this);
         }
@@ -66,13 +68,13 @@ function appendElementsPanierNonVide(){
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
-            }
-        }    
+        }
+    }    
         // la validation pour l'adresse
     form.adresse.addEventListener("change",function(){
         validAdresse(this);
         }
-        )
+    )
  
     const validAdresse = function(inputAdresse){
         let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
@@ -81,14 +83,13 @@ function appendElementsPanierNonVide(){
             small.innerHTML = "Adresse valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;
-            }else{
-                small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
-                small.classList.remove("text-success");
-                small.classList.add("text-danger");
-                return false
-                }
+            return true;}else{
+            small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false
         }
+    }
         // la validation pour la code postale     
     form.codepostale.addEventListener("change",function(){
         validCodePostale(this);
@@ -108,15 +109,38 @@ function appendElementsPanierNonVide(){
                 small.classList.remove("text-success");
                 small.classList.add("text-danger");
                 return false;
-                }
+            }
+    }
+
+    form.nom.addEventListener("change",function(){
+        validNom(this);
         }
+    )
+                    
+    const validNom = function(inputNom){
+        
+        let small = inputCodePostale.nextElementSibling;
+        if(this.value){
+            small.innerHTML = "nom valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "ecrit ton nom";
+                small.classList.remove("text-success");
+                small.classList.add("text-danger");
+                return false;
+            }
+    }
+    
+    
         
     // composer et send mes commandes
    
         
         
         if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
-            &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+            &&validNom(form.nom)&&(form.prenom.value)&&(form.city.value)){
                 
                 
                 
