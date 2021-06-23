@@ -17,19 +17,20 @@ function appendElementsPanierNonVide(){
         let quantityProduit = produit.quantity
         let colorProduit = produit.color
         let srcImg = produit.imageUrl
-        let htmlElement=`<div class="carte" >
-                            <div class="image-produit">
-                                <img src="${srcImg}">
-                            </div>
-                            <div class="info-produit">
-                                <h2 class="nom-peluche">${nomProduit}</h2>
-                                <p class="desp-produit">${despProduit}</p>
-                                <p class="price-produit" >Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})</p>
-                                <p class="color-produit">Color:${colorProduit}</p>
-                                <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
-                                <button class="btn-supprimer">Supprimer</button>
-                            </div>
-                        </div>`
+        let htmlElement=
+            `<div class="carte" >
+                <div class="image-produit">
+                    <img src="${srcImg}">
+                </div>
+                <div class="info-produit">
+                    <h2 class="nom-peluche">${nomProduit}</h2>
+                    <p class="desp-produit">${despProduit}</p>
+                    <p class="price-produit" >Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})</p>
+                    <p class="color-produit">Color:${colorProduit}</p>
+                    <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
+                    <button class="btn-supprimer">Supprimer</button>
+                </div>
+            </div>`
         elementPanierInf.innerHTML+= htmlElement 
     }   
     sum = 0;
