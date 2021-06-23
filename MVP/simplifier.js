@@ -47,11 +47,12 @@ function appendElementsPanierNonVide(){
     }            
      // ajouter le prix total
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
-    }
+}
      
 function commandeSend(){
-    // la validation pour l'email
+    // la validation pour le formulaire
     let form = document.getElementById("loginForm");
+        // la validation pour l'email
     form.email.addEventListener("change",function(){
         validEmail(this);
         }
@@ -75,7 +76,6 @@ function commandeSend(){
         validAdresse(this);
         }
     )
- 
     const validAdresse = function(inputAdresse){
         let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
         let small = inputAdresse.nextElementSibling;
@@ -95,7 +95,6 @@ function commandeSend(){
         validCodePostale(this);
         }
     )
-                    
     const validCodePostale = function(inputCodePostale){
         let codePostaleRegExp = new RegExp('^\\d{5}$','g');
         let small = inputCodePostale.nextElementSibling;
@@ -103,98 +102,125 @@ function commandeSend(){
             small.innerHTML = "Code postale valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;
-            }else{
-                small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
-                small.classList.remove("text-success");
-                small.classList.add("text-danger");
-                return false;
-            }
+            return true;}else{
+            small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+        }
     }
-
+    // la validation pour le nom 
     form.nom.addEventListener("change",function(){
         validNom(this);
         }
     )
-                    
     const validNom = function(inputNom){
-        
-        let small = inputCodePostale.nextElementSibling;
-        if(this.value){
+        let small = inputNom.nextElementSibling;
+        if(form.nom.value){
             small.innerHTML = "nom valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;
-            }else{
-                small.innerHTML = "ecrit ton nom";
-                small.classList.remove("text-success");
-                small.classList.add("text-danger");
-                return false;
-            }
+            return true;}else{
+            small.innerHTML = "veuillez renseigner votre nom";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+        }
+    }
+    // la validation pour le prenom
+    form.prenom.addEventListener("change",function(){
+        validPrenom(this);
+        }
+    )
+    const validPrenom = function(inputPrenom){
+        let small = inputPrenom.nextElementSibling;
+        if(form.prenom.value){
+            small.innerHTML = "prenom valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;}else{
+            small.innerHTML = "veuillez renseigner votre prenom";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+        }
+    }
+    // la validation pour la ville
+    form.city.addEventListener("change",function(){
+        validCity(this);
+        }
+    )
+    const validCity = function(inputCity){
+        let small = inputCity.nextElementSibling;
+        if(form.city.value){
+            small.innerHTML = "ville valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;}else{
+            small.innerHTML = "veuillez renseigner votre ville";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+        }
     }
     
-    
-        
     // composer et send mes commandes
-   
+    if (validEmail(form.email) 
+        && validAdresse(form.adresse) 
+        && validCodePostale(form.codepostale)
+        &&validNom(form.nom)
+        &&validPrenom(form.prenom)
+        &&validCity(form.city)){
+            let contact = {
+                firstName:form.nom.value,
+                lastName:form.prenom.value,
+                email:form.email.value,
+                address:form.adresse.value,
+                city:form.city.value
+            }
+            let formPurchaseOrder = {
+                contact:contact,
+                products:[]
+            }
+            for (let i=0;i<lePanier.length;i++){
+                formPurchaseOrder.products.push(lePanier[i].id)
+            }
+            fetch("http://localhost:3000/api/teddies/order",{
+                
+                method: "POST",
+                headers: { 
+                    'Accept': 'application/json', 
+                    'Content-Type': 'application/json' 
+                },
+                body:JSON.stringify(formPurchaseOrder)
+                }
+            )
+            .then(function(res) {
+                if (res.ok) { 
+                    return res.json(); 
+                    }
+                }
+            )
+            .then(function(formPurchaseOrder) {
+                let monCommande = {
+                    listOfProductsCommanded : lePanier,
+                    orderId : formPurchaseOrder.orderId
+                }
+                localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                lePanier=[];
+                localStorage.setItem("monPanier",JSON.stringify(lePanier));
+                }
+            )
+            .catch(function(err){
+                console.log("il y a un error")
+                }
+            ); 
+            alert("Confirmez votre commande!")   
+            
+                
+    document.getElementById("btn-link").href="commandeSuccess.html";        
+    }               
         
-        
-        if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
-            &&validNom(form.nom)&&(form.prenom.value)&&(form.city.value)){
-                
-                
-                
-                let contact = {
-                    firstName:form.nom.value,
-                    lastName:form.prenom.value,
-                    email:form.email.value,
-                    address:form.adresse.value,
-                    city:form.city.value
-                }
-                let formPurchaseOrder = {
-                    contact:contact,
-                    products:[]
-                }
-                for (let i=0;i<lePanier.length;i++){
-                    formPurchaseOrder.products.push(lePanier[i].id)
-                }
-                fetch("http://localhost:3000/api/teddies/order",{
-                    
-                    method: "POST",
-                    headers: { 
-                        'Accept': 'application/json', 
-                        'Content-Type': 'application/json' 
-                    },
-                    body:JSON.stringify(formPurchaseOrder)
-                    }
-                )
-                .then(function(res) {
-                    if (res.ok) { 
-                        return res.json(); 
-                        }
-                    }
-                )
-                .then(function(formPurchaseOrder) {
-                    let monCommande = {
-                        listOfProductsCommanded : lePanier,
-                        orderId : formPurchaseOrder.orderId
-                    }
-                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
-                    lePanier=[];
-                    localStorage.setItem("monPanier",JSON.stringify(lePanier));
-                    
-                    
-                    }
-                )
-                .catch(function(err){
-                    console.log("il y a un error")
-                }); 
-                alert("Confirmez votre commande!")   
-                
-                 
-        document.getElementById("btn-link").href="commandeSuccess.html";        
-        }               
-         
                    
     };
     
