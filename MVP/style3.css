@@ -197,7 +197,7 @@ div.monpanier h1{
     margin-left:5%;
     padding-top:20px;
 }
-button#btn-supprimer{
+button.btn-supprimer{
     display:block;
     font-size: 14px;
     margin-left:30px;

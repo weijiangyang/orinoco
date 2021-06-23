@@ -21,9 +21,6 @@ if(monCommande ==null || monCommande.length == 0){
         localStorage.setItem("monCommande",JSON.stringify(monCommande));
     })
 };
-// document.getElementById("panier").addEventListener("click",function(){
-//     localStorage.removeItem("monPanier")
-// })
 
 
 

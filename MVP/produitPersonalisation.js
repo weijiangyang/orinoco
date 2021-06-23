@@ -45,16 +45,16 @@ console.log(produitPersonaliser);
 let misePanier = document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){
         
-            let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+            let lePanier = JSON.parse(localStorage.getItem("lePanier"));
         
-            if(monPanier){
-                monPanier.push(produitPersonaliser);
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
+            if(lePanier){
+                lePanier.push(produitPersonaliser);
+                localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 
             }else{
-                let monPanier=[];
-                monPanier.push(produitPersonaliser);
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                let lePanier=[];
+                lePanier.push(produitPersonaliser);
+                localStorage.setItem("lePanier",JSON.stringify(lePanier));
             }
        document.getElementById("link-btn-panier").href="./mon-panier.html";
     }

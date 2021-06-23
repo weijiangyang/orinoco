@@ -1,4 +1,4 @@
-let lePanier = JSON.parse(localStorage.getItem("monPanier"));
+let lePanier = JSON.parse(localStorage.getItem("lePanier"));
 let elementMain = document.querySelector("main");
 let elementPanierInf = document.getElementById("monpanier-inf");
 
@@ -40,7 +40,7 @@ function appendElementsPanierNonVide(){
         btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
             btnSupprimer.addEventListener("click",function(){
                 lePanier.splice(i,1);
-                localStorage.setItem("monPanier",JSON.stringify(lePanier));
+                localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 location.reload();
                 }
             )    
@@ -208,7 +208,7 @@ function commandeSend(){
                 }
                 localStorage.setItem("monCommande",JSON.stringify(monCommande));
                 lePanier=[];
-                localStorage.setItem("monPanier",JSON.stringify(lePanier));
+                localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 }
             )
             .catch(function(err){
@@ -216,19 +216,13 @@ function commandeSend(){
                 }
             ); 
             alert("Confirmez votre commande!")   
-            
-                
-    document.getElementById("btn-link").href="commandeSuccess.html";        
+            document.getElementById("btn-link").href="commandeSuccess.html";        
     }               
-        
-                   
-    };
+}
     
-    if(lePanier==null|| lePanier.length==0){
-        appendElementsPanierVide();
+if(lePanier==null|| lePanier.length==0){
+    appendElementsPanierVide();
     }else{
-        appendElementsPanierNonVide();
-            
-   const commandeSendCliquer =  document.getElementById("btn-commande");
-   commandeSendCliquer.addEventListener("click",commandeSend) ;  
-    }
+    appendElementsPanierNonVide();
+    document.getElementById("btn-commande").addEventListener("click",commandeSend) ;  
+}
