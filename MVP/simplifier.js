@@ -1,7 +1,6 @@
 let lePanier = JSON.parse(localStorage.getItem("monPanier"));
 let elementMain = document.querySelector("main");
-let parentPanierInf = document.getElementById("monpanier-inf");
-
+let elementPanierInf = document.getElementById("monpanier-inf");
 function appendElementsPanierVide(){
     elementMain.removeChild(document.querySelector("div#formvalidation"));
     document.querySelector("div.monpanier-no-vide").style.display="none"
@@ -9,8 +8,8 @@ function appendElementsPanierVide(){
 
 function appendElementsPanierNonVide(){
     document.querySelector("div.monpanier-vide").style.display="none"
-        for(let produit of lePanier){
-
+    // ajouter des elements HTML pour chaque produit dans mon panier
+    for(let produit of lePanier){
         let nomProduit = produit.name
         let despProduit = produit.description
         let prixProduit = produit.price
@@ -18,22 +17,19 @@ function appendElementsPanierNonVide(){
         let colorProduit = produit.color
         let srcImg = produit.imageUrl
         let htmlElement=`<div class="carte" >
-                        <div class="image-produit">
-                            <img src="${srcImg}">
-                        </div>
-                        <div class="info-produit">
-                            <h2 class="nom-peluche">${nomProduit}</h2>
-                            <p class="desp-produit">${despProduit}</p>
-                            <p class="price-produit" >Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})</p>
-                            <p class="color-produit">Color:${colorProduit}</p>
-                            
-                            <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
-                            <button class="btn-supprimer">Supprimer</button>
-                        </div>
-
-                    </div>`
-        parentPanierInf.innerHTML+= htmlElement 
-        
+                            <div class="image-produit">
+                                <img src="${srcImg}">
+                            </div>
+                            <div class="info-produit">
+                                <h2 class="nom-peluche">${nomProduit}</h2>
+                                <p class="desp-produit">${despProduit}</p>
+                                <p class="price-produit" >Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})</p>
+                                <p class="color-produit">Color:${colorProduit}</p>
+                                <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
+                                <button class="btn-supprimer">Supprimer</button>
+                            </div>
+                        </div>`
+        elementPanierInf.innerHTML+= htmlElement 
     }   
     sum = 0;
     for(let i=0;i<lePanier.length;i++){
@@ -51,8 +47,138 @@ function appendElementsPanierNonVide(){
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
     
     } 
+    function commandeSend(){
+        let form = document.getElementById("loginForm");
+        // la validation pour l'email
+    form.email.addEventListener("change",function(){
+        validEmail(this);
+        }
+    )
+    const validEmail = function(inputEmail){
+        let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
+        let small = inputEmail.nextElementSibling;
+        if(emailRegExp.test(inputEmail.value)){
+            small.innerHTML = "Email valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;}else{
+            small.innerHTML = "Email non valide";
+            small.classList.remove("text-success");
+            small.classList.add("text-danger");
+            return false;
+            }
+        }    
+        // la validation pour l'adresse
+    form.adresse.addEventListener("change",function(){
+        validAdresse(this);
+        }
+        )
+ 
+    const validAdresse = function(inputAdresse){
+        let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
+        let small = inputAdresse.nextElementSibling;
+        if(adresseRegExp.test(inputAdresse.value)){
+            small.innerHTML = "Adresse valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
+                small.classList.remove("text-success");
+                small.classList.add("text-danger");
+                return false
+                }
+        }
+        // la validation pour la code postale     
+    form.codepostale.addEventListener("change",function(){
+        validCodePostale(this);
+        }
+    )
+                    
+    const validCodePostale = function(inputCodePostale){
+        let codePostaleRegExp = new RegExp('^\\d{5}$','g');
+        let small = inputCodePostale.nextElementSibling;
+        if(codePostaleRegExp.test(inputCodePostale.value)){
+            small.innerHTML = "Code postale valide";
+            small.classList.remove("text-danger");
+            small.classList.add("text-success");
+            return true;
+            }else{
+                small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
+                small.classList.remove("text-success");
+                small.classList.add("text-danger");
+                return false;
+                }
+        }
+        
+    // composer et send mes commandes
+   
+        
+        
+        if (validEmail(form.email) && validAdresse(form.adresse) && validCodePostale(form.codepostale)
+            &&(form.nom.value)&&(form.prenom.value)&&(form.city.value)){
+                
+                
+                
+                let contact = {
+                    firstName:form.nom.value,
+                    lastName:form.prenom.value,
+                    email:form.email.value,
+                    address:form.adresse.value,
+                    city:form.city.value
+                }
+                let formPurchaseOrder = {
+                    contact:contact,
+                    products:[]
+                }
+                for (let i=0;i<lePanier.length;i++){
+                    formPurchaseOrder.products.push(lePanier[i].id)
+                }
+                fetch("http://localhost:3000/api/teddies/order",{
+                    
+                    method: "POST",
+                    headers: { 
+                        'Accept': 'application/json', 
+                        'Content-Type': 'application/json' 
+                    },
+                    body:JSON.stringify(formPurchaseOrder)
+                    }
+                )
+                .then(function(res) {
+                    if (res.ok) { 
+                        return res.json(); 
+                        }
+                    }
+                )
+                .then(function(formPurchaseOrder) {
+                    let monCommande = {
+                        listOfProductsCommanded : lePanier,
+                        orderId : formPurchaseOrder.orderId
+                    }
+                    localStorage.setItem("monCommande",JSON.stringify(monCommande));
+                    lePanier=[];
+                    localStorage.setItem("monPanier",JSON.stringify(lePanier));
+                    
+                    
+                    }
+                )
+                .catch(function(err){
+                    console.log("il y a un error")
+                }); 
+                alert("Confirmez votre commande!")   
+                
+                 
+        document.getElementById("btn-link").href="commandeSuccess.html";        
+        }               
+         
+                   
+    };
+    
     if(lePanier==null|| lePanier.length==0){
         appendElementsPanierVide();
     }else{
         appendElementsPanierNonVide();
+            
+   const commandeSendCliquer =  document.getElementById("btn-commande");
+   commandeSendCliquer.addEventListener("click",commandeSend) ;  
     }
