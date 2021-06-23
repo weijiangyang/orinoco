@@ -4,7 +4,7 @@ sour le dossier JWDP5, declencher node server .
 sour le dossier MVP:
 page1: index.html
        style.css
-       listProduitNew.js
+       listPeuluches.js
 page2: optionProduit.html
         style2.css
         produitPersonalisation.js

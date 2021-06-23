@@ -7,13 +7,12 @@
     <title>mon panier</title>
     <link rel="stylesheet" href="style3.css">;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
-    <!-- <link rel="stylesheet" href=".reset.css">  -->
     <link rel="stylesheet" href="./fa/css/all.css"> 
     <link rel="stylesheet" href="./iconfonts/iconfont.css">
     <link rel="icon" type="image/png" href="./favicon.ico"/>
-    <!-- <link rel="stylesheet" href="./reset.css"> -->
 </head>
 <body >
+  <!-- header -->
   <header>
     <div class="container-upper">
       <div class="image-logo">
@@ -47,14 +46,17 @@
         </div>
       </div>
     </div>        
-  </header>        
+  </header> 
+  <!-- main -->
   <main>
+    <!-- quand le panier est vide -->
     <div class="monpanier-vide">
         <div class="vide">Votre panier est vide pour le moment!</div>
         <a href="index.html" id="commencechoisir">Choisissez vos produits</a>
         <div id="ajouter">Ajouter vos produits au panier pour le moment!</div>
         <div id="valider">Ensuit vous pourrez valider votre panier Merci!</div>
     </div>
+    <!-- quand le panier n'est pas vide -->
     <div class="monpanier-no-vide" >
         <h1 style="margin-bottom: 30px;">Mon panier</h1>
         <div id="monpanier-inf">
@@ -102,6 +104,7 @@
       </form>
     </div>
   </main>
+  <!-- footer -->
   <footer style="display:flex">
     <div class="container-societe">
       <h2>NOTRE SOCIETE</h2>
@@ -130,8 +133,9 @@
         <a href=""><li><i class="fab fa-instagram"></i></li></a>
       </ul>
     </div>
-  </footer>          
-  <script src='simplifier.js' ></script>    
+  </footer>  
+  <!--js  -->
+  <script src='panier-formulaire.js'></script>    
 </body>
 </html>        
       
