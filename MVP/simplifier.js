@@ -1,23 +1,22 @@
-let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-let parentMain = document.querySelector("main");
+let lePanier = JSON.parse(localStorage.getItem("monPanier"));
+let elementMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
 
+function appendElementsPanierVide(){
+    elementMain.removeChild(document.querySelector("div#formvalidation"));
+    document.querySelector("div.monpanier-no-vide").style.display="none"
+}
 
-        for(let produit of monPanier){
+function appendElementsPanierNonVide(){
+    document.querySelector("div.monpanier-vide").style.display="none"
+        for(let produit of lePanier){
 
         let nomProduit = produit.name
         let despProduit = produit.description
         let prixProduit = produit.price
         let quantityProduit = produit.quantity
         let colorProduit = produit.color
-
-
-        // let idCarte = `carte-${i}`
-        // let idInfProd =`infor-produit-${i}`
-        // let idPrixProd = `price-produit-${i}`
-        // let idPrixItemTotal = `pItemTotal-${i}`
         let srcImg = produit.imageUrl
-
         let htmlElement=`<div class="carte" >
                         <div class="image-produit">
                             <img src="${srcImg}">
@@ -37,13 +36,13 @@ let parentPanierInf = document.getElementById("monpanier-inf");
         
     }   
     sum = 0;
-    for(let i=0;i<monPanier.length;i++){
-        sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+    for(let i=0;i<lePanier.length;i++){
+        sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
         btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
             btnSupprimer.addEventListener("click",function(){
-                monPanier.splice(i,1);
+                lePanier.splice(i,1);
                 
-                localStorage.setItem("monPanier",JSON.stringify(monPanier));
+                localStorage.setItem("monPanier",JSON.stringify(lePanier));
                 location.reload();
                 }
             )
@@ -51,4 +50,9 @@ let parentPanierInf = document.getElementById("monpanier-inf");
         }
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
     
-          
+    } 
+    if(lePanier==null|| lePanier.length==0){
+        appendElementsPanierVide();
+    }else{
+        appendElementsPanierNonVide();
+    }
