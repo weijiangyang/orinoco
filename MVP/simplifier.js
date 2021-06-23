@@ -1,12 +1,12 @@
 let lePanier = JSON.parse(localStorage.getItem("lePanier"));
 let elementMain = document.querySelector("main");
 let elementPanierInf = document.getElementById("monpanier-inf");
-
+// quand le panier est vide
 function appendElementsPanierVide(){
     elementMain.removeChild(document.querySelector("div#formvalidation"));
     document.querySelector("div.monpanier-no-vide").style.display="none"
 }
-
+// quand le panier n'est pas vide
 function appendElementsPanierNonVide(){
     document.querySelector("div.monpanier-vide").style.display="none"
     // ajouter des elements HTML pour chaque produit dans mon panier

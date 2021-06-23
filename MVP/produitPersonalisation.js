@@ -1,5 +1,4 @@
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
-console.log(produitOption);
 // ajouter la produit choisie sur la page 
 function produitOptionAppend (){
     document.getElementById("title-peluche").innerHTML = produitOption.name;
@@ -25,13 +24,10 @@ price : produitOption.price,
 imageUrl:produitOption.imageUrl,
 id:produitOption._id,}
 let inputQuantity = document.getElementById("quantity-select");
-
-
 inputQuantity.addEventListener("input",function(){
     produitPersonaliser.quantity = document.getElementById("quantity-select").value;
     }
 )
-   
 let inputColor = document.getElementById("form-selection");
 inputColor.addEventListener("change",function(){
     let index = document.getElementById("form-selection").selectedIndex;
@@ -39,29 +35,25 @@ inputColor.addEventListener("change",function(){
     produitPersonaliser.color = colorSelected;
     }
 )
-
-console.log(produitPersonaliser);
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
 let misePanier = document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){
-        
-            let lePanier = JSON.parse(localStorage.getItem("lePanier"));
-        
-            if(lePanier){
-                lePanier.push(produitPersonaliser);
-                localStorage.setItem("lePanier",JSON.stringify(lePanier));
-                
+        let lePanier = JSON.parse(localStorage.getItem("lePanier"));
+        if(lePanier){
+            lePanier.push(produitPersonaliser);
+            localStorage.setItem("lePanier",JSON.stringify(lePanier));
             }else{
-                let lePanier=[];
-                lePanier.push(produitPersonaliser);
-                localStorage.setItem("lePanier",JSON.stringify(lePanier));
-            }
+            let lePanier=[];
+            lePanier.push(produitPersonaliser);
+            localStorage.setItem("lePanier",JSON.stringify(lePanier));
+        }
        document.getElementById("link-btn-panier").href="./mon-panier.html";
     }
     document.getElementById("quantity-select").value="";
     let index = document.getElementById("form-selection").selectedIndex;
-    document.getElementById("form-selection").options[index].value = "";      
-})   
+    document.getElementById("form-selection").options[index].value = "";  
+    }
+)   
 
 
 
