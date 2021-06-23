@@ -14,7 +14,7 @@ function getPeulucheInf(){
                             <img class="peuluche-image" src= "${peuluche.imageUrl}" style="height:320px">
                             <h3 class="peuluche-titre">${peuluche.name}</h3>
                             <p class="peuluche-desp">${peuluche.description}</p>
-                            <p class="peuluche-price">"Price:"+"${(peuluche.price/100).toFixed(2)}"+"€"</p>
+                            <p class="peuluche-price">Price:${(peuluche.price/100).toFixed(2)}€</p>
                         </div>
                     </a>`
                 document.getElementById("total-produits").innerHTML+= htmlElement    
