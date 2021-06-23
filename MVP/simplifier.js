@@ -1,7 +1,7 @@
 let monPanier = JSON.parse(localStorage.getItem("monPanier"));
 let parentMain = document.querySelector("main");
 let parentPanierInf = document.getElementById("monpanier-inf");
-function append(){
+
 
         for(let produit of monPanier){
 
@@ -27,32 +27,18 @@ function append(){
                             <p class="desp-produit">${despProduit}</p>
                             <p class="price-produit" >Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})</p>
                             <p class="color-produit">Color:${colorProduit}</p>
-                            <label class="labelQuantity">Quantity:
-                                <input class="quantity-inp" type="number" value="${quantityProduit}" min="1">
-                            </label>
+                            
                             <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
+                            <button id="btn-supprimer">Supprimer</button>
                         </div>
+
                     </div>`
         parentPanierInf.innerHTML+= htmlElement 
-        const inputQuantity = document.querySelector("input")
-        inputQuantity.addEventListener("change",function(){
-        quantityProduit = this.value;
-        localStorage.setItem("monPanier",JSON.stringify(monPanier));
-        
-        eltP = document.querySelector("p.price-produit")
-                    eltP.innerHTML = "Price:"+`${(prixProduit/100).toFixed(2)}`+"&nbsp€"+`(*${quantityProduit}）`;
-                    pItemTotal = document.querySelector("p.totalprice-produit");
-                    pItemTotal.innerHTML = `${(quantityProduit*(prixProduit/100)).toFixed(2)}`+"&nbsp€";})
-        //             document.getElementById(`${idPrixProd}`).innerHTML = "50";
-        //             sum = 0;
-        //             for(let i=0;i<monPanier.length;i++){
-        //                 sum+=(quantityProduit)*(prixProduit/100)
-        //                 }
-                       
-                    
-        //             }
-                // ) 
-            // }
-        
-    }}
-            append()
+    }   
+    sum = 0;
+    for(let i=0;i<monPanier.length;i++){
+        sum+=(monPanier[i].quantity)*(monPanier[i].price/100);
+        }
+    document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>"
+    
+          
