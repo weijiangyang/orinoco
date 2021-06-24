@@ -42,7 +42,7 @@ let misePanier = document.getElementById("btn-panier").addEventListener("click",
         if(lePanier){
             lePanier.push(produitPersonaliser);
             localStorage.setItem("lePanier",JSON.stringify(lePanier));
-            }else{
+        }else{
             let lePanier=[];
             lePanier.push(produitPersonaliser);
             localStorage.setItem("lePanier",JSON.stringify(lePanier));

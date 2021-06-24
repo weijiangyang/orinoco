@@ -65,8 +65,8 @@ function commandeSend(){
             small.innerHTML = "Email valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "Email non valide";
+            return true;
+        }else{small.innerHTML = "Email non valide";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
@@ -84,8 +84,8 @@ function commandeSend(){
             small.innerHTML = "Adresse valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
+            return true;
+        }else{small.innerHTML = "Adresse non valide doit contenir aux moins deux lettres";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false
@@ -103,8 +103,8 @@ function commandeSend(){
             small.innerHTML = "Code postale valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
+            return true;
+        }else{small.innerHTML = "Code postale non valide doit contenir 5 chiffres ";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
@@ -121,8 +121,8 @@ function commandeSend(){
             small.innerHTML = "nom valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "veuillez renseigner votre nom";
+            return true;
+        }else{small.innerHTML = "veuillez renseigner votre nom";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
@@ -139,8 +139,8 @@ function commandeSend(){
             small.innerHTML = "prenom valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "veuillez renseigner votre prenom";
+            return true;
+        }else{small.innerHTML = "veuillez renseigner votre prenom";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
@@ -157,8 +157,8 @@ function commandeSend(){
             small.innerHTML = "ville valide";
             small.classList.remove("text-danger");
             small.classList.add("text-success");
-            return true;}else{
-            small.innerHTML = "veuillez renseigner votre ville";
+            return true;
+        }else{small.innerHTML = "veuillez renseigner votre ville";
             small.classList.remove("text-success");
             small.classList.add("text-danger");
             return false;
@@ -223,7 +223,6 @@ function commandeSend(){
    
 if(lePanier==null|| lePanier.length==0){
     appendElementsPanierVide();
-    }else{
-    appendElementsPanierNonVide();
-    document.getElementById("btn-commande").addEventListener("click",commandeSend);  
+}else{appendElementsPanierNonVide();
+     document.getElementById("btn-commande").addEventListener("click",commandeSend); 
 }
