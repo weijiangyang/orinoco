@@ -26,7 +26,7 @@ function getPeulucheInf(){
                 );        
             }
         elementAppend();   
-       })    
+    })    
     .catch(function(err){
         console.log("il y a un error")
     });    
