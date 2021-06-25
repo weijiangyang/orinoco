@@ -210,14 +210,16 @@ function commandeSend(){
                 localStorage.setItem("monCommande",JSON.stringify(monCommande));
                 lePanier=[];
                 localStorage.setItem("lePanier",JSON.stringify(lePanier));
+                window.location.href  = "commandeSuccess.html" ;
                 }
             )
             .catch(function(err){
                 console.log("il y a un error")
                 }
             ); 
-            alert("Confirmez votre commande!")   
-            document.getElementById("btn-link").href="commandeSuccess.html";        
+            // alert("Confirmez votre commande!")   
+            // document.getElementById("btn-link").href="commandeSuccess.html";  
+               
     }               
 }
    
