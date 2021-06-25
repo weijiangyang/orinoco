@@ -18,11 +18,12 @@ function produitOptionAppend (){
 produitOptionAppend();
 // personaliser la produit choisie en choisissant la couleur et la quantity
 let produitPersonaliser = {
-name : produitOption.name,
-description : produitOption.description,
-price : produitOption.price,
-imageUrl:produitOption.imageUrl,
-id:produitOption._id,}
+    name : produitOption.name,
+    description : produitOption.description,
+    price : produitOption.price,
+    imageUrl:produitOption.imageUrl,
+    id:produitOption._id
+}
 let inputQuantity = document.getElementById("quantity-select");
 inputQuantity.addEventListener("input",function(){
     produitPersonaliser.quantity = document.getElementById("quantity-select").value;
@@ -42,8 +43,7 @@ let misePanier = document.getElementById("btn-panier").addEventListener("click",
         if(lePanier){
             lePanier.push(produitPersonaliser);
             localStorage.setItem("lePanier",JSON.stringify(lePanier));
-        }else{
-            let lePanier=[];
+        }else{let lePanier=[];
             lePanier.push(produitPersonaliser);
             localStorage.setItem("lePanier",JSON.stringify(lePanier));
         }
