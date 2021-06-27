@@ -210,7 +210,7 @@ function commandeSend(){
                 localStorage.setItem("monCommande",JSON.stringify(monCommande));
                 lePanier=[];
                 localStorage.setItem("lePanier",JSON.stringify(lePanier));
-                window.location.href  = "commandeSuccess.html" ;
+                window.location.href  = "../html/commandeSuccess.html" ;
                 }
             )
             .catch(function(err){
