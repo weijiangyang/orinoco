@@ -9,7 +9,7 @@ function getPeulucheInf(){
         function elementAppend(){
             for (let peuluche of peuluches){
                 let htmlElement = 
-                    `<a class="lien" href="./optionProduit.html">
+                    `<a class="lien" href="./js/produitPersonalisation">
                         <div class="peuluche-carte" style="height:450px">
                             <img class="peuluche-image" src= "${peuluche.imageUrl}" style="height:320px">
                             <h3 class="peuluche-titre">${peuluche.name}</h3>

@@ -47,7 +47,7 @@ let misePanier = document.getElementById("btn-panier").addEventListener("click",
             lePanier.push(produitPersonaliser);
             localStorage.setItem("lePanier",JSON.stringify(lePanier));
         }
-       document.getElementById("link-btn-panier").href="./mon-panier.html";
+       document.getElementById("link-btn-panier").href="./monPanier.html";
     }
     document.getElementById("quantity-select").value="";
     let index = document.getElementById("form-selection").selectedIndex;
