@@ -1,5 +1,8 @@
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
-// ajouter la produit choisie sur la page 
+/** afficher la produit choisie sur la page 
+    * @param none
+    * @return none
+**/
 function produitOptionAppend (){
     document.getElementById("title-peluche").innerHTML = produitOption.name;
     document.getElementById("desp-peluche").innerHTML = produitOption.description;

@@ -1,3 +1,7 @@
+/** récupérer les données du serveur et les afficher sur la page
+    * @param none
+    * @return none
+**/
 function getPeulucheInf(){
     fetch("http://localhost:3000/api/teddies")
     .then(function(res){
@@ -27,8 +31,8 @@ function getPeulucheInf(){
                 document.getElementsByClassName("lien")[i].addEventListener("click",function(){
                     localStorage.setItem("optionItem",JSON.stringify(peuluches[i]))
                     });  
-                          
-        }}
+            }
+        }                  
         elementAppend();   
     })    
     .catch(function(err){

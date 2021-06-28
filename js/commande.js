@@ -1,6 +1,6 @@
 
 let monCommande = JSON.parse(localStorage.getItem("monCommande"));
-
+ 
 if(monCommande ==null || monCommande.length == 0){function appendElementsCommandeVide(){
       document.querySelector("h2").innerText = "Vous n'avez aucune commande en cours!";
       document.querySelector("p#infocommande").innerText = "Ajouter d'abord vos produits au votre panier et puis valider vos commandes"

@@ -6,7 +6,9 @@ function appendElementsPanierVide(){
     elementMain.removeChild(document.querySelector("div#formvalidation"));
     document.querySelector("div.monpanier-no-vide").style.display="none"
 }
-// quand le panier n'est pas vide
+/**quand le panier n'est pas vide
+ * afficher l'indication sur la page 
+ **/
 function appendElementsPanierNonVide(){
     document.querySelector("div.monpanier-vide").style.display="none"
     // ajouter les elements HTML pour chaque produit dans mon panier
@@ -49,7 +51,10 @@ function appendElementsPanierNonVide(){
      // ajouter le prix total
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
 }
-// valider le formulaire et faire le commande
+/**valider le formulaire et faire le commande
+ * composer la commande
+ * envoyer au serveur et récupérer les information sur la commande
+ **/
 function commandeSend(){
     // la validation pour le formulaire
     let form = document.getElementById("loginForm");
