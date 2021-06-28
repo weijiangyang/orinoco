@@ -217,10 +217,8 @@ function commandeSend(){
                 console.log("il y a un error")
                 }
             ); 
-            // alert("Confirmez votre commande!")   
-            // document.getElementById("btn-link").href="commandeSuccess.html";  
-               
-    }               
+           
+        }               
 }
    
 if(lePanier==null|| lePanier.length==0){
