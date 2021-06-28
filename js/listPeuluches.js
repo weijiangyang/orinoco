@@ -6,6 +6,10 @@ function getPeulucheInf(){
         }
     })
     .then(function(peuluches){
+        /** afficher les elements sur la page
+             * @param none
+             * @return none
+         **/
         function elementAppend(){
             for (let peuluche of peuluches){
                 let htmlElement = 
@@ -19,18 +23,20 @@ function getPeulucheInf(){
                     </a>`
                 document.getElementById("total-produits").innerHTML+= htmlElement    
             }
-            for (let i=0; i<peuluches.length;i++)        
+            for (let i=0; i<peuluches.length;i++){        
                 document.getElementsByClassName("lien")[i].addEventListener("click",function(){
                     localStorage.setItem("optionItem",JSON.stringify(peuluches[i]))
-                    }
-                );        
-            }
+                    });  
+                          
+        }}
         elementAppend();   
     })    
     .catch(function(err){
         console.log("il y a un error")
     });    
 }         
-getPeulucheInf();   
+getPeulucheInf();  
+
+
 
    
