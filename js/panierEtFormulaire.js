@@ -45,8 +45,7 @@ function appendElementsPanierNonVide(){
                 lePanier.splice(i,1);
                 localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 location.reload();
-                }
-            )    
+                })    
     }            
      // ajouter le prix total
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
@@ -118,8 +117,7 @@ function commandeSend(){
     // la validation pour le nom 
     form.nom.addEventListener("change",function(){
         validNom(this);
-        }
-    )
+        })
     const validNom = function(inputNom){
         let small = inputNom.nextElementSibling;
         if(form.nom.value){
@@ -136,8 +134,7 @@ function commandeSend(){
     // la validation pour le prenom
     form.prenom.addEventListener("change",function(){
         validPrenom(this);
-        }
-    )
+        })
     const validPrenom = function(inputPrenom){
         let small = inputPrenom.nextElementSibling;
         if(form.prenom.value){
@@ -154,8 +151,7 @@ function commandeSend(){
     // la validation pour la ville
     form.city.addEventListener("change",function(){
         validCity(this);
-        }
-    )
+        })
     const validCity = function(inputCity){
         let small = inputCity.nextElementSibling;
         if(form.city.value){
@@ -216,12 +212,10 @@ function commandeSend(){
                 lePanier=[];
                 localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 window.location.href  = "../html/commandeSuccess.html" ;
-                }
-            )
+            })
             .catch(function(err){
                 console.log("il y a un error")
-                }
-            ); 
+            }); 
            
         }               
 }

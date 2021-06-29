@@ -30,15 +30,13 @@ let produitPersonaliser = {
 let inputQuantity = document.getElementById("quantity-select");
 inputQuantity.addEventListener("input",function(){
     produitPersonaliser.quantity = document.getElementById("quantity-select").value;
-    }
-)
+    })
 let inputColor = document.getElementById("form-selection");
 inputColor.addEventListener("change",function(){
     let index = document.getElementById("form-selection").selectedIndex;
     let colorSelected = document.getElementById("form-selection").options[index].value;
     produitPersonaliser.color = colorSelected;
-    }
-)
+    })
 // mettre les produits choisies et personalisées dans mon panier en cliquant le button
 let misePanier = document.getElementById("btn-panier").addEventListener("click",function(){
     if(produitPersonaliser.color&&produitPersonaliser.quantity){

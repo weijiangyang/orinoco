@@ -20,8 +20,7 @@ if(monCommande ==null || monCommande.length == 0){function appendElementsCommand
          document.getElementById("acueill").addEventListener("click",function(){
             monCommande=[];
             localStorage.setItem("monCommande",JSON.stringify(monCommande));
-            }
-         )
+         })
       }
       appendElementsCommandeNonVide();
 };
