@@ -46,16 +46,23 @@ function appendElementsPanierNonVide(){
     for(let i=0;i<lePanier.length;i++){
         let prixProduit = lePanier[i].price;
         let quantityProduit = lePanier[i].quantity;
+          sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
         document.getElementsByClassName("quantity-select")[i].addEventListener("input",function(){
             quantityProduit = this.value;
             document.getElementsByClassName("price-produit")[i].innerHTML = `Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})`;
             document.getElementsByClassName("totalprice-produit")[i].innerHTML = `${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€`;
            lePanier[i].quantity = this.value;
-            localStorage.setItem("lePanier",JSON.stringify(lePanier));
-            lePanier = JSON.parse(localStorage.getItem("lePanier"));
-        })   
-        
-        sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+         
+         localStorage.setItem("lePanier",JSON.stringify(lePanier));
+         lePanier = JSON.parse(localStorage.getItem("lePanier"));
+        //  sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+         document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+         
+        }) 
+      
+            
+            
+
         // ajouter le button supprimer pour chaque produit dans mon panier
         btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
             btnSupprimer.addEventListener("click",function(){
