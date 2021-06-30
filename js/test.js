@@ -31,7 +31,7 @@ function appendElementsPanierNonVide(){
                     <p class="color-produit">Color:${colorProduit}</p>
                     <form for="quantity-select" id='quantity'>
                         Quantity:
-                        <input type="number" id='quantity-select' min="1">
+                        <input type="number" class='quantity-select' min="1">
                     </form>      
                     <p class="totalprice-produit" >${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€</p>
                     <button class="btn-supprimer">Supprimer</button>
@@ -44,10 +44,15 @@ function appendElementsPanierNonVide(){
     // calculer le prix total et donner la function au button supprimer 
     sum = 0;
     for(let i=0;i<lePanier.length;i++){
-        document.getElementById("quantity-select").addEventListener("input",function(){
+        let prixProduit = lePanier[i].price;
+        let quantityProduit = lePanier[i].quantity;
+        document.getElementsByClassName("quantity-select")[i].addEventListener("input",function(){
             quantityProduit = this.value;
             document.getElementsByClassName("price-produit")[i].innerHTML = `Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})`;
-            document.getElementsByClassName("totalprice-produit")[i].innerHTML = `${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€`
+            document.getElementsByClassName("totalprice-produit")[i].innerHTML = `${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€`;
+           lePanier[i].quantity = this.value;
+            localStorage.setItem("lePanier",JSON.stringify(lePanier));
+            lePanier = JSON.parse(localStorage.getItem("lePanier"));
         })   
         
         sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
