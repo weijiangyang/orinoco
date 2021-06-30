@@ -37,14 +37,19 @@ function appendElementsPanierNonVide(){
                     <button class="btn-supprimer">Supprimer</button>
                 </div>
             </div>`
-            
         elementPanierInf.innerHTML+= htmlElement;
-       } 
+        
+        
+    } 
     // calculer le prix total et donner la function au button supprimer 
     sum = 0;
     for(let i=0;i<lePanier.length;i++){
-        document.getElementById("quantity-select").addEventListener("change",function(){
-            lePanier[i].quantity = this.value});
+        document.getElementById("quantity-select").addEventListener("input",function(){
+            quantityProduit = this.value;
+            document.getElementsByClassName("price-produit")[i].innerHTML = `Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})`;
+            document.getElementsByClassName("totalprice-produit")[i].innerHTML = `${quantityProduit*(prixProduit/100).toFixed(2)}&nbsp€`
+        })   
+        
         sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
         // ajouter le button supprimer pour chaque produit dans mon panier
         btnSupprimer=document.getElementsByClassName("btn-supprimer")[i];
