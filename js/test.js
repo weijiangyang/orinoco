@@ -44,9 +44,10 @@ function appendElementsPanierNonVide(){
     // calculer le prix total et donner la function au button supprimer 
     sum = 0;
     for(let i=0;i<lePanier.length;i++){
+        document.getElementsByClassName("quantity-select")[i].value = lePanier[i].quantity;
         let prixProduit = lePanier[i].price;
         let quantityProduit = lePanier[i].quantity;
-          sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+          
         document.getElementsByClassName("quantity-select")[i].addEventListener("input",function(){
             quantityProduit = this.value;
             document.getElementsByClassName("price-produit")[i].innerHTML = `Price:${(prixProduit/100).toFixed(2)}&nbsp€(*${quantityProduit})`;
@@ -56,11 +57,17 @@ function appendElementsPanierNonVide(){
          localStorage.setItem("lePanier",JSON.stringify(lePanier));
          lePanier = JSON.parse(localStorage.getItem("lePanier"));
         //  sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+        sum=0;
+        for(let i=0;i<lePanier.length;i++){
+            sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
+        }
          document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
+        
+         
          
         }) 
       
-            
+            sum+=(lePanier[i].quantity)*(lePanier[i].price/100);
             
 
         // ajouter le button supprimer pour chaque produit dans mon panier
