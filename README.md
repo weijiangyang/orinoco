@@ -1,4 +1,5 @@
 # orinoco
+L'api se declenche par /JWDP5 , et puis "node server"
 l'application web  est composée de 4 pages. 
 
 
