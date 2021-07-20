@@ -54,7 +54,9 @@ let misePanier = document.getElementById("btn-panier").addEventListener("click",
     let index = document.getElementById("form-selection").selectedIndex;
     document.getElementById("form-selection").options[index].value = "";  
     }
-)   
+)  
+
+console.log(produitPersonaliser)
 
 
 
