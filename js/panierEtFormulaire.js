@@ -84,8 +84,8 @@ function commandeSend(){
         // la validation pour l'email
     form.email.addEventListener("change",function(){
         validEmail(this);
-        }
-    )
+    })
+    
     const validEmail = function(inputEmail){
         let emailRegExp = new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$','g');
         let small = inputEmail.nextElementSibling;
@@ -103,8 +103,8 @@ function commandeSend(){
         // la validation pour l'adresse
     form.adresse.addEventListener("change",function(){
         validAdresse(this);
-        }
-    )
+    })
+    
     const validAdresse = function(inputAdresse){
         let adresseRegExp = new RegExp('[a-zA-Z]{2,}','g');
         let small = inputAdresse.nextElementSibling;
@@ -122,8 +122,8 @@ function commandeSend(){
         // la validation pour la code postale     
     form.codepostale.addEventListener("change",function(){
         validCodePostale(this);
-        }
-    )
+    })
+    
     const validCodePostale = function(inputCodePostale){
         let codePostaleRegExp = new RegExp('^\\d{5}$','g');
         let small = inputCodePostale.nextElementSibling;
@@ -141,7 +141,7 @@ function commandeSend(){
     // la validation pour le nom 
     form.nom.addEventListener("change",function(){
         validNom(this);
-        })
+    })
     const validNom = function(inputNom){
         let small = inputNom.nextElementSibling;
         if(form.nom.value){
@@ -158,7 +158,7 @@ function commandeSend(){
     // la validation pour le prenom
     form.prenom.addEventListener("change",function(){
         validPrenom(this);
-        })
+    })
     const validPrenom = function(inputPrenom){
         let small = inputPrenom.nextElementSibling;
         if(form.prenom.value){
@@ -175,7 +175,7 @@ function commandeSend(){
     // la validation pour la ville
     form.city.addEventListener("change",function(){
         validCity(this);
-        })
+    })
     const validCity = function(inputCity){
         let small = inputCity.nextElementSibling;
         if(form.city.value){
