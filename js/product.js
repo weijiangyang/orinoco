@@ -1,6 +1,9 @@
+/**recupérer le Id dans le URL 
+  * @param none
+  * @return theRequest
+ * */
 function GetRequest() {  
     var url = location.search;
-    //获取url中"?"符后的字串  
     var theRequest = new Object(); 
     if (url.indexOf("?") != -1) { 
        var str = url.substr(1); 
@@ -12,22 +15,27 @@ function GetRequest() {
     return theRequest;  
  }
 var req = GetRequest();
-console.log(req.id); 
+/**recupérer la produit par son ID à partir de L'API
+  * @param none
+  * @return none
+ * */ 
+function getProduitParIdOfUrl(){
+    fetch(`http://localhost:3000/api/teddies/${req.id}`)
+        .then(function(res){
+            if(res.ok){
+                return res.json();
+            }
+        })
+        .then(function(produit){
+        
+            localStorage.setItem("optionItem",JSON.stringify(produit))
 
-fetch(`http://localhost:3000/api/teddies/${req.id}`)
-    .then(function(res){
-        if(res.ok){
-            return res.json();
-        }
-    })
-    .then(function(produit){
-        console.log(produit.name)
-
-    })
-    .catch(function(err){
-        console.log("il y a un error")
-    });    
-
+        })
+        .catch(function(err){
+            console.log("il y a un error")
+        });    
+};
+getProduitParIdOfUrl();
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
 /** afficher la produit choisie sur la page 
     * @param none
@@ -86,7 +94,7 @@ let misePanier = document.getElementById("btn-panier").addEventListener("click",
     }
 )  
 
-// console.log(produitPersonaliser)
+console.log(produitPersonaliser)
 
 
 

@@ -1,3 +1,41 @@
+/**recupérer le Id dans le URL 
+  * @param none
+  * @return theRequest
+ * */
+ function GetRequest() {  
+    var url = location.search;
+    var theRequest = new Object(); 
+    if (url.indexOf("?") != -1) { 
+       var str = url.substr(1); 
+       strs = str.split("&");  
+       for(var i = 0; i < strs.length; i ++) {
+          theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+       }
+    }
+    return theRequest;  
+ }
+var req = GetRequest();
+/**recupérer la produit par son ID à partir de L'API
+  * @param none
+  * @return none
+ * */ 
+function getProduitParIdOfUrl(){
+    fetch(`http://localhost:3000/api/teddies/${req.id}`)
+        .then(function(res){
+            if(res.ok){
+                return res.json();
+            }
+        })
+        .then(function(produit){
+        
+            localStorage.setItem("optionItem",JSON.stringify(produit))
+
+        })
+        .catch(function(err){
+            console.log("il y a un error")
+        });    
+};
+getProduitParIdOfUrl();
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
 /** afficher la produit choisie sur la page 
     * @param none
