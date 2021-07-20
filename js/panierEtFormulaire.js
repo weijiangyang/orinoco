@@ -69,7 +69,7 @@ function appendElementsPanierNonVide(){
                 lePanier.splice(i,1);
                 localStorage.setItem("lePanier",JSON.stringify(lePanier));
                 location.reload();
-                })    
+            })    
     }            
      // ajouter le prix total
     document.getElementById("pricetotal") .innerHTML = "Total:&nbsp<strong>"+sum.toFixed(2)+"&nbsp€"+"</strong>";
