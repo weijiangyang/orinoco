@@ -35,8 +35,12 @@ function getProduitParIdOfUrl(){
             console.log("il y a un error")
         });    
 };
+
 getProduitParIdOfUrl();
+
+
 let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+
 /** afficher la produit choisie sur la page 
     * @param none
     * @return none
@@ -57,6 +61,7 @@ function produitOptionAppend (){
     }   
 }
 produitOptionAppend();
+
 // personaliser la produit choisie en choisissant la couleur et la quantity
 let produitPersonaliser = {
     name : produitOption.name,

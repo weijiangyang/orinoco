@@ -27,11 +27,11 @@ function getPeulucheInf(){
                     </a>`
                 document.getElementById("total-produits").innerHTML+= htmlElement    
             }
-            for (let i=0; i<peuluches.length;i++){        
-                document.getElementsByClassName("lien")[i].addEventListener("click",function(){
-                    localStorage.setItem("optionItem",JSON.stringify(peuluches[i]))
-                    });  
-            }
+            // for (let i=0; i<peuluches.length;i++){        
+            //     document.getElementsByClassName("lien")[i].addEventListener("click",function(){
+            //         localStorage.setItem("optionItem",JSON.stringify(peuluches[i]))
+            //         });  
+            // }
         }                  
         elementAppend();   
     })    
