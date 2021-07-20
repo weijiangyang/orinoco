@@ -27,19 +27,16 @@ function getProduitParIdOfUrl(){
             }
         })
         .then(function(produit){
-        
-            localStorage.setItem("optionItem",JSON.stringify(produit));
-            let produitOption=JSON.parse(localStorage.getItem("optionItem"));
-            /** afficher la produit choisie sur la page 
+            /** afficher la produit récupéré sur la page 
                 * @param none
                 * @return none
             **/
-            function produitOptionAppend (){
-                document.getElementById("title-peluche").innerHTML = produitOption.name;
-                document.getElementById("desp-peluche").innerHTML = produitOption.description;
-                document.getElementById("price-peluche").innerHTML = "Price:"+(produitOption.price/100).toFixed(2)+"€";
-                document.getElementById("image-peluche").src = produitOption.imageUrl;
-                let typesColor = produitOption.colors;
+            function produitAppend (){
+                document.getElementById("title-peluche").innerHTML = produit.name;
+                document.getElementById("desp-peluche").innerHTML = produit.description;
+                document.getElementById("price-peluche").innerHTML = "Price:"+(produit.price/100).toFixed(2)+"€";
+                document.getElementById("image-peluche").src = produit.imageUrl;
+                let typesColor = produit.colors;
                 let parentFormSelection = document.getElementById("form-selection");
                 for (let color of typesColor){
                     let eltOption = document.createElement("option");
@@ -49,14 +46,14 @@ function getProduitParIdOfUrl(){
                     eltOption.style.color = color;
                 }   
             }
-            produitOptionAppend();
+            produitAppend();
             // personaliser la produit choisie en choisissant la couleur et la quantity
             let produitPersonaliser = {
-                name : produitOption.name,
-                description : produitOption.description,
-                price : produitOption.price,
-                imageUrl:produitOption.imageUrl,
-                id:produitOption._id
+                name : produit.name,
+                description : produit.description,
+                price : produit.price,
+                imageUrl:produit.imageUrl,
+                id:produit._id
             }
             let inputQuantity = document.getElementById("quantity-select");
             inputQuantity.addEventListener("input",function(){
