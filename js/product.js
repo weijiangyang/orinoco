@@ -15,7 +15,7 @@ function GetRequest() {
     return theRequest;  
  }
 var req = GetRequest();
-/**recupérer la produit par son ID à partir de L'API
+/**recupérer la produit par son ID à partir de L'API et la personaliser 
   * @param none
   * @return none
  * */ 
@@ -50,52 +50,52 @@ function getProduitParIdOfUrl(){
                 }   
             }
             produitOptionAppend();
-// personaliser la produit choisie en choisissant la couleur et la quantity
-let produitPersonaliser = {
-    name : produitOption.name,
-    description : produitOption.description,
-    price : produitOption.price,
-    imageUrl:produitOption.imageUrl,
-    id:produitOption._id
-}
-let inputQuantity = document.getElementById("quantity-select");
-inputQuantity.addEventListener("input",function(){
-    produitPersonaliser.quantity = document.getElementById("quantity-select").value;
-    })
-let inputColor = document.getElementById("form-selection");
-inputColor.addEventListener("change",function(){
-    let index = document.getElementById("form-selection").selectedIndex;
-    let colorSelected = document.getElementById("form-selection").options[index].value;
-    produitPersonaliser.color = colorSelected;
-    })
-// mettre les produits choisies et personalisées dans mon panier en cliquant le button
- document.getElementById("btn-panier").addEventListener("click",function(){
-    if(produitPersonaliser.color&&produitPersonaliser.quantity){
-        let lePanier = JSON.parse(localStorage.getItem("lePanier"));
-        if(lePanier){
-            lePanier.push(produitPersonaliser);
-            localStorage.setItem("lePanier",JSON.stringify(lePanier));
-        }else{let lePanier=[];
-            lePanier.push(produitPersonaliser);
-            localStorage.setItem("lePanier",JSON.stringify(lePanier));
-        }
-       document.getElementById("link-btn-panier").href="../html/monPanier.html";
-    }
-    document.getElementById("quantity-select").value="";
-    let index = document.getElementById("form-selection").selectedIndex;
-    document.getElementById("form-selection").options[index].value = "";  
-    }
-)  
-
+            // personaliser la produit choisie en choisissant la couleur et la quantity
+            let produitPersonaliser = {
+                name : produitOption.name,
+                description : produitOption.description,
+                price : produitOption.price,
+                imageUrl:produitOption.imageUrl,
+                id:produitOption._id
+            }
+            let inputQuantity = document.getElementById("quantity-select");
+            inputQuantity.addEventListener("input",function(){
+                produitPersonaliser.quantity = document.getElementById("quantity-select").value;
+                })
+            let inputColor = document.getElementById("form-selection");
+            inputColor.addEventListener("change",function(){
+                let index = document.getElementById("form-selection").selectedIndex;
+                let colorSelected = document.getElementById("form-selection").options[index].value;
+                produitPersonaliser.color = colorSelected;
+                })
+            // mettre les produits choisies et personalisées dans mon panier en cliquant le button
+            document.getElementById("btn-panier").addEventListener("click",function(){
+                if(produitPersonaliser.color&&produitPersonaliser.quantity){
+                    let lePanier = JSON.parse(localStorage.getItem("lePanier"));
+                    if(lePanier){
+                        lePanier.push(produitPersonaliser);
+                        localStorage.setItem("lePanier",JSON.stringify(lePanier));
+                    }else{let lePanier=[];
+                        lePanier.push(produitPersonaliser);
+                        localStorage.setItem("lePanier",JSON.stringify(lePanier));
+                    }
+                document.getElementById("link-btn-panier").href="../html/monPanier.html";
+                }
+                document.getElementById("quantity-select").value="";
+                let index = document.getElementById("form-selection").selectedIndex;
+                document.getElementById("form-selection").options[index].value = "";  
+                })
         })
+
         .catch(function(err){
             console.log("il y a un error")
         });    
 };
+        
 getProduitParIdOfUrl();
 
 
-// console.log(produitPersonaliser)
+
 
 
 
