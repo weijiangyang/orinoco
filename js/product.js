@@ -2,7 +2,7 @@
   * @param none
   * @return theRequest
  * */
-function GetRequest() {  
+ function GetRequest() {  
     var url = location.search;
     var theRequest = new Object(); 
     if (url.indexOf("?") != -1) { 
@@ -28,8 +28,8 @@ function getProduitParIdOfUrl(){
         })
         .then(function(produit){
         
-            localStorage.setItem("optionItem",JSON.stringify(produit));
-            let produitOption=JSON.parse(localStorage.getItem("optionItem"));
+            // localStorage.setItem("optionItem",JSON.stringify(produit));
+            let produitOption = produit;
             /** afficher la produit choisie sur la page 
                 * @param none
                 * @return none
